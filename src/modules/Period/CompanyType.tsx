@@ -1,4 +1,4 @@
-import Tag from '../Tag';
+import Tag from '../../components/Tag';
 import React from 'react';
 import DataModel from '../../models/types';
 

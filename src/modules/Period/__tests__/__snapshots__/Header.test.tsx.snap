@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Period Header 1`] = `
+<div
+  className="header"
+>
+  <div>
+    <div
+      className="job"
+    >
+      <span>
+        Senior
+      </span>
+      <span>
+        Software Engineer
+      </span>
+    </div>
+    <div
+      className="companyName"
+    >
+      <div>
+        test company name
+      </div>
+      <div
+        className="companyIndustry"
+      >
+        (
+        )
+      </div>
+    </div>
+  </div>
+  <div
+    className="dividerH"
+  />
+  <div>
+    <span
+      className="filled"
+    >
+      React
+    </span>
+  </div>
+</div>
+`;

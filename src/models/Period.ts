@@ -3,6 +3,7 @@ import DataModel from './types';
 import Base from './Base';
 import StringWithID from './StringWithID';
 import { v4 } from 'uuid';
+import Project from './Project';
 
 interface IPeriod {
     start: Date;
@@ -13,37 +14,34 @@ interface IPeriod {
     jobPosition: DataModel.JobPosition;
     achievements: DataModel.IAchievement[];
     jobSummaries: string[];
-    solutionsOfHowToImplement: DataModel.SolutionsOfHowToImplement[];
+    jobType: DataModel.JobType;
+    projects?: Project[];
+    descriptions: string[];
 }
 
 export default class Period extends Base {
     public start: Date;
     public end?: Date;
     public keywords: StringWithID[];
+    public descriptions: StringWithID[];
     public achievements: DataModel.Achievement[];
     public jobSummaries: StringWithID[];
     public company: Company;
-    /**
-     * @deprecated please use Job.level
-     */
-    public jobPositionLevel: DataModel.JobPositionLevel;
-    /**
-     * @deprecated please use Job.position
-     */
-    public jobPosition: DataModel.JobPosition;
     public job: DataModel.Job;
-    public solutionsOfHowToImplement: DataModel.SolutionsOfHowToImplement[];
+    public projects?: Project[];
 
     constructor({
-        solutionsOfHowToImplement,
         company,
         jobSummaries,
         jobPosition,
         jobPositionLevel,
         achievements,
         keywords,
+        descriptions,
         start,
-        end
+        end,
+        jobType,
+        projects
     }: IPeriod) {
         super();
         this.company = company;
@@ -56,12 +54,12 @@ export default class Period extends Base {
         }));
         this.jobSummaries = jobSummaries.map(e => new StringWithID(e));
         this.keywords = keywords.map(e => new StringWithID(e));
-        this.jobPositionLevel = jobPositionLevel;
-        this.jobPosition = jobPosition;
+        this.descriptions = descriptions?.map(e => new StringWithID(e));
         this.job = {
             position: jobPosition,
-            level: jobPositionLevel
+            level: jobPositionLevel,
+            type: jobType
         };
-        this.solutionsOfHowToImplement = solutionsOfHowToImplement;
+        this.projects = projects;
     }
 }

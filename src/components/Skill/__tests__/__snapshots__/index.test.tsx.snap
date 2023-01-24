@@ -3,6 +3,7 @@
 exports[`renders Skill  Skill --->level = familiar 1`] = `
 <div
   className="skill"
+  style={Object {}}
 >
   <div>
     <div
@@ -18,9 +19,7 @@ exports[`renders Skill  Skill --->level = familiar 1`] = `
   >
     <span />
     <span />
-    <span
-      className="empty"
-    />
+    <span />
     <span
       className="empty"
     />
@@ -39,6 +38,7 @@ exports[`renders Skill  Skill --->level = familiar 1`] = `
 exports[`renders Skill  Skill --->level = familiar 2`] = `
 <div
   className="skill"
+  style={Object {}}
 >
   <div>
     <div
@@ -54,9 +54,7 @@ exports[`renders Skill  Skill --->level = familiar 2`] = `
   >
     <span />
     <span />
-    <span
-      className="empty"
-    />
+    <span />
     <span
       className="empty"
     />
@@ -75,6 +73,7 @@ exports[`renders Skill  Skill --->level = familiar 2`] = `
 exports[`renders Skill  Skill --->level = familiar 3`] = `
 <div
   className="skill"
+  style={Object {}}
 >
   <div>
     <div
@@ -90,9 +89,7 @@ exports[`renders Skill  Skill --->level = familiar 3`] = `
   >
     <span />
     <span />
-    <span
-      className="empty"
-    />
+    <span />
     <span
       className="empty"
     />
@@ -111,6 +108,7 @@ exports[`renders Skill  Skill --->level = familiar 3`] = `
 exports[`renders Skill  Skill --->level = proficient 1`] = `
 <div
   className="skill"
+  style={Object {}}
 >
   <div>
     <div
@@ -128,9 +126,7 @@ exports[`renders Skill  Skill --->level = proficient 1`] = `
     <span />
     <span />
     <span />
-    <span
-      className="empty"
-    />
+    <span />
     <div
       className="levelName"
     >
@@ -143,6 +139,7 @@ exports[`renders Skill  Skill --->level = proficient 1`] = `
 exports[`renders Skill  Skill --->level = proficient 2`] = `
 <div
   className="skill"
+  style={Object {}}
 >
   <div>
     <div
@@ -181,6 +178,7 @@ exports[`renders Skill  Skill --->level = proficient 2`] = `
 exports[`renders Skill  Skill --->level = proficient 3`] = `
 <div
   className="skill"
+  style={Object {}}
 >
   <div>
     <div
@@ -219,6 +217,7 @@ exports[`renders Skill  Skill --->level = proficient 3`] = `
 exports[`renders Skill  Skill --->level = understand 1`] = `
 <div
   className="skill"
+  style={Object {}}
 >
   <div>
     <div
@@ -257,6 +256,7 @@ exports[`renders Skill  Skill --->level = understand 1`] = `
 exports[`renders Skill  Skill --->level = understand 2`] = `
 <div
   className="skill"
+  style={Object {}}
 >
   <div>
     <div
@@ -295,6 +295,7 @@ exports[`renders Skill  Skill --->level = understand 2`] = `
 exports[`renders Skill  Skill --->level = understand 3`] = `
 <div
   className="skill"
+  style={Object {}}
 >
   <div>
     <div

@@ -32,8 +32,8 @@ describe('Period class', () => {
         expect(testPeriod.end).toEqual(end);
         expect(testPeriod.keywords.map(e => e.toString())).toEqual(keywords);
         expect(testPeriod.achievements).toEqual(achievements);
-        expect(testPeriod.jobPosition).toEqual(jobPosition);
-        expect(testPeriod.jobPositionLevel).toEqual(jobPositionLevel);
+        expect(testPeriod.job.position).toEqual(jobPosition);
+        expect(testPeriod.job.level).toEqual(jobPositionLevel);
         expect(testPeriod.jobSummaries).toEqual(jobSummaries);
     });
 });

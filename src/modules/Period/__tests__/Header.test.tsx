@@ -10,7 +10,15 @@ test('renders Period Header', () => {
     const jobPositionLevel = DataModel.JobPositionLevel.Senior;
     const jobPosition = 'Software Engineer';
     const HeaderDom = renderer
-        .create(<Header companyType={DataModel.CompanyType.Startup} jobPosition={jobPosition} jobPositionLevel={jobPositionLevel} companyName={testCompanyName} keywords={keywords} />)
+        .create(
+            <Header
+                companyType={DataModel.CompanyType.Startup}
+                jobPosition={jobPosition}
+                jobPositionLevel={jobPositionLevel}
+                companyName={testCompanyName}
+                keywords={keywords}
+            />
+        )
         .toJSON();
     expect(HeaderDom).toMatchSnapshot();
 });

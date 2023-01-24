@@ -23,7 +23,7 @@ const Header = ({ links, firstName, lastName, email, cellphone }: HeaderProps) =
                     <div>{email}</div>
                 </div>
                 <div className={styles.basicInfoItem}>
-                    <div>Cellphone:</div>
+                    <div>Mobile:</div>
                     <div>{cellphone}</div>
                 </div>
                 <>

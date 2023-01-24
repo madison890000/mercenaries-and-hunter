@@ -65,31 +65,37 @@ function App() {
                         ))}
                 </div>
             </section>
+            <Divider variant="dash" />
             <section>
                 <div className={styles.skills}>
                     {person.skills
                         ?.filter(s => s?.importance === DataModel.Importance.Advanced)
                         ?.map(skill => (
-                            <Skill {...skill} key={skill.id} />
+                            <Skill size="small" {...skill} key={skill.id} />
                         ))}
                 </div>
             </section>
             <Divider title={intl.formatMessage(messages.professionalExperiences)} />
             <section>
                 {person.reversedPeriods?.map(period => (
-                    <Period
-                        jobPositionLevel={period.job.level}
-                        jobPosition={period.job.position}
-                        keywords={period.keywords}
-                        key={period.id}
-                        periodColor={periodColors[period?.id]}
-                        companyName={period?.company?.name}
-                        companyType={period.company.type}
-                        achievements={period.achievements}
-                        start={period.start}
-                        end={period.end}
-                        jobSummaries={period.jobSummaries}
-                    />
+                    <>
+                        <Period
+                            jobPositionLevel={period.job.level}
+                            jobPosition={period.job.position}
+                            keywords={period.keywords}
+                            descriptions={period.descriptions}
+                            key={period.id}
+                            periodColor={periodColors[period?.id]}
+                            companyName={period?.company?.name}
+                            companyType={period.company.type}
+                            companyIndustry={period.company.industry}
+                            achievements={period.achievements}
+                            start={period.start}
+                            end={period.end}
+                            jobSummaries={period.jobSummaries}
+                            projects={period?.projects}
+                        />
+                    </>
                 ))}
             </section>
             <Divider title={intl.formatMessage(messages.educationExperiences)} />

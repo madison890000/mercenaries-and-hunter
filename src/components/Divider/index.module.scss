@@ -1,3 +1,12 @@
+.dividerH {
+    border: 1px solid var(--divider-border-color);
+    width: 0px;
+    height: 100%;
+    display: block;
+    min-height: 30px;
+    margin: 0 16px;
+}
+
 .divider {
     margin: var(--block-margin) 0 0 0;
     width: 100%;
@@ -16,4 +25,10 @@
 .section {
     margin: 10px 0;
     border: var(--base-gap-unit) solid var(--divider-border-color);
+}
+
+.sectionDash {
+    margin: 5px 10px;
+    width: 95%;
+    border: 1px dashed var(--divider-border-color);
 }

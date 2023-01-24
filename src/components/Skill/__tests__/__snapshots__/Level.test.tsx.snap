@@ -6,9 +6,7 @@ exports[`renders Level  Level --->level = Familiar 1`] = `
 >
   <span />
   <span />
-  <span
-    className="empty"
-  />
+  <span />
   <span
     className="empty"
   />
@@ -31,9 +29,7 @@ exports[`renders Level  Level --->level = Proficient 1`] = `
   <span />
   <span />
   <span />
-  <span
-    className="empty"
-  />
+  <span />
   <div
     className="levelName"
   >

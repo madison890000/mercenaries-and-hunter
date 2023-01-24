@@ -116,30 +116,41 @@ exports[`renders Period 1`] = `
         <div
           className="header"
         >
-          <span
-            className="job"
-          >
-            <span>
-              Senior
-            </span>
-            <span>
-              Software Engineer
-            </span>
-          </span>
-          <span>
+          <div>
+            <div
+              className="job"
+            >
+              <span>
+                Senior
+              </span>
+              <span>
+                Software Engineer
+              </span>
+            </div>
+            <div
+              className="companyName"
+            >
+              <div>
+                test company name
+              </div>
+              <div
+                className="companyIndustry"
+              >
+                (
+                )
+              </div>
+            </div>
+          </div>
+          <div
+            className="dividerH"
+          />
+          <div>
             <span
               className="filled"
             >
               React
             </span>
-          </span>
-          <span
-            className="companyName"
-          >
-            <span>
-              test company name
-            </span>
-          </span>
+          </div>
         </div>
       </div>
       <div
@@ -151,31 +162,34 @@ exports[`renders Period 1`] = `
           <span>
             Jan, 2012
           </span>
-          <span>
-            -
-          </span>
+          <span
+            className="divider"
+          />
           <span>
             Jan, 2013
           </span>
         </div>
       </div>
     </div>
+    <div />
     <div>
-      <h5>
-        Job summaries
-        :
-      </h5>
-      <ul />
+      <ul
+        style={
+          Object {
+            "display": "flex",
+            "flexWrap": "wrap",
+          }
+        }
+      />
     </div>
     <div>
-      <h5>
-        Achievements
-        :
-      </h5>
       <ul
         className="achievements"
       />
     </div>
+    <div
+      className="projects"
+    />
   </div>
 </div>
 `;

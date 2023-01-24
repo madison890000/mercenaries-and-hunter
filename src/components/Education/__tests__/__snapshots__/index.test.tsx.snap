@@ -27,9 +27,9 @@ exports[`renders Education Bachelor 1`] = `
     <span>
       Jan, 2012
     </span>
-    <span>
-      -
-    </span>
+    <span
+      className="divider"
+    />
     <span>
       Jan, 2013
     </span>
@@ -64,9 +64,9 @@ exports[`renders Education Master 1`] = `
     <span>
       Jan, 2012
     </span>
-    <span>
-      -
-    </span>
+    <span
+      className="divider"
+    />
     <span>
       Jan, 2013
     </span>
@@ -101,9 +101,9 @@ exports[`renders Education PhD 1`] = `
     <span>
       Jan, 2012
     </span>
-    <span>
-      -
-    </span>
+    <span
+      className="divider"
+    />
     <span>
       Jan, 2013
     </span>

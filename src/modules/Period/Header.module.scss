@@ -1,5 +1,7 @@
 .header {
     font-weight: bold;
+    display: flex;
+    align-items: center;
 
     & > span {
         margin-right: var(--inline-block-margin);
@@ -23,4 +25,13 @@
 .companyName {
     font-weight: normal;
     color: var(--period-sub-title-color);
+    display: flex;
+    align-items: center;
+}
+
+.companyIndustry {
+    font-weight: normal;
+    color: var(--period-sub-title-color);
+    font-size: 12px;
+    margin: 6px;
 }

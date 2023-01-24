@@ -1,5 +1,5 @@
 import React from 'react';
-import Achievement from '../Achievement';
+import Achievement from '../../../components/Achievement/Achievement';
 import renderer from 'react-test-renderer';
 import StringWithID from '../../../models/StringWithID';
 
