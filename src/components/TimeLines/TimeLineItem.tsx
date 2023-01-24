@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { getMonthCountFromStartAndEnd } from '../../utils/date';
 import MonthRect from './MonthRect';
-import { getScreenDevice, ScreenDevice } from '../../utils/device';
+import { ScreenDevice } from '../../utils/device';
 import { BASE_MONTH_SVG_HEIGHT, BASE_RECT_WIDTH, RECT_GAP } from '../../constants/widths';
 
 export const getBaseRectFull = (device: ScreenDevice) => {
@@ -18,23 +18,19 @@ export const getBaseRectFull = (device: ScreenDevice) => {
 };
 
 const TimeLineItem = ({ start, end, periodColor }: { start: Date; end?: Date; periodColor: string }) => {
-    const { rectFullWidth, totalRects, rects, rectWidth } = useMemo(() => {
+    const { totalRects, rects } = useMemo(() => {
         const totalRects = getMonthCountFromStartAndEnd(start, end ?? new Date()) + 1;
-        const rectFullWidth = getBaseRectFull(getScreenDevice());
-        const rectWidth = rectFullWidth - RECT_GAP;
         let rects = new Array(totalRects).fill(0);
         return {
-            rectFullWidth,
             totalRects,
-            rects,
-            rectWidth
+            rects
         };
     }, [start, end]);
     return (
-        <svg width={rectFullWidth * totalRects} height={BASE_MONTH_SVG_HEIGHT}>
+        <svg width={BASE_MONTH_SVG_HEIGHT} height={(10 + 1) * totalRects}>
             <g>
                 {rects?.map((e, index) => (
-                    <MonthRect key={index} width={rectWidth} gap={RECT_GAP} color={periodColor} index={index} />
+                    <MonthRect variant="v" key={index} width={10} gap={RECT_GAP} color={periodColor} index={index} />
                 ))}
             </g>
         </svg>

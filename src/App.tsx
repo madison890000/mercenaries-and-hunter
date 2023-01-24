@@ -1,9 +1,7 @@
 import React, { useRef } from 'react';
 import styles from './App.module.scss';
 import madison from './Madison';
-import { Capability, Divider, Education, Header, Period, Skill, TimeLines } from './components';
-import { getScreenDevice, ScreenDevice } from './utils/device';
-import useTimelineWidth from './hooks/useTimelineWidth';
+import { Capability, Divider, Education, Header, Period, Skill } from './components';
 import { defineMessages, useIntl } from 'react-intl';
 import capitalize from './utils/capitalize';
 import DataModel from './models/types';
@@ -28,7 +26,6 @@ const messages = defineMessages({
 
 function App() {
     const intl = useIntl();
-    const { timelineWidth } = useTimelineWidth();
     const { current: person } = useRef(madison);
     const periodColors: { [key: string]: string } = {};
     person?.periods?.forEach((p, index) => {
@@ -77,19 +74,7 @@ function App() {
                         ))}
                 </div>
             </section>
-            <Divider
-                title={intl.formatMessage(messages.professionalExperiences)}
-                extra={
-                    getScreenDevice() === ScreenDevice.PC ? (
-                        <TimeLines width={timelineWidth - 300} periods={person.periods} periodColors={periodColors} />
-                    ) : null
-                }
-            />
-            <section>
-                {getScreenDevice() !== ScreenDevice.PC ? (
-                    <TimeLines width={timelineWidth - 20} periods={person.periods} periodColors={periodColors} />
-                ) : null}
-            </section>
+            <Divider title={intl.formatMessage(messages.professionalExperiences)} />
             <section>
                 {person.reversedPeriods?.map(period => (
                     <Period
