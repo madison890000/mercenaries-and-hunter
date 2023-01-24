@@ -5,5 +5,5 @@ export { default as Header } from './Header';
 export { default as Period } from './Period';
 export { default as Skill } from './Skill';
 export { default as Tag } from './Tag';
-export { default as TimeLines } from './TimeLines';
+export { default as TimeLines } from './TimeLines/TimeLineItem';
 export { default as Times } from './Times';

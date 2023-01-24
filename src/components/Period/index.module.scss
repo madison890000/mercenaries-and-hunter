@@ -1,8 +1,13 @@
 .periodContainer {
+    display: flex;
+}
+
+.content {
     background: var(--period-background-color);
     padding: 10px;
     margin: 10px 0;
     border-radius: var(--base-border-radius);
+    width: 100%;
 }
 
 .period {
@@ -16,6 +21,10 @@
 }
 
 .timeline {
+    margin-top: 30px;
+}
+
+.time {
     display: flex;
     justify-content: flex-end;
     align-items: center;
