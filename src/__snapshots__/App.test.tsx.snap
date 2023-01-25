@@ -29,7 +29,7 @@ exports[`renders App 1`] = `
         className="basicInfoItem"
       >
         <div>
-          Cellphone:
+          Mobile:
         </div>
         <div>
           +8618510163161
@@ -138,6 +138,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
     >
       <div
         className="skill"
+        style={Object {}}
       >
         <div>
           <div
@@ -160,9 +161,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
           <span />
           <span />
           <span />
-          <span
-            className="empty"
-          />
+          <span />
           <div
             className="levelName"
           >
@@ -172,6 +171,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
       </div>
       <div
         className="skill"
+        style={Object {}}
       >
         <div>
           <div
@@ -194,9 +194,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
           <span />
           <span />
           <span />
-          <span
-            className="empty"
-          />
+          <span />
           <div
             className="levelName"
           >
@@ -206,6 +204,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
       </div>
       <div
         className="skill"
+        style={Object {}}
       >
         <div>
           <div
@@ -228,9 +227,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
           <span />
           <span />
           <span />
-          <span
-            className="empty"
-          />
+          <span />
           <div
             className="levelName"
           >
@@ -240,6 +237,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
       </div>
       <div
         className="skill"
+        style={Object {}}
       >
         <div>
           <div
@@ -262,9 +260,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
           <span />
           <span />
           <span />
-          <span
-            className="empty"
-          />
+          <span />
           <div
             className="levelName"
           >
@@ -274,6 +270,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
       </div>
       <div
         className="skill"
+        style={Object {}}
       >
         <div>
           <div
@@ -296,9 +293,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
           <span />
           <span />
           <span />
-          <span
-            className="empty"
-          />
+          <span />
           <div
             className="levelName"
           >
@@ -308,6 +303,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
       </div>
       <div
         className="skill"
+        style={Object {}}
       >
         <div>
           <div
@@ -330,9 +326,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
           <span />
           <span />
           <span />
-          <span
-            className="empty"
-          />
+          <span />
           <div
             className="levelName"
           >
@@ -342,6 +336,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
       </div>
       <div
         className="skill"
+        style={Object {}}
       >
         <div>
           <div
@@ -362,9 +357,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
         >
           <span />
           <span />
-          <span
-            className="empty"
-          />
+          <span />
           <span
             className="empty"
           />
@@ -380,12 +373,22 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
       </div>
     </div>
   </section>
+  <div
+    className="sectionDash"
+  />
   <section>
     <div
       className="skills"
     >
       <div
         className="skill"
+        style={
+          Object {
+            "transform": "scale(0.8)",
+            "transformOrigin": "left",
+            "width": "23%",
+          }
+        }
       >
         <div>
           <div
@@ -406,9 +409,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
         >
           <span />
           <span />
-          <span
-            className="empty"
-          />
+          <span />
           <span
             className="empty"
           />
@@ -424,6 +425,13 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
       </div>
       <div
         className="skill"
+        style={
+          Object {
+            "transform": "scale(0.8)",
+            "transformOrigin": "left",
+            "width": "23%",
+          }
+        }
       >
         <div>
           <div
@@ -444,9 +452,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
         >
           <span />
           <span />
-          <span
-            className="empty"
-          />
+          <span />
           <span
             className="empty"
           />
@@ -462,6 +468,13 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
       </div>
       <div
         className="skill"
+        style={
+          Object {
+            "transform": "scale(0.8)",
+            "transformOrigin": "left",
+            "width": "23%",
+          }
+        }
       >
         <div>
           <div
@@ -484,9 +497,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
           <span />
           <span />
           <span />
-          <span
-            className="empty"
-          />
+          <span />
           <div
             className="levelName"
           >
@@ -496,6 +507,13 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
       </div>
       <div
         className="skill"
+        style={
+          Object {
+            "transform": "scale(0.8)",
+            "transformOrigin": "left",
+            "width": "23%",
+          }
+        }
       >
         <div>
           <div
@@ -516,9 +534,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
         >
           <span />
           <span />
-          <span
-            className="empty"
-          />
+          <span />
           <span
             className="empty"
           />
@@ -534,6 +550,13 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
       </div>
       <div
         className="skill"
+        style={
+          Object {
+            "transform": "scale(0.8)",
+            "transformOrigin": "left",
+            "width": "23%",
+          }
+        }
       >
         <div>
           <div
@@ -554,9 +577,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
         >
           <span />
           <span />
-          <span
-            className="empty"
-          />
+          <span />
           <span
             className="empty"
           />
@@ -572,6 +593,13 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
       </div>
       <div
         className="skill"
+        style={
+          Object {
+            "transform": "scale(0.8)",
+            "transformOrigin": "left",
+            "width": "23%",
+          }
+        }
       >
         <div>
           <div
@@ -612,6 +640,13 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
       </div>
       <div
         className="skill"
+        style={
+          Object {
+            "transform": "scale(0.8)",
+            "transformOrigin": "left",
+            "width": "23%",
+          }
+        }
       >
         <div>
           <div
@@ -757,35 +792,45 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
             <div
               className="header"
             >
-              <span
-                className="job"
-              >
-                <span>
-                  Senior
-                </span>
-                <span>
-                  Software Engineer
-                </span>
-              </span>
-              <span>
+              <div>
+                <div
+                  className="job"
+                >
+                  <span>
+                    Senior
+                  </span>
+                  <span>
+                    Front-End Engineer
+                  </span>
+                </div>
+                <div
+                  className="companyName"
+                >
+                  <div>
+                    Tesla
+                  </div>
+                </div>
+              </div>
+              <div
+                className="dividerH"
+              />
+              <div>
                 <span
                   className="filled"
                 >
-                  React
+                  Motor
                 </span>
                 <span
                   className="filled"
                 >
                   Agile
                 </span>
-              </span>
-              <span
-                className="companyName"
-              >
-                <span>
-                  Tesla
+                <span
+                  className="filled"
+                >
+                  JIRA
                 </span>
-              </span>
+              </div>
             </div>
           </div>
           <div
@@ -797,9 +842,9 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
               <span>
                 May, 2022
               </span>
-              <span>
-                -
-              </span>
+              <span
+                className="divider"
+              />
               <span>
                 Present
               </span>
@@ -807,70 +852,347 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
           </div>
         </div>
         <div>
-          <h5>
-            Job summaries
-            :
-          </h5>
-          <ul>
-            <li>
+          <div
+            className="descriptionItem"
+          >
+            My main job at Tesla is to ensure the steady iterative development of two web projects, upgrade the old architecture, and add special business components of Tesla's UI in China.
+          </div>
+        </div>
+        <div>
+          <ul
+            style={
+              Object {
+                "display": "flex",
+                "flexWrap": "wrap",
+              }
+            }
+          >
+            <li
+              style={
+                Object {
+                  "fontSize": 14,
+                  "marginRight": "2%",
+                }
+              }
+            >
               Become the core developer in Front-End team.
             </li>
-            <li>
-              Make the architecture design in Front-End project.
-            </li>
-            <li>
+            <li
+              style={
+                Object {
+                  "fontSize": 14,
+                  "marginRight": "2%",
+                }
+              }
+            >
               Improve the code quality and performance.
             </li>
-            <li>
-              Improve the FE team efficiency.
-            </li>
-            <li>
-              Communicate with product manager and UI designer to understand project requirements every 2 weeks (one sprint).
-            </li>
-            <li>
+            <li
+              style={
+                Object {
+                  "fontSize": 14,
+                  "marginRight": "2%",
+                }
+              }
+            >
               Provide training and guidance on technical.
             </li>
           </ul>
         </div>
         <div>
-          <h5>
-            Achievements
-            :
-          </h5>
           <ul
             className="achievements"
+          />
+        </div>
+        <div
+          className="projects"
+        >
+          <div
+            className="container"
           >
-            <li>
-              Completed the design and development of common utils and Hooks in React project.
-              <span>
+            <div
+              className="content"
+            >
+              <div>
                 <span
-                  className="normal"
+                  className="name"
                 >
-                  Engineering
+                  Customer Portal
                 </span>
-              </span>
-            </li>
-            <li>
-              Optimized the Front-End code.
-              <span>
+                <span>
+                  <span
+                    className="filled"
+                  >
+                    React
+                  </span>
+                  <span
+                    className="filled"
+                  >
+                    Mobile Web
+                  </span>
+                  <span
+                    className="filled"
+                  >
+                    Survey
+                  </span>
+                </span>
+              </div>
+              <div>
+                <div
+                  className="times"
+                >
+                  <span>
+                    8
+                     Months
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              className="descriptions"
+            >
+              <div>
+                This is Tesla's client-side web application for potential and existing customers in China. It mainly includes questionnaire, survey, article recommendation, account management, etc.
+              </div>
+              <div>
+                The project has been running about 2 years when I joined, which exist some known and unresloved issues.
+              </div>
+            </div>
+            <div>
+              <ul
+                className="challengeAndSolutions"
+              >
+                <li
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
+                >
+                  <div>
+                    <span>
+                      The ui and form library versions used in this project are too low, which contains some unfixed bugs. It is urgent to upgrade, however, we don’t want to cause too many online bugs
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "fontStyle": "italic",
+                        "fontWeight": "normal",
+                      }
+                    }
+                  >
+                    <span>
+                      We spent a week to unify the import ways of the ui and form libs (from everywhere to one file), and manually handled the compatibility of the upgraded version(as a adapter) to avoid destructive bugs as much as possible.
+                    </span>
+                  </div>
+                </li>
+                <li
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
+                >
+                  <div>
+                    <span>
+                      In the early days of the project, a full-featured(so heavy) front-end architecture was used. It was very restrictive and insufficient in scalability, which hindered us from upgrading the versions of react, react router and so on.
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "fontStyle": "italic",
+                        "fontWeight": "normal",
+                      }
+                    }
+                  >
+                    <span>
+                      We rewrote the webpack configuration file, completely abandoned the original front-end framework within 2 weeks, found alternatives for inapplicable modules, and finally completed the upgrade of react 18 and react router v6. Now the entire configuration is completely defined and controlled by ourselves.
+                    </span>
+                  </div>
+                </li>
+                <li
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
+                >
+                  <div>
+                    <span>
+                      The code quality of the project is very hard to say, and there is no automated inspection process. As a result, many of our online bugs rely on user\`s feedback and cannot be found in time and in advance.
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "fontStyle": "italic",
+                        "fontWeight": "normal",
+                      }
+                    }
+                  >
+                    <span>
+                      I integrated sentry and sonar-qube in the stage environment of the project. Sentry helps us discover known errors in the project in the stage environment ahead of users and QA colleagues. Sonar-qube helps us discover possible negligence and code irregularities before code merged.
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              className="divider"
+            >
+              <div
+                className="title"
+              >
+                <div>
+                  <h3 />
+                </div>
+                <div />
+              </div>
+              <div
+                className="section"
+              />
+            </div>
+            <div>
+              <h5>
+                Achievements
+                :
+              </h5>
+              <ul
+                className="achievements"
+              >
+                <li>
+                  Optimized the Front-End code.
+                  <span>
+                    <span
+                      className="normal"
+                    >
+                      Performance
+                    </span>
+                  </span>
+                </li>
+                <li>
+                  Completed the design and development of common utils and Hooks in React project.
+                  <span>
+                    <span
+                      className="normal"
+                    >
+                      Engineering
+                    </span>
+                  </span>
+                </li>
+                <li>
+                  Improved test code coverage.
+                  <span>
+                    <span
+                      className="normal"
+                    >
+                      Unit tests
+                    </span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            className="container"
+          >
+            <div
+              className="content"
+            >
+              <div>
                 <span
-                  className="normal"
+                  className="name"
                 >
-                  Performance
+                  Admin Portal
                 </span>
-              </span>
-            </li>
-            <li>
-              Improved the code quality.
-              <span>
-                <span
-                  className="normal"
+                <span>
+                  <span
+                    className="filled"
+                  >
+                    React
+                  </span>
+                </span>
+              </div>
+              <div>
+                <div
+                  className="times"
                 >
-                  Quality
-                </span>
-              </span>
-            </li>
-          </ul>
+                  <span>
+                    8
+                     Months
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              className="descriptions"
+            >
+              <div>
+                This is the admin management portal corresponding to the customer portal. It is a system built for Tesla's operators to manage related forms, articles, and pushing notifications on a daily basis.
+              </div>
+              <div>
+                The project has been running about 2 years when I joined, which exist some known and unresloved issues.
+              </div>
+            </div>
+            <div>
+              <ul
+                className="challengeAndSolutions"
+              >
+                <li
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
+                >
+                  <div>
+                    <span>
+                      Most of the data on the admin side has a strong structure type. Although we use typescript to help us correct the wrong type during development, it still cannot guarantee the standardization of the back-end data.
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "fontStyle": "italic",
+                        "fontWeight": "normal",
+                      }
+                    }
+                  >
+                    <span>
+                      We created and improved the definition of data models, and performed default assignment and type checking during initialization to ensure that the data in the entire life cycle conforms to the type definition from the source of the data, reducing abnormal problems caused by data.
+                    </span>
+                  </div>
+                </li>
+                <li
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
+                >
+                  <div>
+                    <span>
+                      The current questionnaire editing function has performance problems when the data length is too large.
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "fontStyle": "italic",
+                        "fontWeight": "normal",
+                      }
+                    }
+                  >
+                    <span>
+                      I spent 2 weeks refactoring the entire survey editing module, improving the way data is updated, optimizing the update range of React Context, and using react memo to reduce unnecessary rendering as much as possible.
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1129,50 +1451,45 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
             <div
               className="header"
             >
-              <span
-                className="job"
-              >
-                <span>
-                  Senior
-                </span>
-                <span>
-                  Software Engineer
-                </span>
-              </span>
-              <span>
+              <div>
+                <div
+                  className="job"
+                >
+                  <span>
+                    Senior
+                  </span>
+                  <span>
+                    Front-End Engineer
+                  </span>
+                </div>
+                <div
+                  className="companyName"
+                >
+                  <div>
+                    PCCW GLOBAL
+                  </div>
+                </div>
+              </div>
+              <div
+                className="dividerH"
+              />
+              <div>
                 <span
                   className="filled"
                 >
-                  React
-                </span>
-                <span
-                  className="filled"
-                >
-                  NextJs
-                </span>
-                <span
-                  className="filled"
-                >
-                  umi
-                </span>
-                <span
-                  className="filled"
-                >
-                  TDD
+                  Telecommunications
                 </span>
                 <span
                   className="filled"
                 >
                   Agile
                 </span>
-              </span>
-              <span
-                className="companyName"
-              >
-                <span>
-                  PCCW GLOBAL
+                <span
+                  className="filled"
+                >
+                  JIRA
                 </span>
-              </span>
+              </div>
             </div>
           </div>
           <div
@@ -1184,9 +1501,9 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
               <span>
                 Sep, 2019
               </span>
-              <span>
-                -
-              </span>
+              <span
+                className="divider"
+              />
               <span>
                 May, 2022
               </span>
@@ -1194,110 +1511,422 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
           </div>
         </div>
         <div>
-          <h5>
-            Job summaries
-            :
-          </h5>
-          <ul>
-            <li>
-              Become the core developer in Front-End team.
-            </li>
-            <li>
-              Make the architecture design in Front-End project.
-            </li>
-            <li>
-              Communicate with product manager and UI designer to understand project requirements every week (one sprint),.
-            </li>
-            <li>
+          <div
+            className="descriptionItem"
+          >
+            My main job at PCCW Global is to build two web applications (admin portal & customer portal), and integrate some MVP features into the two portals, hand them over to the market for verification.
+          </div>
+        </div>
+        <div>
+          <ul
+            style={
+              Object {
+                "display": "flex",
+                "flexWrap": "wrap",
+              }
+            }
+          >
+            <li
+              style={
+                Object {
+                  "fontSize": 14,
+                  "marginRight": "2%",
+                }
+              }
+            >
               Conduct functional research and validation based on business requirements, evaluate requirements implementation feasibility and propose solutions.
             </li>
-            <li>
+            <li
+              style={
+                Object {
+                  "fontSize": 14,
+                  "marginRight": "2%",
+                }
+              }
+            >
               Responsible for task assignment and project requirement explanation to 5 external team members.
-            </li>
-            <li>
-              Provide training and guidance on technical to junior engineer.
             </li>
           </ul>
         </div>
         <div>
-          <h5>
-            Achievements
-            :
-          </h5>
           <ul
             className="achievements"
+          />
+        </div>
+        <div
+          className="projects"
+        >
+          <div
+            className="container"
           >
-            <li>
-              Designed and developed low-code form modules to improve the company's efficiency in custom dynamic form releases.
-              <span>
+            <div
+              className="content"
+            >
+              <div>
                 <span
-                  className="normal"
+                  className="name"
                 >
-                  low-code
+                  Customer Portal
                 </span>
-              </span>
-            </li>
-            <li>
-              Defined the Best practices in FE project with React and Typescript.
-              <span>
+                <span>
+                  <span
+                    className="filled"
+                  >
+                    React
+                  </span>
+                  <span
+                    className="filled"
+                  >
+                    NextJs
+                  </span>
+                  <span
+                    className="filled"
+                  >
+                    TDD
+                  </span>
+                  <span
+                    className="filled"
+                  >
+                    Invoice
+                  </span>
+                </span>
+              </div>
+              <div>
+                <div
+                  className="times"
+                >
+                  <span>
+                    32
+                     Months
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              className="descriptions"
+            >
+              <div>
+                This is a portal for PCCW Global's partner companies and normal users. You can purchase port/connection/data-center/VM on this portal, view detail and check invoice.
+              </div>
+              <div>
+                This system also supports partners to upload and develop their own SDKs, so we met some new challenges.
+              </div>
+            </div>
+            <div>
+              <ul
+                className="challengeAndSolutions"
+              >
+                <li
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
+                >
+                  <div>
+                    <span>
+                      The front-end architecture we chose in the early days did not support runtime environment variables, which brought a lot of troubles in our project.
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "fontStyle": "italic",
+                        "fontWeight": "normal",
+                      }
+                    }
+                  >
+                    <span>
+                      Based on our company's environment configuration strategies, we updated the build progress of the production environment and created an npm script used internally by the company to execute variable-related rebuild operations when the environment variables in the production environment are updated.We Implemented runtime environment variables by our own way.
+                    </span>
+                  </div>
+                </li>
+                <li
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
+                >
+                  <div>
+                    <span>
+                      Because we support customized SDK, we need to provide a code editor in this portal which can edit and modify code by customers them-self with version controlling.
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "fontStyle": "italic",
+                        "fontWeight": "normal",
+                      }
+                    }
+                  >
+                    <span>
+                      After researching the popular open source WebIDE, we finally chose a project which is most suitable for us, and added some extended functions for better using.
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              className="divider"
+            >
+              <div
+                className="title"
+              >
+                <div>
+                  <h3 />
+                </div>
+                <div />
+              </div>
+              <div
+                className="section"
+              />
+            </div>
+            <div>
+              <h5>
+                Achievements
+                :
+              </h5>
+              <ul
+                className="achievements"
+              >
+                <li>
+                  Defined the Best practices in FE project with React and Typescript.
+                  <span>
+                    <span
+                      className="normal"
+                    >
+                      Architecture
+                    </span>
+                  </span>
+                </li>
+                <li>
+                  Setup the Front-End CI/CD with system Engineers, including the Docker building and the jest process.
+                  <span>
+                    <span
+                      className="normal"
+                    >
+                      CI/CD
+                    </span>
+                    <span
+                      className="normal"
+                    >
+                      Engineering
+                    </span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            className="container"
+          >
+            <div
+              className="content"
+            >
+              <div>
                 <span
-                  className="normal"
+                  className="name"
                 >
-                  Architecture
+                  Admin Portal
                 </span>
-              </span>
-            </li>
-            <li>
-              Used Micro Front-End Service to split code and improve the performance in FE.
-              <span>
-                <span
-                  className="normal"
+                <span>
+                  <span
+                    className="filled"
+                  >
+                    React
+                  </span>
+                  <span
+                    className="filled"
+                  >
+                    Port
+                  </span>
+                  <span
+                    className="filled"
+                  >
+                    Connection
+                  </span>
+                  <span
+                    className="filled"
+                  >
+                    Data Center
+                  </span>
+                </span>
+              </div>
+              <div>
+                <div
+                  className="times"
                 >
-                  Performance
-                </span>
-                <span
-                  className="normal"
+                  <span>
+                    32
+                     Months
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              className="descriptions"
+            >
+              <div>
+                This is a front-end portal built from zero, it main purpose is to replace the company's original portal. In the past 3 years, we have done a lot of migration work, including refactored the code based on the existing business logic, and added many new functions which the old portal did not support at the same time.
+              </div>
+              <div>
+                Of course we faced many challenges.
+              </div>
+            </div>
+            <div>
+              <ul
+                className="challengeAndSolutions"
+              >
+                <li
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
                 >
-                  Engineering
-                </span>
-              </span>
-            </li>
-            <li>
-              Designed and developed the company's Front-End UI component library.
-              <span>
-                <span
-                  className="normal"
+                  <div>
+                    <span>
+                      How to quickly build CRUD operation functions based on the original business in the early stage of the project, so that we can quickly test the data connection capabilities of the new portal ？
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "fontStyle": "italic",
+                        "fontWeight": "normal",
+                      }
+                    }
+                  >
+                    <span>
+                      We chose a very powerful front-end scaffold, which helped us avoid a lot of unnecessary development costs in the early stage. We also wrote a front-end CRUD template to help us reduce a lot of repetitive codes.
+                    </span>
+                  </div>
+                </li>
+                <li
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
                 >
-                  UI
-                </span>
-              </span>
-            </li>
-            <li>
-              Setup the Front-End CI/CD with system Engineers, including the Docker building and the jest process.
-              <span>
-                <span
-                  className="normal"
+                  <div>
+                    <span>
+                      There are many functions that need to be integrated in the project, and several vendor teams are developing in parallel. How to ensure that the code quality of the project does not decline and the subsequent continuous development is not affected after team handover.
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "fontStyle": "italic",
+                        "fontWeight": "normal",
+                      }
+                    }
+                  >
+                    <span>
+                      After an unhappy project handover, we investigated the technology of micro front-end service and finally enabled it in the project. Using this technology, we can divide the code into different code repos by module, and use different front-end technologies in different places. finally it can be updated at any time, and other modules will not be affected.
+                    </span>
+                  </div>
+                </li>
+                <li
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
                 >
-                  CI/CD
-                </span>
-                <span
-                  className="normal"
-                >
-                  Engineering
-                </span>
-              </span>
-            </li>
-            <li>
-              Setup the utils library in FE.
-              <span>
-                <span
-                  className="normal"
-                >
-                  Engineering
-                </span>
-              </span>
-            </li>
-          </ul>
+                  <div>
+                    <span>
+                      We need to integrate online products from various providers, display their products in our own portal. However, their interfaces are not standardized. How can we use a module to quickly integrate all services and display & place orders normally ?
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "fontStyle": "italic",
+                        "fontWeight": "normal",
+                      }
+                    }
+                  >
+                    <span>
+                      We use a  dynamic form (self-developed) module to efficiently and conveniently define basic and responsible form types, including the api address and data type of the drop-down options. The final online form is generated by front-end drag-and-drop configuration, which is very easy to operate and modify, and does not require users to have any code foundation.
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              className="divider"
+            >
+              <div
+                className="title"
+              >
+                <div>
+                  <h3 />
+                </div>
+                <div />
+              </div>
+              <div
+                className="section"
+              />
+            </div>
+            <div>
+              <h5>
+                Achievements
+                :
+              </h5>
+              <ul
+                className="achievements"
+              >
+                <li>
+                  Designed and developed low-code form modules to improve the company's efficiency in custom dynamic form releases.
+                  <span>
+                    <span
+                      className="normal"
+                    >
+                      low-code
+                    </span>
+                  </span>
+                </li>
+                <li>
+                  Used Micro Front-End Service to split code and improve the performance in FE.
+                  <span>
+                    <span
+                      className="normal"
+                    >
+                      Performance
+                    </span>
+                    <span
+                      className="normal"
+                    >
+                      Engineering
+                    </span>
+                  </span>
+                </li>
+                <li>
+                  Designed and developed the company's Front-End UI component library.
+                  <span>
+                    <span
+                      className="normal"
+                    >
+                      UI
+                    </span>
+                  </span>
+                </li>
+                <li>
+                  Setup the utils library in FE.
+                  <span>
+                    <span
+                      className="normal"
+                    >
+                      Engineering
+                    </span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1430,37 +2059,37 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
             <div
               className="header"
             >
-              <span
-                className="job"
-              >
-                <span>
-                  Front-End Engineer
-                </span>
-              </span>
-              <span>
+              <div>
+                <div
+                  className="job"
+                >
+                  <span>
+                    Front-End Engineer
+                  </span>
+                </div>
+                <div
+                  className="companyName"
+                >
+                  <div>
+                    Citic Baixin Bank Co. Ltd
+                  </div>
+                </div>
+              </div>
+              <div
+                className="dividerH"
+              />
+              <div>
                 <span
                   className="filled"
                 >
-                  Vue
-                </span>
-                <span
-                  className="filled"
-                >
-                  React
+                  Bank
                 </span>
                 <span
                   className="filled"
                 >
                   Waterfall
                 </span>
-              </span>
-              <span
-                className="companyName"
-              >
-                <span>
-                  Citic Baixin Bank Co. Ltd
-                </span>
-              </span>
+              </div>
             </div>
           </div>
           <div
@@ -1472,9 +2101,9 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
               <span>
                 Apr, 2018
               </span>
-              <span>
-                -
-              </span>
+              <span
+                className="divider"
+              />
               <span>
                 Jun, 2019
               </span>
@@ -1482,44 +2111,206 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
           </div>
         </div>
         <div>
-          <h5>
-            Job summaries
-            :
-          </h5>
-          <ul>
-            <li>
-              Become the core developer in Front-End team.
-            </li>
-            <li>
-              Communicate with product manager and UI designer partner through meeting to understand project requirements.
-            </li>
-            <li>
+          <div
+            className="descriptionItem"
+          >
+            My main job at Citic Baixin Bank is to develop several front-end projects with my colleagues, which include different front-end technology stacks(Vue/React).
+          </div>
+        </div>
+        <div>
+          <ul
+            style={
+              Object {
+                "display": "flex",
+                "flexWrap": "wrap",
+              }
+            }
+          >
+            <li
+              style={
+                Object {
+                  "fontSize": 14,
+                  "marginRight": "2%",
+                }
+              }
+            >
               Responsible for task assignment and project requirement explanation to 5 team members.
             </li>
-            <li>
+            <li
+              style={
+                Object {
+                  "fontSize": 14,
+                  "marginRight": "2%",
+                }
+              }
+            >
               Provide training and guidance on technical to junior engineer.
             </li>
           </ul>
         </div>
         <div>
-          <h5>
-            Achievements
-            :
-          </h5>
           <ul
             className="achievements"
+          />
+        </div>
+        <div
+          className="projects"
+        >
+          <div
+            className="container"
           >
-            <li>
-              Completed the design and development of company's Front-End UI component library.
-              <span>
+            <div
+              className="content"
+            >
+              <div>
                 <span
-                  className="normal"
+                  className="name"
                 >
-                  UI
+                  Customer Portal
                 </span>
-              </span>
-            </li>
-          </ul>
+                <span>
+                  <span
+                    className="filled"
+                  >
+                    Vue
+                  </span>
+                  <span
+                    className="filled"
+                  >
+                    Web Component
+                  </span>
+                  <span
+                    className="filled"
+                  >
+                    Mobile
+                  </span>
+                </span>
+              </div>
+              <div>
+                <div
+                  className="times"
+                >
+                  <span>
+                    14
+                     Months
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              className="descriptions"
+            >
+              <div>
+                This is a mobile web application for potential and existing customers of the company, mainly including advertising campaign, helping users to open accounts, helping users to apply for personal loans, etc.
+              </div>
+            </div>
+            <div>
+              <ul
+                className="challengeAndSolutions"
+              >
+                <li
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
+                >
+                  <div>
+                    <span>
+                      Our front-end components need to run in different environments at the same time, including the company's own website and the partner's website, so we need to support different front-end technology stacks.
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "fontStyle": "italic",
+                        "fontWeight": "normal",
+                      }
+                    }
+                  >
+                    <span>
+                      We used the relatively innovative web component 3.0 at that time to build our basic components and solve the problem of cross-technology stacks.
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            className="container"
+          >
+            <div
+              className="content"
+            >
+              <div>
+                <span
+                  className="name"
+                >
+                  Admin Portal
+                </span>
+                <span>
+                  <span
+                    className="filled"
+                  >
+                    Vue
+                  </span>
+                  <span
+                    className="filled"
+                  >
+                    EChart
+                  </span>
+                </span>
+              </div>
+              <div>
+                <div
+                  className="times"
+                >
+                  <span>
+                    4
+                     Months
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              className="descriptions"
+            >
+              <div>
+                This is an internal web page used by the company's operations, which can display various data in time and history in graphs.
+              </div>
+            </div>
+            <div>
+              <ul
+                className="challengeAndSolutions"
+              >
+                <li
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
+                >
+                  <div>
+                    <span>
+                      How to ensure the data update in-timely?
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "fontStyle": "italic",
+                        "fontWeight": "normal",
+                      }
+                    }
+                  >
+                    <span>
+                      We use websocket technology for real-time data push.
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1694,42 +2485,37 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
             <div
               className="header"
             >
-              <span
-                className="job"
-              >
-                <span>
-                  Software Engineer
-                </span>
-              </span>
-              <span>
+              <div>
+                <div
+                  className="job"
+                >
+                  <span>
+                    Software Engineer
+                  </span>
+                </div>
+                <div
+                  className="companyName"
+                >
+                  <div>
+                    Yinyuan Asia-pacific Technology Co. Ltd 
+                  </div>
+                </div>
+              </div>
+              <div
+                className="dividerH"
+              />
+              <div>
                 <span
                   className="filled"
                 >
-                  Java
-                </span>
-                <span
-                  className="filled"
-                >
-                  jQuery
-                </span>
-                <span
-                  className="filled"
-                >
-                  React
+                  e-commerce
                 </span>
                 <span
                   className="filled"
                 >
                   Waterfall
                 </span>
-              </span>
-              <span
-                className="companyName"
-              >
-                <span>
-                  Yinyuan Asia-pacific Technology Co. Ltd 
-                </span>
-              </span>
+              </div>
             </div>
           </div>
           <div
@@ -1741,9 +2527,9 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
               <span>
                 Jul, 2016
               </span>
-              <span>
-                -
-              </span>
+              <span
+                className="divider"
+              />
               <span>
                 Mar, 2018
               </span>
@@ -1751,64 +2537,286 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
           </div>
         </div>
         <div>
-          <h5>
-            Job summaries
-            :
-          </h5>
-          <ul>
-            <li>
+          <div
+            className="descriptionItem"
+          >
+            My main job in the company is to develop API interfaces, develop front-end pages and Apps.
+          </div>
+        </div>
+        <div>
+          <ul
+            style={
+              Object {
+                "display": "flex",
+                "flexWrap": "wrap",
+              }
+            }
+          >
+            <li
+              style={
+                Object {
+                  "fontSize": 14,
+                  "marginRight": "2%",
+                }
+              }
+            >
               Participate in the design and development of all projects .
             </li>
-            <li>
+            <li
+              style={
+                Object {
+                  "fontSize": 14,
+                  "marginRight": "2%",
+                }
+              }
+            >
               Responsible for the release quality of all system.
             </li>
-            <li>
+            <li
+              style={
+                Object {
+                  "fontSize": 14,
+                  "marginRight": "2%",
+                }
+              }
+            >
               Responsible for team's recruitment, technical training(ES6), etc.
             </li>
-            <li>
+            <li
+              style={
+                Object {
+                  "fontSize": 14,
+                  "marginRight": "2%",
+                }
+              }
+            >
               Take charge of annual feature planning and appraise performance of each team member.
             </li>
           </ul>
         </div>
         <div>
-          <h5>
-            Achievements
-            :
-          </h5>
           <ul
             className="achievements"
+          />
+        </div>
+        <div
+          className="projects"
+        >
+          <div
+            className="container"
           >
-            <li>
-              Used different technologies to start new project, like React, React-Native, Vue.
-              <span>
+            <div
+              className="content"
+            >
+              <div>
                 <span
-                  className="normal"
+                  className="name"
                 >
-                  FE
+                  Customer Portal
                 </span>
-              </span>
-            </li>
-            <li>
-              Used shell scripts to improve the development efficiency of CRUD classes.
-              <span>
+                <span>
+                  <span
+                    className="filled"
+                  >
+                    Java
+                  </span>
+                  <span
+                    className="filled"
+                  >
+                    jQuery
+                  </span>
+                  <span
+                    className="filled"
+                  >
+                    Mobile
+                  </span>
+                </span>
+              </div>
+              <div>
+                <div
+                  className="times"
+                >
+                  <span>
+                    20
+                     Months
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              className="descriptions"
+            >
+              <div>
+                This is an online shopping website which provides common functions including viewing products, adding to cart, and paying online.
+              </div>
+            </div>
+            <div>
+              <ul
+                className="challengeAndSolutions"
+              >
+                <li
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
+                >
+                  <div>
+                    <span>
+                      There are some similar CRUD codes that needs to be created in the backend interface.
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "fontStyle": "italic",
+                        "fontWeight": "normal",
+                      }
+                    }
+                  >
+                    <span>
+                      Used shell scripts to improve the development efficiency of CRUD classes.
+                    </span>
+                  </div>
+                </li>
+                <li
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
+                >
+                  <div>
+                    <span>
+                      The front-end does not have the concept of components, the html contains many duplicated codes since it is based on the logic of each page.
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "fontStyle": "italic",
+                        "fontWeight": "normal",
+                      }
+                    }
+                  >
+                    <span>
+                      Our jQuery-based plugin technology combines many commonly used form libs to reduce repetitive code.
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              className="divider"
+            >
+              <div
+                className="title"
+              >
+                <div>
+                  <h3 />
+                </div>
+                <div />
+              </div>
+              <div
+                className="section"
+              />
+            </div>
+            <div>
+              <h5>
+                Achievements
+                :
+              </h5>
+              <ul
+                className="achievements"
+              >
+                <li>
+                  Completed the design and development of the company's Front-End UI component library.
+                  <span>
+                    <span
+                      className="normal"
+                    >
+                      UI
+                    </span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            className="container"
+          >
+            <div
+              className="content"
+            >
+              <div>
                 <span
-                  className="normal"
+                  className="name"
                 >
-                  Java
+                  Mobile App
                 </span>
-              </span>
-            </li>
-            <li>
-              Completed the design and development of the company's Front-End UI component library.
-              <span>
-                <span
-                  className="normal"
+                <span>
+                  <span
+                    className="filled"
+                  >
+                    React Native
+                  </span>
+                  <span
+                    className="filled"
+                  >
+                    Mobile
+                  </span>
+                </span>
+              </div>
+              <div>
+                <div
+                  className="times"
                 >
-                  UI
-                </span>
-              </span>
-            </li>
-          </ul>
+                  <span>
+                    7
+                     Months
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              className="descriptions"
+            >
+              <div>
+                This is a mobile app to help teachers and parents. It can support online course selection, appointment of classes and uploading homework, etc.
+              </div>
+            </div>
+            <div>
+              <ul
+                className="challengeAndSolutions"
+              >
+                <li
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
+                >
+                  <div>
+                    <span>
+                      React native has performance issues when rendering large lists of data.
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "fontStyle": "italic",
+                        "fontWeight": "normal",
+                      }
+                    }
+                  >
+                    <span>
+                      We use virtual list technology to solve the problem of enormous data.
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1927,37 +2935,37 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
             <div
               className="header"
             >
-              <span
-                className="job"
-              >
-                <span>
-                  Software Engineer
-                </span>
-              </span>
-              <span>
+              <div>
+                <div
+                  className="job"
+                >
+                  <span>
+                    Software Engineer
+                  </span>
+                </div>
+                <div
+                  className="companyName"
+                >
+                  <div>
+                    Taiji Computer Corporation. Ltd
+                  </div>
+                </div>
+              </div>
+              <div
+                className="dividerH"
+              />
+              <div>
                 <span
                   className="filled"
                 >
-                  Java
-                </span>
-                <span
-                  className="filled"
-                >
-                  jQuery
+                  IT
                 </span>
                 <span
                   className="filled"
                 >
                   Waterfall
                 </span>
-              </span>
-              <span
-                className="companyName"
-              >
-                <span>
-                  Taiji Computer Corporation. Ltd
-                </span>
-              </span>
+              </div>
             </div>
           </div>
           <div
@@ -1969,9 +2977,9 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
               <span>
                 Jul, 2015
               </span>
-              <span>
-                -
-              </span>
+              <span
+                className="divider"
+              />
               <span>
                 Jul, 2016
               </span>
@@ -1979,15 +2987,39 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
           </div>
         </div>
         <div>
-          <h5>
-            Job summaries
-            :
-          </h5>
-          <ul>
-            <li>
+          <div
+            className="descriptionItem"
+          >
+            My main job is to use java to develop the back-end interface, and use jQuery to develop the front-end page.
+          </div>
+        </div>
+        <div>
+          <ul
+            style={
+              Object {
+                "display": "flex",
+                "flexWrap": "wrap",
+              }
+            }
+          >
+            <li
+              style={
+                Object {
+                  "fontSize": 14,
+                  "marginRight": "2%",
+                }
+              }
+            >
               Use Java to develop system on schedule.
             </li>
-            <li>
+            <li
+              style={
+                Object {
+                  "fontSize": 14,
+                  "marginRight": "2%",
+                }
+              }
+            >
               Participate in the design and development of one economic-data-report project.
             </li>
           </ul>
@@ -2022,6 +3054,9 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
             </li>
           </ul>
         </div>
+        <div
+          className="projects"
+        />
       </div>
     </div>
   </section>
@@ -2069,9 +3104,9 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
         <span>
           Sep, 2008
         </span>
-        <span>
-          -
-        </span>
+        <span
+          className="divider"
+        />
         <span>
           Jul, 2012
         </span>
@@ -2103,9 +3138,9 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
         <span>
           Sep, 2012
         </span>
-        <span>
-          -
-        </span>
+        <span
+          className="divider"
+        />
         <span>
           Jul, 2015
         </span>

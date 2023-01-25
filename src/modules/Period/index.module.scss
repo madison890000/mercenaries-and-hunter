@@ -1,0 +1,49 @@
+.periodContainer {
+    display: flex;
+}
+
+.content {
+    //background: var(--period-background-color);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: var(--base-border-radius);
+    width: 100%;
+}
+
+.period {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @media screen and (max-width: 414px) {
+        flex-direction: column-reverse;
+    }
+}
+
+.timeline {
+    margin-top: 30px;
+}
+
+.time {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @media screen and (max-width: 414px) {
+        width: 100%;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+    }
+}
+
+.achievements {
+    font-weight: bold;
+}
+
+.projects {
+    display: grid;
+    grid-column-gap: 20px;
+}
+
+.descriptionItem {
+    margin-top: var(--block-padding);
+}

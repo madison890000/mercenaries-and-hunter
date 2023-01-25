@@ -7,9 +7,9 @@ exports[`renders Times 1`] = `
   <span>
     Jan, 2012
   </span>
-  <span>
-    -
-  </span>
+  <span
+    className="divider"
+  />
   <span>
     Aug, 2012
   </span>
@@ -23,9 +23,9 @@ exports[`renders Times with no end 1`] = `
   <span>
     Jan, 2012
   </span>
-  <span>
-    -
-  </span>
+  <span
+    className="divider"
+  />
   <span>
     Present
   </span>

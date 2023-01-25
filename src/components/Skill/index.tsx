@@ -10,6 +10,7 @@ interface SkillProps {
     level: DataModel.SkillLevel;
     ages: number;
     importance: DataModel.Importance;
+    size?: 'small';
 }
 
 const messages = defineMessages({
@@ -18,10 +19,21 @@ const messages = defineMessages({
         defaultMessage: 'years'
     }
 });
-const Skill = ({ level, name, ages, importance }: SkillProps) => {
+const Skill = ({ size, level, name, ages, importance }: SkillProps) => {
     const intl = useIntl();
     return (
-        <div className={styles.skill}>
+        <div
+            className={styles.skill}
+            style={
+                size === 'small'
+                    ? {
+                          transform: 'scale(0.8)',
+                          transformOrigin: 'left',
+                          width: '23%'
+                      }
+                    : {}
+            }
+        >
             <div>
                 <Name level={importance}>{name}</Name>
                 <div className={styles.subTitle}>

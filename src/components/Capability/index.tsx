@@ -91,7 +91,7 @@ const Capability = ({ capabilities }: any) => {
             lazyUpdate={true}
             style={{
                 width: '100%',
-                height: '280px'
+                height: '220px'
             }}
         />
     );

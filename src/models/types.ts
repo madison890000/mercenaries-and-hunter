@@ -27,12 +27,20 @@ namespace DataModel {
         Junior = 'JUNIOR'
     }
 
+    export enum JobType {
+        FullTime = 'FULLTIME',
+        PartTime = 'PARTTIME',
+        Contract = 'CONTRACT'
+    }
+
     export type JobPosition = 'Software Engineer' | 'Front-End Engineer' | 'Back-End Engineer' | 'Full-Stack Engineer';
 
     export type Job = {
         position: JobPosition;
         level: JobPositionLevel;
+        type: JobType;
     };
+
     export enum SkillLevel {
         understand = 'UNDERSTAND',
         familiar = 'FAMILIAR',
@@ -53,5 +61,12 @@ namespace DataModel {
         name: string;
         value: string;
     };
+    export type IChallengeAndSolution = {
+        challenge: string;
+        solution: string;
+    };
+    export type ChallengeAndSolution = {
+        id: string;
+    } & IChallengeAndSolution;
 }
 export default DataModel;

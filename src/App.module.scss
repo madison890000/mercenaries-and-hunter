@@ -3,12 +3,13 @@
     padding: var(--page-padding);
 
     h5 {
-        margin: calc(var(--base-gap-unit) * 2) calc(var(--base-gap-unit) * 8);
+        margin: calc(var(--base-gap-unit) * 2) calc(var(--base-gap-unit) * 2);
     }
 
     ul {
-        margin: calc(var(--base-gap-unit) * 2) 0;
-        padding-right: calc(var(--base-gap-unit) * 8);
+        & > li {
+            font-size: 14px;
+        }
     }
 
     @media screen and (max-width: 414px) {

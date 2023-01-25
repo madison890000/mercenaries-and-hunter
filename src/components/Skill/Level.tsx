@@ -38,7 +38,7 @@ namespace Level {
             <div className={classNames(styles.level)}>
                 <span />
                 <span />
-                <span className={styles.empty} />
+                <span />
                 <span className={styles.empty} />
                 <span className={styles.empty} />
                 <div className={styles.levelName}>{intl.formatMessage(messages.familiar)}</div>
@@ -54,7 +54,7 @@ namespace Level {
                 <span />
                 <span />
                 <span />
-                <span className={styles.empty} />
+                <span />
                 <div className={styles.levelName}>{intl.formatMessage(messages.proficient)}</div>
             </div>
         );
