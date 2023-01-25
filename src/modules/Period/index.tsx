@@ -100,7 +100,7 @@ const Period = ({
                                     key={summary.id}
                                     style={{
                                         marginRight: '2%',
-                                        fontSize: 16
+                                        fontSize: 14
                                     }}
                                 >
                                     {pipe<string>(capitalize, addPeriodSuffix)(summary.toString())}

@@ -809,19 +809,17 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                   <div>
                     Tesla
                   </div>
-                  <div
-                    className="companyIndustry"
-                  >
-                    (
-                    Motor
-                    )
-                  </div>
                 </div>
               </div>
               <div
                 className="dividerH"
               />
               <div>
+                <span
+                  className="filled"
+                >
+                  Motor
+                </span>
                 <span
                   className="filled"
                 >
@@ -857,7 +855,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
           <div
             className="descriptionItem"
           >
-            My main job at Tesla is to ensure the steady iterative development of two web projects, upgrade the old architecture, and add special components of Tesla's UI in China.
+            My main job at Tesla is to ensure the steady iterative development of two web projects, upgrade the old architecture, and add special business components of Tesla's UI in China.
           </div>
         </div>
         <div>
@@ -872,7 +870,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
             <li
               style={
                 Object {
-                  "fontSize": 16,
+                  "fontSize": 14,
                   "marginRight": "2%",
                 }
               }
@@ -882,7 +880,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
             <li
               style={
                 Object {
-                  "fontSize": 16,
+                  "fontSize": 14,
                   "marginRight": "2%",
                 }
               }
@@ -892,7 +890,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
             <li
               style={
                 Object {
-                  "fontSize": 16,
+                  "fontSize": 14,
                   "marginRight": "2%",
                 }
               }
@@ -925,6 +923,11 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                   <span
                     className="filled"
                   >
+                    React
+                  </span>
+                  <span
+                    className="filled"
+                  >
                     Mobile Web
                   </span>
                   <span
@@ -949,10 +952,10 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
               className="descriptions"
             >
               <div>
-                This is Tesla's client-side web system for potential customers and existing customers in China. It mainly includes questionnaire and form survey functions, Tesla-related article recommendation function and personal center and other functions.
+                This is Tesla's client-side web application for potential and existing customers in China. It mainly includes questionnaire, survey, article recommendation, account management, etc.
               </div>
               <div>
-                The project has been running for about 2 years when I joined, and there are many known issues that have not been resolved.
+                The project has been running about 2 years when I joined, which exist some known and unresloved issues.
               </div>
             </div>
             <div>
@@ -968,7 +971,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                 >
                   <div>
                     <span>
-                      The ui and form library versions used in the project are too low, and there are some unfixed bugs. It is urgent to upgrade to the latest version, but we don’t want to cause too many online bugs
+                      The ui and form library versions used in this project are too low, which contains some unfixed bugs. It is urgent to upgrade, however, we don’t want to cause too many online bugs
                     </span>
                   </div>
                   <div
@@ -980,7 +983,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                     }
                   >
                     <span>
-                      We spent a week unifying the ui and form import methods that need to be upgraded in the project (from everywhere to one file), and manually handled the compatibility of the upgraded version to avoid destructive bugs as much as possible.
+                      We spent a week to unify the import ways of the ui and form libs (from everywhere to one file), and manually handled the compatibility of the upgraded version(as a adapter) to avoid destructive bugs as much as possible.
                     </span>
                   </div>
                 </li>
@@ -993,7 +996,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                 >
                   <div>
                     <span>
-                      In the early days of the project, a full-featured and heavy-duty front-end architecture was used, but it was very restrictive and insufficient in scalability, which hindered us from upgrading the versions of react and react router.
+                      In the early days of the project, a full-featured(so heavy) front-end architecture was used. It was very restrictive and insufficient in scalability, which hindered us from upgrading the versions of react, react router and so on.
                     </span>
                   </div>
                   <div
@@ -1018,7 +1021,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                 >
                   <div>
                     <span>
-                      The code quality of the project is very average, and there is no automated inspection process. As a result, many of our online bugs rely on user feedback and cannot be found in time and in advance.
+                      The code quality of the project is very hard to say, and there is no automated inspection process. As a result, many of our online bugs rely on user\`s feedback and cannot be found in time and in advance.
                     </span>
                   </div>
                   <div
@@ -1030,7 +1033,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                     }
                   >
                     <span>
-                      I integrated sentry and sonar qube in the stage environment of the project. Sentry helps us discover known errors in the project in the stage environment ahead of users and QA colleagues. Sonar qube helps us discover possible negligence and code irregularities in the code PR.
+                      I integrated sentry and sonar-qube in the stage environment of the project. Sentry helps us discover known errors in the project in the stage environment ahead of users and QA colleagues. Sonar-qube helps us discover possible negligence and code irregularities before code merged.
                     </span>
                   </div>
                 </li>
@@ -1108,7 +1111,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                   <span
                     className="filled"
                   >
-                    Admin
+                    React
                   </span>
                 </span>
               </div>
@@ -1127,41 +1130,16 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
               className="descriptions"
             >
               <div>
-                This is the admin management portal corresponding to the customer portal. It is a system built for Tesla's operators to manage related forms, articles, and push notifications on a daily basis.
+                This is the admin management portal corresponding to the customer portal. It is a system built for Tesla's operators to manage related forms, articles, and pushing notifications on a daily basis.
               </div>
               <div>
-                The project has been running for about 2 years when I joined, and there are many known issues that have not been resolved
+                The project has been running about 2 years when I joined, which exist some known and unresloved issues.
               </div>
             </div>
             <div>
               <ul
                 className="challengeAndSolutions"
               >
-                <li
-                  style={
-                    Object {
-                      "fontSize": 14,
-                    }
-                  }
-                >
-                  <div>
-                    <span>
-                      The current questionnaire editing function has performance problems when the amount of data is too large, and it is very inconvenient to use
-                    </span>
-                  </div>
-                  <div
-                    style={
-                      Object {
-                        "fontStyle": "italic",
-                        "fontWeight": "normal",
-                      }
-                    }
-                  >
-                    <span>
-                      I spent 2 weeks refactoring the entire survey editing module, improving the way data is updated, optimizing the update range of React Context, and using react memo to reduce unnecessary rendering as much as possible.
-                    </span>
-                  </div>
-                </li>
                 <li
                   style={
                     Object {
@@ -1184,6 +1162,31 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                   >
                     <span>
                       We created and improved the definition of data models, and performed default assignment and type checking during initialization to ensure that the data in the entire life cycle conforms to the type definition from the source of the data, reducing abnormal problems caused by data.
+                    </span>
+                  </div>
+                </li>
+                <li
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
+                >
+                  <div>
+                    <span>
+                      The current questionnaire editing function has performance problems when the data length is too large.
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "fontStyle": "italic",
+                        "fontWeight": "normal",
+                      }
+                    }
+                  >
+                    <span>
+                      I spent 2 weeks refactoring the entire survey editing module, improving the way data is updated, optimizing the update range of React Context, and using react memo to reduce unnecessary rendering as much as possible.
                     </span>
                   </div>
                 </li>
@@ -1465,19 +1468,17 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                   <div>
                     PCCW GLOBAL
                   </div>
-                  <div
-                    className="companyIndustry"
-                  >
-                    (
-                    Telecommunications
-                    )
-                  </div>
                 </div>
               </div>
               <div
                 className="dividerH"
               />
               <div>
+                <span
+                  className="filled"
+                >
+                  Telecommunications
+                </span>
                 <span
                   className="filled"
                 >
@@ -1513,7 +1514,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
           <div
             className="descriptionItem"
           >
-            My main job at PCCW Global is to build two web systems, admin portal and customer portal, and integrate some MVP features into the two portals, and hand them over to the market for verification.
+            My main job at PCCW Global is to build two web applications (admin portal & customer portal), and integrate some MVP features into the two portals, hand them over to the market for verification.
           </div>
         </div>
         <div>
@@ -1528,7 +1529,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
             <li
               style={
                 Object {
-                  "fontSize": 16,
+                  "fontSize": 14,
                   "marginRight": "2%",
                 }
               }
@@ -1538,7 +1539,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
             <li
               style={
                 Object {
-                  "fontSize": 16,
+                  "fontSize": 14,
                   "marginRight": "2%",
                 }
               }
@@ -1605,10 +1606,10 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
               className="descriptions"
             >
               <div>
-                This is a portal for PCCW Global's partner companies and ordinary users. You can purchase port, connection, datacenter, and VM cloud on this portal, and view and check invoice.
+                This is a portal for PCCW Global's partner companies and normal users. You can purchase port/connection/data-center/VM on this portal, view detail and check invoice.
               </div>
               <div>
-                This system also supports partners to upload and develop their own SDKs, so we encountered some new challenges.
+                This system also supports partners to upload and develop their own SDKs, so we met some new challenges.
               </div>
             </div>
             <div>
@@ -1636,7 +1637,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                     }
                   >
                     <span>
-                      Based on the company's environment configuration specifications, we updated the build method of the production environment and created an npm cli script used internally by the company. Its function is to execute variable-related rebuild operations when the environment variables in the production environment are updated. Implemented runtime environment variables.
+                      Based on our company's environment configuration strategies, we updated the build progress of the production environment and created an npm script used internally by the company to execute variable-related rebuild operations when the environment variables in the production environment are updated.We Implemented runtime environment variables by our own way.
                     </span>
                   </div>
                 </li>
@@ -1649,7 +1650,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                 >
                   <div>
                     <span>
-                      Because we provided the functions of the last SDK, we need to provide a code editor in the portal that can be edited and modified by customers, and include version management tools.
+                      Because we support customized SDK, we need to provide a code editor in this portal which can edit and modify code by customers them-self with version controlling.
                     </span>
                   </div>
                   <div
@@ -1661,210 +1662,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                     }
                   >
                     <span>
-                      After researching the mainstream webide open source tools in the market, we chose a project that is most suitable for us, and added some extended functions for the convenience of customers.
-                    </span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div
-              className="divider"
-            >
-              <div
-                className="title"
-              >
-                <div>
-                  <h3 />
-                </div>
-                <div />
-              </div>
-              <div
-                className="section"
-              />
-            </div>
-            <div>
-              <h5>
-                Achievements
-                :
-              </h5>
-              <ul
-                className="achievements"
-              >
-                <li>
-                  Designed and developed low-code form modules to improve the company's efficiency in custom dynamic form releases.
-                  <span>
-                    <span
-                      className="normal"
-                    >
-                      low-code
-                    </span>
-                  </span>
-                </li>
-                <li>
-                  Setup the Front-End CI/CD with system Engineers, including the Docker building and the jest process.
-                  <span>
-                    <span
-                      className="normal"
-                    >
-                      CI/CD
-                    </span>
-                    <span
-                      className="normal"
-                    >
-                      Engineering
-                    </span>
-                  </span>
-                </li>
-                <li>
-                  Setup the utils library in FE.
-                  <span>
-                    <span
-                      className="normal"
-                    >
-                      Engineering
-                    </span>
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div
-            className="container"
-          >
-            <div
-              className="content"
-            >
-              <div>
-                <span
-                  className="name"
-                >
-                  Admin Portal
-                </span>
-                <span>
-                  <span
-                    className="filled"
-                  >
-                    React
-                  </span>
-                  <span
-                    className="filled"
-                  >
-                    Invoice
-                  </span>
-                  <span
-                    className="filled"
-                  >
-                    Port
-                  </span>
-                  <span
-                    className="filled"
-                  >
-                    Cloud
-                  </span>
-                  <span
-                    className="filled"
-                  >
-                    Date Center
-                  </span>
-                </span>
-              </div>
-              <div>
-                <div
-                  className="times"
-                >
-                  <span>
-                    32
-                     Months
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div
-              className="descriptions"
-            >
-              <div>
-                This is a front-end admin portal built from zero, the main purpose is to replace the company's original admin portal. In the past 3 years, we have done a lot of migration work, and at the same time refactored the code based on the existing business logic, and added many new functions that the old system did not support.
-              </div>
-              <div>
-                Of course we faced many challenges.
-              </div>
-            </div>
-            <div>
-              <ul
-                className="challengeAndSolutions"
-              >
-                <li
-                  style={
-                    Object {
-                      "fontSize": 14,
-                    }
-                  }
-                >
-                  <div>
-                    <span>
-                      Challenge 1, how to quickly build CRUD operation functions based on the original business in the early stage of the project, so that we can quickly test the data connection capabilities of the new system ？
-                    </span>
-                  </div>
-                  <div
-                    style={
-                      Object {
-                        "fontStyle": "italic",
-                        "fontWeight": "normal",
-                      }
-                    }
-                  >
-                    <span>
-                      We chose a very powerful front-end scaffolding, which helped us reduce a lot of unnecessary development costs in the early stage. We also wrote a front-end CRUD template to help us reduce a lot of repetitive code about CRUD.
-                    </span>
-                  </div>
-                </li>
-                <li
-                  style={
-                    Object {
-                      "fontSize": 14,
-                    }
-                  }
-                >
-                  <div>
-                    <span>
-                      Challenge 2. There are many functions that need to be integrated in the project, and several vandor teams are developing in parallel. How to ensure that the code quality of the project does not decline and the subsequent continuous development is not affected by team handover.
-                    </span>
-                  </div>
-                  <div
-                    style={
-                      Object {
-                        "fontStyle": "italic",
-                        "fontWeight": "normal",
-                      }
-                    }
-                  >
-                    <span>
-                      After an unhappy project handover, we investigated the technology of front-end microservices and finally enabled it in the project. Using this technology, we can divide the code into different code repos by module, and use different front-end technologies in different modules, so that it can be updated at any time, and other modules will not be affected.
-                    </span>
-                  </div>
-                </li>
-                <li
-                  style={
-                    Object {
-                      "fontSize": 14,
-                    }
-                  }
-                >
-                  <div>
-                    <span>
-                      Challenge 3, we need to integrate online products of various service providers, and integrate configuration and display in our own system. However, their interfaces are not standardized. How can we use a module to quickly integrate all services and display and place orders normally?
-                    </span>
-                  </div>
-                  <div
-                    style={
-                      Object {
-                        "fontStyle": "italic",
-                        "fontWeight": "normal",
-                      }
-                    }
-                  >
-                    <span>
-                      We use a self-developed dynamic form module to efficiently and conveniently define basic and responsible form types, including the api address and data type of the drop-down options. The final online form is generated by front-end drag-and-drop configuration, which is very easy to operate and modify, and does not require users to have any code foundation.
+                      After researching the popular open source WebIDE, we finally chose a project which is most suitable for us, and added some extended functions for better using.
                     </span>
                   </div>
                 </li>
@@ -1904,6 +1702,194 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                   </span>
                 </li>
                 <li>
+                  Setup the Front-End CI/CD with system Engineers, including the Docker building and the jest process.
+                  <span>
+                    <span
+                      className="normal"
+                    >
+                      CI/CD
+                    </span>
+                    <span
+                      className="normal"
+                    >
+                      Engineering
+                    </span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            className="container"
+          >
+            <div
+              className="content"
+            >
+              <div>
+                <span
+                  className="name"
+                >
+                  Admin Portal
+                </span>
+                <span>
+                  <span
+                    className="filled"
+                  >
+                    React
+                  </span>
+                  <span
+                    className="filled"
+                  >
+                    Port
+                  </span>
+                  <span
+                    className="filled"
+                  >
+                    Connection
+                  </span>
+                  <span
+                    className="filled"
+                  >
+                    Data Center
+                  </span>
+                </span>
+              </div>
+              <div>
+                <div
+                  className="times"
+                >
+                  <span>
+                    32
+                     Months
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              className="descriptions"
+            >
+              <div>
+                This is a front-end portal built from zero, it main purpose is to replace the company's original portal. In the past 3 years, we have done a lot of migration work, including refactored the code based on the existing business logic, and added many new functions which the old portal did not support at the same time.
+              </div>
+              <div>
+                Of course we faced many challenges.
+              </div>
+            </div>
+            <div>
+              <ul
+                className="challengeAndSolutions"
+              >
+                <li
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
+                >
+                  <div>
+                    <span>
+                      How to quickly build CRUD operation functions based on the original business in the early stage of the project, so that we can quickly test the data connection capabilities of the new portal ？
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "fontStyle": "italic",
+                        "fontWeight": "normal",
+                      }
+                    }
+                  >
+                    <span>
+                      We chose a very powerful front-end scaffold, which helped us avoid a lot of unnecessary development costs in the early stage. We also wrote a front-end CRUD template to help us reduce a lot of repetitive codes.
+                    </span>
+                  </div>
+                </li>
+                <li
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
+                >
+                  <div>
+                    <span>
+                      There are many functions that need to be integrated in the project, and several vendor teams are developing in parallel. How to ensure that the code quality of the project does not decline and the subsequent continuous development is not affected after team handover.
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "fontStyle": "italic",
+                        "fontWeight": "normal",
+                      }
+                    }
+                  >
+                    <span>
+                      After an unhappy project handover, we investigated the technology of micro front-end service and finally enabled it in the project. Using this technology, we can divide the code into different code repos by module, and use different front-end technologies in different places. finally it can be updated at any time, and other modules will not be affected.
+                    </span>
+                  </div>
+                </li>
+                <li
+                  style={
+                    Object {
+                      "fontSize": 14,
+                    }
+                  }
+                >
+                  <div>
+                    <span>
+                      We need to integrate online products from various providers, display their products in our own portal. However, their interfaces are not standardized. How can we use a module to quickly integrate all services and display & place orders normally ?
+                    </span>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "fontStyle": "italic",
+                        "fontWeight": "normal",
+                      }
+                    }
+                  >
+                    <span>
+                      We use a  dynamic form (self-developed) module to efficiently and conveniently define basic and responsible form types, including the api address and data type of the drop-down options. The final online form is generated by front-end drag-and-drop configuration, which is very easy to operate and modify, and does not require users to have any code foundation.
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              className="divider"
+            >
+              <div
+                className="title"
+              >
+                <div>
+                  <h3 />
+                </div>
+                <div />
+              </div>
+              <div
+                className="section"
+              />
+            </div>
+            <div>
+              <h5>
+                Achievements
+                :
+              </h5>
+              <ul
+                className="achievements"
+              >
+                <li>
+                  Designed and developed low-code form modules to improve the company's efficiency in custom dynamic form releases.
+                  <span>
+                    <span
+                      className="normal"
+                    >
+                      low-code
+                    </span>
+                  </span>
+                </li>
+                <li>
                   Used Micro Front-End Service to split code and improve the performance in FE.
                   <span>
                     <span
@@ -1925,6 +1911,16 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                       className="normal"
                     >
                       UI
+                    </span>
+                  </span>
+                </li>
+                <li>
+                  Setup the utils library in FE.
+                  <span>
+                    <span
+                      className="normal"
+                    >
+                      Engineering
                     </span>
                   </span>
                 </li>
@@ -2077,19 +2073,17 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                   <div>
                     Citic Baixin Bank Co. Ltd
                   </div>
-                  <div
-                    className="companyIndustry"
-                  >
-                    (
-                    Bank
-                    )
-                  </div>
                 </div>
               </div>
               <div
                 className="dividerH"
               />
               <div>
+                <span
+                  className="filled"
+                >
+                  Bank
+                </span>
                 <span
                   className="filled"
                 >
@@ -2120,7 +2114,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
           <div
             className="descriptionItem"
           >
-            My main job at Citic Baixin Bank is to complete several front-end projects with my colleagues, which include different front-end technology stacks.
+            My main job at Citic Baixin Bank is to develop several front-end projects with my colleagues, which include different front-end technology stacks(Vue/React).
           </div>
         </div>
         <div>
@@ -2135,7 +2129,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
             <li
               style={
                 Object {
-                  "fontSize": 16,
+                  "fontSize": 14,
                   "marginRight": "2%",
                 }
               }
@@ -2145,7 +2139,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
             <li
               style={
                 Object {
-                  "fontSize": 16,
+                  "fontSize": 14,
                   "marginRight": "2%",
                 }
               }
@@ -2207,7 +2201,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
               className="descriptions"
             >
               <div>
-                This is a mobile web system for potential and existing customers of the company, mainly including event promotion, helping users to open accounts and apply for personal loans and other financial services.
+                This is a mobile web application for potential and existing customers of the company, mainly including advertising campaign, helping users to open accounts, helping users to apply for personal loans, etc.
               </div>
             </div>
             <div>
@@ -2235,7 +2229,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                     }
                   >
                     <span>
-                      We used the relatively innovative web component 3.0 technology at that time to build our basic components and solve the problem of cross-technology stacks.
+                      We used the relatively innovative web component 3.0 at that time to build our basic components and solve the problem of cross-technology stacks.
                     </span>
                   </div>
                 </li>
@@ -2282,7 +2276,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
               className="descriptions"
             >
               <div>
-                This is an internal system used by the company's operations personnel, which can display various data in time and history in graphs.
+                This is an internal web page used by the company's operations, which can display various data in time and history in graphs.
               </div>
             </div>
             <div>
@@ -2310,7 +2304,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                     }
                   >
                     <span>
-                      We use websocket technology for real-time communication.
+                      We use websocket technology for real-time data push.
                     </span>
                   </div>
                 </li>
@@ -2505,19 +2499,17 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                   <div>
                     Yinyuan Asia-pacific Technology Co. Ltd 
                   </div>
-                  <div
-                    className="companyIndustry"
-                  >
-                    (
-                    E-commerce
-                    )
-                  </div>
                 </div>
               </div>
               <div
                 className="dividerH"
               />
               <div>
+                <span
+                  className="filled"
+                >
+                  e-commerce
+                </span>
                 <span
                   className="filled"
                 >
@@ -2563,7 +2555,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
             <li
               style={
                 Object {
-                  "fontSize": 16,
+                  "fontSize": 14,
                   "marginRight": "2%",
                 }
               }
@@ -2573,7 +2565,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
             <li
               style={
                 Object {
-                  "fontSize": 16,
+                  "fontSize": 14,
                   "marginRight": "2%",
                 }
               }
@@ -2583,7 +2575,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
             <li
               style={
                 Object {
-                  "fontSize": 16,
+                  "fontSize": 14,
                   "marginRight": "2%",
                 }
               }
@@ -2593,7 +2585,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
             <li
               style={
                 Object {
-                  "fontSize": 16,
+                  "fontSize": 14,
                   "marginRight": "2%",
                 }
               }
@@ -2655,7 +2647,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
               className="descriptions"
             >
               <div>
-                This is an online shopping website that provides functions including viewing products, adding to cart, and online payment.
+                This is an online shopping website which provides common functions including viewing products, adding to cart, and paying online.
               </div>
             </div>
             <div>
@@ -2671,7 +2663,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                 >
                   <div>
                     <span>
-                      There is very similar CRUD code that needs to be created in the backend interface.
+                      There are some similar CRUD codes that needs to be created in the backend interface.
                     </span>
                   </div>
                   <div
@@ -2696,7 +2688,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                 >
                   <div>
                     <span>
-                      The front-end does not have the concept of components, and is based on the development of each page and the introduction of a third-party jQuery library.
+                      The front-end does not have the concept of components, the html contains many duplicated codes since it is based on the logic of each page.
                     </span>
                   </div>
                   <div
@@ -2708,7 +2700,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                     }
                   >
                     <span>
-                      Our jQuery-based plug-in technology combines many commonly used form functions to reduce repetitive code.
+                      Our jQuery-based plugin technology combines many commonly used form libs to reduce repetitive code.
                     </span>
                   </div>
                 </li>
@@ -2790,7 +2782,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
               className="descriptions"
             >
               <div>
-                This is a mobile app to help teachers and parents. It can support online course selection, appointment of teachers and uploading homework and other functions.
+                This is a mobile app to help teachers and parents. It can support online course selection, appointment of classes and uploading homework, etc.
               </div>
             </div>
             <div>
@@ -2818,7 +2810,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                     }
                   >
                     <span>
-                      We use virtual list technology to solve the problem of too large data.
+                      We use virtual list technology to solve the problem of enormous data.
                     </span>
                   </div>
                 </li>
@@ -2957,19 +2949,17 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
                   <div>
                     Taiji Computer Corporation. Ltd
                   </div>
-                  <div
-                    className="companyIndustry"
-                  >
-                    (
-                    IT
-                    )
-                  </div>
                 </div>
               </div>
               <div
                 className="dividerH"
               />
               <div>
+                <span
+                  className="filled"
+                >
+                  IT
+                </span>
                 <span
                   className="filled"
                 >
@@ -3015,7 +3005,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
             <li
               style={
                 Object {
-                  "fontSize": 16,
+                  "fontSize": 14,
                   "marginRight": "2%",
                 }
               }
@@ -3025,7 +3015,7 @@ System, Web Finance(Invoice) System, Supporting System, SPA, etc.
             <li
               style={
                 Object {
-                  "fontSize": 16,
+                  "fontSize": 14,
                   "marginRight": "2%",
                 }
               }

@@ -24,7 +24,7 @@ const Header = ({ keywords, companyName, companyIndustry, jobPosition, jobPositi
             </div>
             <div className={styles.companyName}>
                 <div>{companyName}</div>
-                <div className={styles.companyIndustry}>({capitalize(companyIndustry)})</div>
+                {/*<div className={styles.companyIndustry}>({capitalize(companyIndustry)})</div>*/}
             </div>
         </div>
         <Divider variant="v" />

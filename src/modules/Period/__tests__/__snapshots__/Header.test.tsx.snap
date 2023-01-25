@@ -21,12 +21,6 @@ exports[`renders Period Header 1`] = `
       <div>
         test company name
       </div>
-      <div
-        className="companyIndustry"
-      >
-        (
-        )
-      </div>
     </div>
   </div>
   <div
