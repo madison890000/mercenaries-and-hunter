@@ -11,6 +11,8 @@ interface IPerson {
     links?: { name: string; value: string }[];
     lastName: string;
     email: string;
+    location: string;
+    searchingFor: string;
     birthDay: Date;
     gender: DataModel.Gender;
     cellphone: string;
@@ -25,6 +27,8 @@ export default class Person extends Base {
     public links?: DataModel.RelatedLink[];
     public lastName: string;
     public email: string;
+    public location: string;
+    public searchingFor: string;
     public gender: DataModel.Gender;
     public cellphone: string;
     public country: string;
@@ -35,7 +39,19 @@ export default class Person extends Base {
     public descriptions: StringWithID[];
     public capability!: Capability;
 
-    constructor({ links, firstName, descriptions, birthDay, lastName, email, cellphone, country, gender }: IPerson) {
+    constructor({
+        links,
+        firstName,
+        descriptions,
+        birthDay,
+        lastName,
+        email,
+        cellphone,
+        country,
+        gender,
+        location,
+        searchingFor
+    }: IPerson) {
         super();
         this.educations = [];
         this.periods = [];
@@ -47,6 +63,8 @@ export default class Person extends Base {
         this.country = country;
         this.gender = gender;
         this.links = links;
+        this.location = location;
+        this.searchingFor = searchingFor;
         this.skills = [];
         this.descriptions = descriptions.map(e => new StringWithID(e));
     }
@@ -62,6 +80,7 @@ export default class Person extends Base {
     addSkills(skills: Skill[]) {
         this.skills = this.skills.concat(skills);
     }
+
     addCapability(capabilities: Capability) {
         this.capability = capabilities;
     }

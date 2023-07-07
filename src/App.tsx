@@ -39,6 +39,8 @@ function App() {
                 email={person.email}
                 links={person.links}
                 cellphone={person.cellphone}
+                location={person.location}
+                searchingFor={person.searchingFor}
             />
             <Divider title={intl.formatMessage(messages.profile)} />
             <section>

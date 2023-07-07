@@ -12,8 +12,10 @@ const madison = new Person({
     lastName: 'Ma',
     birthDay: new Date('1989-10-25T00:00:00Z'),
     email: 'madison.sss.ma@gmail.com',
-    cellphone: '+8618510163161',
+    cellphone: '+64 027 229 1141',
     country: 'China',
+    location: 'Auckland City, New Zealand',
+    searchingFor: 'Front End',
     gender: 'MALE',
     links: [
         {
@@ -26,11 +28,10 @@ const madison = new Person({
         }
     ],
     descriptions: [
-        'I have 7 years working experience in IT with solid technical background, proficient in modern JavaScript/TypeScript programming frameworks, tools, and libraries. ',
-        'I Have rich development experience both in Front-End and Back-End, including Admin Portal and Customer Portal in E-commerce\n' +
-            'System, Web Finance(Invoice) System, Supporting System, SPA, etc.',
-        'I am both a good team leader and team member. ' +
-            'I am passionate about life, friendly to people, willing to share, and wish to work with colleagues whom want to make the world to be a better place.'
+        'I have accumulated 8 years of experience working in the IT industry, building a strong technical foundation. I possess extensive knowledge and skill in modern JavaScript and TypeScript programming frameworks, tools, and libraries.',
+        'I have a wealth of experience in both front-end and back-end development. Specifically, I have worked on projects involving the development of admin portals and customer portals in an e-commerce system, web-based finance systems (such as invoicing systems), supporting systems, single-page applications (SPAs), and more.',
+        'I have expertise in both team leadership and working collaboratively as a team member, allowing me to excel in both roles.' +
+            'I am passionate about life and approachable, fostering friendly and positive relationships with people. I am always willing to share my knowledge and experiences with others, and I strive to work with colleagues who share a common goal of making the world a better place.'
     ]
 });
 
@@ -66,8 +67,8 @@ const periodOne = new Period({
     jobPositionLevel: DataModel.JobPositionLevel.Middle,
     jobType: DataModel.JobType.FullTime,
     jobSummaries: [
-        'use Java to develop system on schedule',
-        'participate in the design and development of one economic-data-report project.'
+        'Using Java to develop a system according to the planned schedule.',
+        'I have participated in the design and development of an economic data report project.'
     ],
     achievements: [
         {
@@ -80,7 +81,7 @@ const periodOne = new Period({
         }
     ],
     descriptions: [
-        'My main job is to use java to develop the back-end interface, and use jQuery to develop the front-end page.'
+        'I primarily work on developing the backend interface using Java, and I use jQuery for front-end page development.'
     ]
 });
 const yinyuanCompany = new Company({
@@ -102,19 +103,19 @@ const h5PortalProjectInYinyuan = new Project({
         }
     ],
     descriptions: [
-        'This is an online shopping website which provides common functions including viewing products, adding to cart, and paying online.'
+        'This is an online shopping website that offers common functionalities such as product browsing, adding items to the shopping cart, and online payment processing.'
     ],
     challengeAndSolutions: [
         {
-            challenge: 'There are some similar CRUD codes that needs to be created in the backend interface.',
-            solution: 'Used shell scripts to improve the development efficiency of CRUD classes.'
+            challenge: 'There are several similar CRUD codes that need to be implemented in the backend interface.',
+            solution:
+                'I used shell scripts to enhance the development efficiency of CRUD (Create, Read, Update, Delete) classes.'
         },
         {
             challenge:
-                'The front-end does not have the concept of components, ' +
-                'the html contains many duplicated codes since it is based on the logic of each page.',
+                'In the front-end, the concept of components is not present. As a result, the HTML code often includes a lot of duplication, as it is structured based on the logic of each individual page.',
             solution:
-                'Our jQuery-based plugin technology combines many commonly used form libs to reduce repetitive code.'
+                'Our plugin technology, based on jQuery, effectively combines various commonly used form libraries. This approach significantly minimizes the need for repetitive code.'
         }
     ]
 });
@@ -126,13 +127,12 @@ const appPortalProjectInYinyuan = new Project({
     company: yinyuanCompany,
     achievements: [],
     descriptions: [
-        'This is a mobile app to help teachers and parents. ' +
-            'It can support online course selection, appointment of classes and uploading homework, etc.'
+        'This mobile app is designed to assist teachers and parents with various functions. It is capable of providing online course selection support, managing class appointments, and facilitating homework uploads, among other features.'
     ],
     challengeAndSolutions: [
         {
             challenge: 'React native has performance issues when rendering large lists of data.',
-            solution: 'We use virtual list technology to solve the problem of enormous data.'
+            solution: 'We utilize virtual list technology to address the challenge of handling large volumes of data.'
         }
     ]
 });
@@ -153,7 +153,9 @@ const periodTwo = new Period({
     projects: [h5PortalProjectInYinyuan, appPortalProjectInYinyuan],
     jobType: DataModel.JobType.FullTime,
     achievements: [],
-    descriptions: ['My main job in the company is to develop API interfaces, develop front-end pages and Apps.']
+    descriptions: [
+        'I am responsible for developing API interfaces, creating front-end pages, and building Apps as part of my main role in the company.'
+    ]
 });
 const baixinCompany = new Company({
     name: 'Citic Baixin Bank Co. Ltd',
@@ -169,18 +171,14 @@ const h5PortalProjectInBaixin = new Project({
     company: baixinCompany,
     achievements: [],
     descriptions: [
-        'This is a mobile web application for potential and existing customers of the company,' +
-            ' mainly including advertising campaign, helping users to open accounts, helping users to apply for personal loans, etc.'
+        'This mobile web application caters to potential and existing customers of the company. It primarily focuses on advertising campaigns and facilitates tasks such as account opening and personal loan applications for users.'
     ],
     challengeAndSolutions: [
         {
             challenge:
-                'Our front-end components need to run in different environments at the same time, ' +
-                "including the company's own website and the partner's website, " +
-                'so we need to support different front-end technology stacks.',
+                "Our front-end components are required to run in various environments simultaneously, including our company's website and our partner's website. Therefore, we need to support different front-end technology stacks.",
             solution:
-                'We used the relatively innovative web component 3.0 at that time to build our basic components and' +
-                ' solve the problem of cross-technology stacks.'
+                'At that time, we utilized the innovative web component 3.0 to build our foundational components and address the challenge of cross-technology stacks.'
         }
     ]
 });
@@ -192,12 +190,12 @@ const h5ChartPortalProjectInBaixin = new Project({
     company: baixinCompany,
     achievements: [],
     descriptions: [
-        "This is an internal web page used by the company's operations, which can display various data in time and history in graphs."
+        "This is an internal web page used by the company's operations, which can display real-time and historical data in graphs."
     ],
     challengeAndSolutions: [
         {
-            challenge: 'How to ensure the data update in-timely?',
-            solution: 'We use websocket technology for real-time data push.'
+            challenge: 'How can we ensure timely data updates?',
+            solution: 'We utilize WebSocket technology for real-time data push'
         }
     ]
 });
@@ -217,8 +215,7 @@ const periodThree = new Period({
     jobType: DataModel.JobType.FullTime,
     achievements: [],
     descriptions: [
-        'My main job at Citic Baixin Bank is to develop several front-end projects with my colleagues, ' +
-            'which include different front-end technology stacks(Vue/React).'
+        'My main responsibility at Citic Baixin Bank is to collaborate with my colleagues in the development of several front-end projects, utilizing different technology stacks such as Vue and React.'
     ]
 });
 const pccwCompany = new Company({
@@ -252,49 +249,26 @@ const adminPortalProjectInPCCW = new Project({
         }
     ],
     descriptions: [
-        'This is a front-end portal built from zero, ' +
-            "it main purpose is to replace the company's original portal. " +
-            'In the past 3 years, we have done a lot of migration work, ' +
-            'including refactored the code based on the existing business logic, ' +
-            'and added many new functions which the old portal did not support at the same time.',
-        'Of course we faced many challenges.'
+        "This is a front-end portal built from scratch. Its main purpose is to replace the company's original portal. Over the past 3 years, we have undertaken a significant migration effort, involving code refactoring based on existing business logic and the addition of numerous new functions not supported by the old portal. Naturally, we encountered various challenges throughout this process."
     ],
     challengeAndSolutions: [
         {
             challenge:
-                'how to quickly build CRUD operation functions based on the original business in the early stage of the project, ' +
-                'so that we can quickly test the data connection capabilities of the new portal ？',
+                'To expedite the building of CRUD operations in the early stages of the project, and to facilitate swift testing of the data connection capabilities of the new portal, we need to determine the most efficient method.',
             solution:
-                'We chose a very powerful front-end scaffold, ' +
-                'which helped us avoid a lot of unnecessary development costs in the early stage. ' +
-                'We also wrote a front-end CRUD template to help us reduce a lot of repetitive codes.'
+                'We chose a highly efficient front-end scaffolding framework, which saved us a substantial amount of unnecessary development costs during the initial phase. Additionally, we developed a front-end CRUD template, enabling us to significantly reduce redundant code.'
         },
         {
             challenge:
-                'There are many functions that need to be integrated in the project, ' +
-                'and several vendor teams are developing in parallel. ' +
-                'How to ensure that the code quality of the project does not decline ' +
-                'and the subsequent continuous development is not affected after team handover.',
+                "There are numerous functionalities that need to be integrated into the project, and multiple vendor teams are working in parallel. How can we ensure that the code quality of the project doesn't deteriorate and that subsequent continuous development isn't affected after the team handover?",
             solution:
-                'After an unhappy project handover, ' +
-                'we investigated the technology of micro front-end service and finally enabled it in the project. ' +
-                'Using this technology, we can divide the code into different code repos by module, ' +
-                'and use different front-end technologies in different places. ' +
-                'finally it can be updated at any time, ' +
-                'and other modules will not be affected.'
+                'After an unsatisfactory project handover, we conducted an investigation into micro front-end service technology and ultimately implemented it in the project. By leveraging this technology, we are able to divide the code into separate code repositories based on modules and utilize different front-end technologies in various locations. This approach allows for independent updates to be made at any time without impacting other modules.'
         },
         {
             challenge:
-                'We need to integrate online products from various providers, ' +
-                'display their products in our own portal. ' +
-                'However, their interfaces are not standardized. ' +
-                'How can we use a module to quickly integrate all services and display & place orders normally ?',
+                'We need to integrate online products from various providers and display them on our own portal. However, their interfaces lack standardization. How can we utilize a module to easily integrate all services, ensuring that products are displayed and orders can be placed normally?',
             solution:
-                'We use a  dynamic form (self-developed) module to efficiently and ' +
-                'conveniently define basic and responsible form types, ' +
-                'including the api address and data type of the drop-down options. ' +
-                'The final online form is generated by front-end drag-and-drop configuration, ' +
-                'which is very easy to operate and modify, and does not require users to have any code foundation.'
+                'We use a self-developed dynamic form module to efficiently and conveniently define basic and advanced form types. This module includes the API address and data type of the drop-down options. The final online form is generated through front-end drag-and-drop configuration, making it incredibly easy to operate and modify. Users do not need to have any coding knowledge.'
         }
     ]
 });
@@ -316,30 +290,21 @@ const customerPortalProjectInPCCW = new Project({
         }
     ],
     descriptions: [
-        "This is a portal for PCCW Global's partner companies and normal users. " +
-            'You can purchase port/connection/data-center/VM on this portal, view detail and check invoice.',
-        'This system also supports partners to upload and develop their own SDKs, so we met some new challenges.'
+        "This is a portal for PCCW Global's partner companies and regular users. You can purchase ports, connections, data centers, and VMs on this portal. It allows you to view details and check invoices." +
+            'Furthermore, this system also supports partners to upload and develop their own SDKs, thereby presenting us with new challenges.'
     ],
     challengeAndSolutions: [
         {
             challenge:
-                'The front-end architecture we chose in the early days did not support runtime environment variables, ' +
-                'which brought a lot of troubles in our project.',
+                'The front-end architecture we chose in the early days did not support runtime environment variables, which caused a lot of trouble in our project.',
             solution:
-                "Based on our company's environment configuration strategies," +
-                ' we updated the build progress of the production environment ' +
-                'and created an npm script used internally by the company ' +
-                'to execute variable-related rebuild operations ' +
-                'when the environment variables in the production environment are updated.We Implemented runtime environment variables by our own way.'
+                "Based on our company's environment configuration strategies, we have updated the build progress of the production environment and created an internal npm script to perform rebuild operations related to variables when the environment variables in the production environment are updated. We have implemented runtime environment variables in our own way."
         },
         {
             challenge:
-                'Because we support customized SDK, ' +
-                'we need to provide a code editor in this portal which can edit and modify code by customers them-self' +
-                ' with version controlling.',
+                'As we support customized SDK, we need to provide a code editor in this portal that allows customers to edit and modify code themselves, while also implementing version control.',
             solution:
-                'After researching the popular open source WebIDE, ' +
-                'we finally chose a project which is most suitable for us, and added some extended functions for better using.'
+                'After researching popular open source WebIDEs, we finally chose a project that is most suitable for us, and added some extended functions for better usability.'
         }
     ]
 });
@@ -352,15 +317,14 @@ const periodFour = new Period({
     jobPosition: 'Front-End Engineer',
     jobPositionLevel: DataModel.JobPositionLevel.Senior,
     jobSummaries: [
-        'conduct functional research and validation based on business requirements, evaluate requirements implementation feasibility and propose solutions.',
-        'responsible for task assignment and project requirement explanation to 5 external team members'
+        'Conduct functional research and validation based on business requirements, evaluate the feasibility of implementing the requirements, and propose solutions.',
+        'Responsible for assigning tasks and explaining project requirements to five external team members.'
     ],
     jobType: DataModel.JobType.FullTime,
     projects: [customerPortalProjectInPCCW, adminPortalProjectInPCCW],
     achievements: [],
     descriptions: [
-        'My main job at PCCW Global is to build two web applications (admin portal & customer portal), ' +
-            'and integrate some MVP features into the two portals, hand them over to the market for verification.'
+        'My main job at PCCW Global is to build two web applications: the admin portal and the customer portal. I also integrate some MVP features into these portals and hand them over to the market for verification.'
     ]
 });
 const teslaCompany = new Company({
@@ -376,9 +340,9 @@ const adminPortalProjectInTesla = new Project({
     company: teslaCompany,
     achievements: [],
     descriptions: [
-        'This is the admin management portal corresponding to the customer portal. ' +
-            "It is a system built for Tesla's operators to manage related forms, articles, and pushing notifications on a daily basis.",
-        'The project has been running about 2 years when I joined, ' + 'which exist some known and unresloved issues.'
+        'This is the administrative management portal corresponding to the customer portal. ' +
+            "It is a system built for Tesla's operators to manage related forms, articles, and push notifications on a daily basis. ",
+        ' I joined the project after it had been running for about 2 years, during which some known and unresolved issues have been identified.'
     ],
     challengeAndSolutions: [
         {
@@ -415,68 +379,58 @@ const customerPortalProjectInTesla = new Project({
         }
     ],
     descriptions: [
-        "This is Tesla's client-side web application for potential and existing customers in China. " +
-            'It mainly includes questionnaire, survey, article recommendation, account management, etc.',
-        'The project has been running about 2 years when I joined, ' + 'which exist some known and unresloved issues.'
+        "This is Tesla's client-side web application for potential and existing customers in China. It mainly includes questionnaires, surveys, article recommendations, and account management. The project has been running for about 2 years before I joined, during which some known and unresolved issues have been identified."
     ],
     challengeAndSolutions: [
         {
             challenge:
-                'The ui and form library versions used in this project are too low, which contains some unfixed bugs. ' +
-                'It is urgent to upgrade, however, we don’t want to cause too many online bugs',
+                'The UI and form library versions used in this project are outdated, which means they contain unfixed bugs. It is necessary to upgrade them, but we are concerned about the possibility of introducing new bugs to the live system during the process.',
             solution:
-                'We spent a week to unify the import ways of the ui and form libs (from everywhere to one file), ' +
-                'and manually handled the compatibility of the upgraded version(as a adapter) to avoid destructive bugs as much as possible.'
+                'We spent a week unifying the import methods for the UI and form libraries (from various sources to one file). We also manually resolved compatibility issues with the upgraded version, functioning as an adapter, in order to minimize the occurrence of destructive bugs.'
         },
         {
             challenge:
-                'In the early days of the project, a full-featured(so heavy) front-end architecture was used. ' +
-                'It was very restrictive and insufficient in scalability, which hindered us from upgrading the versions of react, react router and so on.',
+                'In the early days of the project, we used a full-featured (but heavy) front-end architecture. However, it proved to be restrictive and lacking in scalability. As a result, we faced challenges in upgrading versions of react, react router, and other dependencies.',
             solution:
-                'We rewrote the webpack configuration file, completely abandoned the original front-end framework within 2 weeks, ' +
-                'found alternatives for inapplicable modules, and finally completed the upgrade of react 18 and react router v6. ' +
-                'Now the entire configuration is completely defined and controlled by ourselves.'
+                'We rewrote the webpack configuration file, completely abandoning the original front-end framework within 2 weeks. We identified alternatives for inapplicable modules and successfully upgraded react 18 and react router v6. Now, we have full control over the entire configuration.'
         },
         {
             challenge:
-                'The code quality of the project is very hard to say, and there is no automated inspection process. ' +
-                'As a result, many of our online bugs rely on user`s feedback and cannot be found in time and in advance.',
+                'The code quality of the project is difficult to assess, and there is currently no automated inspection process in place. As a consequence, many of our online bugs depend on user feedback and are not discovered in a timely and proactive manner.',
             solution:
-                'I integrated sentry and sonar-qube in the stage environment of the project. ' +
-                'Sentry helps us discover known errors in the project in the stage environment ahead of users and QA colleagues. ' +
-                'Sonar-qube helps us discover possible negligence and code irregularities before code merged.'
+                "I integrated Sentry and SonarQube into the project's stage environment. Sentry helps us identify known errors in the project before users and QA colleagues encounter them. SonarQube helps us identify potential oversights and code irregularities prior to merging the code."
         }
     ]
 });
 const periodFive = new Period({
     start: new Date('2022-05-23T00:00:00Z'),
+    end: new Date('2023-06-26T00:00:00Z'),
     company: teslaCompany,
     keywords: ['Motor', 'Agile', 'JIRA'],
     jobPosition: 'Front-End Engineer',
     jobPositionLevel: DataModel.JobPositionLevel.Senior,
     jobType: DataModel.JobType.FullTime,
     jobSummaries: [
-        'become the core developer in Front-End team',
-        'improve the code quality and performance',
-        'provide training and guidance on technical'
+        'Core developer in Front-End team',
+        'Improve the code quality and performance',
+        'Provide training and guidance on technical'
     ],
     projects: [customerPortalProjectInTesla, adminPortalProjectInTesla],
     achievements: [],
     descriptions: [
-        'My main job at Tesla is to ensure the steady iterative development of two web projects, ' +
-            "upgrade the old architecture, and add special business components of Tesla's UI in China."
+        "At Tesla, my main responsibility is to ensure the smooth and continuous development of two web projects. This entails upgrading the existing architecture and incorporating special business components into Tesla's UI specifically for the Chinese market."
     ]
 });
 madison.addPeriods([periodOne, periodTwo, periodThree, periodFour, periodFive]);
 
 const skills = [
-    new Skill('React', DataModel.SkillLevel.proficient, 5, DataModel.Importance.Essential),
-    new Skill('TypeScript', DataModel.SkillLevel.proficient, 3, DataModel.Importance.Essential),
-    new Skill('JavaScript', DataModel.SkillLevel.proficient, 7, DataModel.Importance.Essential),
-    new Skill('Redux/MobX', DataModel.SkillLevel.proficient, 3, DataModel.Importance.Essential),
-    new Skill('HTML & CSS', DataModel.SkillLevel.proficient, 6, DataModel.Importance.Essential),
-    new Skill('GIT', DataModel.SkillLevel.proficient, 6, DataModel.Importance.Essential),
-    new Skill('Jest', DataModel.SkillLevel.familiar, 3, DataModel.Importance.Essential),
+    new Skill('React', DataModel.SkillLevel.proficient, 6, DataModel.Importance.Essential),
+    new Skill('TypeScript', DataModel.SkillLevel.proficient, 4, DataModel.Importance.Essential),
+    new Skill('JavaScript', DataModel.SkillLevel.proficient, 8, DataModel.Importance.Essential),
+    new Skill('Redux/MobX', DataModel.SkillLevel.proficient, 4, DataModel.Importance.Essential),
+    new Skill('HTML & CSS', DataModel.SkillLevel.proficient, 8, DataModel.Importance.Essential),
+    new Skill('GIT', DataModel.SkillLevel.proficient, 8, DataModel.Importance.Essential),
+    new Skill('Jest', DataModel.SkillLevel.proficient, 4, DataModel.Importance.Essential),
     new Skill('Node', DataModel.SkillLevel.familiar, 2, DataModel.Importance.Advanced),
     new Skill('Java', DataModel.SkillLevel.familiar, 3, DataModel.Importance.Advanced),
     new Skill('Vue', DataModel.SkillLevel.proficient, 1.5, DataModel.Importance.Advanced),

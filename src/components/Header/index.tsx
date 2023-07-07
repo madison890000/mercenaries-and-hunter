@@ -7,11 +7,13 @@ interface HeaderProps {
     firstName: string;
     lastName: string;
     email: string;
+    location?: string;
+    searchingFor?: string;
     cellphone: string;
     links?: DataModel.RelatedLink[];
 }
 
-const Header = ({ links, firstName, lastName, email, cellphone }: HeaderProps) => {
+const Header = ({ links, firstName, lastName, email, cellphone, location, searchingFor }: HeaderProps) => {
     return (
         <header className={styles.header}>
             <h1>
@@ -19,12 +21,20 @@ const Header = ({ links, firstName, lastName, email, cellphone }: HeaderProps) =
             </h1>
             <div className={styles.basicInfo}>
                 <div className={styles.basicInfoItem}>
+                    <div>Looking For:</div>
+                    <div>{searchingFor}</div>
+                </div>
+                <div className={styles.basicInfoItem}>
                     <div>Email:</div>
                     <div>{email}</div>
                 </div>
                 <div className={styles.basicInfoItem}>
                     <div>Mobile:</div>
                     <div>{cellphone}</div>
+                </div>
+                <div className={styles.basicInfoItem}>
+                    <div>Location:</div>
+                    <div>{location}</div>
                 </div>
                 <>
                     {links?.map(link => (
