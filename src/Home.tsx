@@ -1,8 +1,9 @@
-import React, { useRef } from 'react';
+import React, {useRef} from 'react';
 import styles from './App.module.scss';
 import madison from './Madison';
-import { Capability, Divider, Education, Header, Period, Skill } from './components';
-import { defineMessages, useIntl } from 'react-intl';
+import {Capability, Divider, Education, BaseInfo, Skill} from './components';
+import Period from './modules/Period'
+import {defineMessages, useIntl} from 'react-intl';
 import capitalize from './utils/capitalize';
 import DataModel from './models/types';
 
@@ -24,16 +25,16 @@ const messages = defineMessages({
     }
 });
 
-function App() {
+function Home() {
     const intl = useIntl();
-    const { current: person } = useRef(madison);
+    const {current: person} = useRef(madison);
     const periodColors: { [key: string]: string } = {};
     person?.periods?.forEach((p, index) => {
         periodColors[p.id] = index % 2 === 0 ? 'black' : '#1976d2';
     });
     return (
         <div className={styles.main}>
-            <Header
+            <BaseInfo
                 firstName={person.firstName}
                 lastName={person.lastName}
                 email={person.email}
@@ -42,7 +43,7 @@ function App() {
                 location={person.location}
                 searchingFor={person.searchingFor}
             />
-            <Divider title={intl.formatMessage(messages.profile)} />
+            <Divider title={intl.formatMessage(messages.profile)}/>
             <section>
                 <div className={styles.profile}>
                     <div className={styles.description}>
@@ -53,31 +54,31 @@ function App() {
                         ))}
                     </div>
                     <div className={styles.capability}>
-                        <Capability capabilities={person.capability} />
+                        <Capability capabilities={person.capability}/>
                     </div>
                 </div>
             </section>
-            <Divider title={intl.formatMessage(messages.skills)} />
+            <Divider title={intl.formatMessage(messages.skills)}/>
             <section>
                 <div className={styles.skills}>
                     {person.skills
                         ?.filter(s => s?.importance === DataModel.Importance.Essential)
                         ?.map(skill => (
-                            <Skill {...skill} key={skill.id} />
+                            <Skill {...skill} key={skill.id}/>
                         ))}
                 </div>
             </section>
-            <Divider variant="dash" />
+            <Divider variant="dash"/>
             <section>
                 <div className={styles.skills}>
                     {person.skills
                         ?.filter(s => s?.importance === DataModel.Importance.Advanced)
                         ?.map(skill => (
-                            <Skill size="small" {...skill} key={skill.id} />
+                            <Skill size="small" {...skill} key={skill.id}/>
                         ))}
                 </div>
             </section>
-            <Divider title={intl.formatMessage(messages.professionalExperiences)} />
+            <Divider title={intl.formatMessage(messages.professionalExperiences)}/>
             <section>
                 {person.reversedPeriods?.map(period => (
                     <>
@@ -100,14 +101,14 @@ function App() {
                     </>
                 ))}
             </section>
-            <Divider title={intl.formatMessage(messages.educationExperiences)} />
+            <Divider title={intl.formatMessage(messages.educationExperiences)}/>
             <section>
                 {person.educations?.map(education => (
-                    <Education {...education} key={education.id} />
+                    <Education {...education} key={education.id}/>
                 ))}
             </section>
         </div>
     );
 }
 
-export default App;
+export default Home;

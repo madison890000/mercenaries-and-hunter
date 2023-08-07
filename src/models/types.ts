@@ -2,8 +2,8 @@ import StringWithID from './StringWithID';
 
 namespace DataModel {
     export enum Degree {
-        Bachelor = 'BACHELOR',
-        Master = 'MASTER',
+        BACHELOR = 'BACHELOR',
+        MASTER = 'MASTER',
         PhD = 'PHD'
     }
 
