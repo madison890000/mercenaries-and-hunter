@@ -1,18 +1,23 @@
 import Achievement from "./components/Achievement/Achievement";
 import DemoData from "./data.json";
-import StringWithID from "./models/StringWithID";
 import {BaseInfo, Divider, Education, Skill, Tag, Times} from "./components";
 import DataModel from "./models/types";
 import TimeLineItem from "./components/TimeLines/TimeLineItem";
+import Period from "./modules/Period";
+import Project from "./components/Project";
+import React from "react";
+import ChallengeAndSolution from "./components/Project/ChallengeAndSolution";
 
 const Demo = () => {
     const education = DemoData.educations[0];
     const baseInfo = DemoData.baseInfo;
+    const period = DemoData.periods[0];
+    // @ts-ignore
+    const project = period?.projects[0];
     return (
         <div style={{
             padding: 40
         }}>
-            <Divider title="Components"/>
             <Divider title="Divider"/>
             <div>
                 <Divider title="a" variant='dash'/>
@@ -21,12 +26,22 @@ const Demo = () => {
             </div>
             <Divider title="Achievement"/>
             <div>
-                <Achievement
-                    categories={[
-                        new StringWithID(DemoData.periods[0].achievements[0].categories[0])
-                    ]}
-                    title={DemoData.periods[0].achievements[0].text}
-                />
+                <ul>
+                    <Achievement
+                        categories={DemoData.periods[0].achievements[0].categories}
+                        title={DemoData.periods[0].achievements[0].text}
+                    />
+                </ul>
+            </div>
+            <Divider title="ChallengeAndSolution"/>
+            <div>
+                <ul>
+                    <ChallengeAndSolution
+                        key={DemoData.periods[0].challengeAndSolutions[0].challenge}
+                        challenge={DemoData.periods[0].challengeAndSolutions[0]?.challenge}
+                        solution={DemoData.periods[0].challengeAndSolutions[0]?.solution}
+                    />
+                </ul>
             </div>
             <Divider title="Education"/>
             <div>
@@ -45,6 +60,9 @@ const Demo = () => {
                     email={baseInfo.email}
                     firstName={baseInfo.firstName}
                     lastName={baseInfo.lastName}
+                    links={[
+                        {name: 'test', value: 'https://google.com'}
+                    ]}
                 />
             </div>
             <Divider title="Skill"/>
@@ -124,6 +142,35 @@ const Demo = () => {
                     variant={'month'}
                     start={new Date('2021-09-01T00:00:00Z')}
                     end={new Date('2022-09-01T00:00:00Z')}
+                />
+            </div>
+            <Divider title="Period"/>
+            <div>
+                <Period
+                    start={new Date('2021-09-01T00:00:00Z')}
+                    end={new Date('2022-09-01T00:00:00Z')}
+                    periodColor={'red'}
+                    keywords={['UI']}
+                    descriptions={period.descriptions}
+                    companyName={'test'}
+                    companyIndustry={'tele'}
+                    companyType={DataModel.CompanyType.Enterprise}
+                    jobPositionLevel={DataModel.JobPositionLevel.Senior}
+                    jobPosition={'Software Engineer'}
+                    achievements={period.achievements}
+                    jobSummaries={period.jobSummaries}
+                    // ojects={period.projects}
+                />
+            </div>
+            <div>
+                <Project
+                    projectName={project.name}
+                    start={new Date(project.start)}
+                    end={new Date(project.end)}
+                    keywords={project.keywords}
+                    descriptions={project.descriptions}
+                    challengeAndSolutions={project.challengeAndSolutions}
+                    achievements={project.achievements}
                 />
             </div>
         </div>

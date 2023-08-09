@@ -16,6 +16,14 @@ exports[`renders Header 1`] = `
       className="basicInfoItem"
     >
       <div>
+        Looking For:
+      </div>
+      <div />
+    </div>
+    <div
+      className="basicInfoItem"
+    >
+      <div>
         Email:
       </div>
       <div>
@@ -32,6 +40,17 @@ exports[`renders Header 1`] = `
         101101101
       </div>
     </div>
+    <div
+      className="basicInfoItem"
+    >
+      <div>
+        Location:
+      </div>
+      <div />
+    </div>
+    <div
+      className="links"
+    />
   </div>
 </header>
 `;

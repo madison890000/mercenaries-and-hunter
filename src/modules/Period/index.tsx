@@ -1,5 +1,5 @@
 import React from 'react';
-import { defineMessages, useIntl } from 'react-intl';
+import {defineMessages, useIntl} from 'react-intl';
 
 import styles from './index.module.scss';
 import Achievement from '../../components/Achievement/Achievement';
@@ -7,13 +7,12 @@ import Header from './Header';
 
 import capitalize from '../../utils/capitalize';
 import pipe from '../../utils/pipe';
-import { addPeriodSuffix } from '../../utils/suffix';
+import {addPeriodSuffix} from '../../utils/suffix';
 
 import Times from '../../components/Times';
 import TimeLineItem from '../../components/TimeLines/TimeLineItem';
 import Project from '../../components/Project';
 
-import StringWithID from '../../models/StringWithID';
 import DataModel from '../../models/types';
 import ProjectModel from '../../models/Project';
 
@@ -21,16 +20,16 @@ interface PeriodProps {
     start: Date;
     periodColor: string;
     end?: Date;
-    keywords: StringWithID[];
-    descriptions: StringWithID[];
+    keywords: string[];
+    descriptions: string[];
     companyName: string;
     companyIndustry: string;
     companyType: DataModel.CompanyType;
     jobPositionLevel: DataModel.JobPositionLevel;
     jobPosition: DataModel.JobPosition;
-    achievements: DataModel.Achievement[];
-    jobSummaries: StringWithID[];
-    projects?: ProjectModel[];
+    achievements: DataModel.IAchievement[];
+    jobSummaries: string[];
+    projects?: Omit<ProjectModel, 'id'>[];
 }
 
 const messages = defineMessages({
@@ -44,26 +43,26 @@ const messages = defineMessages({
     }
 });
 const Period = ({
-    start,
-    periodColor,
-    end,
-    companyName,
-    companyType,
-    companyIndustry,
-    keywords,
-    descriptions,
-    jobPositionLevel,
-    jobPosition,
-    achievements,
-    jobSummaries,
-    projects
-}: PeriodProps) => {
+                    start,
+                    periodColor,
+                    end,
+                    companyName,
+                    companyType,
+                    companyIndustry,
+                    keywords,
+                    descriptions,
+                    jobPositionLevel,
+                    jobPosition,
+                    achievements,
+                    jobSummaries,
+                    projects
+                }: PeriodProps) => {
     const intl = useIntl();
     return (
         <>
             <div className={styles.periodContainer}>
                 <div className={styles.timeline}>
-                    <TimeLineItem start={start} end={end} periodColor={periodColor} />
+                    <TimeLineItem start={start} end={end} periodColor={periodColor}/>
                 </div>
                 <div className={styles.content}>
                     <div className={styles.period}>
@@ -78,29 +77,24 @@ const Period = ({
                             />
                         </div>
                         <div className={styles.time}>
-                            <Times start={start} end={end} />
+                            <Times start={start} end={end}/>
                         </div>
                     </div>
                     <div>
                         {descriptions?.map(description => (
-                            <div className={styles.descriptionItem} key={description.id}>
+                            <div className={styles.descriptionItem} key={description}>
                                 {capitalize(description.toString())}
                             </div>
                         ))}
                     </div>
                     <div>
-                        <ul
-                            style={{
-                                display: 'flex',
-                                flexWrap: 'wrap'
-                            }}
-                        >
+                        <ul>
                             {jobSummaries?.map(summary => (
                                 <li
-                                    key={summary.id}
+                                    key={summary}
                                     style={{
                                         marginRight: '2%',
-                                        fontSize: 14
+                                        fontSize: 'var(--base-font-size-large-2)',
                                     }}
                                 >
                                     {pipe<string>(capitalize, addPeriodSuffix)(summary.toString())}
@@ -109,11 +103,14 @@ const Period = ({
                         </ul>
                     </div>
                     <div>
-                        {achievements?.length > 0 && <h5>{intl.formatMessage(messages.achievements)}:</h5>}
+                        {achievements?.length > 0 && <div style={{
+                            fontWeight: "bold",
+                            fontSize: 'var(--base-font-size-middle)'
+                        }}>{intl.formatMessage(messages.achievements)}:</div>}
                         <ul className={styles.achievements}>
                             {achievements?.map(achievement => (
                                 <Achievement
-                                    key={achievement.id}
+                                    key={achievement.text}
                                     title={achievement?.text}
                                     categories={achievement?.categories}
                                 />

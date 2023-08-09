@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './index.module.scss';
 import DataModel from '../../models/types';
 import Times from '../Times';
+import Tag from "../Tag";
 
 interface EducationProps {
     college: string;
@@ -11,17 +12,17 @@ interface EducationProps {
     end: Date;
 }
 
-const Education = ({ start, end, college, degree, major }: EducationProps) => {
+const Education = ({start, end, college, degree, major}: EducationProps) => {
     return (
         <div className={styles.education}>
             <div>
                 <span>{college}</span>
             </div>
             <div>
-                <span>{major}</span>
-                <span className={styles.major}>({degree})</span>
+                <Tag type="filled">{major}</Tag>
+                <Tag type="less">{degree}</Tag>
             </div>
-            <Times start={start} end={end} />
+            <Times start={start} end={end}/>
         </div>
     );
 };

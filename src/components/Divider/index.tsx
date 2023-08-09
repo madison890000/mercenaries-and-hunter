@@ -16,10 +16,8 @@ const Divider = ({variant, title}: DividerProps) => {
     }
     return (
         <div className={styles.divider}>
-            <div className={styles.title}>
-                <div>
-                    <h3>{capitalize(title)}</h3>
-                </div>
+            <div>
+                <div className={styles.title}>{capitalize(title)}</div>
             </div>
             <div className={styles.section}/>
         </div>

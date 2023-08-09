@@ -2,11 +2,10 @@ import React from 'react';
 import Header from '../Header';
 import renderer from 'react-test-renderer';
 import DataModel from '../../../models/types';
-import StringWithID from '../../../models/StringWithID';
 
 test('renders Period Header', () => {
     const testCompanyName = 'test company name';
-    const keywords = [new StringWithID('React')];
+    const keywords = ['React'];
     const jobPositionLevel = DataModel.JobPositionLevel.Senior;
     const jobPosition = 'Software Engineer';
     const HeaderDom = renderer
@@ -17,6 +16,7 @@ test('renders Period Header', () => {
                 jobPositionLevel={jobPositionLevel}
                 companyName={testCompanyName}
                 keywords={keywords}
+                companyIndustry={'tele'}
             />
         )
         .toJSON();

@@ -1,4 +1,3 @@
-import StringWithID from './StringWithID';
 
 namespace DataModel {
     export enum Degree {
@@ -12,11 +11,6 @@ namespace DataModel {
     export type IAchievement = {
         text: string;
         categories: string[];
-    };
-    export type Achievement = {
-        id: string;
-        text: string;
-        categories: StringWithID[];
     };
     export type SolutionsOfHowToImplement = string;
 
@@ -65,8 +59,5 @@ namespace DataModel {
         challenge: string;
         solution: string;
     };
-    export type ChallengeAndSolution = {
-        id: string;
-    } & IChallengeAndSolution;
 }
 export default DataModel;

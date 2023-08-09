@@ -1,40 +1,28 @@
 .container {
-    background: var(--period-background-color);
-    padding: 12px;
-    grid-row: 2;
-    border-radius: 4px;
+  background: var(--period-background-color);
+  padding: 12px;
+  grid-row: 2;
+  border-radius: 4px;
 }
 
 .content {
-    border-radius: var(--base-border-radius);
-    display: flex;
-    justify-content: space-between;
+  border-radius: var(--base-border-radius);
+  display: flex;
+  justify-content: space-between;
 }
 
 .name {
-    margin: var(--base-gap);
+  margin: var(--base-gap);
+  font-size: var(--base-font-size-large);
 }
 
 .timeline {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    @media screen and (max-width: 414px) {
-        width: 100%;
-        justify-content: space-between;
-        flex-direction: row-reverse;
-    }
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .descriptions {
-    margin: 12px;
-    font-size: 16px;
-}
-
-.challengeAndSolutions {
-    font-weight: bold;
-}
-
-.achievements {
-    font-weight: bold;
+  margin: 12px;
+  font-size: 20px;
 }

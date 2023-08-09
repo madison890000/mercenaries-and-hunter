@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    font-size: var(--base-font-size-middle);
     & > span {
         margin: var(--inline-block-margin);
     }

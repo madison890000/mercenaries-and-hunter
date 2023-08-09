@@ -1,33 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders Tag 1`] = `
-<span
-  className="normal"
+<div
+  className="normal tag"
 >
   React
-</span>
+</div>
 `;
 
 exports[`renders Tag default 1`] = `
-<span
-  className="normal"
+<div
+  className="normal tag"
 >
   React
-</span>
+</div>
 `;
 
 exports[`renders Tag filled 1`] = `
-<span
-  className="filled"
+<div
+  className="filled tag"
 >
   React
-</span>
+</div>
 `;
 
 exports[`renders Tag less 1`] = `
-<span
-  className="less"
+<div
+  className="less tag"
 >
   React
-</span>
+</div>
 `;

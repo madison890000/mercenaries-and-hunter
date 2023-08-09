@@ -21,7 +21,7 @@ const messages = defineMessages({
     },
     educationExperiences: {
         id: 'section.divider.educationExperiences',
-        defaultMessage: 'Education Experiences'
+        defaultMessage: 'Education'
     }
 });
 
@@ -48,13 +48,10 @@ function Home() {
                 <div className={styles.profile}>
                     <div className={styles.description}>
                         {person.descriptions?.map(d => (
-                            <div className={styles.descriptionItem} key={d.id}>
+                            <div className={styles.descriptionItem} key={d}>
                                 {capitalize(d.toString())}
                             </div>
                         ))}
-                    </div>
-                    <div className={styles.capability}>
-                        <Capability capabilities={person.capability}/>
                     </div>
                 </div>
             </section>
@@ -74,7 +71,7 @@ function Home() {
                     {person.skills
                         ?.filter(s => s?.importance === DataModel.Importance.Advanced)
                         ?.map(skill => (
-                            <Skill size="small" {...skill} key={skill.id}/>
+                            <Skill {...skill} key={skill.id}/>
                         ))}
                 </div>
             </section>

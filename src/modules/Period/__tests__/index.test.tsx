@@ -2,17 +2,16 @@ import React from 'react';
 import Period from '../index';
 import renderer from 'react-test-renderer';
 import DataModel from '../../../models/types';
-import StringWithID from '../../../models/StringWithID';
 
 test('renders Period', () => {
     const testCompanyName = 'test company name';
     const start = new Date('2012-01-01');
     const end = new Date('2013-01-01');
-    const keywords = [new StringWithID('React')];
+    const keywords = ['React'];
     const jobPositionLevel = DataModel.JobPositionLevel.Senior;
     const jobPosition = 'Software Engineer';
-    const achievements = [] as DataModel.Achievement[];
-    const jobSummaries = [] as StringWithID[];
+    const achievements = [] as DataModel.IAchievement[];
+    const jobSummaries = [] as string[];
     const PeriodDom = renderer
         .create(
             <Period
@@ -26,7 +25,8 @@ test('renders Period', () => {
                 jobSummaries={jobSummaries}
                 companyName={testCompanyName}
                 periodColor={'red'}
-            />
+                companyIndustry={'tele'}
+                descriptions={[]}/>
         )
         .toJSON();
     expect(PeriodDom).toMatchSnapshot();

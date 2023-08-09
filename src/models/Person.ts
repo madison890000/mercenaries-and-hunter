@@ -4,7 +4,6 @@ import Period from './Period';
 import Skill from './Skill';
 import Capability from './Capability';
 import Base from './Base';
-import StringWithID from './StringWithID';
 
 interface IPerson {
     firstName: string;
@@ -36,7 +35,7 @@ export default class Person extends Base {
     public educations: Education[];
     public periods: Period[];
     public skills: Skill[];
-    public descriptions: StringWithID[];
+    public descriptions: string[];
     public capability!: Capability;
 
     constructor({
@@ -66,7 +65,7 @@ export default class Person extends Base {
         this.location = location;
         this.searchingFor = searchingFor;
         this.skills = [];
-        this.descriptions = descriptions.map(e => new StringWithID(e));
+        this.descriptions = descriptions;
     }
 
     addEducations(educations: Education[]) {

@@ -71,6 +71,47 @@
           "challenge": "There are several similar CRUD codes that need to be implemented in the backend interface.",
           "solution": "I used shell scripts to enhance the development efficiency of CRUD (Create, Read, Update, Delete) classes."
         }
+      ],
+      "projects": [
+        {
+          "name": "Customer Portal",
+          "start": "2016-07-01T00:00:00Z",
+          "end": "2018-03-01T00:00:00Z",
+          "keywords": [
+            "Java",
+            "jQuery",
+            "Mobile"
+          ],
+          "company": {
+            "name": "Taiji Computer Corporation. Ltd",
+            "type": "Enterprise",
+            "location": "Beijing, China",
+            "industry": "IT"
+          },
+          "achievements": [
+            {
+              "text": "used Spring-boot and Kendo-UI to build the the basic configuration of common project",
+              "categories": [
+                "Java"
+              ]
+            },
+            {
+              "text": "abstracted 10+ components to unify UI style, including table, form input, file upload, etc",
+              "categories": [
+                "UI"
+              ]
+            }
+          ],
+          "descriptions": [
+            "I primarily work on developing the backend interface using Java, and I use jQuery for front-end page development."
+          ],
+          "challengeAndSolutions": [
+            {
+              "challenge": "There are several similar CRUD codes that need to be implemented in the backend interface.",
+              "solution": "I used shell scripts to enhance the development efficiency of CRUD (Create, Read, Update, Delete) classes."
+            }
+          ]
+        }
       ]
     }
   ]

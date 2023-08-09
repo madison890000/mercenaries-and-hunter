@@ -4,15 +4,12 @@ exports[`renders Divider 1`] = `
 <div
   className="divider"
 >
-  <div
-    className="title"
-  >
-    <div>
-      <h3>
-        Test Divider
-      </h3>
+  <div>
+    <div
+      className="title"
+    >
+      Test Divider
     </div>
-    <div />
   </div>
   <div
     className="section"
@@ -24,16 +21,11 @@ exports[`renders Divider with extra 1`] = `
 <div
   className="divider"
 >
-  <div
-    className="title"
-  >
-    <div>
-      <h3>
-        Test Divider
-      </h3>
-    </div>
-    <div>
-      test extra
+  <div>
+    <div
+      className="title"
+    >
+      Test Divider
     </div>
   </div>
   <div

@@ -13,7 +13,7 @@ interface BaseInfoProps {
     links?: DataModel.RelatedLink[];
 }
 
-const BaseInfo = ({ links, firstName, lastName, email, cellphone, location, searchingFor }: BaseInfoProps) => {
+const BaseInfo = ({links, firstName, lastName, email, cellphone, location, searchingFor}: BaseInfoProps) => {
     return (
         <header className={styles.header}>
             <h1>
@@ -36,18 +36,13 @@ const BaseInfo = ({ links, firstName, lastName, email, cellphone, location, sear
                     <div>Location:</div>
                     <div>{location}</div>
                 </div>
-                <>
+                <div className={styles.links}>
                     {links?.map(link => (
-                        <div key={link?.value} className={styles.basicInfoItem}>
-                            <div>{link?.name}:</div>
-                            <div>
-                                <a href={link?.value} target="_blank">
-                                    {link?.value}
-                                </a>
-                            </div>
+                        <div key={link?.value}>
+                            <a href={link?.value} target="_blank">{link?.name}</a>
                         </div>
                     ))}
-                </>
+                </div>
             </div>
         </header>
     );
