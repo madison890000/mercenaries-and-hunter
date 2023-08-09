@@ -1,28 +1,47 @@
-import React, { useContext } from 'react';
+import React, {useContext} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import Home from './Home';
+import Demo from './Demo';
 import reportWebVitals from './reportWebVitals';
-import { IntlProvider } from 'react-intl';
-import { generatedTranslations } from './i18n/translations';
+import {IntlProvider} from 'react-intl';
+import {generatedTranslations} from './i18n/translations';
 import Menus from './modules/Menus';
-import LocaleContext, { LocaleContextContainer } from './contexts/LocaleContext';
+import LocaleContext, {LocaleContextContainer} from './contexts/LocaleContext';
+import {BrowserRouter, Outlet, Route, Routes} from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
+const RouteMap = () => {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={
+                    <>
+                        <Menus/>
+                        <Outlet/>
+                    </>
+                }>
+
+                    <Route path="home" element={<Home/>}/>
+                    <Route path="components" element={<Demo/>}/>
+                </Route>
+            </Routes>
+        </BrowserRouter>
+    )
+}
 const I18nProvider = () => {
-    const { locale } = useContext(LocaleContext);
+    const {locale} = useContext(LocaleContext);
     return (
         <IntlProvider locale={locale} key={locale} messages={generatedTranslations()[locale]}>
-            <Menus />
-            <App />
+            <RouteMap/>
         </IntlProvider>
     );
 };
 root.render(
     <React.StrictMode>
         <LocaleContextContainer>
-            <I18nProvider />
+            <I18nProvider/>
         </LocaleContextContainer>
     </React.StrictMode>
 );

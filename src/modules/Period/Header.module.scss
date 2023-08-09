@@ -1,37 +1,40 @@
 .header {
-    font-weight: bold;
-    display: flex;
-    align-items: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+
+  & > span {
+    margin-right: var(--inline-block-margin);
+  }
+
+  @media screen and (max-width: 414px) {
+    width: 300px;
 
     & > span {
-        margin-right: var(--inline-block-margin);
+      display: block;
     }
-
-    @media screen and (max-width: 414px) {
-        width: 300px;
-
-        & > span {
-            display: block;
-        }
-    }
+  }
 }
 
 .job {
-    & > span {
-        margin-right: var(--inline-block-margin);
-    }
+  font-size: 24px;
+
+  & > span {
+    margin-right: var(--inline-block-margin);
+  }
 }
 
 .companyName {
-    font-weight: normal;
-    color: var(--period-sub-title-color);
-    display: flex;
-    align-items: center;
+  font-size: 20px;
+  font-weight: normal;
+  color: var(--period-sub-title-color);
+  display: flex;
+  align-items: center;
 }
 
 .companyIndustry {
-    font-weight: normal;
-    color: var(--period-sub-title-color);
-    font-size: 12px;
-    margin: 6px;
+  font-weight: normal;
+  color: var(--period-sub-title-color);
+  font-size: 12px;
+  margin: 6px;
 }

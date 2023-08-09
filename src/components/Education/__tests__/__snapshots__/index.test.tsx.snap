@@ -10,16 +10,14 @@ exports[`renders Education Bachelor 1`] = `
     </span>
   </div>
   <div>
-    <span>
-      test major
-    </span>
-    <span
-      className="major"
+    <div
+      className="filled tag"
     >
-      (
-      BACHELOR
-      )
-    </span>
+      test major
+    </div>
+    <div
+      className="less tag"
+    />
   </div>
   <div
     className="times"
@@ -47,16 +45,14 @@ exports[`renders Education Master 1`] = `
     </span>
   </div>
   <div>
-    <span>
-      test major
-    </span>
-    <span
-      className="major"
+    <div
+      className="filled tag"
     >
-      (
-      MASTER
-      )
-    </span>
+      test major
+    </div>
+    <div
+      className="less tag"
+    />
   </div>
   <div
     className="times"
@@ -84,16 +80,16 @@ exports[`renders Education PhD 1`] = `
     </span>
   </div>
   <div>
-    <span>
-      test major
-    </span>
-    <span
-      className="major"
+    <div
+      className="filled tag"
     >
-      (
+      test major
+    </div>
+    <div
+      className="less tag"
+    >
       PHD
-      )
-    </span>
+    </div>
   </div>
   <div
     className="times"

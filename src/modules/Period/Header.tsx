@@ -2,12 +2,11 @@ import Tag from '../../components/Tag';
 import React from 'react';
 import DataModel from '../../models/types';
 import styles from './Header.module.scss';
-import StringWithID from '../../models/StringWithID';
 import capitalize from '../../utils/capitalize';
 import Divider from '../../components/Divider';
 
 interface HeaderProps {
-    keywords: StringWithID[];
+    keywords: string[];
     jobPositionLevel: DataModel.JobPositionLevel;
     jobPosition: DataModel.JobPosition;
     companyName: string;
@@ -15,7 +14,7 @@ interface HeaderProps {
     companyType: DataModel.CompanyType;
 }
 
-const Header = ({ keywords, companyName, companyIndustry, jobPosition, jobPositionLevel }: HeaderProps) => (
+const Header = ({keywords, companyName, companyIndustry, jobPosition, jobPositionLevel}: HeaderProps) => (
     <div className={styles.header}>
         <div>
             <div className={styles.job}>
@@ -27,10 +26,12 @@ const Header = ({ keywords, companyName, companyIndustry, jobPosition, jobPositi
                 {/*<div className={styles.companyIndustry}>({capitalize(companyIndustry)})</div>*/}
             </div>
         </div>
-        <Divider variant="v" />
-        <div>
+        <Divider variant="v"/>
+        <div style={{
+            fontSize: 24
+        }}>
             {keywords?.map(keyword => (
-                <Tag type="filled" key={keyword.id}>
+                <Tag type="filled" key={keyword}>
                     {keyword.toString()}
                 </Tag>
             ))}

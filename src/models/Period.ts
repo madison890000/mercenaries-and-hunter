@@ -1,8 +1,7 @@
 import Company from './Company';
 import DataModel from './types';
 import Base from './Base';
-import StringWithID from './StringWithID';
-import { v4 } from 'uuid';
+import {v4} from 'uuid';
 import Project from './Project';
 
 interface IPeriod {
@@ -22,27 +21,27 @@ interface IPeriod {
 export default class Period extends Base {
     public start: Date;
     public end?: Date;
-    public keywords: StringWithID[];
-    public descriptions: StringWithID[];
-    public achievements: DataModel.Achievement[];
-    public jobSummaries: StringWithID[];
+    public keywords: string[];
+    public descriptions: string[];
+    public achievements: DataModel.IAchievement[];
+    public jobSummaries: string[];
     public company: Company;
     public job: DataModel.Job;
     public projects?: Project[];
 
     constructor({
-        company,
-        jobSummaries,
-        jobPosition,
-        jobPositionLevel,
-        achievements,
-        keywords,
-        descriptions,
-        start,
-        end,
-        jobType,
-        projects
-    }: IPeriod) {
+                    company,
+                    jobSummaries,
+                    jobPosition,
+                    jobPositionLevel,
+                    achievements,
+                    keywords,
+                    descriptions,
+                    start,
+                    end,
+                    jobType,
+                    projects
+                }: IPeriod) {
         super();
         this.company = company;
         this.start = start;
@@ -50,11 +49,11 @@ export default class Period extends Base {
         this.achievements = achievements.map(achievement => ({
             id: v4(),
             text: achievement.text,
-            categories: achievement.categories.map(e => new StringWithID(e))
+            categories: achievement.categories
         }));
-        this.jobSummaries = jobSummaries.map(e => new StringWithID(e));
-        this.keywords = keywords.map(e => new StringWithID(e));
-        this.descriptions = descriptions?.map(e => new StringWithID(e));
+        this.jobSummaries = jobSummaries
+        this.keywords = keywords
+        this.descriptions = descriptions
         this.job = {
             position: jobPosition,
             level: jobPositionLevel,

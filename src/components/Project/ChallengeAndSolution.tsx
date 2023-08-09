@@ -5,20 +5,22 @@ interface ChallengeAndSolutionProps {
     solution: string;
 }
 
-const ChallengeAndSolution = ({ challenge, solution }: ChallengeAndSolutionProps) => {
+const ChallengeAndSolution = ({challenge, solution}: ChallengeAndSolutionProps) => {
     return (
         <li
             style={{
-                fontSize: 14
+                fontSize: 16
             }}
         >
             <div>
-                <span>{capitalize(challenge)}</span>
+                <span style={{
+                    fontWeight: 'bold'
+                }}>{capitalize(challenge)}</span>
             </div>
             <div
                 style={{
-                    fontStyle: 'italic',
-                    fontWeight: 'normal'
+                    // fontStyle: 'italic',
+                    // fontWeight: 'bold'
                 }}
             >
                 <span>{capitalize(solution)}</span>

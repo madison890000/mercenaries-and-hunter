@@ -138,12 +138,18 @@ exports[`renders Period 1`] = `
           <div
             className="dividerH"
           />
-          <div>
-            <span
-              className="filled"
+          <div
+            style={
+              Object {
+                "fontSize": 24,
+              }
+            }
+          >
+            <div
+              className="filled tag"
             >
               React
-            </span>
+            </div>
           </div>
         </div>
       </div>
@@ -167,14 +173,7 @@ exports[`renders Period 1`] = `
     </div>
     <div />
     <div>
-      <ul
-        style={
-          Object {
-            "display": "flex",
-            "flexWrap": "wrap",
-          }
-        }
-      />
+      <ul />
     </div>
     <div>
       <ul

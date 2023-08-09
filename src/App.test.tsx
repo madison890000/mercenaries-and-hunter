@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import App from './App';
+import Home from './Home';
 import Capability from './components/Capability';
 
 jest.mock('./components/Capability'); // Capability is now a mock constructor
@@ -21,6 +21,6 @@ it('renders App', () => {
         innerWidth: 1024,
         outerWidth: 1024
     }));
-    const AppDom = renderer.create(<App />).toJSON();
+    const AppDom = renderer.create(<Home />).toJSON();
     expect(AppDom).toMatchSnapshot();
 });

@@ -3,7 +3,7 @@ import styles from './index.module.scss';
 import capitalize from '../../utils/capitalize';
 import DataModel from '../../models/types';
 
-interface HeaderProps {
+interface BaseInfoProps {
     firstName: string;
     lastName: string;
     email: string;
@@ -13,7 +13,7 @@ interface HeaderProps {
     links?: DataModel.RelatedLink[];
 }
 
-const Header = ({ links, firstName, lastName, email, cellphone, location, searchingFor }: HeaderProps) => {
+const BaseInfo = ({links, firstName, lastName, email, cellphone, location, searchingFor}: BaseInfoProps) => {
     return (
         <header className={styles.header}>
             <h1>
@@ -36,21 +36,16 @@ const Header = ({ links, firstName, lastName, email, cellphone, location, search
                     <div>Location:</div>
                     <div>{location}</div>
                 </div>
-                <>
+                <div className={styles.links}>
                     {links?.map(link => (
-                        <div key={link?.value} className={styles.basicInfoItem}>
-                            <div>{link?.name}:</div>
-                            <div>
-                                <a href={link?.value} target="_blank">
-                                    {link?.value}
-                                </a>
-                            </div>
+                        <div key={link?.value}>
+                            <a href={link?.value} target="_blank">{link?.name}</a>
                         </div>
                     ))}
-                </>
+                </div>
             </div>
         </header>
     );
 };
 
-export default Header;
+export default BaseInfo;

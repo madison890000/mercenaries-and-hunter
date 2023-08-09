@@ -2,20 +2,20 @@
 
 exports[`renders CompanyType is Enterprise 1`] = `
 <span>
-  <span
-    className="less"
+  <div
+    className="less tag"
   >
     Enterprise
-  </span>
+  </div>
 </span>
 `;
 
 exports[`renders CompanyType is Startup 1`] = `
 <span>
-  <span
-    className="less"
+  <div
+    className="less tag"
   >
     Startup
-  </span>
+  </div>
 </span>
 `;

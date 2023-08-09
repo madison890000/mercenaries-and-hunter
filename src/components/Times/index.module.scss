@@ -11,15 +11,8 @@
     }
 
     & > span:nth-child(2) {
-        min-width: 10px;
-    }
-
-    @media screen and (max-width: 414px) {
-        min-width: 90px;
-        & > span {
-            min-width: 60px;
-            font-style: normal;
-        }
+        min-width: 32px;
+        margin: 0 8px;
     }
 }
 

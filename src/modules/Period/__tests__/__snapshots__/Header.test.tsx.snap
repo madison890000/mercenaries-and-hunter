@@ -26,12 +26,18 @@ exports[`renders Period Header 1`] = `
   <div
     className="dividerH"
   />
-  <div>
-    <span
-      className="filled"
+  <div
+    style={
+      Object {
+        "fontSize": 24,
+      }
+    }
+  >
+    <div
+      className="filled tag"
     >
       React
-    </span>
+    </div>
   </div>
 </div>
 `;

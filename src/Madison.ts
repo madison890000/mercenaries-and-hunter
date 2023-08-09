@@ -38,14 +38,14 @@ const madison = new Person({
 const masterEducation = new Education({
     major: 'Land Utilization and Information Technology',
     college: 'China Agricultural University',
-    degree: DataModel.Degree.Master,
+    degree: DataModel.Degree.MASTER,
     start: new Date('2012-09-01T00:00:00Z'),
     end: new Date('2015-07-01T00:00:00Z')
 });
 const bachelorEducation = new Education({
     major: 'Resources and Environment',
     college: 'China Agricultural University',
-    degree: DataModel.Degree.Bachelor,
+    degree: DataModel.Degree.BACHELOR,
     start: new Date('2008-09-01T00:00:00Z'),
     end: new Date('2012-07-01T00:00:00Z')
 });

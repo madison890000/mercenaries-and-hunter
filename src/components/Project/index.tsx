@@ -1,13 +1,11 @@
 import styles from './index.module.scss';
 import Times from '../Times';
 import React from 'react';
-import StringWithID from '../../models/StringWithID';
 import Tag from '../Tag';
 import Achievement from '../Achievement/Achievement';
-import { defineMessages, useIntl } from 'react-intl';
+import {defineMessages, useIntl} from 'react-intl';
 import DataModel from '../../models/types';
 import ChallengeAndSolution from './ChallengeAndSolution';
-import { Divider } from '../index';
 
 const messages = defineMessages({
     jobSummaries: {
@@ -24,21 +22,21 @@ interface ProjectProps {
     projectName: string;
     start: Date;
     end?: Date;
-    keywords: StringWithID[];
-    descriptions: StringWithID[];
-    challengeAndSolutions: DataModel.ChallengeAndSolution[];
-    achievements: DataModel.Achievement[];
+    keywords: string[];
+    descriptions: string[];
+    challengeAndSolutions: DataModel.IChallengeAndSolution[];
+    achievements: DataModel.IAchievement[];
 }
 
 const Project = ({
-    projectName,
-    descriptions,
-    achievements,
-    challengeAndSolutions,
-    keywords,
-    start,
-    end
-}: ProjectProps) => {
+                     projectName,
+                     descriptions,
+                     achievements,
+                     challengeAndSolutions,
+                     keywords,
+                     start,
+                     end
+                 }: ProjectProps) => {
     const intl = useIntl();
     const hasAchievements = achievements?.length > 0;
     return (
@@ -46,16 +44,21 @@ const Project = ({
             <div className={styles.content}>
                 <div>
                     <span className={styles.name}>{projectName}</span>
-                    <span>
+                    <span
+                        style={{
+                            fontSize: 22,
+                            marginLeft: 10
+                        }}
+                    >
                         {keywords?.map(keyword => (
-                            <Tag type="filled" key={keyword.id}>
+                            <Tag type="filled" key={keyword}>
                                 {keyword.toString()}
                             </Tag>
                         ))}
                     </span>
                 </div>
                 <div>
-                    <Times variant="month" start={start} end={end} />
+                    <Times variant="month" start={start} end={end}/>
                 </div>
             </div>
             <div className={styles.descriptions}>
@@ -64,10 +67,10 @@ const Project = ({
                 ))}
             </div>
             <div>
-                <ul className={styles.challengeAndSolutions}>
+                <ul>
                     {challengeAndSolutions?.map(challengeAndSolution => (
                         <ChallengeAndSolution
-                            key={challengeAndSolution.id}
+                            key={challengeAndSolution.challenge}
                             challenge={challengeAndSolution?.challenge}
                             solution={challengeAndSolution?.solution}
                         />
@@ -76,13 +79,18 @@ const Project = ({
             </div>
             {hasAchievements && (
                 <>
-                    <Divider />
                     <div>
-                        <h5>{intl.formatMessage(messages.achievements)}:</h5>
-                        <ul className={styles.achievements}>
+                        <div style={{
+                            fontWeight: "bold",
+                            fontSize: 'var(--base-font-size-middle)'
+                        }}>{intl.formatMessage(messages.achievements)}:
+                        </div>
+                        <ul style={{
+                            fontSize: 'var(--base-font-size-middle)',
+                        }}>
                             {achievements?.map(achievement => (
                                 <Achievement
-                                    key={achievement.id}
+                                    key={achievement?.text}
                                     title={achievement?.text}
                                     categories={achievement?.categories}
                                 />

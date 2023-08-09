@@ -4,16 +4,16 @@ exports[`renders Achievement 1`] = `
 <li>
   Test Achievement.
   <span>
-    <span
-      className="normal"
+    <div
+      className="normal tag"
     >
       test category 1
-    </span>
-    <span
-      className="normal"
+    </div>
+    <div
+      className="normal tag"
     >
       Engineering
-    </span>
+    </div>
   </span>
 </li>
 `;
