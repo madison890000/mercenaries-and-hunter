@@ -1,14 +1,12 @@
 import React, {useContext} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Home from './Home';
-import Demo from './Demo';
 import reportWebVitals from './reportWebVitals';
 import {IntlProvider} from 'react-intl';
 import {generatedTranslations} from './i18n/translations';
-import Menus from './modules/Menus';
 import LocaleContext, {LocaleContextContainer} from './contexts/LocaleContext';
 import {BrowserRouter, Outlet, Route, Routes} from "react-router-dom";
+import Preview from "./Preview";
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
@@ -18,13 +16,10 @@ const RouteMap = () => {
             <Routes>
                 <Route path="/" element={
                     <>
-                        <Menus/>
                         <Outlet/>
                     </>
                 }>
-
-                    <Route path="home" element={<Home/>}/>
-                    <Route path="components" element={<Demo/>}/>
+                    <Route path="preview" index element={<Preview/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>

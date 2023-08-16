@@ -1,22 +1,18 @@
 import Person from './models/Person';
 import Education from './models/Education';
-import DataModel from './models/types';
 import Period from './models/Period';
 import Company from './models/Company';
 import Skill from './models/Skill';
-import Capability from './models/Capability';
 import Project from './models/Project';
+import {CompanyType, Degree, Importance} from "./models/types";
 
 const madison = new Person({
     firstName: 'Madison(Zusheng)',
     lastName: 'Ma',
-    birthDay: new Date('1989-10-25T00:00:00Z'),
     email: 'madison.sss.ma@gmail.com',
     cellphone: '+64 027 229 1141',
-    country: 'China',
     location: 'Auckland City, New Zealand',
     searchingFor: 'Front End',
-    gender: 'MALE',
     links: [
         {
             name: 'Github',
@@ -31,41 +27,34 @@ const madison = new Person({
         'I have accumulated 8 years of experience working in the IT industry, building a strong technical foundation. I possess extensive knowledge and skill in modern JavaScript and TypeScript programming frameworks, tools, and libraries.',
         'I have a wealth of experience in both front-end and back-end development. Specifically, I have worked on projects involving the development of admin portals and customer portals in an e-commerce system, web-based finance systems (such as invoicing systems), supporting systems, single-page applications (SPAs), and more.',
         'I have expertise in both team leadership and working collaboratively as a team member, allowing me to excel in both roles.' +
-            'I am passionate about life and approachable, fostering friendly and positive relationships with people. I am always willing to share my knowledge and experiences with others, and I strive to work with colleagues who share a common goal of making the world a better place.'
+        'I am passionate about life and approachable, fostering friendly and positive relationships with people. I am always willing to share my knowledge and experiences with others, and I strive to work with colleagues who share a common goal of making the world a better place.'
     ]
 });
 
 const masterEducation = new Education({
     major: 'Land Utilization and Information Technology',
     college: 'China Agricultural University',
-    degree: DataModel.Degree.MASTER,
-    start: new Date('2012-09-01T00:00:00Z'),
-    end: new Date('2015-07-01T00:00:00Z')
+    degree: Degree.MASTER,
+    start: '2012-09-01T00:00:00Z',
+    end: '2015-07-01T00:00:00Z'
 });
 const bachelorEducation = new Education({
     major: 'Resources and Environment',
     college: 'China Agricultural University',
-    degree: DataModel.Degree.BACHELOR,
-    start: new Date('2008-09-01T00:00:00Z'),
-    end: new Date('2012-07-01T00:00:00Z')
+    degree: Degree.BACHELOR,
+    start: '2008-09-01T00:00:00Z',
+    end: '2012-07-01T00:00:00Z'
 });
 
 madison.addEducations([bachelorEducation, masterEducation]);
 
-const taijiCompany = new Company({
-    name: 'Taiji Computer Corporation. Ltd',
-    type: DataModel.CompanyType.Enterprise,
-    location: 'Beijing, China',
-    industry: 'IT'
-});
+const taijiCompany = new Company('Taiji Computer Corporation. Ltd');
 const periodOne = new Period({
-    start: new Date('2015-07-01T00:00:00Z'),
-    end: new Date('2016-07-01T00:00:00Z'),
+    start: '2015-07-01T00:00:00Z',
+    end: '2016-07-01T00:00:00Z',
     company: taijiCompany,
     keywords: ['IT', 'Waterfall'],
     jobPosition: 'Software Engineer',
-    jobPositionLevel: DataModel.JobPositionLevel.Middle,
-    jobType: DataModel.JobType.FullTime,
     jobSummaries: [
         'Using Java to develop a system according to the planned schedule.',
         'I have participated in the design and development of an economic data report project.'
@@ -80,20 +69,15 @@ const periodOne = new Period({
             categories: ['UI']
         }
     ],
-    descriptions: [
+    descriptions:
         'I primarily work on developing the backend interface using Java, and I use jQuery for front-end page development.'
-    ]
+
 });
-const yinyuanCompany = new Company({
-    name: 'Yinyuan Asia-pacific Technology Co. Ltd ',
-    type: DataModel.CompanyType.Startup,
-    location: 'Beijing, China',
-    industry: 'e-commerce'
-});
+const yinyuanCompany = new Company('Yinyuan Asia-pacific Technology Co. Ltd ');
 const h5PortalProjectInYinyuan = new Project({
     name: 'Customer Portal',
-    start: new Date('2016-07-01T00:00:00Z'),
-    end: new Date('2018-03-01T00:00:00Z'),
+    start: '2016-07-01T00:00:00Z',
+    end: '2018-03-01T00:00:00Z',
     keywords: ['Java', 'jQuery', 'Mobile'],
     company: yinyuanCompany,
     achievements: [
@@ -102,9 +86,9 @@ const h5PortalProjectInYinyuan = new Project({
             categories: ['UI']
         }
     ],
-    descriptions: [
+    descriptions:
         'This is an online shopping website that offers common functionalities such as product browsing, adding items to the shopping cart, and online payment processing.'
-    ],
+    ,
     challengeAndSolutions: [
         {
             challenge: 'There are several similar CRUD codes that need to be implemented in the backend interface.',
@@ -121,14 +105,14 @@ const h5PortalProjectInYinyuan = new Project({
 });
 const appPortalProjectInYinyuan = new Project({
     name: 'Mobile App',
-    start: new Date('2017-08-01T00:00:00Z'),
-    end: new Date('2018-03-01T00:00:00Z'),
+    start: '2017-08-01T00:00:00Z',
+    end: '2018-03-01T00:00:00Z',
     keywords: ['React Native', 'Mobile'],
     company: yinyuanCompany,
     achievements: [],
-    descriptions: [
+    descriptions:
         'This mobile app is designed to assist teachers and parents with various functions. It is capable of providing online course selection support, managing class appointments, and facilitating homework uploads, among other features.'
-    ],
+    ,
     challengeAndSolutions: [
         {
             challenge: 'React native has performance issues when rendering large lists of data.',
@@ -138,12 +122,11 @@ const appPortalProjectInYinyuan = new Project({
 });
 
 const periodTwo = new Period({
-    start: new Date('2016-07-01T00:00:00Z'),
-    end: new Date('2018-03-01T00:00:00Z'),
+    start: '2016-07-01T00:00:00Z',
+    end: '2018-03-01T00:00:00Z',
     company: yinyuanCompany,
     keywords: ['e-commerce', 'Waterfall'],
     jobPosition: 'Software Engineer',
-    jobPositionLevel: DataModel.JobPositionLevel.Middle,
     jobSummaries: [
         'participate in the design and development of all projects ',
         'responsible for the release quality of all system',
@@ -151,28 +134,22 @@ const periodTwo = new Period({
         'take charge of annual feature planning and appraise performance of each team member'
     ],
     projects: [h5PortalProjectInYinyuan, appPortalProjectInYinyuan],
-    jobType: DataModel.JobType.FullTime,
     achievements: [],
-    descriptions: [
+    descriptions:
         'I am responsible for developing API interfaces, creating front-end pages, and building Apps as part of my main role in the company.'
-    ]
+
 });
-const baixinCompany = new Company({
-    name: 'Citic Baixin Bank Co. Ltd',
-    type: DataModel.CompanyType.Enterprise,
-    location: 'Beijing, China',
-    industry: 'bank'
-});
+const baixinCompany = new Company('Citic Baixin Bank Co. Ltd');
 const h5PortalProjectInBaixin = new Project({
     name: 'Customer Portal',
-    start: new Date('2018-04-01T00:00:00Z'),
-    end: new Date('2019-06-01T00:00:00Z'),
+    start: '2018-04-01T00:00:00Z',
+    end: '2019-06-01T00:00:00Z',
     keywords: ['Vue', 'Web Component', 'Mobile'],
     company: baixinCompany,
     achievements: [],
-    descriptions: [
+    descriptions:
         'This mobile web application caters to potential and existing customers of the company. It primarily focuses on advertising campaigns and facilitates tasks such as account opening and personal loan applications for users.'
-    ],
+    ,
     challengeAndSolutions: [
         {
             challenge:
@@ -184,14 +161,14 @@ const h5PortalProjectInBaixin = new Project({
 });
 const h5ChartPortalProjectInBaixin = new Project({
     name: 'Admin Portal',
-    start: new Date('2019-02-01T00:00:00Z'),
-    end: new Date('2019-06-01T00:00:00Z'),
+    start: '2019-02-01T00:00:00Z',
+    end: '2019-06-01T00:00:00Z',
     keywords: ['Vue', 'EChart'],
     company: baixinCompany,
     achievements: [],
-    descriptions: [
+    descriptions:
         "This is an internal web page used by the company's operations, which can display real-time and historical data in graphs."
-    ],
+    ,
     challengeAndSolutions: [
         {
             challenge: 'How can we ensure timely data updates?',
@@ -201,33 +178,26 @@ const h5ChartPortalProjectInBaixin = new Project({
 });
 
 const periodThree = new Period({
-    start: new Date('2018-04-01T00:00:00Z'),
-    end: new Date('2019-06-01T00:00:00Z'),
+    start: '2018-04-01T00:00:00Z',
+    end: '2019-06-01T00:00:00Z',
     company: baixinCompany,
     keywords: ['Bank', 'Waterfall'],
     jobPosition: 'Front-End Engineer',
     projects: [h5PortalProjectInBaixin, h5ChartPortalProjectInBaixin],
-    jobPositionLevel: DataModel.JobPositionLevel.Middle,
     jobSummaries: [
         'responsible for task assignment and project requirement explanation to 5 team members',
         'provide training and guidance on technical to junior engineer'
     ],
-    jobType: DataModel.JobType.FullTime,
     achievements: [],
-    descriptions: [
+    descriptions:
         'My main responsibility at Citic Baixin Bank is to collaborate with my colleagues in the development of several front-end projects, utilizing different technology stacks such as Vue and React.'
-    ]
+
 });
-const pccwCompany = new Company({
-    name: 'PCCW GLOBAL',
-    type: DataModel.CompanyType.Enterprise,
-    location: 'Beijing, China',
-    industry: 'telecommunications'
-});
+const pccwCompany = new Company('PCCW GLOBAL');
 const adminPortalProjectInPCCW = new Project({
     name: 'Admin Portal',
-    start: new Date('2019-09-01T00:00:00Z'),
-    end: new Date('2022-05-01T00:00:00Z'),
+    start: '2019-09-01T00:00:00Z',
+    end: '2022-05-01T00:00:00Z',
     keywords: ['React', 'Port', 'Connection', 'Data Center'],
     company: pccwCompany,
     achievements: [
@@ -248,9 +218,9 @@ const adminPortalProjectInPCCW = new Project({
             categories: ['Engineering']
         }
     ],
-    descriptions: [
+    descriptions:
         "This is a front-end portal built from scratch. Its main purpose is to replace the company's original portal. Over the past 3 years, we have undertaken a significant migration effort, involving code refactoring based on existing business logic and the addition of numerous new functions not supported by the old portal. Naturally, we encountered various challenges throughout this process."
-    ],
+    ,
     challengeAndSolutions: [
         {
             challenge:
@@ -275,8 +245,8 @@ const adminPortalProjectInPCCW = new Project({
 
 const customerPortalProjectInPCCW = new Project({
     name: 'Customer Portal',
-    start: new Date('2019-09-01T00:00:00Z'),
-    end: new Date('2022-05-01T00:00:00Z'),
+    start: '2019-09-01T00:00:00Z',
+    end: '2022-05-01T00:00:00Z',
     keywords: ['React', 'NextJs', 'TDD', 'Invoice'],
     company: pccwCompany,
     achievements: [
@@ -289,10 +259,10 @@ const customerPortalProjectInPCCW = new Project({
             categories: ['CI/CD', 'Engineering']
         }
     ],
-    descriptions: [
+    descriptions:
         "This is a portal for PCCW Global's partner companies and regular users. You can purchase ports, connections, data centers, and VMs on this portal. It allows you to view details and check invoices." +
-            'Furthermore, this system also supports partners to upload and develop their own SDKs, thereby presenting us with new challenges.'
-    ],
+        'Furthermore, this system also supports partners to upload and develop their own SDKs, thereby presenting us with new challenges.'
+    ,
     challengeAndSolutions: [
         {
             challenge:
@@ -310,40 +280,31 @@ const customerPortalProjectInPCCW = new Project({
 });
 
 const periodFour = new Period({
-    start: new Date('2019-09-01T00:00:00Z'),
-    end: new Date('2022-05-01T00:00:00Z'),
+    start: '2019-09-01T00:00:00Z',
+    end: '2022-05-01T00:00:00Z',
     company: pccwCompany,
     keywords: ['Telecommunications', 'Agile', 'JIRA'],
     jobPosition: 'Front-End Engineer',
-    jobPositionLevel: DataModel.JobPositionLevel.Senior,
     jobSummaries: [
         'Conduct functional research and validation based on business requirements, evaluate the feasibility of implementing the requirements, and propose solutions.',
         'Responsible for assigning tasks and explaining project requirements to five external team members.'
     ],
-    jobType: DataModel.JobType.FullTime,
     projects: [customerPortalProjectInPCCW, adminPortalProjectInPCCW],
     achievements: [],
-    descriptions: [
-        'My main job at PCCW Global is to build two web applications: the admin portal and the customer portal. I also integrate some MVP features into these portals and hand them over to the market for verification.'
-    ]
+    descriptions: 'My main job at PCCW Global is to build two web applications: the admin portal and the customer portal. I also integrate some MVP features into these portals and hand them over to the market for verification.'
 });
-const teslaCompany = new Company({
-    name: 'Tesla',
-    type: DataModel.CompanyType.Enterprise,
-    location: 'Beijing, China',
-    industry: 'Motor'
-});
+const teslaCompany = new Company('Tesla');
 const adminPortalProjectInTesla = new Project({
     name: 'Admin Portal',
-    start: new Date('2022-05-23T00:00:00Z'),
+    start: '2022-05-23T00:00:00Z',
     keywords: ['React'],
     company: teslaCompany,
     achievements: [],
-    descriptions: [
+    descriptions:
         'This is the administrative management portal corresponding to the customer portal. ' +
-            "It is a system built for Tesla's operators to manage related forms, articles, and push notifications on a daily basis. ",
-        ' I joined the project after it had been running for about 2 years, during which some known and unresolved issues have been identified.'
-    ],
+        "It is a system built for Tesla's operators to manage related forms, articles, and push notifications on a daily basis." +
+        'I joined the project after it had been running for about 2 years, during which some known and unresolved issues have been identified.'
+    ,
     challengeAndSolutions: [
         {
             challenge:
@@ -361,7 +322,7 @@ const adminPortalProjectInTesla = new Project({
 });
 const customerPortalProjectInTesla = new Project({
     name: 'Customer Portal',
-    start: new Date('2022-05-23T00:00:00Z'),
+    start: '2022-05-23T00:00:00Z',
     keywords: ['React', 'Mobile Web', 'Survey'],
     company: teslaCompany,
     achievements: [
@@ -378,9 +339,9 @@ const customerPortalProjectInTesla = new Project({
             categories: ['Unit tests']
         }
     ],
-    descriptions: [
+    descriptions:
         "This is Tesla's client-side web application for potential and existing customers in China. It mainly includes questionnaires, surveys, article recommendations, and account management. The project has been running for about 2 years before I joined, during which some known and unresolved issues have been identified."
-    ],
+    ,
     challengeAndSolutions: [
         {
             challenge:
@@ -403,13 +364,12 @@ const customerPortalProjectInTesla = new Project({
     ]
 });
 const periodFive = new Period({
-    start: new Date('2022-05-23T00:00:00Z'),
-    end: new Date('2023-06-26T00:00:00Z'),
+    start: '2022-05-23T00:00:00Z',
+    end: '2023-06-26T00:00:00Z',
     company: teslaCompany,
     keywords: ['Motor', 'Agile', 'JIRA'],
     jobPosition: 'Front-End Engineer',
-    jobPositionLevel: DataModel.JobPositionLevel.Senior,
-    jobType: DataModel.JobType.FullTime,
+
     jobSummaries: [
         'Core developer in Front-End team',
         'Improve the code quality and performance',
@@ -417,37 +377,27 @@ const periodFive = new Period({
     ],
     projects: [customerPortalProjectInTesla, adminPortalProjectInTesla],
     achievements: [],
-    descriptions: [
+    descriptions:
         "At Tesla, my main responsibility is to ensure the smooth and continuous development of two web projects. This entails upgrading the existing architecture and incorporating special business components into Tesla's UI specifically for the Chinese market."
-    ]
+
 });
 madison.addPeriods([periodOne, periodTwo, periodThree, periodFour, periodFive]);
 
 const skills = [
-    new Skill('React', DataModel.SkillLevel.proficient, 6, DataModel.Importance.Essential),
-    new Skill('TypeScript', DataModel.SkillLevel.proficient, 4, DataModel.Importance.Essential),
-    new Skill('JavaScript', DataModel.SkillLevel.proficient, 8, DataModel.Importance.Essential),
-    new Skill('Redux/MobX', DataModel.SkillLevel.proficient, 4, DataModel.Importance.Essential),
-    new Skill('HTML & CSS', DataModel.SkillLevel.proficient, 8, DataModel.Importance.Essential),
-    new Skill('GIT', DataModel.SkillLevel.proficient, 8, DataModel.Importance.Essential),
-    new Skill('Jest', DataModel.SkillLevel.proficient, 4, DataModel.Importance.Essential),
-    new Skill('Node', DataModel.SkillLevel.familiar, 2, DataModel.Importance.Advanced),
-    new Skill('Java', DataModel.SkillLevel.familiar, 3, DataModel.Importance.Advanced),
-    new Skill('Vue', DataModel.SkillLevel.proficient, 1.5, DataModel.Importance.Advanced),
-    new Skill('Database/SQL', DataModel.SkillLevel.familiar, 2, DataModel.Importance.Advanced),
-    new Skill('Electron', DataModel.SkillLevel.familiar, 1, DataModel.Importance.Advanced),
-    new Skill('Docker', DataModel.SkillLevel.understand, 0.5, DataModel.Importance.Advanced),
-    new Skill('C#', DataModel.SkillLevel.understand, 0.5, DataModel.Importance.Advanced)
+    new Skill('React', 6, Importance.Essential),
+    new Skill('TypeScript', 4, Importance.Essential),
+    new Skill('JavaScript', 8, Importance.Essential),
+    new Skill('Redux/MobX', 4, Importance.Essential),
+    new Skill('HTML & CSS', 8, Importance.Essential),
+    new Skill('GIT', 8, Importance.Essential),
+    new Skill('Jest', 4, Importance.Essential),
+    new Skill('Node', 2, Importance.Advanced),
+    new Skill('Java', 3, Importance.Advanced),
+    new Skill('Vue', 1.5, Importance.Advanced),
+    new Skill('Database/SQL', 2, Importance.Advanced),
+    new Skill('Electron', 1, Importance.Advanced),
+    new Skill('Docker', 0.5, Importance.Advanced),
+    new Skill('C#', 0.5, Importance.Advanced)
 ];
 madison.addSkills(skills);
-
-const capabilities = new Capability({
-    problemSolving: 8.8,
-    dataStructure: 9,
-    algorithm: 8,
-    communicate: 9.5,
-    engineer: 8,
-    passion: 9
-});
-madison.addCapability(capabilities);
 export default madison;
