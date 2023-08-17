@@ -6,7 +6,7 @@ import {defineMessages, useIntl} from 'react-intl';
 import {Importance, SkillLevel} from "../../types";
 
 interface SkillProps {
-    name: string;
+    name?: string;
     level: SkillLevel;
     ages: number;
     importance: Importance;

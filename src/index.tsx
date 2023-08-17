@@ -5,14 +5,21 @@ import reportWebVitals from './reportWebVitals';
 import {IntlProvider} from 'react-intl';
 import {generatedTranslations} from './i18n/translations';
 import LocaleContext, {LocaleContextContainer} from './contexts/LocaleContext';
-import {BrowserRouter, Outlet, Route, Routes} from "react-router-dom";
-import Preview from "./Preview";
+import {HashRouter, Outlet, Route, Routes} from "react-router-dom";
+import Preview from "./Home";
+import defaultPerson from "./DefaultPerson";
+import Person from "./models/Person";
+import Print from "./Print";
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+// @ts-ignore
+const storePerson = window.localStorage.getItem('resume') !== null ? new Person(JSON.parse(window.localStorage.getItem('resume'))) : defaultPerson;
+// @ts-ignore
+window.storePerson = storePerson;
 
 const RouteMap = () => {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
                 <Route path="/" element={
                     <>
@@ -20,9 +27,10 @@ const RouteMap = () => {
                     </>
                 }>
                     <Route path="preview" index element={<Preview/>}/>
+                    <Route path="print" index element={<Print/>}/>
                 </Route>
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 const I18nProvider = () => {

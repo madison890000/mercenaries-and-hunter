@@ -4,12 +4,11 @@ import EditText from './EditText';
 import Times from './Times';
 import {Tag} from "./components";
 import styled from "styled-components";
-import {Degree} from "./types";
 
-interface IEducation {
+export interface IEducation {
     college: string;
     major: string;
-    degree: Degree;
+    degree: string;
     start: string;
     end: string;
 }
@@ -24,7 +23,7 @@ const EducationUI = styled.div`
 class Education extends Base {
     public college: EditText;
     public major: EditText;
-    public degree: Degree;
+    public degree: EditText;
     private times: Times;
 
 
@@ -32,7 +31,7 @@ class Education extends Base {
         super();
         this.major = new EditText(major).setParent(this);
         this.college = new EditText(college).setParent(this);
-        this.degree = degree;
+        this.degree = new EditText(degree).setParent(this);
         this.times = new Times(start, end).setParent(this);
     }
 
@@ -46,7 +45,9 @@ class Education extends Base {
                     <Tag type="filled">
                         <this.major.Show/>
                     </Tag>
-                    <Tag type="less">{this.degree}</Tag>
+                    <Tag type="less">
+                        <this.degree.Show/>
+                    </Tag>
                 </div>
                 <this.times.Show/>
             </EducationUI>
@@ -61,7 +62,7 @@ class Education extends Base {
                 </div>
                 <div>
                     <this.major.Show/>
-                    {this.degree}
+                    <this.degree.Show/>
                 </div>
                 <this.times.Show/>
             </EducationUI>

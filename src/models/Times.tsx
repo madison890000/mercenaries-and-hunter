@@ -8,15 +8,17 @@ import {Dayjs} from "dayjs";
 class Times extends Base {
     start: Dayjs;
     end: Dayjs;
+    private variant?: "month";
 
-    constructor(start: string = '', end: string | undefined) {
+    constructor(start: string = '', end: string | undefined, variant?: 'month') {
         super();
         this.start = this.getDateFromString(start, true)
         this.end = this.getDateFromString(end ?? '', true);
+        this.variant = variant;
     }
 
     View = () => {
-        return <TimesUI start={this.start} end={this.end}/>
+        return <TimesUI variant={this.variant} start={this.start} end={this.end}/>
     }
 
     Edit = () => {

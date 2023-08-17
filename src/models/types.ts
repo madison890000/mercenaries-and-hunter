@@ -1,4 +1,4 @@
-export enum Degree {
+export const enum Degree {
     BACHELOR = 'BACHELOR',
     MASTER = 'MASTER',
     PhD = 'PHD'
@@ -12,7 +12,7 @@ export type IAchievement = {
 };
 
 
-export type JobPosition = 'Software Engineer' | 'Front-End Engineer' | 'Back-End Engineer' | 'Full-Stack Engineer';
+export type JobPosition = string;
 
 export enum SkillLevel {
     understand = 'UNDERSTAND',

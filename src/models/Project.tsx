@@ -1,5 +1,4 @@
 import React from "react";
-import Company from './Company';
 import Base from './Base';
 import EditText from './EditText';
 import Times from './Times';
@@ -10,13 +9,13 @@ import styled from "styled-components";
 import {IAchievement, IChallengeAndSolution} from "./types";
 import Keywords from "./Keywords";
 import ArrayData from "./ArrayData";
+import {Row} from "antd";
 
-interface IProject {
+export interface IProject {
     name: string;
     start: string;
     end?: string;
     keywords: string[];
-    company: Company;
     achievements: IAchievement[];
     descriptions: string;
     challengeAndSolutions: IChallengeAndSolution[];
@@ -33,6 +32,7 @@ const Content = styled.div`
   border-radius: var(--base-border-radius);
   display: flex;
   justify-content: space-between;
+  font-size: var(--base-font-size-large)
 `
 
 const Name = styled.span`
@@ -56,16 +56,16 @@ class Project extends Base {
     constructor({name, challengeAndSolutions, descriptions, achievements, keywords, start, end}: IProject) {
         super();
         this.name = new EditText(name, 'input', '项目名称').setParent(this);
-        this.times = new Times(start, end).setParent(this);
-        this.descriptions = new Description(descriptions, 'input', '项目简介').setParent(this);
+        this.times = new Times(start, end, 'month').setParent(this);
+        this.descriptions = new Description(descriptions, 'textarea', '项目简介').setParent(this);
         this.achievements = new ArrayData<Achievement>(
             achievements?.map(a => new Achievement(a?.text, a?.categories).setParent(this)),
-            Achievement,
+            new Achievement('', [])
         ).setParent(this);
         this.challengeAndSolutions = new ArrayData<ChallengeAndSolution>(
             challengeAndSolutions?.map(e => new ChallengeAndSolution(e?.challenge, e?.solution).setParent(this)),
-            ChallengeAndSolution
-        );
+            new ChallengeAndSolution()
+            , false, '编辑挑战和解决方案').setParent(this);
         this.keywords = new Keywords(keywords).setParent(this);
     }
 
@@ -74,22 +74,50 @@ class Project extends Base {
             <Container>
                 <Content>
                     <div>
-                        <Name>
-                            <this.name.Show/>
-                        </Name>
-                        <span
-                            style={{
-                                fontSize: 22,
-                                marginLeft: 10
-                            }}
-                        >
+                        <this.name.Show/>
+                        <span style={{marginLeft: 10}}>
                             <this.keywords.Show/>
-                    </span>
+                        </span>
                     </div>
                     <div>
                         <this.times.Show/>
                     </div>
                 </Content>
+                <Descriptions>
+                    <this.descriptions.Show/>
+                </Descriptions>
+                <div>
+                    <ul>
+                        <this.challengeAndSolutions.Show/>
+                    </ul>
+                </div>
+                {this.achievements?.data?.length > 0 && (
+                    <>
+                        <div>
+                            <div style={{
+                                fontWeight: "bold",
+                                fontSize: 'var(--base-font-size-middle)'
+                            }}>Achievements :
+                            </div>
+                            <ul style={{
+                                fontSize: 'var(--base-font-size-middle)',
+                            }}>
+                                <this.achievements.Show/>
+                            </ul>
+                        </div>
+                    </>
+                )}
+            </Container>
+        )
+    }
+    Edit = () => {
+        return (
+            <Container>
+                <Row>
+                    <this.name.Show/>
+                    <this.keywords.Show/>
+                    <this.times.Show/>
+                </Row>
                 <Descriptions>
                     <this.descriptions.Show/>
                 </Descriptions>

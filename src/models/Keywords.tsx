@@ -29,8 +29,6 @@ class Keywords extends Base {
     Edit = () => {
         return (
             <div style={{
-                padding: 5,
-                height: 45,
                 display: 'inline-block',
             }}>
                 <Select

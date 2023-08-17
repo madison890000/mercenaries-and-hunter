@@ -11,9 +11,9 @@ const DescriptionContainer = styled.div`
 class Description extends Base {
     private text: EditText;
 
-    constructor(text?: string, type?: 'input' | 'textarea', label?: string) {
+    constructor(text?: string, type?: 'input' | 'textarea', label?: string, placeholder?: string) {
         super();
-        this.text = new EditText(pipe<string>(capitalize, addPeriodSuffix)(text ?? ''), type ?? 'textarea', label).setParent(this);
+        this.text = new EditText(pipe<string>(capitalize, addPeriodSuffix)(text ?? ''), type ?? 'textarea', label, placeholder).setParent(this);
     }
 
     View = () => {

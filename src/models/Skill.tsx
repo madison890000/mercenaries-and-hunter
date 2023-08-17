@@ -18,12 +18,18 @@ const MARKS = [
     },
 ];
 
+export interface ISkill {
+    name: string;
+    ages: number;
+    importance: number;
+}
+
 class Skill extends Base {
     public name: EditText;
     public importance: Importance;
     public ages: number;
 
-    constructor(name: string = '', ages: number = 1, importance: Importance = Importance.Essential) {
+    constructor({ages, name, importance}: ISkill) {
         super();
         this.name = new EditText(name, 'input', '技能').setParent(this);
         this.ages = ages;

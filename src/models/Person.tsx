@@ -1,11 +1,12 @@
 import React from "react";
-import Education from './Education';
-import Period from './Period';
-import Skill from './Skill';
+import Education, {IEducation} from './Education';
+import Period, {IPeriod} from './Period';
+import Skill, {ISkill} from './Skill';
 import Base from './Base';
 import BaseInfo from './BaseInfo';
 import Description from "./Description";
 import ArrayData from "./ArrayData";
+import {Degree} from "./types";
 
 interface IPerson {
     firstName: string;
@@ -16,8 +17,9 @@ interface IPerson {
     searchingFor: string;
     cellphone: string;
     descriptions: string[];
-    educations?: Education[];
-    periods?: Period[];
+    educations?: IEducation[];
+    periods?: IPeriod[];
+    skills?: ISkill[];
 }
 
 class Person extends Base {
@@ -35,11 +37,23 @@ class Person extends Base {
                     email,
                     cellphone,
                     location,
-                    searchingFor
+                    searchingFor,
+                    educations,
+                    periods,
+                    skills
                 }: IPerson) {
         super();
-        this.educations = new ArrayData<Education>([], Education).setParent(this);
-        this.periods = new ArrayData<Period>([], Period).setParent(this);
+        this.educations = new ArrayData<Education>(educations?.map(e => new Education(e)) ?? [], new Education({
+            college: '',
+            major: '',
+            degree: Degree.BACHELOR,
+            start: '',
+            end: ''
+        }), false, '编辑教育经历').setParent(this);
+        this.periods = new ArrayData<Period>(periods?.map(e => new Period(e)) ?? [], new Period({
+            achievements: [], descriptions: "", jobPosition: '', jobSummaries: [], keywords: [], start: "",
+            company: ''
+        }), false, '编辑公司经历').setParent(this);
         this.baseInfo = new BaseInfo({
             firstName,
             lastName,
@@ -49,9 +63,23 @@ class Person extends Base {
             location,
             searchingFor
         }).setParent(this);
-        this.skills = new ArrayData<Skill>([], Skill).setParent(this);
-        this.descriptions = new ArrayData<Description>(descriptions?.map(d => new Description(d).setParent(this)), Description).setParent(this);
-
+        this.skills = new ArrayData<Skill>(skills?.map(e => new Skill(e)) ?? [], new Skill({
+            name: '',
+            ages: 1,
+            importance: 0
+        }), true, '编辑个人技能').setParent(this);
+        this.descriptions = new ArrayData<Description>(
+            descriptions?.map(d =>
+                new Description(
+                    d,
+                    'textarea',
+                    '',
+                    '请简单描述您自己的状况'
+                ).setParent(this)), new Description('',
+                'textarea',
+                '',
+                '请简单描述您自己的状况'
+            ), false, '编辑个人说明').setParent(this);
     }
 
     addEducations(educations: Education[]) {
@@ -66,19 +94,15 @@ class Person extends Base {
         this.skills.concat(skills);
     }
 
-    get reversedPeriods() {
-        return [...this.periods.data].reverse();
-    }
-
-    viewBaseInfo() {
+    ViewBaseInfo = () => {
         return <this.baseInfo.Show/>
     }
 
-    viewDescription() {
+    ViewDescription = () => {
         return <this.descriptions.Show/>
     }
 
-    viewSkills() {
+    ViewSkills = () => {
         return (
             <div>
                 <this.skills.Show/>
@@ -86,20 +110,14 @@ class Person extends Base {
         )
     }
 
-    viewPeriods() {
-        return (
-            <section>
-                {this.reversedPeriods?.map((period, index) => {
-                    return <period.Show/>
-                })}
-            </section>
-        )
+    ViewPeriods = () => {
+        return <this.periods.Show/>
     }
 
-    viewEducations() {
+    ViewEducations = () => {
         return (
             <section>
-                {this.educations?.data?.map(education => <education.Show/>)}
+                <this.educations.Show/>
             </section>
         )
     }

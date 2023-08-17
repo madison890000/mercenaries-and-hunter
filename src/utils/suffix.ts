@@ -1,4 +1,7 @@
 const addSuffix = (chars: string, suffix: string) => {
+    if(!chars){
+        return ''
+    }
     if (chars.endsWith(suffix)) {
         return chars;
     }
