@@ -2,7 +2,7 @@
   "name": "resume",
   "version": "0.24.0",
   "private": true,
-  "homepage": "https://madison890000.github.io/resume/",
+  "homepage": ".",
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
