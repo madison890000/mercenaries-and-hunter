@@ -22,9 +22,11 @@ class Link extends Base {
     }
 
     Edit = () => {
+        const Name = this.name.Show;
+        const Value = this.value.Show;
         return <>
-            <this.name.Show/>
-            <this.value.Show/>
+            <Name/>
+            <Value/>
         </>
     }
 

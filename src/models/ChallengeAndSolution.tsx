@@ -12,6 +12,8 @@ class ChallengeAndSolution extends Base {
     }
 
     View = () => {
+        const Challenge = this.challenge.Show;
+        const Solution = this.solution.Show;
         return (
             <li
                 style={{
@@ -21,10 +23,10 @@ class ChallengeAndSolution extends Base {
                 <div style={{
                     fontWeight: 'bold'
                 }}>
-                    <this.challenge.Show/>
+                    <Challenge/>
                 </div>
                 <div>
-                    <this.solution.Show/>
+                    <Solution/>
                 </div>
             </li>
         )

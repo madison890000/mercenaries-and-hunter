@@ -181,6 +181,8 @@ export default class Base {
     @nonenumerable
     Show = () => {
         const reload = useReload();
+        const View = this.View;
+        const Edit = this.Edit;
         useEffect(() => {
             this.on('type-change', () => {
                 try {
@@ -198,7 +200,7 @@ export default class Base {
             })
         }, []);
         if (this.isPreview) {
-            return <>{!this.canEdit ? <this.View/> : <this.Edit/>}</>
+            return <>{!this.canEdit ? <View/> : <Edit/>}</>
         }
         const showTranslateBtn = this.canTranslate && !this.canEdit;
         return (
@@ -206,7 +208,7 @@ export default class Base {
                 <div style={{
                     width: showTranslateBtn ? 'calc(100% - 60px)' : 'auto'
                 }}>
-                    {!this.canEdit ? <this.View/> : <this.Edit/>}
+                    {!this.canEdit ? <View/> : <Edit/>}
                 </div>
                 {
                     showTranslateBtn && (
@@ -251,7 +253,8 @@ export default class Base {
 
     @nonenumerable
     Edit = () => {
-        return <this.View/>
+        const View = this.View;
+        return <View/>
     }
 
 

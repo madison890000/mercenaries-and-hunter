@@ -51,11 +51,12 @@ class Skill extends Base {
     }
 
     Edit = () => {
+        const NameShow = this.name.Show;
         return (
             <Row gutter={12}>
                 <Col>
                     <Name level={this.importance}>
-                        <this.name.Show/>
+                        <NameShow/>
                     </Name>
                 </Col>
                 <Col style={{

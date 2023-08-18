@@ -43,13 +43,11 @@ const I18nProvider = () => {
     );
 };
 root.render(
-    <React.StrictMode>
-        <LocaleContextContainer>
-            <GlobalContextContainer>
-                <I18nProvider/>
-            </GlobalContextContainer>
-        </LocaleContextContainer>
-    </React.StrictMode>
+    <LocaleContextContainer>
+        <GlobalContextContainer>
+            <I18nProvider/>
+        </GlobalContextContainer>
+    </LocaleContextContainer>
 );
 
 // If you want to start measuring performance in your app, pass a function

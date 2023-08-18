@@ -39,6 +39,7 @@ class BaseInfo extends Base {
         this.location = new EditText(location).setParent(this);
         this.searchingFor = new EditText(searchingFor).setParent(this);
         this.canTranslate = true;
+        console.log(this)
     }
 
     @nonenumerable
@@ -56,37 +57,44 @@ class BaseInfo extends Base {
         }
     }
     View = () => {
+        const FirstName = this.firstName.Show;
+        const LastName = this.lastName.Show;
+        const SearchingFor = this.searchingFor.Show;
+        const Email = this.email.Show;
+        const Cellphone = this.cellphone.Show;
+        const Location = this.location.Show;
+        const ViewWrapper = this.ViewWrapper;
         return (
-            <this.ViewWrapper editText="编辑个人信息" onTranslate={this.onTranslate}>
+            <ViewWrapper editText="编辑个人信息" onTranslate={this.onTranslate}>
                 <header className={styles.header}>
                     <h1>
-                        <this.firstName.Show/>
+                        <FirstName/>
                         <span style={{margin: '0 10px'}}></span>
-                        <this.lastName.Show/>
+                        <LastName/>
                     </h1>
                     <div className={styles.basicInfo}>
                         <div className={styles.basicInfoItem}>
                             <div>Looking:</div>
                             <div>
-                                <this.searchingFor.Show/>
+                                <SearchingFor/>
                             </div>
                         </div>
                         <div className={styles.basicInfoItem}>
                             <div>Email:</div>
                             <div>
-                                <this.email.Show/>
+                                <Email/>
                             </div>
                         </div>
                         <div className={styles.basicInfoItem}>
                             <div>Mobile:</div>
                             <div>
-                                <this.cellphone.Show/>
+                                <Cellphone/>
                             </div>
                         </div>
                         <div className={styles.basicInfoItem}>
                             <div>Location:</div>
                             <div>
-                                <this.location.Show/>
+                                <Location/>
                             </div>
                         </div>
                         <div className={styles.links}>
@@ -94,49 +102,57 @@ class BaseInfo extends Base {
                         </div>
                     </div>
                 </header>
-            </this.ViewWrapper>
+            </ViewWrapper>
         )
     }
     Edit = () => {
+        const FirstName = this.firstName.Show;
+        const LastName = this.lastName.Show;
+        const SearchingFor = this.searchingFor.Show;
+        const Email = this.email.Show;
+        const Cellphone = this.cellphone.Show;
+        const Location = this.location.Show;
+        const Links = this.links.Show;
+        const ViewWrapper = this.ViewWrapper;
         return (
-            <this.ViewWrapper editText="编辑个人信息">
+            <ViewWrapper editText="编辑个人信息">
                 <header className={styles.header}>
                     <h1>
-                        <this.firstName.Show/>
+                        <FirstName/>
                         <span style={{margin: '0 10px'}}></span>
-                        <this.lastName.Show/>
+                        <LastName/>
                     </h1>
                     <div className={styles.basicInfo}>
                         <div className={styles.basicInfoItem}>
                             <div>Looking:</div>
                             <div>
-                                <this.searchingFor.Show/>
+                                <SearchingFor/>
                             </div>
                         </div>
                         <div className={styles.basicInfoItem}>
                             <div>Email:</div>
                             <div>
-                                <this.email.Show/>
+                                <Email/>
                             </div>
                         </div>
                         <div className={styles.basicInfoItem}>
                             <div>Mobile:</div>
                             <div>
-                                <this.cellphone.Show/>
+                                <Cellphone/>
                             </div>
                         </div>
                         <div className={styles.basicInfoItem}>
                             <div>Location:</div>
                             <div>
-                                <this.location.Show/>
+                                <Location/>
                             </div>
                         </div>
                     </div>
                     <div className={styles.links}>
-                        <this.links.Show/>
+                        <Links/>
                     </div>
                 </header>
-            </this.ViewWrapper>
+            </ViewWrapper>
         )
     }
 

@@ -36,35 +36,43 @@ class Education extends Base {
     }
 
     View = () => {
+        const College = this.college.Show;
+        const Major = this.major.Show;
+        const Degree = this.degree.Show;
+        const Times = this.times.Show;
         return (
             <EducationUI>
                 <div>
-                    <this.college.Show/>
+                    <College/>
                 </div>
                 <div>
                     <Tag type="filled">
-                        <this.major.Show/>
+                        <Major/>
                     </Tag>
                     <Tag type="less">
-                        <this.degree.Show/>
+                        <Degree/>
                     </Tag>
                 </div>
-                <this.times.Show/>
+                <Times/>
             </EducationUI>
         )
     }
 
     Edit = () => {
+        const College = this.college.Show;
+        const Major = this.major.Show;
+        const Degree = this.degree.Show;
+        const Times = this.times.Show;
         return (
             <EducationUI>
                 <div>
-                    <this.college.Show/>
+                    <College/>
                 </div>
                 <div>
-                    <this.major.Show/>
-                    <this.degree.Show/>
+                    <Major/>
+                    <Degree/>
                 </div>
-                <this.times.Show/>
+                <Times/>
             </EducationUI>
         )
     }

@@ -117,29 +117,34 @@ class Person extends Base {
 
     @nonenumerable
     ViewBaseInfo = () => {
-        return <this.baseInfo.Show/>
+        const BaseInfo = this.baseInfo.Show;
+        return <BaseInfo/>
     }
     @nonenumerable
     ViewDescription = () => {
-        return <this.descriptions.Show/>
+        const Descriptions = this.descriptions.Show;
+        return <Descriptions/>
     }
     @nonenumerable
     ViewSkills = () => {
+        const Skills = this.skills.Show;
         return (
             <div>
-                <this.skills.Show/>
+                <Skills/>
             </div>
         )
     }
     @nonenumerable
     ViewPeriods = () => {
-        return <this.periods.Show/>
+        const Periods = this.periods.Show;
+        return <Periods/>
     }
     @nonenumerable
     ViewEducations = () => {
+        const Educations = this.educations.Show;
         return (
             <section>
-                <this.educations.Show/>
+                <Educations/>
             </section>
         )
     }

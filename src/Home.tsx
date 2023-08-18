@@ -32,6 +32,13 @@ function Home() {
     const reload = useReload();
     const {person} = useContext(GlobalContext);
     const navigate = useNavigate();
+
+    const ViewBaseInfo = person.ViewBaseInfo;
+    const ViewDescription = person.ViewDescription;
+    const ViewSkills = person.ViewSkills;
+    const ViewPeriods = person.ViewPeriods;
+    const ViewEducations = person.ViewEducations;
+
     return (
         <div>
             <Row justify="center">
@@ -57,15 +64,15 @@ function Home() {
                 }} size="large">去打印</Button>
             </Row>
             <div className={styles.main} id="print-id">
-                <person.ViewBaseInfo/>
+                <ViewBaseInfo/>
                 <Divider title={intl.formatMessage(messages.profile)}/>
-                <person.ViewDescription/>
+                <ViewDescription/>
                 <Divider title={intl.formatMessage(messages.skills)}/>
-                <person.ViewSkills/>
+                <ViewSkills/>
                 <Divider title={intl.formatMessage(messages.professionalExperiences)}/>
-                <person.ViewPeriods/>
+                <ViewPeriods/>
                 <Divider title={intl.formatMessage(messages.educationExperiences)}/>
-                <person.ViewEducations/>
+                <ViewEducations/>
             </div>
         </div>
     );

@@ -1,8 +1,10 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useContext, useEffect} from 'react';
 import styles from './App.module.scss';
 import {Divider} from './models/components';
 import {defineMessages, useIntl} from 'react-intl';
 import useReload from "./models/hooks/useReload";
+import GlobalContext from "./contexts/GlobalContext";
+import {useNavigate} from "react-router";
 
 const messages = defineMessages({
     profile: {
@@ -25,23 +27,36 @@ const messages = defineMessages({
 function Print() {
     const intl = useIntl();
     const reload = useReload();
-    // @ts-ignore
-    const {current: storePerson} = useRef(window.storePerson);
+    const {person} = useContext(GlobalContext);
     useEffect(() => {
-        storePerson.editType = 'preview';
+        person.editType = 'preview';
         reload()
-    }, [])
+    }, []);
+
+    const navigate = useNavigate();
+
+    const ViewBaseInfo = person.ViewBaseInfo;
+    const ViewDescription = person.ViewDescription;
+    const ViewSkills = person.ViewSkills;
+    const ViewPeriods = person.ViewPeriods;
+    const ViewEducations = person.ViewEducations;
     return (
         <div className={styles.main}>
-            <storePerson.ViewBaseInfo/>
+            <div style={{
+                fontSize: 30,
+                cursor: 'pointer',
+            }} onClick={() => {
+                navigate(-1)
+            }}>{'<'}</div>
+            <ViewBaseInfo/>
             <Divider title={intl.formatMessage(messages.profile)}/>
-            <storePerson.ViewDescription/>
+            <ViewDescription/>
             <Divider title={intl.formatMessage(messages.skills)}/>
-            <storePerson.ViewSkills/>
+            <ViewSkills/>
             <Divider title={intl.formatMessage(messages.professionalExperiences)}/>
-            <storePerson.ViewPeriods/>
+            <ViewPeriods/>
             <Divider title={intl.formatMessage(messages.educationExperiences)}/>
-            <storePerson.ViewEducations/>
+            <ViewEducations/>
         </div>
     );
 }

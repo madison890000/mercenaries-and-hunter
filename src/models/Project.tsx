@@ -73,25 +73,31 @@ class Project extends Base {
     }
 
     View = () => {
+        const Name = this.name.Show;
+        const Keywords = this.keywords.Show;
+        const Times = this.times.Show;
+        const DescriptionsShow = this.descriptions.Show;
+        const ChallengeAndSolutions = this.challengeAndSolutions.Show;
+        const Achievements = this.achievements.Show;
         return (
             <Container>
                 <Content>
                     <div>
-                        <this.name.Show/>
+                        <Name/>
                         <span style={{marginLeft: 10}}>
-                            <this.keywords.Show/>
+                            <Keywords/>
                         </span>
                     </div>
                     <div>
-                        <this.times.Show/>
+                        <Times/>
                     </div>
                 </Content>
                 <Descriptions>
-                    <this.descriptions.Show/>
+                    <DescriptionsShow/>
                 </Descriptions>
                 <div>
                     <ul>
-                        <this.challengeAndSolutions.Show/>
+                        <ChallengeAndSolutions/>
                     </ul>
                 </div>
                 {this.achievements?.data?.length > 0 && (
@@ -105,7 +111,7 @@ class Project extends Base {
                             <ul style={{
                                 fontSize: 'var(--base-font-size-middle)',
                             }}>
-                                <this.achievements.Show/>
+                                <Achievements/>
                             </ul>
                         </div>
                     </>
@@ -114,19 +120,25 @@ class Project extends Base {
         )
     }
     Edit = () => {
+        const Name = this.name.Show;
+        const Keywords = this.keywords.Show;
+        const Times = this.times.Show;
+        const DescriptionsShow = this.descriptions.Show;
+        const ChallengeAndSolutions = this.challengeAndSolutions.Show;
+        const Achievements = this.achievements.Show;
         return (
             <Container>
                 <Row>
-                    <this.name.Show/>
-                    <this.keywords.Show/>
-                    <this.times.Show/>
+                    <Name/>
+                    <Keywords/>
+                    <Times/>
                 </Row>
                 <Descriptions>
-                    <this.descriptions.Show/>
+                    <DescriptionsShow/>
                 </Descriptions>
                 <div>
                     <ul>
-                        <this.challengeAndSolutions.Show/>
+                        <ChallengeAndSolutions/>
                     </ul>
                 </div>
                 {this.achievements?.data?.length > 0 && (
@@ -140,7 +152,7 @@ class Project extends Base {
                             <ul style={{
                                 fontSize: 'var(--base-font-size-middle)',
                             }}>
-                                <this.achievements.Show/>
+                                <Achievements/>
                             </ul>
                         </div>
                     </>

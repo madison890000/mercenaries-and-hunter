@@ -20,9 +20,10 @@ class Description extends Base {
     }
 
     View = () => {
+        const Text = this.text.Show;
         return (
             <DescriptionContainer>
-                <this.text.Show/>
+                <Text/>
             </DescriptionContainer>
         )
     }

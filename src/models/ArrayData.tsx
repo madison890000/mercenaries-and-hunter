@@ -92,6 +92,7 @@ export default class ArrayData<T extends {
 
 
     View = () => {
+        const ViewWrapper = this.ViewWrapper;
         if (this.isPreview) {
             if (this.flex) {
                 return (
@@ -110,19 +111,19 @@ export default class ArrayData<T extends {
         }
         if (this.flex) {
             return (
-                <this.ViewWrapper editText={this.editText}>
+                <ViewWrapper editText={this.editText}>
                     <Row>
                         {this.data?.map(d => <Col span={8}>
                             <d.Show/>
                         </Col>)}
                     </Row>
-                </this.ViewWrapper>
+                </ViewWrapper>
             )
         }
         return (
-            <this.ViewWrapper editText={this.editText}>
+            <ViewWrapper editText={this.editText}>
                 {this.data?.map(d => <d.Show/>)}
-            </this.ViewWrapper>
+            </ViewWrapper>
         )
     }
 
@@ -135,18 +136,19 @@ export default class ArrayData<T extends {
         this.data = [...this.data?.filter(d => d?.id !== id)]
     }
     Edit = () => {
+        const ViewWrapper = this.ViewWrapper;
         const reload = useReload();
         if (this.flex) {
-            return <this.ViewWrapper editText={this.editText}><EditFlexComponent data={this.data} onAdd={() => {
+            return <ViewWrapper editText={this.editText}><EditFlexComponent data={this.data} onAdd={() => {
                 this.onAdd();
                 reload()
             }} onDelete={(e: any) => {
                 this.onDelete(e);
                 reload()
-            }}/></this.ViewWrapper>
+            }}/></ViewWrapper>
         }
         return (
-            <this.ViewWrapper editText={this.editText}>
+            <ViewWrapper editText={this.editText}>
                 <EditComponent flex={this.flex} data={this.data} onAdd={() => {
                     this.onAdd();
                     reload()
@@ -154,7 +156,7 @@ export default class ArrayData<T extends {
                     this.onDelete(e);
                     reload()
                 }}/>
-            </this.ViewWrapper>
+            </ViewWrapper>
         )
     }
 

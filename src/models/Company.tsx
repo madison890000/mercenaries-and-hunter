@@ -20,10 +20,11 @@ class Company extends Base {
     }
 
     View = () => {
+        const Name = this.name.Show;
         return (
             <CompanyUI>
                 <div>
-                    <this.name.Show/>
+                    <Name/>
                 </div>
             </CompanyUI>
         )

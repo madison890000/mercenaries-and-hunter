@@ -12,6 +12,8 @@ const storePerson = window.localStorage.getItem('resume') !== null ? new Person(
 
 
 export const GlobalContextContainer = ({children}: PropsWithChildren) => {
+    console.log(storePerson, 'storePerson')
+    console.log(window.localStorage)
     const person = useRef<Person>(storePerson);
     return (
         <GlobalContext.Provider

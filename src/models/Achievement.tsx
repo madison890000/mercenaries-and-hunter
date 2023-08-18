@@ -16,11 +16,13 @@ class Achievement extends Base {
     }
 
     View = () => {
+        const Text = this.text.Show;
+        const Categories = this.categories.Show;
         return (
             <li>
-                <this.text.Show/>
+                <Text/>
                 <span>
-                    <this.categories.Show/>
+                    <Categories/>
                 </span>
             </li>
         )

@@ -103,6 +103,13 @@ class Period extends Base {
         this.updateTranslate(data)
     }
     View = () => {
+        const JobPosition = this.jobPosition.Show;
+        const Company = this.company.Show;
+        const Keywords = this.keywords.Show;
+        const Times = this.times.Show;
+        const Descriptions = this.descriptions.Show;
+        const Achievements = this.achievements.Show;
+        const Projects = this.projects.Show;
         return (
             <>
                 <div style={{display: 'flex'}}>
@@ -116,21 +123,21 @@ class Period extends Base {
                                     <div style={{
                                         fontSize: 'var(--base-font-size-large)'
                                     }}>
-                                        <this.jobPosition.Show/>
+                                        <JobPosition/>
                                     </div>
-                                    <this.company.Show/>
+                                    <Company/>
                                 </JobTitle>
                                 <Divider variant="v"/>
                                 <div>
-                                    <this.keywords.Show/>
+                                    <Keywords/>
                                 </div>
                             </div>
                             <Time>
-                                <this.times.Show/>
+                                <Times/>
                             </Time>
                         </PeriodHeader>
                         <div>
-                            <this.descriptions.Show/>
+                            <Descriptions/>
                         </div>
                         <div>
                             <ul>
@@ -144,11 +151,11 @@ class Period extends Base {
                             <ul style={{
                                 fontSize: 'var(--base-font-size-middle)'
                             }}>
-                                <this.achievements.Show/>
+                                <Achievements/>
                             </ul>
                         </div>
                         <div>
-                            <this.projects.Show/>
+                            <Projects/>
                         </div>
                     </Content>
                 </div>
