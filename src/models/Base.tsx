@@ -1,9 +1,11 @@
 import {v4} from 'uuid';
 import Dayjs from 'dayjs';
 import React, {PropsWithChildren, useEffect} from "react";
-import {Card} from "antd";
+import {Row} from "antd";
 import useReload from "./hooks/useReload";
 import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import {nonenumerable} from "core-decorators";
 
 type EditType = 'view' | 'edit' | 'preview';
 
@@ -25,8 +27,10 @@ const InnerViewWrapper: React.FC<PropsWithChildren<ViewWrapperProps>> = ({
                                                                          }) => {
     const reload = useReload();
     return (
-        <Card>
-            <div>
+        <Card style={{
+            padding: 5
+        }}>
+            <Row justify="space-between">
                 {
                     editType === 'view' && !canEdit && <Button onClick={() => {
                         onEdit();
@@ -43,7 +47,7 @@ const InnerViewWrapper: React.FC<PropsWithChildren<ViewWrapperProps>> = ({
                         保存
                     </Button>
                 }
-            </div>
+            </Row>
             <div>
                 {children}
             </div>
@@ -52,13 +56,22 @@ const InnerViewWrapper: React.FC<PropsWithChildren<ViewWrapperProps>> = ({
 }
 
 export default class Base {
+    @nonenumerable
     readonly id: string;
+    @nonenumerable
     private _editType!: EditType;
+    @nonenumerable
     parent: any;
+    @nonenumerable
     children: any[];
+    @nonenumerable
     public needProxyParent = true;
-    ViewWrapper: React.FC<React.PropsWithChildren<{ editText?: string }>>;
+    @nonenumerable
+    ViewWrapper: React.FC<React.PropsWithChildren<{ editText?: string; onTranslate?: () => Promise<void> }>>;
+    @nonenumerable
     private watch: Record<string, any[]>;
+    @nonenumerable
+    public canTranslate: boolean;
 
     constructor() {
         this.id = v4();
@@ -68,7 +81,8 @@ export default class Base {
         }
         const onSave = () => {
             this.editType = 'view';
-        }
+        };
+        this.canTranslate = false;
         this.ViewWrapper = ({children, editText}) => {
             return (
                 <InnerViewWrapper
@@ -82,6 +96,10 @@ export default class Base {
         };
         this.watch = {};
         this.children = [];
+    }
+
+    async onTranslate() {
+
     }
 
     setParent(parent: any) {
@@ -124,6 +142,7 @@ export default class Base {
         this.editType = this.editType === 'view' ? 'edit' : 'view'
     }
 
+    @nonenumerable
     get canEdit() {
         const innerEdit = this.isPreview ? false : this.editType === 'edit';
         const parent = this.parent;
@@ -134,6 +153,7 @@ export default class Base {
         }
     }
 
+    @nonenumerable
     get isPreview() {
         const innerEdit = this.editType === 'preview';
         const parent = this.parent;
@@ -144,7 +164,7 @@ export default class Base {
         }
     }
 
-    emit(name: string, params: any) {
+    emit(name: string, params?: any) {
         this.watch?.[name]?.forEach((e) => {
             e(params);
         })
@@ -158,6 +178,7 @@ export default class Base {
         }
     }
 
+    @nonenumerable
     Show = () => {
         const reload = useReload();
         useEffect(() => {
@@ -167,12 +188,42 @@ export default class Base {
                 } catch (e) {
                     console.log(e)
                 }
+            });
+            this.on('value-change', () => {
+                try {
+                    reload();
+                } catch (e) {
+                    console.log(e)
+                }
             })
         }, []);
-        return <>{!this.canEdit ? <this.View/> : <this.Edit/>}</>;
+        if (this.isPreview) {
+            return <>{!this.canEdit ? <this.View/> : <this.Edit/>}</>
+        }
+        const showTranslateBtn = this.canTranslate && !this.canEdit;
+        return (
+            <div style={{position: 'relative'}}>
+                <div style={{
+                    width: showTranslateBtn ? 'calc(100% - 60px)' : 'auto'
+                }}>
+                    {!this.canEdit ? <this.View/> : <this.Edit/>}
+                </div>
+                {
+                    showTranslateBtn && (
+                        <div style={{width: 60, position: "absolute", top: 0, right: 0}}>
+                            <Button onClick={async () => {
+                                await this.onTranslate?.();
+                                reload();
+                            }}>
+                                翻译
+                            </Button>
+                        </div>
+                    )
+                }
+            </div>);
     }
 
-
+    @nonenumerable
     View = () => {
         return <div/>
     }
@@ -198,7 +249,10 @@ export default class Base {
         return newOne
     }
 
+    @nonenumerable
     Edit = () => {
         return <this.View/>
     }
+
+
 }

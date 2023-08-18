@@ -11,6 +11,8 @@ import {Divider, TimeLineItem} from "./components";
 import {IAchievement, JobPosition} from "./types";
 import Keywords from "./Keywords";
 import ArrayData from "./ArrayData";
+import {nonenumerable} from "core-decorators";
+import {formatAndTranslateResume} from "../service";
 
 export interface IPeriod {
     start: string;
@@ -51,7 +53,7 @@ class Period extends Base {
     public achievements: ArrayData<Achievement>;
     public jobSummaries: ArrayData<Description>;
     public company: Company;
-    public job: EditText;
+    public jobPosition: EditText;
     public projects: ArrayData<Project>;
     public periodColor?: string;
     private times: Times;
@@ -73,16 +75,16 @@ class Period extends Base {
         this.times = new Times(start, end).setParent(this);
         this.achievements = new ArrayData<Achievement>(
             achievements?.map(a => new Achievement(a?.text, a?.categories).setParent(this)),
-            new Achievement('', [])
+            () => new Achievement('', [])
             , false, '编辑成就').setParent(this);
         this.jobSummaries = new ArrayData<Description>(
             jobSummaries?.map(d => new Description(d, 'input').setParent(this)),
-            new Description('', 'textarea', '岗位职责', '请描述岗位职责'),
+            () => new Description('', 'textarea', '岗位职责', '请描述岗位职责'),
         ).setParent(this);
         this.keywords = new Keywords(keywords).setParent(this);
         this.descriptions = new Description(descriptions, 'textarea', '职位简介').setParent(this)
-        this.job = new EditText(jobPosition, 'input', '职位').setParent(this);
-        this.projects = new ArrayData<Project>(projects?.map(e => new Project(e)) ?? [], new Project({
+        this.jobPosition = new EditText(jobPosition, 'input', '职位').setParent(this);
+        this.projects = new ArrayData<Project>(projects?.map(e => new Project(e)) ?? [], () => new Project({
             name: '',
             challengeAndSolutions: [],
             descriptions: '',
@@ -92,8 +94,14 @@ class Period extends Base {
             end: '',
         }), false, '编辑项目经历').setParent(this);
         this.periodColor = periodColor;
+        this.canTranslate = true;
     }
 
+    @nonenumerable
+    onTranslate = async () => {
+        const data = await formatAndTranslateResume(this.toTranslate());
+        this.updateTranslate(data)
+    }
     View = () => {
         return (
             <>
@@ -108,7 +116,7 @@ class Period extends Base {
                                     <div style={{
                                         fontSize: 'var(--base-font-size-large)'
                                     }}>
-                                        <this.job.Show/>
+                                        <this.jobPosition.Show/>
                                     </div>
                                     <this.company.Show/>
                                 </JobTitle>
@@ -146,6 +154,36 @@ class Period extends Base {
                 </div>
             </>
         )
+    }
+
+    toJSON() {
+        const json = {
+            ...this,
+            start: this.times.start,
+            end: this.times.end,
+        }
+        // @ts-ignore
+        delete json.times;
+        return json
+    }
+
+    toTranslate() {
+        return {
+            jobPosition: this.jobPosition,
+            jobSummaries: this.jobSummaries,
+            descriptions: this.descriptions,
+            company: this.company,
+        }
+    }
+
+    updateTranslate(d: any) {
+        this.jobPosition.text = d?.jobPosition;
+        this.jobSummaries?.data?.forEach((j, index) => {
+            j.text.text = d?.jobSummaries?.[index];
+        });
+        this.descriptions.text.text = d?.descriptions;
+        this.company.name.text = d?.company;
+        this.emit('value-change')
     }
 }
 

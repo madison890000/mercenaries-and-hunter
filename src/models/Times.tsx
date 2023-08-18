@@ -38,6 +38,13 @@ class Times extends Base {
             />
         )
     }
+
+    toJSON(): any {
+        return {
+            start: this.start.toJSON(),
+            end: this.end.toJSON(),
+        }
+    }
 }
 
 export default Times

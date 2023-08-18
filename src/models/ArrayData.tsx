@@ -1,13 +1,13 @@
 import Base from "./Base";
 import Button from "@mui/material/Button";
 import useReload from "./hooks/useReload";
-import {v4} from "uuid";
 import {Col, Row} from "antd";
 
 const DeleteComponent = ({children, onDelete}: any) => {
     return (
         <div style={{
             position: "relative",
+            // width: 'calc(100% - 60px)'
         }}>
             <div style={{
                 position: "absolute",
@@ -19,7 +19,7 @@ const DeleteComponent = ({children, onDelete}: any) => {
         </div>
     )
 }
-const EditComponent = ({data, onAdd, onDelete, flex}: any) => {
+const EditComponent = ({data, onAdd, onDelete}: any) => {
     return (
         <>
             <div>
@@ -70,13 +70,14 @@ export default class ArrayData<T extends {
     needProxyParent: boolean;
     parent: any;
     id: string;
+    toJSON?: () => any;
 }> extends Base {
     data: T[];
-    private origin: any;
+    private origin: () => T;
     private flex?: boolean;
     private editText: string | undefined;
 
-    constructor(data: T[], origin: T, flex?: boolean, editText?: string) {
+    constructor(data: T[], origin: () => T, flex?: boolean, editText?: string) {
         super();
         this.data = data;
         data?.map(d => {
@@ -126,10 +127,8 @@ export default class ArrayData<T extends {
     }
 
     onAdd = () => {
-        const newItem = this.origin.clone();
+        const newItem = this.origin();
         newItem.parent = this;
-        newItem.id = v4();
-        console.log(newItem)
         this.data.push(newItem)
     }
     onDelete = (id: string) => {
@@ -166,5 +165,11 @@ export default class ArrayData<T extends {
             }
         })
         this.data = this.data.concat(data)
+    }
+
+    toJSON() {
+        return [
+            ...this.data
+        ]
     }
 }

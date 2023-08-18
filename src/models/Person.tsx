@@ -7,6 +7,8 @@ import BaseInfo from './BaseInfo';
 import Description from "./Description";
 import ArrayData from "./ArrayData";
 import {Degree} from "./types";
+import {formatAndTranslateResume} from "../service";
+import {nonenumerable} from "core-decorators";
 
 interface IPerson {
     firstName: string;
@@ -43,14 +45,14 @@ class Person extends Base {
                     skills
                 }: IPerson) {
         super();
-        this.educations = new ArrayData<Education>(educations?.map(e => new Education(e)) ?? [], new Education({
+        this.educations = new ArrayData<Education>(educations?.map(e => new Education(e)) ?? [], () => new Education({
             college: '',
             major: '',
             degree: Degree.BACHELOR,
             start: '',
             end: ''
         }), false, '编辑教育经历').setParent(this);
-        this.periods = new ArrayData<Period>(periods?.map(e => new Period(e)) ?? [], new Period({
+        this.periods = new ArrayData<Period>(periods?.map(e => new Period(e)) ?? [], () => new Period({
             achievements: [], descriptions: "", jobPosition: '', jobSummaries: [], keywords: [], start: "",
             company: ''
         }), false, '编辑公司经历').setParent(this);
@@ -63,7 +65,7 @@ class Person extends Base {
             location,
             searchingFor
         }).setParent(this);
-        this.skills = new ArrayData<Skill>(skills?.map(e => new Skill(e)) ?? [], new Skill({
+        this.skills = new ArrayData<Skill>(skills?.map(e => new Skill(e)) ?? [], () => new Skill({
             name: '',
             ages: 1,
             importance: 0
@@ -74,12 +76,31 @@ class Person extends Base {
                     d,
                     'textarea',
                     '',
-                    '请简单描述您自己的状况'
-                ).setParent(this)), new Description('',
+                    '请简单描述您自己的状况',
+                    true
+                ).setParent(this)), () => new Description('',
                 'textarea',
                 '',
-                '请简单描述您自己的状况'
+                '请简单描述您自己的状况',
+                true
             ), false, '编辑个人说明').setParent(this);
+    }
+
+    @nonenumerable
+    onTranslateDescriptions = async () => {
+        const data = await formatAndTranslateResume(this.descriptions);
+        data?.forEach((d: string, index: number) => {
+            this.descriptions.data[index].updateText(d);
+        })
+    }
+    @nonenumerable
+    onTranslatePeriods = async () => {
+        const data = await formatAndTranslateResume(this.periods?.data?.map((d) => {
+            return d?.toTranslate();
+        }));
+        data?.forEach((d: any, index: number) => {
+            this.periods.data[index].updateTranslate(d);
+        })
     }
 
     addEducations(educations: Education[]) {
@@ -94,14 +115,15 @@ class Person extends Base {
         this.skills.concat(skills);
     }
 
+    @nonenumerable
     ViewBaseInfo = () => {
         return <this.baseInfo.Show/>
     }
-
+    @nonenumerable
     ViewDescription = () => {
         return <this.descriptions.Show/>
     }
-
+    @nonenumerable
     ViewSkills = () => {
         return (
             <div>
@@ -109,17 +131,27 @@ class Person extends Base {
             </div>
         )
     }
-
+    @nonenumerable
     ViewPeriods = () => {
         return <this.periods.Show/>
     }
-
+    @nonenumerable
     ViewEducations = () => {
         return (
             <section>
                 <this.educations.Show/>
             </section>
         )
+    }
+
+    toJSON() {
+        const json = {
+            ...this,
+            ...this.baseInfo,
+        }
+        // @ts-ignore
+        delete json.baseInfo;
+        return json
     }
 }
 

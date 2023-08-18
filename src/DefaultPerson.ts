@@ -46,9 +46,9 @@ const defaultPerson = new Person({
                 '具体职责3'
             ],
             projects: [{
-                name: 'Customer Portal',
+                name: '项目名称',
                 start: '2022-05-23T00:00:00Z',
-                keywords: ['React', 'Mobile Web', 'Survey'],
+                keywords: ['React', 'Mobile Web'],
                 achievements: [
                     {
                         text: '你在项目中做出的值得骄傲的成就，或者该项目的非技术方案的成就，让对方更清楚的了解这个项目',
@@ -60,7 +60,7 @@ const defaultPerson = new Person({
                     }
                 ],
                 descriptions:
-                    "This is Tesla's client-side web application for potential and existing customers in China. It mainly includes questionnaires, surveys, article recommendations, and account management. The project has been running for about 2 years before I joined, during which some known and unresolved issues have been identified."
+                    "项目的基本情况介绍."
                 ,
                 challengeAndSolutions: [
                     {

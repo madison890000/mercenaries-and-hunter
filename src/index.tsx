@@ -7,15 +7,13 @@ import {generatedTranslations} from './i18n/translations';
 import LocaleContext, {LocaleContextContainer} from './contexts/LocaleContext';
 import {HashRouter, Outlet, Route, Routes} from "react-router-dom";
 import Preview from "./Home";
-import defaultPerson from "./DefaultPerson";
-import Person from "./models/Person";
 import Print from "./Print";
+import Editor from "./Editor";
+import Menus from "./modules/Menus";
+import CoverLetter from "./CoverLetter";
+import {GlobalContextContainer} from "./contexts/GlobalContext";
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
-// @ts-ignore
-const storePerson = window.localStorage.getItem('resume') !== null ? new Person(JSON.parse(window.localStorage.getItem('resume'))) : defaultPerson;
-// @ts-ignore
-window.storePerson = storePerson;
 
 const RouteMap = () => {
     return (
@@ -23,11 +21,14 @@ const RouteMap = () => {
             <Routes>
                 <Route path="/" element={
                     <>
+                        <Menus/>
                         <Outlet/>
                     </>
                 }>
-                    <Route path="preview" index element={<Preview/>}/>
+                    <Route path="/" index element={<Preview/>}/>
                     <Route path="print" index element={<Print/>}/>
+                    <Route path="edit" index element={<Editor/>}/>
+                    <Route path="cl" index element={<CoverLetter/>}/>
                 </Route>
             </Routes>
         </HashRouter>
@@ -44,7 +45,9 @@ const I18nProvider = () => {
 root.render(
     <React.StrictMode>
         <LocaleContextContainer>
-            <I18nProvider/>
+            <GlobalContextContainer>
+                <I18nProvider/>
+            </GlobalContextContainer>
         </LocaleContextContainer>
     </React.StrictMode>
 );

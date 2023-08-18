@@ -45,6 +45,10 @@ class Keywords extends Base {
             </div>
         );
     }
+
+    toJSON() {
+        return this.data
+    }
 }
 
 export default Keywords

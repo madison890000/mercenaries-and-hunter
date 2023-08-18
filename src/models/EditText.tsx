@@ -48,6 +48,10 @@ class EditText extends Base {
             )
         }
     }
+
+    toJSON(): any {
+        return this.text
+    }
 }
 
 export default EditText;

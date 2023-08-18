@@ -68,6 +68,17 @@ class Education extends Base {
             </EducationUI>
         )
     }
+
+    toJSON() {
+        const json = {
+            ...this,
+            start: this.times.start,
+            end: this.times.end,
+        }
+        // @ts-ignore
+        delete json.times;
+        return json
+    }
 }
 
 export default Education

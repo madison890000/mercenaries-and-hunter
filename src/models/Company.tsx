@@ -29,6 +29,9 @@ class Company extends Base {
         )
     }
 
+    toJSON() {
+        return this.name.text
+    }
 }
 
 export default Company

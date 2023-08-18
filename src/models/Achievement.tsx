@@ -7,7 +7,7 @@ import Keywords from "./Keywords";
 
 class Achievement extends Base {
     private categories: Keywords;
-    private text: EditText;
+    text: EditText;
 
     constructor(text: string = '', categories: string[] = []) {
         super();
@@ -24,6 +24,10 @@ class Achievement extends Base {
                 </span>
             </li>
         )
+    }
+
+    updateTranslate(achievement: any) {
+        this.text.text = achievement.text;
     }
 }
 

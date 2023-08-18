@@ -10,6 +10,8 @@ import {IAchievement, IChallengeAndSolution} from "./types";
 import Keywords from "./Keywords";
 import ArrayData from "./ArrayData";
 import {Row} from "antd";
+import {nonenumerable} from "core-decorators";
+import {formatAndTranslateResume} from "../service";
 
 export interface IProject {
     name: string;
@@ -60,13 +62,14 @@ class Project extends Base {
         this.descriptions = new Description(descriptions, 'textarea', '项目简介').setParent(this);
         this.achievements = new ArrayData<Achievement>(
             achievements?.map(a => new Achievement(a?.text, a?.categories).setParent(this)),
-            new Achievement('', [])
+            () => new Achievement('', [])
         ).setParent(this);
         this.challengeAndSolutions = new ArrayData<ChallengeAndSolution>(
             challengeAndSolutions?.map(e => new ChallengeAndSolution(e?.challenge, e?.solution).setParent(this)),
-            new ChallengeAndSolution()
+            () => new ChallengeAndSolution()
             , false, '编辑挑战和解决方案').setParent(this);
         this.keywords = new Keywords(keywords).setParent(this);
+        this.canTranslate = true;
     }
 
     View = () => {
@@ -144,6 +147,43 @@ class Project extends Base {
                 )}
             </Container>
         )
+    }
+
+    toJSON() {
+        const json = {
+            ...this,
+            start: this.times.start,
+            end: this.times.end,
+        }
+        // @ts-ignore
+        delete json.times;
+        return json
+    }
+
+    @nonenumerable
+    onTranslate = async () => {
+        const data = await formatAndTranslateResume(this.toTranslate());
+        this.updateTranslate(data)
+    }
+
+    toTranslate() {
+        return {
+            achievements: this.achievements,
+            challengeAndSolutions: this.challengeAndSolutions,
+            descriptions: this.descriptions,
+            name: this.name
+        }
+    }
+
+    updateTranslate(d: any) {
+        this.descriptions.text.text = d?.descriptions;
+        this.name.text = d?.name;
+        this.achievements?.data?.forEach((j, index) => {
+            j.updateTranslate(d?.achievements?.[index]);
+        });
+        this.challengeAndSolutions?.data?.forEach((j, index) => {
+            j.updateTranslate(d?.challengeAndSolutions[index]);
+        });
     }
 }
 

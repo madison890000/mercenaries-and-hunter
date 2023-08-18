@@ -2,8 +2,8 @@ import Base from "./Base";
 import Description from "./Description";
 
 class ChallengeAndSolution extends Base {
-    private solution: Description;
-    private challenge: Description;
+    public solution: Description;
+    public challenge: Description;
 
     constructor(challenge: string = '', solution: string = '') {
         super();
@@ -28,6 +28,11 @@ class ChallengeAndSolution extends Base {
                 </div>
             </li>
         )
+    }
+
+    updateTranslate(challengeAndSolution: any) {
+        this.challenge.text.text = challengeAndSolution?.challenge;
+        this.solution.text.text = challengeAndSolution?.solution;
     }
 }
 

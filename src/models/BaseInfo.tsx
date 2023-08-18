@@ -5,6 +5,8 @@ import styles from "./BaseInfo.module.scss";
 import ArrayData from "./ArrayData";
 import Link from "./Link";
 import {RelatedLink} from "./types";
+import {nonenumerable} from "core-decorators";
+import {formatAndTranslateResume} from "../service";
 
 class BaseInfo extends Base {
 
@@ -26,7 +28,7 @@ class BaseInfo extends Base {
                     searchingFor,
                 }: any) {
         super();
-        this.links = new ArrayData<Link>(links?.map((e: RelatedLink) => new Link(e)) ?? [], new Link({
+        this.links = new ArrayData<Link>(links?.map((e: RelatedLink) => new Link(e)) ?? [], () => new Link({
             name: '链接',
             value: ''
         }), false).setParent(this);
@@ -36,11 +38,26 @@ class BaseInfo extends Base {
         this.cellphone = new EditText(cellphone).setParent(this);
         this.location = new EditText(location).setParent(this);
         this.searchingFor = new EditText(searchingFor).setParent(this);
+        this.canTranslate = true;
     }
 
+    @nonenumerable
+    onTranslate = async () => {
+        const data = await formatAndTranslateResume(this.toTranslate());
+        this.location.text = data?.location;
+        this.searchingFor.text = data?.searchingFor;
+        this.emit('value-change')
+    }
+    @nonenumerable
+    toTranslate = () => {
+        return {
+            location: this.location,
+            searchingFor: this.searchingFor
+        }
+    }
     View = () => {
         return (
-            <this.ViewWrapper editText="编辑个人信息">
+            <this.ViewWrapper editText="编辑个人信息" onTranslate={this.onTranslate}>
                 <header className={styles.header}>
                     <h1>
                         <this.firstName.Show/>
@@ -122,6 +139,7 @@ class BaseInfo extends Base {
             </this.ViewWrapper>
         )
     }
+
 }
 
 export default BaseInfo
