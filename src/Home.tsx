@@ -54,14 +54,14 @@ function Home() {
                         reload()
                     }}>返回编辑</Button>
                 }
-                {
-                    <Button onClick={() => {
-                        window.localStorage.setItem('resume', JSON.stringify(person))
-                    }}>保存</Button>
-                }
                 <Button onClick={() => {
                     navigate('/print')
                 }} size="large">去打印</Button>
+                {
+                    <Button onClick={() => {
+                        window.localStorage.setItem('resume', JSON.stringify(person))
+                    }}>保存(请修改后手动保存防止丢失数据)</Button>
+                }
             </Row>
             <div className={styles.main} id="print-id">
                 <ViewBaseInfo/>

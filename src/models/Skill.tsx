@@ -65,6 +65,7 @@ class Skill extends Base {
                     <Slider
                         aria-label="Small steps"
                         defaultValue={this.ages}
+                        valueLabelDisplay="auto"
                         onChange={(_, value) => {
                             this.ages = value as number
                         }}

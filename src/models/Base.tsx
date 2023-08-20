@@ -3,7 +3,7 @@ import Dayjs from 'dayjs';
 import React, {PropsWithChildren, useEffect} from "react";
 import {Row} from "antd";
 import useReload from "./hooks/useReload";
-import Button from "@mui/material/Button";
+import Button from "./components/Button";
 import Card from "@mui/material/Card";
 import {nonenumerable} from "core-decorators";
 

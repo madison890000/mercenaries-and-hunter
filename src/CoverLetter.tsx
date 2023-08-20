@@ -1,15 +1,16 @@
 import React, {useContext, useState} from "react";
-import {Button, Card, Col, Divider, Row} from "antd";
+import {Card, Col, Divider, Row} from "antd";
 import copy from 'copy-to-clipboard';
 import {TextField} from "@mui/material";
 import {useCoverLetter} from "./hooks/useCoverLetter";
 import GlobalContext from "./contexts/GlobalContext";
+import Button from "./models/components/Button";
 
 const Editor = () => {
     const {person} = useContext(GlobalContext);
     const [job, setJob] = useState<string>();
     const [company, setCompany] = useState<string>();
-    const {run, message} = useCoverLetter();
+    const {run, message, loading} = useCoverLetter();
     return (
         <>
             <Row gutter={12} style={{
@@ -40,7 +41,7 @@ const Editor = () => {
                 </Col>
                 <Col span={12}>
                     <div style={{textAlign: 'center', marginBottom: 10}}>
-                        <Button type="primary" onClick={() => {
+                        <Button loading={loading} type="primary" onClick={() => {
                             company && job && run(JSON.stringify(person.toJSON()), job, company);
                         }}>生成Cover letter</Button>
                     </div>

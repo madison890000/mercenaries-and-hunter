@@ -92,7 +92,7 @@ class Period extends Base {
             keywords: [],
             start: '',
             end: '',
-        }), false, '编辑项目经历').setParent(this);
+        }), false, '编辑项目经历(既能用例说明自己在此公司负责的内容，又能展示自己的能力。不要认为自己的项目过于普通而羞于添加，发掘自身项目的亮点，重点展示自身的技术能力和思考，一般每个公司1-2个项目)').setParent(this);
         this.periodColor = periodColor;
         this.canTranslate = true;
     }
