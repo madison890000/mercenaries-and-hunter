@@ -34,6 +34,11 @@ const Menus = () => {
                 }}>
                     Cover Letter
                 </MenuItem>
+                <MenuItem onClick={() => {
+                    navigate('/web')
+                }}>
+                    适配求职网站
+                </MenuItem>
             </MenuList>
         </>
     );

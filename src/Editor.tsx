@@ -21,8 +21,8 @@ const Editor = () => {
                 </Col>
                 <Col span={12}>
                     <div style={{textAlign: 'center', marginBottom: 10}}>
-                        <Button loading={loading} type="primary" onClick={() => {
-                            data && run(data);
+                        <Button loading={loading} type="primary" onClick={async () => {
+                            data && await run(data);
                         }}>一键翻译并修改语法和语气</Button>
                     </div>
                     <Card>

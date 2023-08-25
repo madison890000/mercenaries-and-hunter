@@ -41,8 +41,8 @@ const Editor = () => {
                 </Col>
                 <Col span={12}>
                     <div style={{textAlign: 'center', marginBottom: 10}}>
-                        <Button loading={loading} type="primary" onClick={() => {
-                            company && job && run(JSON.stringify(person.toJSON()), job, company);
+                        <Button loading={loading} type="primary" onClick={async () => {
+                            company && job && await run(JSON.stringify(person.toJSON()), job, company);
                         }}>生成Cover letter</Button>
                     </div>
                     <Card>
