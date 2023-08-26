@@ -13,6 +13,7 @@ import Menus from "./modules/Menus";
 import CoverLetter from "./CoverLetter";
 import {GlobalContextContainer} from "./contexts/GlobalContext";
 import Websites from "./Websites";
+import Score from "./Score";
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
@@ -31,6 +32,7 @@ const RouteMap = () => {
                     <Route path="edit" index element={<Editor/>}/>
                     <Route path="cl" index element={<CoverLetter/>}/>
                     <Route path="web" index element={<Websites/>}/>
+                    <Route path="score" index element={<Score/>}/>
                 </Route>
             </Routes>
         </HashRouter>

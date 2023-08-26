@@ -22,6 +22,18 @@ export const formatAndTranslateResume = async (text: any) => {
     }).then(e => e.json())
 }
 
+export const scoreResume = async (resume: any) => {
+    return fetch('http://localhost:3000/api/score-resume', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            content: JSON.stringify(resume)
+        })
+    })
+}
+
 export const formatAndTranslateCV = async (resume: string, job: string, company: string) => {
     return fetch('http://8.222.156.60:8088/api/format-and-translate-cv', {
         method: 'POST',

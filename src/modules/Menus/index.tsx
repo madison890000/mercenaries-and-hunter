@@ -25,6 +25,11 @@ const Menus = () => {
                     简历制作
                 </MenuItem>
                 <MenuItem onClick={() => {
+                    navigate('/score')
+                }}>
+                    简历打分
+                </MenuItem>
+                <MenuItem onClick={() => {
                     navigate('/edit')
                 }}>
                     对话翻译
