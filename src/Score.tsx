@@ -1,16 +1,27 @@
 import React, {useContext, useState} from "react";
-import {Divider} from "antd";
+import {Divider, notification} from "antd";
 import GlobalContext from "./contexts/GlobalContext";
-import {useScore} from "./hooks/useScore";
 import Button from "./models/components/Button";
 import Card from "@mui/material/Card";
 import {TextField} from "@mui/material";
+import {hasResume} from "./utils";
 
 const Score = () => {
-    const {person} = useContext(GlobalContext);
+    const {person, scoreValues} = useContext(GlobalContext);
     const [resume, setResume] = useState('');
-    const {run, score, advise, loading} = useScore();
+    const {run, score, advise, loading} = scoreValues;
     const finalResume = resume || JSON.stringify(person.toJSON());
+    const canScore = () => {
+        if (resume) {
+            return true
+        } else if (hasResume()) {
+            return true
+        } else {
+            notification.warning({
+                message: '请创建简历或者在上方输入您的简历文本'
+            })
+        }
+    }
     return (
         <>
             <div style={{
@@ -33,7 +44,7 @@ const Score = () => {
                 />
                 <Divider></Divider>
                 <Button loading={loading} type="primary" onClick={async () => {
-                    finalResume && await run(JSON.stringify(finalResume));
+                    canScore() && await run(JSON.stringify(finalResume), !hasResume());
                 }}>一键打分</Button>
             </div>
 

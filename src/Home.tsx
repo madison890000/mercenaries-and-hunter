@@ -5,8 +5,9 @@ import {defineMessages, useIntl} from 'react-intl';
 import Button from "@mui/material/Button";
 import useReload from "./models/hooks/useReload";
 import {useNavigate} from "react-router";
-import {Row} from "antd";
+import {Col, Row} from "antd";
 import GlobalContext from "./contexts/GlobalContext";
+import Card from "@mui/material/Card";
 
 const messages = defineMessages({
     profile: {
@@ -30,7 +31,7 @@ const messages = defineMessages({
 function Home() {
     const intl = useIntl();
     const reload = useReload();
-    const {person} = useContext(GlobalContext);
+    const {person, scoreValues} = useContext(GlobalContext);
     const navigate = useNavigate();
 
     const ViewBaseInfo = person.ViewBaseInfo;
@@ -38,9 +39,38 @@ function Home() {
     const ViewSkills = person.ViewSkills;
     const ViewPeriods = person.ViewPeriods;
     const ViewEducations = person.ViewEducations;
-
+    const {score, advise} = scoreValues;
     return (
         <div>
+            <Card style={{
+                padding: 20
+            }}>
+                <Row align="middle">
+                    <Col span={8}>
+                        <h5>IT猎人得分：{score}</h5>
+                    </Col>
+                    <Col span={16}>
+                        <h5>
+                            建议：
+                            {
+                                score === 0 && (
+                                    <Button onClick={() => {
+                                        navigate('/score')
+                                    }}>去打分</Button>
+                                )
+                            }
+                        </h5>
+                        <div>
+                            {advise?.map((e, index) =>
+                                <div>
+                                    <span>{e}</span>
+                                </div>
+                            )}
+
+                        </div>
+                    </Col>
+                </Row>
+            </Card>
             <Row justify="center">
                 {
                     person.editType === 'view' && <Button onClick={() => {
