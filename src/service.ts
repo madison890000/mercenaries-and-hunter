@@ -1,5 +1,5 @@
 export const formatAndTranslate = async (text: string) => {
-    return fetch('http://8.222.156.60:8088/api/format-and-translate', {
+    return fetch('https://chat.mercenarieshunter.com/api/format-and-translate', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -11,7 +11,7 @@ export const formatAndTranslate = async (text: string) => {
 }
 
 export const formatAndTranslateResume = async (text: any) => {
-    return fetch('http://8.222.156.60:8088/api/format-and-translate-resume', {
+    return fetch('https://chat.mercenarieshunter.com/api/format-and-translate-resume', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ export const formatAndTranslateResume = async (text: any) => {
 }
 
 export const scoreResume = async (resume: any, needCreateResume: boolean) => {
-    return fetch('http://8.222.156.60:8088/api/score-resume', {
+    return fetch('https://chat.mercenarieshunter.com/api/score-resume', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ export const scoreResume = async (resume: any, needCreateResume: boolean) => {
 }
 
 export const formatAndTranslateCV = async (resume: string, job: string, company: string) => {
-    return fetch('http://8.222.156.60:8088/api/format-and-translate-cv', {
+    return fetch('https://chat.mercenarieshunter.com/api/format-and-translate-cv', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
