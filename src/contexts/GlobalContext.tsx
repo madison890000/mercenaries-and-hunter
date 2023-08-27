@@ -11,7 +11,7 @@ interface ILocaleContext {
 
 export const GlobalContext = React.createContext({} as ILocaleContext);
 // @ts-ignore
-const storePerson = window.localStorage.getItem('resume') !== null ? new Person(JSON.parse(window.localStorage.getItem('resume'))) : madison;
+const storePerson = window.localStorage.getItem('resume') !== null ? new Person(JSON.parse(window.localStorage.getItem('resume'))) : defaultPerson;
 
 
 export const GlobalContextContainer = ({children}: PropsWithChildren) => {
