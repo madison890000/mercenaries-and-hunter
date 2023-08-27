@@ -43,7 +43,7 @@ class Skill extends Base {
     get level() {
         if (this.ages <= 1) {
             return SkillLevel.understand
-        } else if (this.ages > 1 && this.ages <= 4) {
+        } else if (this.ages > 1 && this.ages <= 3) {
             return SkillLevel.familiar
         } else {
             return SkillLevel.proficient

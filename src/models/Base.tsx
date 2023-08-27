@@ -15,12 +15,14 @@ interface ViewWrapperProps {
     editType: EditType;
     canEdit: boolean;
     editText?: string;
+    editDescriptions?: string;
 }
 
 const InnerViewWrapper: React.FC<PropsWithChildren<ViewWrapperProps>> = ({
                                                                              editText,
                                                                              canEdit,
                                                                              editType,
+                                                                             editDescriptions,
                                                                              children,
                                                                              onSave,
                                                                              onEdit
@@ -48,6 +50,17 @@ const InnerViewWrapper: React.FC<PropsWithChildren<ViewWrapperProps>> = ({
                     </Button>
                 }
             </Row>
+            {
+                editType === 'view' && !canEdit && (
+                    <div style={{
+                        fontSize: 14,
+                        color: 'gray',
+                        padding: '0 12px 12px 12px'
+                    }}>
+                        {editDescriptions ?? ''}
+                    </div>
+                )
+            }
             <div>
                 {children}
             </div>
@@ -67,7 +80,11 @@ export default class Base {
     @nonenumerable
     public needProxyParent = true;
     @nonenumerable
-    ViewWrapper: React.FC<React.PropsWithChildren<{ editText?: string; onTranslate?: () => Promise<void> }>>;
+    ViewWrapper: React.FC<React.PropsWithChildren<{
+        editText?: string;
+        editDescriptions?: string;
+        onTranslate?: () => Promise<void>
+    }>>;
     @nonenumerable
     private watch: Record<string, any[]>;
     @nonenumerable
@@ -83,10 +100,11 @@ export default class Base {
             this.editType = 'view';
         };
         this.canTranslate = false;
-        this.ViewWrapper = ({children, editText}) => {
+        this.ViewWrapper = ({children, editText, editDescriptions}) => {
             return (
                 <InnerViewWrapper
                     editText={editText}
+                    editDescriptions={editDescriptions}
                     editType={this.isPreview ? 'preview' : this.editType}
                     onEdit={onEdit}
                     onSave={onSave}

@@ -53,9 +53,12 @@ class Person extends Base {
             end: ''
         }), false, '编辑教育经历').setParent(this);
         this.periods = new ArrayData<Period>(periods?.map(e => new Period(e)) ?? [], () => new Period({
-            achievements: [], descriptions: "", jobPosition: '', jobSummaries: [], keywords: [], start: "",
-            company: ''
-        }), false, '编辑公司经历(不要写公司的注册名称，而用大众熟知的名字)').setParent(this);
+                achievements: [], descriptions: "", jobPosition: '', jobSummaries: [], keywords: [], start: "",
+                company: ''
+            }), false,
+            '编辑公司经历',
+            '不要写公司的注册名称，而用大众熟知的名字',
+        ).setParent(this);
         this.baseInfo = new BaseInfo({
             firstName,
             lastName,
@@ -66,10 +69,13 @@ class Person extends Base {
             searchingFor
         }).setParent(this);
         this.skills = new ArrayData<Skill>(skills?.map(e => new Skill(e)) ?? [], () => new Skill({
-            name: '',
-            ages: 1,
-            importance: 0
-        }), true, '编辑个人技能(多列出你掌握的开发技术，显得你热情且好学，不过要和职业经历相关)').setParent(this);
+                name: '',
+                ages: 1,
+                importance: 0
+            }), true,
+            '编辑个人技能',
+            '多列出你掌握的开发技术，要和职业经历相关',
+        ).setParent(this);
         this.descriptions = new ArrayData<Description>(
             descriptions?.map(d =>
                 new Description(
@@ -83,7 +89,10 @@ class Person extends Base {
                 '',
                 '请简单描述您自己的状况',
                 true
-            ), false, '编辑个人说明(建议分段编辑，包括 您的职业发展经历概况，过硬的职业技能与素养，您的团队协作能力，您的其他信息如对未来的规划)').setParent(this);
+            ), false,
+            '编辑个人说明',
+            '建议分段编辑，包括 您的职业发展经历概况，过硬的职业技能与素养，您的团队协作能力，您的其他信息如对未来的规划'
+        ).setParent(this);
     }
 
     @nonenumerable

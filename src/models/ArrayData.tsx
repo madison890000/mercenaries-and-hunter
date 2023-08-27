@@ -76,8 +76,9 @@ export default class ArrayData<T extends {
     private origin: () => T;
     private flex?: boolean;
     private editText: string | undefined;
+    private editDescriptions: string | undefined;
 
-    constructor(data: T[], origin: () => T, flex?: boolean, editText?: string) {
+    constructor(data: T[], origin: () => T, flex?: boolean, editText?: string, editDescriptions?: string) {
         super();
         this.data = data;
         data?.map(d => {
@@ -88,6 +89,7 @@ export default class ArrayData<T extends {
         this.origin = origin;
         this.flex = flex;
         this.editText = editText;
+        this.editDescriptions = editDescriptions;
     }
 
 
@@ -111,7 +113,7 @@ export default class ArrayData<T extends {
         }
         if (this.flex) {
             return (
-                <ViewWrapper editText={this.editText}>
+                <ViewWrapper editText={this.editText} editDescriptions={this.editDescriptions}>
                     <Row>
                         {this.data?.map(d => <Col span={8}>
                             <d.Show/>
@@ -121,7 +123,7 @@ export default class ArrayData<T extends {
             )
         }
         return (
-            <ViewWrapper editText={this.editText}>
+            <ViewWrapper editText={this.editText} editDescriptions={this.editDescriptions}>
                 {this.data?.map(d => <d.Show/>)}
             </ViewWrapper>
         )
@@ -139,7 +141,7 @@ export default class ArrayData<T extends {
         const ViewWrapper = this.ViewWrapper;
         const reload = useReload();
         if (this.flex) {
-            return <ViewWrapper editText={this.editText}><EditFlexComponent data={this.data} onAdd={() => {
+            return <ViewWrapper editText={this.editText} editDescriptions={this.editDescriptions}><EditFlexComponent data={this.data} onAdd={() => {
                 this.onAdd();
                 reload()
             }} onDelete={(e: any) => {
@@ -148,7 +150,7 @@ export default class ArrayData<T extends {
             }}/></ViewWrapper>
         }
         return (
-            <ViewWrapper editText={this.editText}>
+            <ViewWrapper editText={this.editText} editDescriptions={this.editDescriptions}>
                 <EditComponent flex={this.flex} data={this.data} onAdd={() => {
                     this.onAdd();
                     reload()
