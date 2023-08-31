@@ -44,6 +44,11 @@ const Menus = () => {
                 }}>
                     适配求职网站
                 </MenuItem>
+                <MenuItem onClick={() => {
+                    navigate('/send')
+                }}>
+                    已投递列表
+                </MenuItem>
             </MenuList>
         </>
     );
