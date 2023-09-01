@@ -14,6 +14,7 @@ class Achievement extends Base {
         this.text = new EditText(pipe<string>(capitalize, addPeriodSuffix)(text), 'input', '成就').setParent(this);
         this.categories = new Keywords(categories).setParent(this);
         this.showName = '成就';
+        this.showEditButton = true;
     }
 
     View = () => {

@@ -1,8 +1,8 @@
 import Person from './models/Person';
 
 const defaultPerson = new Person({
-    firstName: '姓',
-    lastName: '名',
+    firstName: '名',
+    lastName: '姓',
     email: '@gmail.com',
     cellphone: '+64 000 000 000',
     location: '当前居住的城市',

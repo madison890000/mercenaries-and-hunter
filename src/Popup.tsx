@@ -82,7 +82,7 @@ function Popup() {
                         focused: !0,
                         left: Math.floor(n.left),
                         top: Math.floor(n.top),
-                        width: 1240,
+                        width: 1080,
                         height: 980,
                         type: "panel"
                     });

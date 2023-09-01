@@ -13,7 +13,7 @@ const columns: GridColDef<{
     site: string;
 }>[] = [
     {
-        field: 'title', headerName: '名称', width: DEFAULT_COLUMNS_WIDTH * 2,
+        field: 'title', headerName: '名称', width: DEFAULT_COLUMNS_WIDTH * 3,
         renderCell: ({value, row}) => <a href={row.originUrl ?? row?.site} target="_blank">{value}</a>
     },
     {
@@ -22,8 +22,6 @@ const columns: GridColDef<{
         width: DEFAULT_COLUMNS_WIDTH,
         renderCell: ({value}) => <ShowTimeUntilNow time={value}/>
     },
-    {field: 'site', headerName: 'url', width: DEFAULT_COLUMNS_WIDTH * 2},
-
 ];
 const SendList = () => {
     const [sends, setSends] = useState([]);
