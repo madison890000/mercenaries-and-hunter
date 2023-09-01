@@ -6,8 +6,16 @@ import ShowTimeUntilNow from "./components/ShowTime";
 import Button from "@mui/material/Button";
 
 const DEFAULT_COLUMNS_WIDTH = 150;
-const columns: GridColDef[] = [
-    {field: 'title', headerName: '名称', width: DEFAULT_COLUMNS_WIDTH * 2},
+const columns: GridColDef<{
+    title?: string;
+    time: string;
+    originUrl?: string;
+    site: string;
+}>[] = [
+    {
+        field: 'title', headerName: '名称', width: DEFAULT_COLUMNS_WIDTH * 2,
+        renderCell: ({value, row}) => <a href={row.originUrl ?? row?.site} target="_blank">{value}</a>
+    },
     {
         field: 'time',
         headerName: '投递时间',
