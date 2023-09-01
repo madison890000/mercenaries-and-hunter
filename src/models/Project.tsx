@@ -67,9 +67,11 @@ class Project extends Base {
         this.challengeAndSolutions = new ArrayData<ChallengeAndSolution>(
             challengeAndSolutions?.map(e => new ChallengeAndSolution(e?.challenge, e?.solution).setParent(this)),
             () => new ChallengeAndSolution()
-            , false, '编辑挑战和解决方案').setParent(this);
+            , false).setParent(this);
         this.keywords = new Keywords(keywords).setParent(this);
         this.canTranslate = true;
+        this.showName = '项目';
+        this.showEditButton = true;
     }
 
     View = () => {

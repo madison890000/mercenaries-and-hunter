@@ -2,7 +2,7 @@ import {LoadingButton} from "@mui/lab";
 import React, {useEffect, useState} from "react";
 
 
-const Button = ({onClick, loading: outerLoading, children}: any) => {
+const Button = ({onClick, loading: outerLoading, children, ...props}: any) => {
     const [loading, setLoading] = useState(false);
     useEffect(() => {
         setLoading(outerLoading)
@@ -15,7 +15,7 @@ const Button = ({onClick, loading: outerLoading, children}: any) => {
             } finally {
                 setLoading(false);
             }
-        }}>
+        }} {...props}>
             {children}
         </LoadingButton>
     )

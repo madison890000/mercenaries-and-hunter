@@ -7,6 +7,7 @@ const madison = new Person({
     cellphone: '+64 027 229 1141',
     location: 'Auckland City, New Zealand',
     searchingFor: 'Front End',
+    visa:'Open Work Visa',
     links: [
         {
             name: 'Github',
@@ -252,21 +253,6 @@ const madison = new Person({
                             'At that time, we utilized the innovative web component 3.0 to build our foundational components and address the challenge of cross-technology stacks.'
                     }
                 ]
-            }, {
-                name: 'Admin Portal',
-                start: '2019-02-01T00:00:00Z',
-                end: '2019-06-01T00:00:00Z',
-                keywords: ['Vue', 'EChart'],
-                achievements: [],
-                descriptions:
-                    "This is an internal web page used by the company's operations, which can display real-time and historical data in graphs."
-                ,
-                challengeAndSolutions: [
-                    {
-                        challenge: 'How can we ensure timely data updates?',
-                        solution: 'We utilize WebSocket technology for real-time data push'
-                    }
-                ]
             }],
             jobSummaries: [
                 'responsible for task assignment and project requirement explanation to 5 team members',
@@ -289,50 +275,7 @@ const madison = new Person({
                 "responsible for team's recruitment, technical training(ES6), etc",
                 'take charge of annual feature planning and appraise performance of each team member'
             ],
-            projects: [{
-                name: 'Customer Portal',
-                start: '2016-07-01T00:00:00Z',
-                end: '2018-03-01T00:00:00Z',
-                keywords: ['Java', 'jQuery', 'Mobile'],
-                achievements: [
-                    {
-                        text: "completed the design and development of the company's Front-End UI component library",
-                        categories: ['UI']
-                    }
-                ],
-                descriptions:
-                    'This is an online shopping website that offers common functionalities such as product browsing, adding items to the shopping cart, and online payment processing.'
-                ,
-                challengeAndSolutions: [
-                    {
-                        challenge: 'There are several similar CRUD codes that need to be implemented in the backend interface.',
-                        solution:
-                            'I used shell scripts to enhance the development efficiency of CRUD (Create, Read, Update, Delete) classes.'
-                    },
-                    {
-                        challenge:
-                            'In the front-end, the concept of components is not present. As a result, the HTML code often includes a lot of duplication, as it is structured based on the logic of each individual page.',
-                        solution:
-                            'Our plugin technology, based on jQuery, effectively combines various commonly used form libraries. This approach significantly minimizes the need for repetitive code.'
-                    }
-                ]
-            },
-                {
-                    name: 'Mobile App',
-                    start: '2017-08-01T00:00:00Z',
-                    end: '2018-03-01T00:00:00Z',
-                    keywords: ['React Native', 'Mobile'],
-                    achievements: [],
-                    descriptions:
-                        'This mobile app is designed to assist teachers and parents with various functions. It is capable of providing online course selection support, managing class appointments, and facilitating homework uploads, among other features.'
-                    ,
-                    challengeAndSolutions: [
-                        {
-                            challenge: 'React native has performance issues when rendering large lists of data.',
-                            solution: 'We utilize virtual list technology to address the challenge of handling large volumes of data.'
-                        }
-                    ]
-                }],
+            projects: [],
             achievements: [],
             descriptions:
                 'I am responsible for developing API interfaces, creating front-end pages, and building Apps as part of my main role in the company.'

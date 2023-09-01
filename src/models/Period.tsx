@@ -76,7 +76,7 @@ class Period extends Base {
         this.achievements = new ArrayData<Achievement>(
             achievements?.map(a => new Achievement(a?.text, a?.categories).setParent(this)),
             () => new Achievement('', [])
-            , false, '编辑成就').setParent(this);
+            , false).setParent(this);
         this.jobSummaries = new ArrayData<Description>(
             jobSummaries?.map(d => new Description(d, 'input').setParent(this)),
             () => new Description('', 'textarea', '岗位职责', '请描述岗位职责'),
@@ -93,11 +93,12 @@ class Period extends Base {
                 start: '',
                 end: '',
             }), false,
-            '编辑项目经历',
             '既能用例说明自己在此公司负责的内容，又能展示自己的能力。不要认为自己的项目过于普通而羞于添加，发掘自身项目的亮点，重点展示自身的技术能力和思考，一般每个公司1-2个项目)',
         ).setParent(this);
         this.periodColor = periodColor;
         this.canTranslate = true;
+        this.showName = '公司经历';
+        this.showEditButton = true;
     }
 
     @nonenumerable

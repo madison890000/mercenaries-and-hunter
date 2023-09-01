@@ -13,10 +13,19 @@ const DescriptionContainer = styled.div`
 class Description extends Base {
     text: EditText;
 
-    constructor(text?: string, type?: 'input' | 'textarea', label?: string, placeholder?: string, canTranslate?: boolean) {
+    constructor(
+        text?: string,
+        type?: 'input' | 'textarea',
+        label?: string,
+        placeholder?: string,
+        canTranslate?: boolean,
+        showEditButton?: boolean,
+    ) {
         super();
         this.text = new EditText(pipe<string>(capitalize, addPeriodSuffix)(text ?? ''), type ?? 'textarea', label, placeholder).setParent(this);
         this.canTranslate = canTranslate ?? false;
+        this.showName = '段落';
+        this.showEditButton = showEditButton ?? false;
     }
 
     View = () => {

@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import styles from './App.module.scss';
 import {Divider} from './models/components';
 import {defineMessages, useIntl} from 'react-intl';
@@ -33,13 +33,21 @@ function Home() {
     const reload = useReload();
     const {person, scoreValues} = useContext(GlobalContext);
     const navigate = useNavigate();
-
     const ViewBaseInfo = person.ViewBaseInfo;
     const ViewDescription = person.ViewDescription;
     const ViewSkills = person.ViewSkills;
     const ViewPeriods = person.ViewPeriods;
     const ViewEducations = person.ViewEducations;
     const {score, advise} = scoreValues;
+    const save = () => {
+        window.localStorage.setItem('resume', JSON.stringify(person))
+    }
+    useEffect(() => {
+        let saveJob = setInterval(() => {
+            save();
+        }, 1000 * 60)
+        return () => clearInterval(saveJob)
+    }, [])
     return (
         <div>
             <Card style={{
@@ -89,8 +97,8 @@ function Home() {
                 }} size="large">去打印</Button>
                 {
                     <Button onClick={() => {
-                        window.localStorage.setItem('resume', JSON.stringify(person))
-                    }}>保存(请修改后手动保存防止丢失数据)</Button>
+                        save();
+                    }}>保存(每1分钟自动保存)</Button>
                 }
             </Row>
             <div className={styles.main} id="print-id">

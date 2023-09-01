@@ -9,6 +9,8 @@ class ChallengeAndSolution extends Base {
         super();
         this.challenge = new Description(challenge, 'textarea', '挑战', '请输入遇到的挑战').setParent(this);
         this.solution = new Description(solution, 'textarea', '解决方法', '您是怎么解决的').setParent(this);
+        this.showName = '挑战';
+        this.showEditButton = true;
     }
 
     View = () => {

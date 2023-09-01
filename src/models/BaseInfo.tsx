@@ -17,12 +17,14 @@ class BaseInfo extends Base {
     private cellphone: EditText;
     private location: EditText;
     private searchingFor: EditText;
+    private visa: EditText;
 
     constructor({
                     links,
                     firstName,
                     lastName,
                     email,
+                    visa,
                     cellphone,
                     location,
                     searchingFor,
@@ -37,9 +39,10 @@ class BaseInfo extends Base {
         this.email = new EditText(email).setParent(this);
         this.cellphone = new EditText(cellphone).setParent(this);
         this.location = new EditText(location).setParent(this);
+        this.visa = new EditText(visa).setParent(this);
         this.searchingFor = new EditText(searchingFor).setParent(this);
         this.canTranslate = true;
-        console.log(this)
+        this.showEditButton = true;
     }
 
     @nonenumerable
@@ -63,6 +66,7 @@ class BaseInfo extends Base {
         const Email = this.email.Show;
         const Cellphone = this.cellphone.Show;
         const Location = this.location.Show;
+        const Visa = this.visa.Show;
         const ViewWrapper = this.ViewWrapper;
         return (
             <ViewWrapper editText="编辑个人信息" onTranslate={this.onTranslate}>
@@ -95,6 +99,12 @@ class BaseInfo extends Base {
                             <div>Location:</div>
                             <div>
                                 <Location/>
+                            </div>
+                        </div>
+                        <div className={styles.basicInfoItem}>
+                            <div>Visa:</div>
+                            <div>
+                                <Visa/>
                             </div>
                         </div>
                         <div className={styles.links}>

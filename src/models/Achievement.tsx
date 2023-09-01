@@ -13,6 +13,7 @@ class Achievement extends Base {
         super();
         this.text = new EditText(pipe<string>(capitalize, addPeriodSuffix)(text), 'input', '成就').setParent(this);
         this.categories = new Keywords(categories).setParent(this);
+        this.showName = '成就';
     }
 
     View = () => {
@@ -20,10 +21,12 @@ class Achievement extends Base {
         const Categories = this.categories.Show;
         return (
             <li>
-                <Text/>
-                <span>
+                <div style={{display: 'flex', alignItems: 'center'}}>
+                    <Text/>
+                    <span>
                     <Categories/>
                 </span>
+                </div>
             </li>
         )
     }

@@ -42,12 +42,6 @@ function Print() {
     const ViewEducations = person.ViewEducations;
     return (
         <div className={styles.main}>
-            <div style={{
-                fontSize: 30,
-                cursor: 'pointer',
-            }} onClick={() => {
-                navigate(-1)
-            }}>{'<'}</div>
             <ViewBaseInfo/>
             <Divider title={intl.formatMessage(messages.profile)}/>
             <ViewDescription/>

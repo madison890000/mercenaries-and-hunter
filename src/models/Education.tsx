@@ -33,6 +33,8 @@ class Education extends Base {
         this.college = new EditText(college).setParent(this);
         this.degree = new EditText(degree).setParent(this);
         this.times = new Times(start, end).setParent(this);
+        this.showName = '教育';
+        this.showEditButton = true;
     }
 
     View = () => {

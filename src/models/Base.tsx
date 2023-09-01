@@ -1,7 +1,6 @@
 import {v4} from 'uuid';
 import Dayjs from 'dayjs';
 import React, {PropsWithChildren, useEffect} from "react";
-import {Row} from "antd";
 import useReload from "./hooks/useReload";
 import Button from "./components/Button";
 import Card from "@mui/material/Card";
@@ -10,52 +9,25 @@ import {nonenumerable} from "core-decorators";
 type EditType = 'view' | 'edit' | 'preview';
 
 interface ViewWrapperProps {
-    onEdit: () => void;
-    onSave: () => void;
     editType: EditType;
     canEdit: boolean;
-    editText?: string;
     editDescriptions?: string;
 }
 
 const InnerViewWrapper: React.FC<PropsWithChildren<ViewWrapperProps>> = ({
-                                                                             editText,
                                                                              canEdit,
                                                                              editType,
                                                                              editDescriptions,
                                                                              children,
-                                                                             onSave,
-                                                                             onEdit
                                                                          }) => {
-    const reload = useReload();
     return (
         <Card style={{
             padding: 5
         }}>
-            <Row justify="space-between">
-                {
-                    editType === 'view' && !canEdit && <Button onClick={() => {
-                        onEdit();
-                        reload();
-                    }}>
-                        {editText ?? '编辑'}
-                    </Button>
-                }
-                {
-                    editType === 'edit' && <Button onClick={() => {
-                        onSave();
-                        reload();
-                    }}>
-                        保存
-                    </Button>
-                }
-            </Row>
             {
-                editType === 'view' && !canEdit && (
+                editType === 'view' && !canEdit && editDescriptions && (
                     <div style={{
-                        fontSize: 14,
                         color: 'gray',
-                        padding: '0 12px 12px 12px'
                     }}>
                         {editDescriptions ?? ''}
                     </div>
@@ -89,6 +61,10 @@ export default class Base {
     private watch: Record<string, any[]>;
     @nonenumerable
     public canTranslate: boolean;
+    @nonenumerable
+    public showName: string;
+    @nonenumerable
+    public showEditButton: boolean;
 
     constructor() {
         this.id = v4();
@@ -100,14 +76,12 @@ export default class Base {
             this.editType = 'view';
         };
         this.canTranslate = false;
-        this.ViewWrapper = ({children, editText, editDescriptions}) => {
+        this.showEditButton = false;
+        this.ViewWrapper = ({children, editDescriptions}) => {
             return (
                 <InnerViewWrapper
-                    editText={editText}
                     editDescriptions={editDescriptions}
                     editType={this.isPreview ? 'preview' : this.editType}
-                    onEdit={onEdit}
-                    onSave={onSave}
                     canEdit={this.canEdit}
                 >{children}</InnerViewWrapper>
             )
@@ -220,26 +194,69 @@ export default class Base {
         if (this.isPreview) {
             return <>{!this.canEdit ? <View/> : <Edit/>}</>
         }
-        const showTranslateBtn = this.canTranslate && !this.canEdit;
+        const showButtons = () => {
+            if (this.canTranslate) {
+                return true
+            }
+            if (this.editType === "view" && !this.canEdit && this.showEditButton) {
+                return true
+            }
+            if (this.editType === 'edit') {
+                return true
+            }
+            return false
+        }
         return (
             <div style={{position: 'relative'}}>
                 <div style={{
-                    width: showTranslateBtn ? 'calc(100% - 60px)' : 'auto'
+                    width: showButtons() ? 'calc(100% - 60px)' : "auto",
+                    minHeight: showButtons() ? '80px' : 'auto'
                 }}>
                     {!this.canEdit ? <View/> : <Edit/>}
                 </div>
-                {
-                    showTranslateBtn && (
-                        <div style={{width: 60, position: "absolute", top: 0, right: 0}}>
-                            <Button onClick={async () => {
-                                await this.onTranslate?.();
-                                reload();
-                            }}>
-                                翻译
+                <div style={{width: 60, position: "absolute", top: 0, right: 0}}>
+                    <div>
+                        {
+                            this.editType === 'view' && !this.canEdit && this.showEditButton && <Button
+                                variant="contained"
+                                onClick={() => {
+                                    this.editType = 'edit';
+                                    reload();
+                                }}>
+                                编辑
                             </Button>
-                        </div>
-                    )
-                }
+                        }
+                    </div>
+                    <div>
+                        {
+                            this.editType === 'edit' && (
+                                <Button
+                                    onClick={() => {
+                                        this.editType = 'view';
+                                        reload();
+                                    }}
+                                    variant="contained"
+                                >
+                                    完成
+                                </Button>
+                            )
+                        }
+                    </div>
+                    {
+                        this.canTranslate && !this.canEdit && (
+                            <div>
+                                <Button
+                                    variant="outlined"
+                                    onClick={async () => {
+                                        await this.onTranslate?.();
+                                        reload();
+                                    }}>
+                                    翻译
+                                </Button>
+                            </div>
+                        )
+                    }
+                </div>
             </div>);
     }
 

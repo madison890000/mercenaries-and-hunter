@@ -1,5 +1,6 @@
 import Base from "./Base";
 import {TextField} from "@mui/material";
+import React from "react";
 
 class EditText extends Base {
     public text?: string | undefined;
@@ -15,8 +16,20 @@ class EditText extends Base {
         this.placeholder = placeholder;
     }
 
-    View = () => {
+    Preview = () => {
         return <>{this.text}</>
+    }
+    View = () => {
+        const Preview = this.Preview;
+        if (this.isPreview) {
+            return <Preview/>
+        }
+        if (this.text) {
+            return <>{this.text}</>
+        } else {
+            return <div style={{color: 'gray'}}>没有内容，请点击编辑添加</div>
+        }
+
     }
 
     Edit = () => {

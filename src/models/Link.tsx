@@ -13,6 +13,7 @@ class Link extends Base {
         super();
         this.name = new EditText(pipe<string>(capitalize)(name ?? ''), 'input', '链接名称', '请输入链接名称').setParent(this);
         this.value = new EditText(value ?? '', 'input', '链接地址', '请输入链接地址').setParent(this);
+        this.showName = '链接';
     }
 
     View = () => {
