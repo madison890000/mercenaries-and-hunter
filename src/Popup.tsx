@@ -15,7 +15,7 @@ const getUrl = () => {
         tabId: number;
         title?: string;
     }>(resolve => {
-        chrome.tabs.query(queryInfo, function (tabs) {
+        chrome?.tabs?.query(queryInfo, function (tabs) {
             const activeTab = tabs?.find(t => t?.active);
             resolve({
                 url: activeTab?.url as string,
@@ -39,7 +39,7 @@ function Popup() {
         // Next state will always be the opposite
         const nextState = res ? '已投' : '待投';
         // Set the action badge to the next state
-        await chrome.action.setBadgeText({
+        await chrome?.action?.setBadgeText({
             tabId: tab.tabId,
             text: nextState,
         });
@@ -75,10 +75,10 @@ function Popup() {
                 }
             }}/></div>
             <div><Button variant="contained" onClick={async () => {
-                const o = await chrome.system.display.getInfo(), {bounds: a} = o[0],
+                const o = await chrome?.system?.display?.getInfo(), {bounds: a} = o[0],
                     n = {left: a.left + a.width / 2 - 400, top: a.top + a.height / 2 - 290},
-                    t = await chrome.windows.create({
-                        url: chrome.runtime.getURL("options/index.html"),
+                    t = await chrome?.windows?.create({
+                        url: chrome?.runtime?.getURL("options/index.html"),
                         focused: !0,
                         left: Math.floor(n.left),
                         top: Math.floor(n.top),

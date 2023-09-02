@@ -8,13 +8,16 @@ const Websites = () => {
                 textAlign: "center",
                 marginTop: 20,
             }}>
-                <h3>帮助用户摆脱google全文网页翻译</h3>
+                <h3>帮助用户摆脱google全文网页翻译(
+                    <a href="https://chrome.google.com/webstore/detail/it-mercenaries-and-hunter/eilakanollhbgdoppbffeikcbkhmeloc?hl=zh-CN&authuser=0"
+                       target="_blank">需要安装插件</a>
+                    )</h3>
                 <h4>仅将网站重要的信息翻译后填充回网页下方。方便您更容易的查看相关信息。</h4>
             </div>
             <div style={{
                 textAlign: 'center'
             }}>
-                <img src="/options/imgs/upwork.png" style={{
+                <img src="/imgs/upwork.png" style={{
                     width: 400,
                     height: 300,
                 }}/>

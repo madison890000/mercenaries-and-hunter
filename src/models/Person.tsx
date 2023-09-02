@@ -86,6 +86,7 @@ class Person extends Base {
                     '请简单描述您自己的状况',
                     true,
                     true,
+                    '个人说明',
                 ).setParent(this)), () => new Description('',
                 'textarea',
                 '',

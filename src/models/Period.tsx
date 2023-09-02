@@ -13,6 +13,7 @@ import Keywords from "./Keywords";
 import ArrayData from "./ArrayData";
 import {nonenumerable} from "core-decorators";
 import {formatAndTranslateResume} from "../service";
+import JobSummary from "./JobSummary";
 
 export interface IPeriod {
     start: string;
@@ -28,8 +29,6 @@ export interface IPeriod {
 }
 
 const Content = styled.div`
-  padding: 10px;
-  margin: 10px 0;
   border-radius: var(--base-border-radius);
   width: 100%;
 `
@@ -78,8 +77,11 @@ class Period extends Base {
             () => new Achievement('', [])
             , false).setParent(this);
         this.jobSummaries = new ArrayData<Description>(
-            jobSummaries?.map(d => new Description(d, 'input').setParent(this)),
-            () => new Description('', 'textarea', '岗位职责', '请描述岗位职责'),
+            jobSummaries?.map(d => new JobSummary(
+                d,
+            ).setParent(this)),
+            () => new JobSummary(''),
+            false,
         ).setParent(this);
         this.keywords = new Keywords(keywords).setParent(this);
         this.descriptions = new Description(descriptions, 'textarea', '职位简介').setParent(this)
@@ -114,6 +116,7 @@ class Period extends Base {
         const Descriptions = this.descriptions.Show;
         const Achievements = this.achievements.Show;
         const Projects = this.projects.Show;
+        const JobSummaries = this.jobSummaries.Show;
         return (
             <>
                 <div style={{display: 'flex'}}>
@@ -144,10 +147,10 @@ class Period extends Base {
                             <Descriptions/>
                         </div>
                         <div>
-                            <ul>
-                                {this.jobSummaries?.data?.map(summary => <li>
-                                    <summary.Show/>
-                                </li>)}
+                            <ul style={{
+                                fontSize: 'var(--base-font-size-middle)'
+                            }}>
+                                <JobSummaries/>
                             </ul>
                         </div>
                         <div>

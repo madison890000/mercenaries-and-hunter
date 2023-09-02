@@ -10,31 +10,27 @@ const DescriptionContainer = styled.div`
   margin-top: var(--block-padding);
 `
 
-class Description extends Base {
+class JobSummary extends Base {
     text: EditText;
 
     constructor(
         text?: string,
-        type?: 'input' | 'textarea',
-        label?: string,
-        placeholder?: string,
-        canTranslate?: boolean,
-        showEditButton?: boolean,
-        showName?: string
     ) {
         super();
-        this.text = new EditText(pipe<string>(capitalize, addPeriodSuffix)(text ?? ''), type ?? 'textarea', label, placeholder).setParent(this);
-        this.canTranslate = canTranslate ?? false;
-        this.showName = showName ?? '段落';
-        this.showEditButton = showEditButton ?? false;
+        this.text = new EditText(pipe<string>(capitalize, addPeriodSuffix)(text ?? ''), 'textarea', '岗位职责', '请描述岗位职责').setParent(this);
+        this.canTranslate = true;
+        this.showName = '岗位职责';
+        this.showEditButton = true;
     }
 
     View = () => {
         const Text = this.text.Show;
         return (
-            <DescriptionContainer>
-                <Text/>
-            </DescriptionContainer>
+            <li>
+                <div style={{lineHeight: '24px'}}>
+                    <Text/>
+                </div>
+            </li>
         )
     }
 
@@ -65,4 +61,4 @@ class Description extends Base {
     }
 }
 
-export default Description
+export default JobSummary
