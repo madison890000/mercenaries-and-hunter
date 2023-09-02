@@ -49,29 +49,28 @@ export const formatAndTranslateCV = async (resume: string, job: string, company:
     })
 }
 
-
-// const port = chrome.runtime.connect({name: "popup"});
 export const getSendList = async () => {
-    const res = await chrome?.runtime?.sendMessage({
+    console.log(process.env.REACT_APP_EXTENSION_NAME)
+    const res = await chrome?.runtime?.sendMessage(process.env.REACT_APP_EXTENSION_NAME, {
         args: ['send-list']
     });
     return res.data;
 }
 
 export const addSend = async (site: string, config: any) => {
-    const res = await chrome?.runtime?.sendMessage({
+    const res = await chrome?.runtime?.sendMessage(process.env.REACT_APP_EXTENSION_NAME, {
         args: ['add-site', site, config]
     });
     return res.data;
 }
 export const hasSite = async (site: string) => {
-    const res = await chrome?.runtime?.sendMessage({
+    const res = await chrome?.runtime?.sendMessage(process.env.REACT_APP_EXTENSION_NAME, {
         args: ['has-site', site]
     });
     return res.data;
 }
 export const removeSend = async (site: string) => {
-    const res = await chrome?.runtime?.sendMessage({
+    const res = await chrome?.runtime?.sendMessage(process.env.REACT_APP_EXTENSION_NAME, {
         args: ['remove-site', site]
     });
     return res.data;

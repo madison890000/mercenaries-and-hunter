@@ -14,7 +14,6 @@ import CoverLetter from "./CoverLetter";
 import {GlobalContextContainer} from "./contexts/GlobalContext";
 import Websites from "./Websites";
 import Score from "./Score";
-import Popup from "./Popup";
 import SendList from "./SendList";
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
@@ -23,7 +22,6 @@ const RouteMap = () => {
     return (
         <HashRouter>
             <Routes>
-                <Route path='/popup' element={<Popup />} />
                 <Route path="/" element={
                     <>
                         <Menus/>
