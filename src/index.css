@@ -105,36 +105,6 @@ code {
     --base-font-size-small: 22px;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        color: white;
-        background-color: black;
-        /**
-         * tag
-         */
-        --tag-fill: white;
-        --tag-color: var(--color-gray);
-        /**
-         * skill
-         */
-        --skill-name-color: var(--color-gray);
-        --skill-level-fill: var(--color-platinum);
-        /**
-         * education
-         */
-        --education-degree-color: var(--color-gray);
-        /**
-         * divider
-         */
-        --divider-border-color: var(--color-platinum);
-        /**
-         * divider
-         */
-        --period-sub-title-color: var(--color-gray);
-        --period-background-color: rgba(255, 255, 255, 0.3);
-    }
-}
-
 @media screen and (max-width: 414px) {
     :root {
         --base-font-size-large: 16px;
