@@ -24,7 +24,7 @@ const columns: GridColDef<{
     },
 ];
 const SendList = () => {
-    const [sends, setSends] = useState([]);
+    const [sends, setSends] = useState<any>([]);
     const getList = async () => {
         const res = await getSendList();
         setSends(res)
