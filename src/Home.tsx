@@ -51,7 +51,7 @@ function Home() {
     return (
         <div>
             <Card style={{
-                padding: 20
+                padding: 10
             }}>
                 <Row align="middle">
                     <Col span={8}>
@@ -79,7 +79,12 @@ function Home() {
                     </Col>
                 </Row>
             </Card>
-            <Row justify="center">
+            <Row justify="space-between" style={{
+                padding: 10
+            }}>
+                <Button onClick={() => {
+                    navigate('/copy')
+                }} size="small">去导入</Button>
                 {
                     person.editType === 'view' && <Button onClick={() => {
                         person.editType = 'preview';
@@ -92,7 +97,7 @@ function Home() {
                         reload()
                     }}>返回编辑</Button>
                 }
-                <Button onClick={() => {
+                <Button variant="contained" onClick={() => {
                     navigate('/print')
                 }} size="large">去打印</Button>
                 {
@@ -100,6 +105,7 @@ function Home() {
                         save();
                     }}>保存(每1分钟自动保存)</Button>
                 }
+
             </Row>
             <div className={styles.main} id="print-id">
                 <ViewBaseInfo/>

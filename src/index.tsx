@@ -15,6 +15,7 @@ import {GlobalContextContainer} from "./contexts/GlobalContext";
 import Websites from "./Websites";
 import Score from "./Score";
 import SendList from "./SendList";
+import ExportResume from "./ExportResume";
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
@@ -28,6 +29,7 @@ const RouteMap = () => {
                         <Outlet/>
                     </>
                 }>
+                    <Route path="copy" index element={<ExportResume/>}/>
                     <Route path="/" index element={<Preview/>}/>
                     <Route path="print" index element={<Print/>}/>
                     <Route path="edit" index element={<Editor/>}/>

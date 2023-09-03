@@ -104,6 +104,7 @@ code {
     --base-font-size-middle: 25px;
     --base-font-size-small: 22px;
 }
+
 @media (prefers-color-scheme: dark) {
     :root {
         color: white;
@@ -164,6 +165,29 @@ code {
         --page-padding: var(--base-gap-large);
         --page-margin: var(--base-gap-large);
     }
+}
+
+:root .small {
+    --base-font-size-large: 16px;
+    --base-font-size-middle: 14px;
+    --base-font-size-small: 12px;
+    --base-gap-unit: 2px;
+    --base-gap-2-unit: 4px;
+    --base-gap-small: 3px;
+    --base-gap: 6px;
+    --base-gap-large: 12px;
+
+    --page-padding: var(--base-gap-large);
+    --page-margin: var(--base-gap-large);
+
+}
+
+.small h1 {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 220px;
+    word-break: break-all;
+    font-size: 24px;
 }
 
 /**

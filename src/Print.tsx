@@ -24,17 +24,16 @@ const messages = defineMessages({
     }
 });
 
-function Print() {
+function Print({person: outerPerson}: any) {
     const intl = useIntl();
     const reload = useReload();
-    const {person} = useContext(GlobalContext);
+    const {person: globalPerson} = useContext(GlobalContext);
+
+    const person = outerPerson ?? globalPerson;
     useEffect(() => {
         person.editType = 'preview';
         reload()
-    }, []);
-
-    const navigate = useNavigate();
-
+    }, [globalPerson]);
     const ViewBaseInfo = person.ViewBaseInfo;
     const ViewDescription = person.ViewDescription;
     const ViewSkills = person.ViewSkills;
