@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Button from "@mui/material/Button";
 import Switch from '@mui/material/Switch';
 import {addSend, hasSite, removeSend} from "./service";
+import copy from 'copy-to-clipboard'
 
 const label = {inputProps: {'aria-label': 'Switch demo'}};
 
@@ -75,18 +76,13 @@ function Popup() {
                 }
             }}/></div>
             <div><Button variant="contained" onClick={async () => {
-                const o = await chrome?.system?.display?.getInfo(), {bounds: a} = o[0],
-                    n = {left: a.left + a.width / 2 - 400, top: a.top + a.height / 2 - 290},
-                    t = await chrome?.windows?.create({
-                        url: chrome?.runtime?.getURL("options/index.html"),
-                        focused: !0,
-                        left: Math.floor(n.left),
-                        top: Math.floor(n.top),
-                        width: 1080,
-                        height: 980,
-                        type: "panel"
-                    });
+                window.open('https://www.mercenarieshunter.com/')
             }}>打开home 页面</Button></div>
+            <div style={{
+                marginTop: 12,
+            }}><Button variant="outlined" onClick={async () => {
+                copy(window.localStorage.getItem('resume') ?? '')
+            }}>复制旧简历</Button></div>
         </div>
     );
 }

@@ -6,14 +6,7 @@ import {IntlProvider} from 'react-intl';
 import {generatedTranslations} from './i18n/translations';
 import LocaleContext, {LocaleContextContainer} from './contexts/LocaleContext';
 import {HashRouter, Outlet, Route, Routes} from "react-router-dom";
-import Preview from "./Home";
-import Print from "./Print";
-import Editor from "./Editor";
 import Menus from "./modules/Menus";
-import CoverLetter from "./CoverLetter";
-import {GlobalContextContainer} from "./contexts/GlobalContext";
-import Websites from "./Websites";
-import Score from "./Score";
 import Popup from "./Popup";
 import SendList from "./SendList";
 
@@ -23,19 +16,13 @@ const RouteMap = () => {
     return (
         <HashRouter>
             <Routes>
-                <Route path='/popup' element={<Popup />} />
+                <Route path='/popup' element={<Popup/>}/>
                 <Route path="/" element={
                     <>
                         <Menus/>
                         <Outlet/>
                     </>
                 }>
-                    <Route path="/" index element={<Preview/>}/>
-                    <Route path="print" index element={<Print/>}/>
-                    <Route path="edit" index element={<Editor/>}/>
-                    <Route path="cl" index element={<CoverLetter/>}/>
-                    <Route path="web" index element={<Websites/>}/>
-                    <Route path="score" index element={<Score/>}/>
                     <Route path="send" index element={<SendList/>}/>
                 </Route>
             </Routes>
@@ -52,9 +39,7 @@ const I18nProvider = () => {
 };
 root.render(
     <LocaleContextContainer>
-        <GlobalContextContainer>
-            <I18nProvider/>
-        </GlobalContextContainer>
+        <I18nProvider/>
     </LocaleContextContainer>
 );
 

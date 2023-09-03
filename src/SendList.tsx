@@ -43,9 +43,6 @@ const SendList = () => {
             }}>
                 刷新数据
             </Button>
-        } extra={
-            <a href="https://chrome.google.com/webstore/detail/it-mercenaries-and-hunter/eilakanollhbgdoppbffeikcbkhmeloc?hl=zh-CN&authuser=0"
-               target="_blank">需要安装插件</a>
         }>
             <DataGrid
                 loading={status === 'loading'}

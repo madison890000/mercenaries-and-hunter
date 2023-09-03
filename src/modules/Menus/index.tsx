@@ -19,31 +19,7 @@ const Menus = () => {
                     background: '#1976d2'
                 }}
             >
-                <MenuItem onClick={() => {
-                    navigate('/')
-                }}>
-                    简历制作
-                </MenuItem>
-                <MenuItem onClick={() => {
-                    navigate('/score')
-                }}>
-                    简历打分
-                </MenuItem>
-                <MenuItem onClick={() => {
-                    navigate('/edit')
-                }}>
-                    对话翻译
-                </MenuItem>
-                <MenuItem onClick={() => {
-                    navigate('/cl')
-                }}>
-                    Cover Letter
-                </MenuItem>
-                <MenuItem onClick={() => {
-                    navigate('/web')
-                }}>
-                    适配求职网站
-                </MenuItem>
+
                 <MenuItem onClick={() => {
                     navigate('/send')
                 }}>
