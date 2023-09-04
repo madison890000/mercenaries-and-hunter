@@ -29,5 +29,11 @@ jobs:
       - name: Cloud Storage Uploader
         uses: google-github-actions/upload-cloud-storage@v1.0.3
         with:
-          path: '/build'
+          path: 'build'
           destination: 'mercenarieshunter.com'
+      - name: 'Automated Version Bump'
+        uses: 'phips28/gh-action-bump-version@master'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          version-type: 'minor'
