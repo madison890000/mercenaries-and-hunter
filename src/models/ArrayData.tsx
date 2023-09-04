@@ -130,7 +130,7 @@ export default class ArrayData<T extends {
                                 {this.data?.map((d, index) => (
                                     <Col span={8}>
                                         <Row>
-                                            <Col span={20}>
+                                            <Col span={this.canEdit ? 20 : 24}>
                                                 <d.Show/>
                                             </Col>
                                             {

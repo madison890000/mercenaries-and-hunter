@@ -14,6 +14,8 @@ import ArrayData from "./ArrayData";
 import {nonenumerable} from "core-decorators";
 import {formatAndTranslateResume} from "../service";
 import JobSummary from "./JobSummary";
+import Card from "@mui/material/Card";
+import {CardContent} from "@mui/material";
 
 export interface IPeriod {
     start: string;
@@ -108,13 +110,61 @@ class Period extends Base {
         const data = await formatAndTranslateResume(this.toTranslate());
         this.updateTranslate(data)
     }
+    Achievements = () => {
+        const Achievements = this.achievements.Show;
+        if (this.isPreview) {
+            return (
+                <>
+                    {
+                        this.achievements?.data?.length > 0 && (
+                            <Card style={{
+                                marginBottom: 20,
+                            }}>
+                                <CardContent>
+                                    <div style={{
+                                        fontSize: 'var(--base-font-size-middle)'
+                                    }}>Achievements:
+                                    </div>
+                                    <ul style={{
+                                        fontSize: 'var(--base-font-size-middle)'
+                                    }}>
+                                        <Achievements/>
+                                    </ul>
+                                </CardContent>
+                            </Card>
+                        )
+                    }
+                </>
+            )
+        }
+        return (
+            <>
+                <div style={{
+                    marginBottom: 20,
+                }}>
+                    <CardContent>
+                        <div style={{
+                            fontSize: 'var(--base-font-size-middle)'
+                        }}>Achievements:
+                        </div>
+                        <ul style={{
+                            fontSize: 'var(--base-font-size-middle)'
+                        }}>
+                            <Achievements/>
+                        </ul>
+                    </CardContent>
+                </div>
+            </>
+        )
+
+    }
     View = () => {
         const JobPosition = this.jobPosition.Show;
         const Company = this.company.Show;
         const Keywords = this.keywords.Show;
         const Times = this.times.Show;
         const Descriptions = this.descriptions.Show;
-        const Achievements = this.achievements.Show;
+        const Achievements = this.Achievements;
         const Projects = this.projects.Show;
         const JobSummaries = this.jobSummaries.Show;
         return (
@@ -153,14 +203,7 @@ class Period extends Base {
                                 <JobSummaries/>
                             </ul>
                         </div>
-                        <div>
-                            {this.achievements?.data?.length > 0 && <div>Achievements:</div>}
-                            <ul style={{
-                                fontSize: 'var(--base-font-size-middle)'
-                            }}>
-                                <Achievements/>
-                            </ul>
-                        </div>
+                        <Achievements/>
                         <div>
                             <Projects/>
                         </div>

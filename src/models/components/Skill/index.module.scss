@@ -1,15 +1,15 @@
 .skill {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: var(--base-font-size-middle);
-    & > span {
-        margin: var(--inline-block-margin);
-    }
+  display: flex;
+  align-items: center;
+  font-size: var(--base-font-size-middle);
+
+  & > div {
+    min-width: 120px;
+  }
 }
 
 .subTitle {
-    font-size: var(--base-font-size-small);
-    margin-left: var(--base-gap-unit);
-    font-style: italic;
+  font-size: var(--base-font-size-small);
+  margin-left: var(--base-gap-unit);
+  font-style: italic;
 }
