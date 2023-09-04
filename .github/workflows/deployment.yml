@@ -6,10 +6,13 @@ on:
 jobs:
   deploy:
     name: deployment
+    permissions:
+      id-token: write
+      contents: read
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [16.x]
     steps:
       - uses: actions/checkout@v3
         with:
@@ -18,14 +21,13 @@ jobs:
         run: npm install
       - name: Build page
         run: npm run build
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v1'
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./build
-      - name:  'Automated Version Bump'
-        uses:  'phips28/gh-action-bump-version@master'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          workload_identity_provider: 'projects/241015634198/locations/global/workloadIdentityPools/github-actions/providers/github'
+          service_account: 'github-action@scenic-rampart-397810.iam.gserviceaccount.com'
+      - name: Cloud Storage Uploader
+        uses: google-github-actions/upload-cloud-storage@v1.0.3
         with:
-          version-type:  'minor'
+          path: '/build'
+          destination: 'mercenarieshunter.com'
