@@ -5,6 +5,8 @@ import useReload from "./hooks/useReload";
 import Button from "./components/Button";
 import Card from "@mui/material/Card";
 import {nonenumerable} from "core-decorators";
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 type EditType = 'view' | 'edit' | 'preview';
 
@@ -65,16 +67,13 @@ export default class Base {
     public showName: string;
     @nonenumerable
     public showEditButton: boolean;
+    public isHidden?: boolean;
+    @nonenumerable
+    public canHidden: boolean;
 
     constructor() {
         this.id = v4();
         this.editType = 'view';
-        const onEdit = () => {
-            this.editType = 'edit';
-        }
-        const onSave = () => {
-            this.editType = 'view';
-        };
         this.canTranslate = false;
         this.showEditButton = false;
         this.ViewWrapper = ({children, editDescriptions}) => {
@@ -88,6 +87,7 @@ export default class Base {
         };
         this.watch = {};
         this.children = [];
+        this.canHidden = false;
     }
 
     async onTranslate() {
@@ -192,7 +192,7 @@ export default class Base {
             })
         }, []);
         if (this.isPreview) {
-            return <>{!this.canEdit ? <View/> : <Edit/>}</>
+            return this.isHidden ? <></> : <View/>
         }
         const showButtons = () => {
             if (this.canTranslate) {
@@ -210,11 +210,24 @@ export default class Base {
             <div style={{position: 'relative'}}>
                 <div style={{
                     width: showButtons() ? 'calc(100% - 60px)' : "auto",
-                    minHeight: showButtons() ? '80px' : 'auto'
+                    minHeight: showButtons() ? '90px' : 'auto'
                 }}>
                     {!this.canEdit ? <View/> : <Edit/>}
                 </div>
                 <div style={{width: 60, position: "absolute", top: 0, right: 0}}>
+                    {
+                        this.canHidden && (
+                            <div onClick={() => {
+                                this.isHidden = !this.isHidden;
+                                reload();
+                            }} style={{
+                                textAlign: 'center'
+                            }}>
+                                {!this.isHidden && <VisibilityIcon color="success"/>}
+                                {this.isHidden && <VisibilityOffIcon color="error"/>}
+                            </div>
+                        )
+                    }
                     <div>
                         {
                             this.editType === 'view' && !this.canEdit && this.showEditButton && <Button

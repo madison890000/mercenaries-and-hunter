@@ -21,6 +21,7 @@ export interface IProject {
     achievements: IAchievement[];
     descriptions: string;
     challengeAndSolutions: IChallengeAndSolution[];
+    isHidden?: boolean;
 }
 
 const Container = styled.div`
@@ -55,23 +56,25 @@ class Project extends Base {
     public challengeAndSolutions: ArrayData<ChallengeAndSolution>;
     private times: Times;
 
-    constructor({name, challengeAndSolutions, descriptions, achievements, keywords, start, end}: IProject) {
+    constructor({name, challengeAndSolutions, descriptions, achievements, keywords, start, end, isHidden}: IProject) {
         super();
         this.name = new EditText(name, 'input', '项目名称').setParent(this);
         this.times = new Times(start, end, 'month').setParent(this);
         this.descriptions = new Description(descriptions, 'textarea', '项目简介').setParent(this);
         this.achievements = new ArrayData<Achievement>(
-            achievements?.map(a => new Achievement(a?.text, a?.categories).setParent(this)),
+            achievements?.map(a => new Achievement(a?.text, a?.categories, a?.isHidden).setParent(this)),
             () => new Achievement('', [])
         ).setParent(this);
         this.challengeAndSolutions = new ArrayData<ChallengeAndSolution>(
-            challengeAndSolutions?.map(e => new ChallengeAndSolution(e?.challenge, e?.solution).setParent(this)),
+            challengeAndSolutions?.map(e => new ChallengeAndSolution(e?.challenge, e?.solution,e?.isHidden).setParent(this)),
             () => new ChallengeAndSolution()
             , false).setParent(this);
         this.keywords = new Keywords(keywords).setParent(this);
         this.canTranslate = true;
         this.showName = '项目';
         this.showEditButton = true;
+        this.isHidden = isHidden;
+        this.canHidden = true;
     }
 
     View = () => {

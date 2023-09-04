@@ -19,6 +19,8 @@ export default class ArrayData<T extends {
     editType: any;
     id: string;
     toJSON?: () => any;
+    canHidden?: boolean;
+    isHidden?: boolean;
 }> extends Base {
     data: T[];
     private origin: () => T;
@@ -44,7 +46,7 @@ export default class ArrayData<T extends {
         if (this.flex) {
             return (
                 <Row>
-                    {this.data?.map(d => <Col span={8}>
+                    {this.data?.filter(d => !d?.isHidden)?.map(d => <Col span={8}>
                         <d.Show/>
                     </Col>)}
                 </Row>
@@ -130,12 +132,12 @@ export default class ArrayData<T extends {
                                 {this.data?.map((d, index) => (
                                     <Col span={8}>
                                         <Row>
-                                            <Col span={this.canEdit ? 20 : 24}>
+                                            <Col span={this.canEdit ? 22 : 24}>
                                                 <d.Show/>
                                             </Col>
                                             {
                                                 this.canEdit && (
-                                                    <Col span={4}>
+                                                    <Col span={2}>
                                                         <HighlightOffIcon
                                                             style={{
                                                                 color: 'red'

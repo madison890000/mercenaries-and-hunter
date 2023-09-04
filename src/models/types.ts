@@ -9,6 +9,7 @@ export type Gender = 'MALE' | 'FEMALE';
 export type IAchievement = {
     text: string;
     categories: string[];
+    isHidden?: boolean;
 };
 
 
@@ -37,4 +38,5 @@ export type RelatedLink = {
 export type IChallengeAndSolution = {
     challenge: string;
     solution: string;
+    isHidden?: boolean;
 };

@@ -22,6 +22,7 @@ export interface ISkill {
     name: string;
     ages: number;
     importance: number;
+    isHidden?: boolean;
 }
 
 class Skill extends Base {
@@ -29,11 +30,13 @@ class Skill extends Base {
     public importance: Importance;
     public ages: number;
 
-    constructor({ages, name, importance}: ISkill) {
+    constructor({ages, name, importance, isHidden}: ISkill) {
         super();
         this.name = new EditText(name, 'input', '技能').setParent(this);
         this.ages = ages;
         this.importance = importance;
+        this.canHidden = true;
+        this.isHidden = isHidden;
     }
 
     View = () => {

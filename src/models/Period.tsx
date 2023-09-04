@@ -28,6 +28,7 @@ export interface IPeriod {
     jobSummaries: string[];
     projects?: IProject[];
     descriptions: string;
+    isHidden?: boolean;
 }
 
 const Content = styled.div`
@@ -69,13 +70,14 @@ class Period extends Base {
                     start,
                     end,
                     periodColor,
-                    projects
+                    projects,
+                    isHidden
                 }: IPeriod) {
         super();
         this.company = new Company(company).setParent(this);
         this.times = new Times(start, end).setParent(this);
         this.achievements = new ArrayData<Achievement>(
-            achievements?.map(a => new Achievement(a?.text, a?.categories).setParent(this)),
+            achievements?.map(a => new Achievement(a?.text, a?.categories, a?.isHidden).setParent(this)),
             () => new Achievement('', [])
             , false).setParent(this);
         this.jobSummaries = new ArrayData<Description>(
@@ -103,6 +105,8 @@ class Period extends Base {
         this.canTranslate = true;
         this.showName = '公司经历';
         this.showEditButton = true;
+        this.canHidden = true;
+        this.isHidden = isHidden;
     }
 
     @nonenumerable

@@ -9,12 +9,14 @@ class Achievement extends Base {
     private categories: Keywords;
     text: EditText;
 
-    constructor(text: string = '', categories: string[] = []) {
+    constructor(text: string = '', categories: string[] = [], isHidden?: boolean) {
         super();
         this.text = new EditText(pipe<string>(capitalize, addPeriodSuffix)(text), 'input', '成就').setParent(this);
         this.categories = new Keywords(categories).setParent(this);
         this.showName = '成就';
         this.showEditButton = true;
+        this.canHidden = true;
+        this.isHidden = isHidden;
     }
 
     View = () => {

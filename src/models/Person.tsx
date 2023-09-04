@@ -92,7 +92,8 @@ class Person extends Base {
                 '',
                 '请简单描述您自己的状况',
                 true,
-                true
+                true,
+                '个人说明',
             ), false,
             '建议分段编辑，包括 您的职业发展经历概况，过硬的职业技能与素养，您的团队协作能力，您的其他信息如对未来的规划'
         ).setParent(this);
