@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {Card} from "antd";
 import {DataGrid, GridColDef} from '@mui/x-data-grid';
-import {getSendList} from "./service";
-import ShowTimeUntilNow from "./components/ShowTime";
+import {getSendList} from "../service";
+import ShowTimeUntilNow from "../components/ShowTime";
 import Button from "@mui/material/Button";
 
 const DEFAULT_COLUMNS_WIDTH = 150;

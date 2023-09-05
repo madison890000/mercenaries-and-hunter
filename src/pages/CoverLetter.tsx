@@ -2,9 +2,9 @@ import React, {useContext, useState} from "react";
 import {Card, Col, Divider, Row} from "antd";
 import copy from 'copy-to-clipboard';
 import {TextField} from "@mui/material";
-import {useCoverLetter} from "./hooks/useCoverLetter";
-import GlobalContext from "./contexts/GlobalContext";
-import Button from "./models/components/Button";
+import {useCoverLetter} from "../hooks/useCoverLetter";
+import GlobalContext from "../contexts/GlobalContext";
+import Button from "../models/components/Button";
 
 const Editor = () => {
     const {person} = useContext(GlobalContext);

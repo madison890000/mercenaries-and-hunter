@@ -1,7 +1,7 @@
 import Button from "@mui/material/Button";
 import React, {useContext, useState} from "react";
 import Person from "./models/Person";
-import Print from "./Print";
+import Print from "./pages/Print";
 import {Col, notification, Row} from "antd";
 import GlobalContext from "./contexts/GlobalContext";
 

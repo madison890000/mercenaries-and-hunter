@@ -1,10 +1,10 @@
 import React, {useContext, useState} from "react";
 import {Divider, notification} from "antd";
-import GlobalContext from "./contexts/GlobalContext";
-import Button from "./models/components/Button";
+import GlobalContext from "../contexts/GlobalContext";
+import Button from "../models/components/Button";
 import Card from "@mui/material/Card";
 import {TextField} from "@mui/material";
-import {hasResume} from "./utils";
+import {hasResume} from "../utils";
 
 const Score = () => {
     const {person, scoreValues} = useContext(GlobalContext);

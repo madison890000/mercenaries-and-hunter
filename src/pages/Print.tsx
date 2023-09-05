@@ -1,9 +1,9 @@
 import React, {useContext, useEffect} from 'react';
-import styles from './App.module.scss';
-import {Divider} from './models/components';
+import styles from '../App.module.scss';
+import {Divider} from '../models/components';
 import {defineMessages, useIntl} from 'react-intl';
-import useReload from "./models/hooks/useReload";
-import GlobalContext from "./contexts/GlobalContext";
+import useReload from "../models/hooks/useReload";
+import GlobalContext from "../contexts/GlobalContext";
 import {useNavigate} from "react-router";
 
 const messages = defineMessages({

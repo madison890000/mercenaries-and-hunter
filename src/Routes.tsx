@@ -1,13 +1,13 @@
 import {HashRouter, Outlet, Route, Routes} from "react-router-dom";
 import Menus from "./modules/Menus";
 import ExportResume from "./ExportResume";
-import Preview from "./Home";
-import Print from "./Print";
-import Editor from "./Editor";
-import CoverLetter from "./CoverLetter";
-import Websites from "./Websites";
-import Score from "./Score";
-import SendList from "./SendList";
+import Preview from "./pages/Home";
+import Print from "./pages/Print";
+import Editor from "./pages/Editor";
+import CoverLetter from "./pages/CoverLetter";
+import Websites from "./pages/Websites";
+import Score from "./pages/Score";
+import SendList from "./pages/SendList";
 import React from "react";
 import WithPaddingLayout from "./layouts/WithPaddingLayout";
 

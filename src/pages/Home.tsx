@@ -1,12 +1,12 @@
 import React, {useContext, useEffect} from 'react';
-import styles from './App.module.scss';
-import {Divider} from './models/components';
+import styles from '../App.module.scss';
+import {Divider} from '../models/components';
 import {defineMessages, useIntl} from 'react-intl';
 import Button from "@mui/material/Button";
-import useReload from "./models/hooks/useReload";
+import useReload from "../models/hooks/useReload";
 import {useNavigate} from "react-router";
 import {Col, Row} from "antd";
-import GlobalContext from "./contexts/GlobalContext";
+import GlobalContext from "../contexts/GlobalContext";
 import Card from "@mui/material/Card";
 
 const messages = defineMessages({
