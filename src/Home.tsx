@@ -39,6 +39,10 @@ function Home() {
     const ViewPeriods = person.ViewPeriods;
     const ViewEducations = person.ViewEducations;
     const {score, advise} = scoreValues;
+    useEffect(() => {
+        person.editType = 'view';
+        reload()
+    }, [])
     const save = () => {
         window.localStorage.setItem('resume', JSON.stringify(person))
     }
@@ -85,18 +89,6 @@ function Home() {
                 <Button onClick={() => {
                     navigate('/copy')
                 }} size="small">去导入</Button>
-                {
-                    person.editType === 'view' && <Button onClick={() => {
-                        person.editType = 'preview';
-                        reload()
-                    }} size="large">预览</Button>
-                }
-                {
-                    person.editType === 'preview' && <Button onClick={() => {
-                        person.editType = 'view';
-                        reload()
-                    }}>返回编辑</Button>
-                }
                 <Button variant="contained" onClick={() => {
                     navigate('/print')
                 }} size="large">去打印</Button>

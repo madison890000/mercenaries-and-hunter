@@ -3,52 +3,37 @@ import MenuList from '@mui/material/MenuList';
 import MenuItem from '@mui/material/MenuItem';
 import {useLocation, useNavigate} from "react-router";
 
+const MENU_LIST = [
+    {name: 'edit', hash: '/edit', title: '简历制作'},
+    {name: 'home', hash: '/', title: '翻译修饰'},
+    {name: 'cl', hash: '/cl', title: '自动CL'},
+    {name: 'web', hash: '/web', title: '快速求职'},
+    {name: 'send', hash: '/send', title: '投递列表'}
+]
+
 const Menus = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    if (location.pathname === '/print') {
-        return null
-    }
     return (
         <>
             <MenuList
                 style={{
                     display: 'flex',
+                    justifyContent: 'center',
                     flexWrap: 'wrap',
-                    color: 'white',
-                    background: '#1976d2'
+                    color: 'var(--color-gray)',
+                    background: 'var(--color-white)'
                 }}
             >
-                <MenuItem onClick={() => {
-                    navigate('/')
-                }}>
-                    简历制作
-                </MenuItem>
-                <MenuItem onClick={() => {
-                    navigate('/score')
-                }}>
-                    简历打分
-                </MenuItem>
-                <MenuItem onClick={() => {
-                    navigate('/edit')
-                }}>
-                    对话翻译
-                </MenuItem>
-                <MenuItem onClick={() => {
-                    navigate('/cl')
-                }}>
-                    Cover Letter
-                </MenuItem>
-                <MenuItem onClick={() => {
-                    navigate('/web')
-                }}>
-                    适配求职网站
-                </MenuItem>
-                <MenuItem onClick={() => {
-                    navigate('/send')
-                }}>
-                    已投递列表
-                </MenuItem>
+                {
+                    MENU_LIST.map((e) => (
+                        <MenuItem onClick={() => {
+                            navigate(e?.hash)
+                        }} selected={location.pathname === e?.hash}>
+                            {e?.title}
+                        </MenuItem>
+                    ))
+                }
             </MenuList>
         </>
     );

@@ -23,6 +23,7 @@ code {
     --base-padding-small: var(--base-gap-small);
     --base-padding: var(--base-gap);
     --base-padding-large: var(--base-gap-large);
+    --base-layout-padding: 40px;
 
     --base-margin: var(--base-gap);
     --base-border-radius: var(--base-gap-2-unit);
@@ -51,6 +52,7 @@ code {
     --color-dark-yellow: #c2aa59;
     --color-green: #93c47d;
     --color-dark-red: #800000;
+    --color-white: #FFFFFF;
     /**
      * page(layout)
      */
@@ -70,8 +72,6 @@ code {
     --inline-block-padding: var(--base-padding);
     --inline-block-margin: var(--base-gap-small);
 
-    color: var(--color-charcoal);
-    background-color: white;
     /**
      * tag
      */
@@ -96,6 +96,9 @@ code {
      */
     --period-sub-title-color: var(--color-gray);
     --period-background-color: rgba(0, 0, 0, 0.05);
+
+    color: var(--color-charcoal);
+    background: var(--color-platinum);
 }
 
 .print {
