@@ -81,23 +81,33 @@ export default class ArrayData<T extends {
             <>
                 {
                     !this.flex && (
-                        <>
+                        <div>
                             <Tabs
                                 value={value}
                                 onChange={handleChange}
+                                indicatorColor="secondary"
+                                textColor="inherit"
                             >
                                 {this.data?.map((d, index) => (
                                     <Tab
                                         label={`${d?.showName} ${index + 1}`}
-                                        icon={<HighlightOffIcon
-                                            style={{
-                                                color: 'red'
-                                            }}
-                                            onClick={(e) => {
-                                                setOpen(true);
-                                                setEditData(d);
-                                                e?.stopPropagation();
-                                            }}/>} iconPosition="end"
+                                        icon={
+                                            <HighlightOffIcon
+                                                style={{
+                                                    color: 'red',
+                                                    fontSize: 16
+                                                }}
+                                                onClick={(e) => {
+                                                    setOpen(true);
+                                                    setEditData(d);
+                                                    e?.stopPropagation();
+                                                }}
+                                            />
+                                        }
+                                        iconPosition="end"
+                                        style={{
+                                            minHeight: 40
+                                        }}
                                     />
                                 ))}
                                 <Tab
@@ -122,7 +132,7 @@ export default class ArrayData<T extends {
                                     <d.Show/>
                                 </div>
                             ))}
-                        </>
+                        </div>
                     )
                 }
                 {

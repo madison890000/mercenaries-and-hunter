@@ -3,7 +3,6 @@ import Dayjs from 'dayjs';
 import React, {PropsWithChildren, useEffect} from "react";
 import useReload from "./hooks/useReload";
 import Button from "./components/Button";
-import Card from "@mui/material/Card";
 import {nonenumerable} from "core-decorators";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
@@ -23,9 +22,7 @@ const InnerViewWrapper: React.FC<PropsWithChildren<ViewWrapperProps>> = ({
                                                                              children,
                                                                          }) => {
     return (
-        <Card style={{
-            padding: 5
-        }}>
+        <div>
             {
                 editType === 'view' && !canEdit && editDescriptions && (
                     <div style={{
@@ -38,7 +35,7 @@ const InnerViewWrapper: React.FC<PropsWithChildren<ViewWrapperProps>> = ({
             <div>
                 {children}
             </div>
-        </Card>
+        </div>
     )
 }
 
@@ -210,7 +207,7 @@ export default class Base {
             <div style={{position: 'relative'}}>
                 <div style={{
                     width: showButtons() ? 'calc(100% - 60px)' : "auto",
-                    minHeight: showButtons() ? '90px' : 'auto'
+                    minHeight: showButtons() ? '60px' : 'auto'
                 }}>
                     {!this.canEdit ? <View/> : <Edit/>}
                 </div>
@@ -232,6 +229,7 @@ export default class Base {
                         {
                             this.editType === 'view' && !this.canEdit && this.showEditButton && <Button
                                 variant="contained"
+                                size="small"
                                 onClick={() => {
                                     this.editType = 'edit';
                                     reload();
@@ -248,6 +246,7 @@ export default class Base {
                                         this.editType = 'view';
                                         reload();
                                     }}
+                                    size="small"
                                     variant="contained"
                                 >
                                     完成
@@ -259,6 +258,7 @@ export default class Base {
                         this.canTranslate && !this.canEdit && (
                             <div>
                                 <Button
+                                    size="small"
                                     variant="outlined"
                                     onClick={async () => {
                                         await this.onTranslate?.();

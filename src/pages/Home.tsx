@@ -5,9 +5,9 @@ import {defineMessages, useIntl} from 'react-intl';
 import Button from "@mui/material/Button";
 import useReload from "../models/hooks/useReload";
 import {useNavigate} from "react-router";
-import {Col, Row} from "antd";
+import {Row} from "antd";
 import GlobalContext from "../contexts/GlobalContext";
-import Card from "@mui/material/Card";
+import AIScore from "../modules/AIScore";
 
 const messages = defineMessages({
     profile: {
@@ -31,14 +31,13 @@ const messages = defineMessages({
 function Home() {
     const intl = useIntl();
     const reload = useReload();
-    const {person, scoreValues} = useContext(GlobalContext);
+    const {person} = useContext(GlobalContext);
     const navigate = useNavigate();
     const ViewBaseInfo = person.ViewBaseInfo;
     const ViewDescription = person.ViewDescription;
     const ViewSkills = person.ViewSkills;
     const ViewPeriods = person.ViewPeriods;
     const ViewEducations = person.ViewEducations;
-    const {score, advise} = scoreValues;
     useEffect(() => {
         person.editType = 'view';
         reload()
@@ -51,52 +50,34 @@ function Home() {
             save();
         }, 1000 * 60)
         return () => clearInterval(saveJob)
-    }, [])
+    }, []);
+
     return (
         <div>
-            <Card style={{
-                padding: 10
-            }}>
-                <Row align="middle">
-                    <Col span={8}>
-                        <h5>IT猎人得分：{score}</h5>
-                    </Col>
-                    <Col span={16}>
-                        <h5>
-                            建议：
-                            {
-                                score === 0 && (
-                                    <Button onClick={() => {
-                                        navigate('/score')
-                                    }}>去打分</Button>
-                                )
-                            }
-                        </h5>
-                        <div>
-                            {advise?.map((e, index) =>
-                                <div>
-                                    <span>{e}</span>
-                                </div>
-                            )}
 
-                        </div>
-                    </Col>
-                </Row>
-            </Card>
-            <Row justify="space-between" style={{
+            <Row justify="space-around" style={{
                 padding: 10
             }}>
-                <Button onClick={() => {
+                <Button  onClick={() => {
                     navigate('/copy')
-                }} size="small">去导入</Button>
+                }} size="small">导入</Button>
+                <AIScore/>
                 <Button variant="contained" onClick={() => {
                     navigate('/print')
                 }} size="large">去打印</Button>
-                {
-                    <Button onClick={() => {
-                        save();
-                    }}>保存(每1分钟自动保存)</Button>
-                }
+                <div style={{
+                    textAlign: "center"
+                }}>
+                    <div>
+                        <Button onClick={() => {
+                            save();
+                        }}>保存</Button>
+                    </div>
+                    <div style={{
+                        fontSize: 'var(--base-font-size-small)'
+                    }}>每一分钟自动保存
+                    </div>
+                </div>
 
             </Row>
             <div className={styles.main} id="print-id">

@@ -144,11 +144,14 @@ class Period extends Base {
         return (
             <>
                 <div style={{
-                    marginBottom: 20,
+                    background: 'rgba(0,0,0,0.05)',
+                    borderRadius: 'var(--base-border-radius)'
                 }}>
-                    <CardContent>
+                    <>
                         <div style={{
-                            fontSize: 'var(--base-font-size-middle)'
+                            fontSize: 'var(--base-font-size-middle)',
+                            padding: 10,
+                            paddingBottom: 0
                         }}>Achievements:
                         </div>
                         <ul style={{
@@ -156,7 +159,7 @@ class Period extends Base {
                         }}>
                             <Achievements/>
                         </ul>
-                    </CardContent>
+                    </>
                 </div>
             </>
         )

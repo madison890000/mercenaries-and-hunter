@@ -1,7 +1,7 @@
 import React, {useContext, useState} from "react";
-import {Card, Col, Divider, Row} from "antd";
+import {Col, Row} from "antd";
 import copy from 'copy-to-clipboard';
-import {TextField} from "@mui/material";
+import {Card, CardContent, TextField, Typography} from "@mui/material";
 import {useCoverLetter} from "../hooks/useCoverLetter";
 import GlobalContext from "../contexts/GlobalContext";
 import Button from "../models/components/Button";
@@ -36,17 +36,24 @@ const Editor = () => {
                             fullWidth
                             variant="filled"
                             multiline
+                            rows={18}
                         />
                     </div>
                 </Col>
                 <Col span={12}>
                     <div style={{textAlign: 'center', marginBottom: 10}}>
-                        <Button loading={loading} type="primary" onClick={async () => {
+                        <Button loading={loading} variant="contained" type="primary" onClick={async () => {
                             company && job && await run(JSON.stringify(person.toJSON()), job, company);
                         }}>生成Cover letter</Button>
                     </div>
                     <Card>
-                        {message}
+                        <CardContent style={{
+                            minHeight: 340,
+                        }}>
+                            <Typography sx={{mb: 1.5}} color="text.secondary">
+                                {message}
+                            </Typography>
+                        </CardContent>
                     </Card>
                     <div>
                         <Button
@@ -58,7 +65,6 @@ const Editor = () => {
                     </div>
                 </Col>
             </Row>
-            <Divider></Divider>
         </>
     )
 }

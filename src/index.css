@@ -124,7 +124,7 @@ code {
     }
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1350px) {
     :root {
         --base-font-size-large: 16px;
         --base-font-size-middle: 14px;
