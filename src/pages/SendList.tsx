@@ -1,43 +1,61 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {Card, CardContent} from "@mui/material";
 
 import {DataGrid, GridColDef} from '@mui/x-data-grid';
-import {getSendList} from "../service";
 import ShowTimeUntilNow from "../components/ShowTime";
 import Button from "@mui/material/Button";
+import SendStatus from "../components/SendStatus";
+import useSendList from "../hooks/useSendList";
+import Like from "../components/Like";
 
 const DEFAULT_COLUMNS_WIDTH = 150;
-const columns: GridColDef<{
-    title?: string;
-    time: string;
-    originUrl?: string;
-    site: string;
-}>[] = [
-    {
-        field: 'title', headerName: '名称', width: DEFAULT_COLUMNS_WIDTH * 3,
-        renderCell: ({value, row}) => <a href={row.originUrl ?? row?.site} target="_blank">{value}</a>
-    },
-    {
-        field: 'time',
-        headerName: '投递时间',
-        width: DEFAULT_COLUMNS_WIDTH,
-        renderCell: ({value}) => <ShowTimeUntilNow time={value}/>
-    },
-];
+
 const SendList = () => {
-    const [sends, setSends] = useState<any>([]);
-    const getList = async () => {
-        const res = await getSendList();
-        console.log(res)
-        setSends(res ?? [])
-    }
-    useEffect(() => {
-        getList();
-    }, [])
+    const {sends, updateStatusById, updateLikeById, getList} = useSendList();
     const [pagination, setPagination] = useState({
         page: 0,
         pageSize: 10
     })
+    const columns: GridColDef<{
+        id: string;
+        title?: string;
+        time: string;
+        originUrl?: string;
+        site: string;
+    }>[] = [
+        {
+            field: 'title', headerName: '名称', width: DEFAULT_COLUMNS_WIDTH * 3,
+            renderCell: ({value, row}) => <a href={row.originUrl ?? row?.site} target="_blank">{value}</a>
+        },
+        {
+            field: 'time',
+            headerName: '投递时间',
+            width: DEFAULT_COLUMNS_WIDTH,
+            renderCell: ({value}) => <ShowTimeUntilNow time={value}/>
+        },
+        {
+            field: 'like',
+            headerName: '心仪度',
+            width: DEFAULT_COLUMNS_WIDTH,
+            renderCell: ({value, row}) => (
+                <Like
+                    onChange={(e: any) => updateLikeById(row.id, e)}
+                    value={value}
+                />
+            )
+        },
+        {
+            field: 'status',
+            headerName: '状态',
+            width: DEFAULT_COLUMNS_WIDTH,
+            renderCell: ({value, row}) => (
+                <SendStatus
+                    onChange={(e: any) => updateStatusById(row.id, e?.target?.value)}
+                    value={value}
+                />
+            )
+        }
+    ];
     return (
         <Card>
             <CardContent>
