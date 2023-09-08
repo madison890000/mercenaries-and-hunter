@@ -10,7 +10,7 @@ const Score = () => {
     const {person, scoreValues} = useContext(GlobalContext);
     const [resume, setResume] = useState('');
     const {run, score, advise, loading} = scoreValues;
-    const finalResume = resume || JSON.stringify(person.toJSON());
+    const finalResume = resume || person.toResume();
     const canScore = () => {
         if (resume) {
             return true
@@ -44,7 +44,7 @@ const Score = () => {
                 />
                 <Divider></Divider>
                 <Button loading={loading} type="primary" onClick={async () => {
-                    canScore() && await run(JSON.stringify(finalResume), !hasResume());
+                    canScore() && await run(finalResume, !hasResume());
                 }}>一键打分</Button>
             </div>
 

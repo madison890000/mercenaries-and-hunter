@@ -171,6 +171,19 @@ class Person extends Base {
         delete json.baseInfo;
         return json
     }
+
+    toResume() {
+        const json = {
+            periods: this.periods.data.map(e => e?.toResume()),
+            descriptions: this.descriptions.data.map(e => e),
+            educations: this.educations.data.map(e => e?.toResume()),
+            skills: this.skills.data.map(e => e?.toResume()),
+            ...this.baseInfo.toResume(),
+        }
+        // @ts-ignore
+        delete json.baseInfo;
+        return json
+    }
 }
 
 export default Person

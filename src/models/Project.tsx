@@ -66,7 +66,7 @@ class Project extends Base {
             () => new Achievement('', [])
         ).setParent(this);
         this.challengeAndSolutions = new ArrayData<ChallengeAndSolution>(
-            challengeAndSolutions?.map(e => new ChallengeAndSolution(e?.challenge, e?.solution,e?.isHidden).setParent(this)),
+            challengeAndSolutions?.map(e => new ChallengeAndSolution(e?.challenge, e?.solution, e?.isHidden).setParent(this)),
             () => new ChallengeAndSolution()
             , false).setParent(this);
         this.keywords = new Keywords(keywords).setParent(this);
@@ -201,6 +201,14 @@ class Project extends Base {
         this.challengeAndSolutions?.data?.forEach((j, index) => {
             j.updateTranslate(d?.challengeAndSolutions[index]);
         });
+    }
+
+    toResume() {
+        return {
+            descriptions: this.descriptions,
+            // achievements: this.achievements,
+            // challengeAndSolutions: this.challengeAndSolutions.data.map(e => e?.toResume()),
+        }
     }
 }
 

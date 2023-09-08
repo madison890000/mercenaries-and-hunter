@@ -81,6 +81,13 @@ class Skill extends Base {
             </Row>
         );
     }
+
+    toResume() {
+        return {
+            name: this.name,
+            ages: this.ages,
+        }
+    }
 }
 
 export default Skill

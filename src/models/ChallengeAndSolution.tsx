@@ -40,6 +40,13 @@ class ChallengeAndSolution extends Base {
         this.challenge.text.text = challengeAndSolution?.challenge;
         this.solution.text.text = challengeAndSolution?.solution;
     }
+
+    toResume() {
+        return {
+            challenge: this.challenge,
+            solution: this.solution,
+        }
+    }
 }
 
 export default ChallengeAndSolution

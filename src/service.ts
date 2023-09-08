@@ -29,7 +29,7 @@ export const scoreResume = async (resume: any, needCreateResume: boolean) => {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            content: JSON.stringify(resume),
+            content: resume,
             needCreateResume,
         })
     })
