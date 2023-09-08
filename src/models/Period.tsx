@@ -249,6 +249,16 @@ class Period extends Base {
         this.company.name.text = d?.company;
         this.emit('value-change')
     }
+
+    toResume() {
+        return {
+            job: this.jobPosition,
+            jobSummaries: this.jobSummaries.data.map(e => e),
+            descriptions: this.descriptions,
+            achievements: this.achievements,
+            projects: this.projects.data.map(e=>e?.toResume()),
+        }
+    }
 }
 
 export default Period

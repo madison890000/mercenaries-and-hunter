@@ -9,7 +9,7 @@ export function useCoverLetter() {
     const [message, setMessage] = useState('');
     const [done, setDone] = useState(false);
     const [loading, setLoading] = useState(false);
-    const run = async (resume: string, job: string, company: string) => {
+    const run = async (resume: any, job: string, company: string) => {
         try {
             setLoading(true);
             const res = await formatAndTranslateCV(resume, job, company);

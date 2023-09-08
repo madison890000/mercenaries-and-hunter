@@ -11,7 +11,7 @@ export function useScore() {
     const [advise, setAdvise] = useState<string[]>([]);
     const [done, setDone] = useState(false);
     const [loading, setLoading] = useState(false);
-    const run = async (resume: string, needCreateResume: boolean) => {
+    const run = async (resume: any, needCreateResume: boolean) => {
         try {
             setLoading(true);
             const res = await scoreResume(resume,needCreateResume).then(e => e.json());

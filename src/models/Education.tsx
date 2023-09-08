@@ -89,6 +89,13 @@ class Education extends Base {
         delete json.times;
         return json
     }
+    toResume(){
+        return {
+            college:this.college,
+            major:this.major,
+            degree:this.degree,
+        }
+    }
 }
 
 export default Education

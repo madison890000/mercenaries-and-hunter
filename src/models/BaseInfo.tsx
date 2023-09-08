@@ -166,6 +166,12 @@ class BaseInfo extends Base {
         )
     }
 
+    toResume() {
+        return {
+            firstName: this.firstName,
+            lastName: this.lastName,
+        }
+    }
 }
 
 export default BaseInfo

@@ -16,6 +16,8 @@ const getStorePerson = () => {
     // @ts-ignore
     return window.localStorage.getItem('resume') !== null ? new Person(JSON.parse(window.localStorage.getItem('resume'))) : defaultPerson;
 }
+// @ts-ignore
+window.person = getStorePerson();
 export const GlobalContextContainer = ({children}: PropsWithChildren) => {
     const person = useRef<Person>(getStorePerson());
     const reload = useReload();
