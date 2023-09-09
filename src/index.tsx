@@ -7,6 +7,7 @@ import {generatedTranslations} from './i18n/translations';
 import LocaleContext, {LocaleContextContainer} from './contexts/LocaleContext';
 import {GlobalContextContainer} from "./contexts/GlobalContext";
 import RouteMap from "./Routes";
+import {GoogleOAuthProvider} from '@react-oauth/google';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
@@ -20,11 +21,15 @@ const I18nProvider = () => {
     );
 };
 root.render(
-    <LocaleContextContainer>
-        <GlobalContextContainer>
-            <I18nProvider/>
-        </GlobalContextContainer>
-    </LocaleContextContainer>
+    <GoogleOAuthProvider
+        clientId={process.env.REACT_APP_GOOGLE_OAUTH2_CLIENT_ID ?? ''}
+    >
+        <LocaleContextContainer>
+            <GlobalContextContainer>
+                <I18nProvider/>
+            </GlobalContextContainer>
+        </LocaleContextContainer>
+    </GoogleOAuthProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

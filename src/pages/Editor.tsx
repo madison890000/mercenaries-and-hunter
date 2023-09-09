@@ -5,12 +5,14 @@ import copy from 'copy-to-clipboard';
 import Button from "../models/components/Button";
 import {CardContent, TextField, Typography} from "@mui/material";
 import Card from "@mui/material/Card";
+import Login from "../modules/GoogleLogin";
 
 const Editor = () => {
     const [data, setData] = useState<string>();
     const {run, message, loading} = useMessage();
     return (
         <>
+            <Login/>
             <Row gutter={12} style={{
                 margin: 12,
             }}>
@@ -40,7 +42,7 @@ const Editor = () => {
                         <CardContent style={{
                             minHeight: 340,
                         }}>
-                            <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                            <Typography sx={{mb: 1.5}} color="text.secondary">
                                 {message}
                             </Typography>
                         </CardContent>

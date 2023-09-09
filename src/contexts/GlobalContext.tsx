@@ -3,6 +3,7 @@ import Person from "../models/Person";
 import defaultPerson from "../DefaultPerson";
 import {useScore} from "../hooks/useScore";
 import useReload from "../models/hooks/useReload";
+import useUserInfo from "./useUserInfo";
 
 interface ILocaleContext {
     person: Person;
@@ -16,10 +17,14 @@ const getStorePerson = () => {
     // @ts-ignore
     return window.localStorage.getItem('resume') !== null ? new Person(JSON.parse(window.localStorage.getItem('resume'))) : defaultPerson;
 }
+
+
 // @ts-ignore
 window.person = getStorePerson();
 export const GlobalContextContainer = ({children}: PropsWithChildren) => {
+    useUserInfo();
     const person = useRef<Person>(getStorePerson());
+
     const reload = useReload();
     const {person: globalPerson} = useContext(GlobalContext);
     const scoreValues = useScore();
