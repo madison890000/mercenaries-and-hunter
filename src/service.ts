@@ -1,8 +1,13 @@
+import {getGoogleToken} from "./utils";
+import {API_DOMAIN} from "./constants/domain";
+
+
 export const formatAndTranslate = async (text: string) => {
-    return fetch('https://chat.mercenarieshunter.com/chat/format-and-translate', {
+    return fetch(`${API_DOMAIN}/chat/format-and-translate`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            'authorization': `Bearer ${getGoogleToken()}`
         },
         body: JSON.stringify({
             content: text
@@ -11,10 +16,11 @@ export const formatAndTranslate = async (text: string) => {
 }
 
 export const formatAndTranslateResume = async (text: any) => {
-    return fetch('https://chat.mercenarieshunter.com/chat/format-resume', {
+        return fetch(`${API_DOMAIN}/chat/format-resume`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            'authorization': `Bearer ${getGoogleToken()}`
         },
         body: JSON.stringify({
             content: JSON.stringify(text)
@@ -23,10 +29,11 @@ export const formatAndTranslateResume = async (text: any) => {
 }
 
 export const scoreResume = async (resume: any, needCreateResume: boolean) => {
-    return fetch('https://chat.mercenarieshunter.com/chat/score-resume', {
+    return fetch(`${API_DOMAIN}/chat/score-resume`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            'authorization': `Bearer ${getGoogleToken()}`
         },
         body: JSON.stringify({
             content: resume,
@@ -36,10 +43,11 @@ export const scoreResume = async (resume: any, needCreateResume: boolean) => {
 }
 
 export const formatAndTranslateCV = async (resume: string, job: string, company: string) => {
-    return fetch('https://chat.mercenarieshunter.com/chat/write-cl', {
+    return fetch(`${API_DOMAIN}/chat/write-cl`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            'authorization': `Bearer ${getGoogleToken()}`
         },
         body: JSON.stringify({
             resume,

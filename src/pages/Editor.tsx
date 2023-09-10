@@ -5,14 +5,13 @@ import copy from 'copy-to-clipboard';
 import Button from "../models/components/Button";
 import {CardContent, TextField, Typography} from "@mui/material";
 import Card from "@mui/material/Card";
-import Login from "../modules/GoogleLogin";
+import LoginWrapper from "../modules/LoginWrapper/LoginWrapper";
 
 const Editor = () => {
     const [data, setData] = useState<string>();
     const {run, message, loading} = useMessage();
     return (
         <>
-            <Login/>
             <Row gutter={12} style={{
                 margin: 12,
             }}>
@@ -34,9 +33,11 @@ const Editor = () => {
                 </Col>
                 <Col span={12}>
                     <div style={{textAlign: 'center', marginBottom: 10}}>
-                        <Button variant="contained" loading={loading} type="primary" onClick={async () => {
-                            data && await run(data);
-                        }}>一键翻译并修改语法和语气</Button>
+                        <LoginWrapper>
+                            <Button variant="contained" loading={loading} type="primary" onClick={async () => {
+                                data && await run(data);
+                            }}>一键翻译并修改语法和语气</Button>
+                        </LoginWrapper>
                     </div>
                     <Card>
                         <CardContent style={{
