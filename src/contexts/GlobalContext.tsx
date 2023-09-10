@@ -9,6 +9,8 @@ interface ILocaleContext {
     person: Person;
     scoreValues: ReturnType<typeof useScore>;
     reloadPerson: () => void;
+    reload: () => void;
+    updateToken: () => void;
     userInfo: any;
 }
 
@@ -23,7 +25,7 @@ const getStorePerson = () => {
 // @ts-ignore
 window.person = getStorePerson();
 export const GlobalContextContainer = ({children}: PropsWithChildren) => {
-    const {userInfo} = useUserInfo();
+    const {userInfo,updateToken} = useUserInfo();
     const person = useRef<Person>(getStorePerson());
 
     const reload = useReload();
@@ -39,7 +41,9 @@ export const GlobalContextContainer = ({children}: PropsWithChildren) => {
                 person: person.current,
                 scoreValues,
                 reloadPerson,
-                userInfo
+                userInfo,
+                reload,
+                updateToken
             }}
         >
             {children}

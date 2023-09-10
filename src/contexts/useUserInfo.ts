@@ -13,8 +13,13 @@ const useUserInfo = () => {
         picture: '',
         login: false,
     })
-
+    const updateToken = ()=>{
+        // @ts-ignore
+        token.current = getGoogleToken();
+        decodeToken();
+    }
     const decodeToken = () => {
+        console.log('decodeToken===>')
         if (token.current) {
             const info = jose.decodeJwt(token.current ?? '');
             if (info?.exp && new Date().getTime() < info?.exp * 1000) {
@@ -32,6 +37,7 @@ const useUserInfo = () => {
     useEffect(() => {
         decodeToken();
         window.addEventListener('storage', (e) => {
+            console.log(e)
             if (e?.key === 'google-token') {
                 decodeToken();
             }
@@ -39,6 +45,7 @@ const useUserInfo = () => {
     }, []);
     return {
         userInfo,
+        updateToken,
     }
 }
 export default useUserInfo
