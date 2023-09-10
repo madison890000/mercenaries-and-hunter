@@ -5,6 +5,7 @@ import copy from 'copy-to-clipboard';
 import Button from "../models/components/Button";
 import {CardContent, TextField, Typography} from "@mui/material";
 import Card from "@mui/material/Card";
+import LoginWrapper from "../modules/LoginWrapper/LoginWrapper";
 
 const Editor = () => {
     const [data, setData] = useState<string>();
@@ -32,15 +33,17 @@ const Editor = () => {
                 </Col>
                 <Col span={12}>
                     <div style={{textAlign: 'center', marginBottom: 10}}>
-                        <Button variant="contained" loading={loading} type="primary" onClick={async () => {
-                            data && await run(data);
-                        }}>一键翻译并修改语法和语气</Button>
+                        <LoginWrapper>
+                            <Button variant="contained" loading={loading} type="primary" onClick={async () => {
+                                data && await run(data);
+                            }}>一键翻译并修改语法和语气</Button>
+                        </LoginWrapper>
                     </div>
                     <Card>
                         <CardContent style={{
                             minHeight: 340,
                         }}>
-                            <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                            <Typography sx={{mb: 1.5}} color="text.secondary">
                                 {message}
                             </Typography>
                         </CardContent>

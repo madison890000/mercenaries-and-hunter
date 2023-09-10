@@ -5,6 +5,7 @@ import Button from "../models/components/Button";
 import Card from "@mui/material/Card";
 import {TextField} from "@mui/material";
 import {hasResume} from "../utils";
+import LoginWrapper from "../modules/LoginWrapper/LoginWrapper";
 
 const Score = () => {
     const {person, scoreValues} = useContext(GlobalContext);
@@ -43,9 +44,11 @@ const Score = () => {
                     multiline
                 />
                 <Divider></Divider>
-                <Button loading={loading} type="primary" onClick={async () => {
-                    canScore() && await run(finalResume, !hasResume());
-                }}>一键打分</Button>
+                <LoginWrapper>
+                    <Button loading={loading} type="primary" onClick={async () => {
+                        canScore() && await run(finalResume, !hasResume());
+                    }}>一键打分</Button>
+                </LoginWrapper>
             </div>
 
             <Card style={{

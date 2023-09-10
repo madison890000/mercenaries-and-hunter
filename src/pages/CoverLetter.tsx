@@ -5,6 +5,7 @@ import {Card, CardContent, TextField, Typography} from "@mui/material";
 import {useCoverLetter} from "../hooks/useCoverLetter";
 import GlobalContext from "../contexts/GlobalContext";
 import Button from "../models/components/Button";
+import LoginWrapper from "../modules/LoginWrapper/LoginWrapper";
 
 const Editor = () => {
     const {person} = useContext(GlobalContext);
@@ -42,9 +43,11 @@ const Editor = () => {
                 </Col>
                 <Col span={12}>
                     <div style={{textAlign: 'center', marginBottom: 10}}>
-                        <Button loading={loading} variant="contained" type="primary" onClick={async () => {
-                            company && job && await run(person.toResume(), job, company);
-                        }}>生成Cover letter</Button>
+                        <LoginWrapper>
+                            <Button loading={loading} variant="contained" type="primary" onClick={async () => {
+                                company && job && await run(person.toResume(), job, company);
+                            }}>生成Cover letter</Button>
+                        </LoginWrapper>
                     </div>
                     <Card>
                         <CardContent style={{
