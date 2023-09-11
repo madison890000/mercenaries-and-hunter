@@ -58,9 +58,6 @@ function Home() {
             <Row justify="space-around" style={{
                 padding: 10
             }}>
-                <Button  onClick={() => {
-                    navigate('/copy')
-                }} size="small">导入</Button>
                 <AIScore/>
                 <Button variant="contained" onClick={() => {
                     navigate('/print')
