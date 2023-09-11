@@ -50,6 +50,14 @@ const Websites = () => {
                 >
                     <SwiperSlide>
                         <ImageCard
+                            src="/imgs/linkedin.png"
+                            description={
+                                <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+                            }
+                        />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <ImageCard
                             src="/imgs/freelancer.png"
                             description={<a href="https://www.freelancer.com/"
                                             target="_blank">freelancer</a>}
