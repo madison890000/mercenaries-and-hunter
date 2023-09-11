@@ -4,7 +4,7 @@ import EditText from "./EditText";
 import styled from "styled-components";
 import {addPeriodSuffix, capitalize, pipe} from "../utils";
 import {nonenumerable} from "core-decorators";
-import {formatAndTranslateResume} from "../service";
+import {formatAndTranslateResume} from "../services/mh";
 
 const DescriptionContainer = styled.div`
   margin-top: var(--block-padding);

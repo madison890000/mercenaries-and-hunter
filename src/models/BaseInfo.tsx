@@ -6,7 +6,7 @@ import ArrayData from "./ArrayData";
 import Link from "./Link";
 import {RelatedLink} from "./types";
 import {nonenumerable} from "core-decorators";
-import {formatAndTranslateResume} from "../service";
+import {formatAndTranslateResume} from "../services/mh";
 
 class BaseInfo extends Base {
 

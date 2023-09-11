@@ -12,7 +12,7 @@ import {IAchievement, JobPosition} from "./types";
 import Keywords from "./Keywords";
 import ArrayData from "./ArrayData";
 import {nonenumerable} from "core-decorators";
-import {formatAndTranslateResume} from "../service";
+import {formatAndTranslateResume} from "../services/mh";
 import JobSummary from "./JobSummary";
 import Card from "@mui/material/Card";
 import {CardContent} from "@mui/material";
@@ -256,7 +256,7 @@ class Period extends Base {
             jobSummaries: this.jobSummaries.data.map(e => e),
             descriptions: this.descriptions,
             achievements: this.achievements,
-            projects: this.projects.data.map(e=>e?.toResume()),
+            projects: this.projects.data.map(e => e?.toResume()),
         }
     }
 }

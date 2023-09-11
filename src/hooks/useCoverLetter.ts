@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {formatAndTranslateCV} from "../service";
+import {formatAndTranslateCV} from "../services/stream";
 
 const TIME_OUT_MS = 60000;
 

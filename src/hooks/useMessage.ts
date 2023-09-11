@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {formatAndTranslate} from "../service";
+import {formatAndTranslate} from "../services/stream";
 
 const TIME_OUT_MS = 60000;
 
@@ -8,7 +8,7 @@ export function useMessage() {
     const [error, setError] = useState('');
     const [message, setMessage] = useState('');
     const [done, setDone] = useState(false);
-    const [loading,setLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
     const run = async (text: string) => {
         try {
             setLoading(true);

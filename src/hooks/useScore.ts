@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {scoreResume} from "../service";
+import {scoreResume} from "../services/mh";
 import Person from "../models/Person";
 
 const TIME_OUT_MS = 60000;
@@ -14,12 +14,12 @@ export function useScore() {
     const run = async (resume: any, needCreateResume: boolean) => {
         try {
             setLoading(true);
-            const res = await scoreResume(resume,needCreateResume).then(e => e.json());
-            if(res.resume && needCreateResume){
-                try{
+            const res = await scoreResume(resume, needCreateResume);
+            if (res.resume && needCreateResume) {
+                try {
                     const newPerson = new Person(res.resume);
                     window.localStorage.setItem('resume', JSON.stringify(newPerson))
-                }finally {
+                } finally {
 
                 }
             }

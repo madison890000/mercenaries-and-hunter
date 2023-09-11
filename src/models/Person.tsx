@@ -7,7 +7,7 @@ import BaseInfo from './BaseInfo';
 import Description from "./Description";
 import ArrayData from "./ArrayData";
 import {Degree} from "./types";
-import {formatAndTranslateResume} from "../service";
+import {formatAndTranslateResume} from "../services/mh";
 import {nonenumerable} from "core-decorators";
 
 interface IPerson {

@@ -11,7 +11,7 @@ import Keywords from "./Keywords";
 import ArrayData from "./ArrayData";
 import {Row} from "antd";
 import {nonenumerable} from "core-decorators";
-import {formatAndTranslateResume} from "../service";
+import {formatAndTranslateResume} from "../services/mh";
 
 export interface IProject {
     name: string;
