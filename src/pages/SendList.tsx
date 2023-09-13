@@ -14,7 +14,7 @@ const SendList = () => {
     const {sends, updateStatusById, updateLikeById, getList} = useSendList();
     const [pagination, setPagination] = useState({
         page: 0,
-        pageSize: 10
+        pageSize: 20
     })
     const columns: GridColDef<{
         id: string;
