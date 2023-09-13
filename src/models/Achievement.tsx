@@ -26,9 +26,11 @@ class Achievement extends Base {
             <li>
                 <div style={{display: 'flex', alignItems: 'center'}}>
                     <Text/>
-                    <span>
-                    <Categories/>
-                </span>
+                    <span style={{
+                        marginLeft: 12,
+                    }}>
+                        <Categories/>
+                    </span>
                 </div>
             </li>
         )

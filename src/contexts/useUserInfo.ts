@@ -4,6 +4,7 @@ import {getGoogleToken} from "../utils";
 import jobs from "../jobs";
 import sendList from "../lib/SendListData";
 import {getUserInfo} from "../services/mh";
+import {ONE_WEEK} from "../constants/date";
 
 
 const useUserInfo = () => {
@@ -30,7 +31,7 @@ const useUserInfo = () => {
     const decodeToken = () => {
         if (token.current) {
             const info = jose.decodeJwt(token.current ?? '');
-            if (info?.exp && new Date().getTime() < info?.exp * 1000 + 60 * 1000 * 60 * 2) {
+            if (info?.exp && new Date().getTime() < info?.exp * 1000 + ONE_WEEK) {
                 setUserInfo({
                     name: info?.name as string,
                     email: info?.email as string,

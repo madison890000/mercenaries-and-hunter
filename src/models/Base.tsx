@@ -1,43 +1,12 @@
 import {v4} from 'uuid';
 import Dayjs from 'dayjs';
-import React, {PropsWithChildren, useEffect} from "react";
-import useReload from "./hooks/useReload";
-import Button from "./components/Button";
+import React, {useEffect} from "react";
 import {nonenumerable} from "core-decorators";
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import InnerViewWrapper from "./ui/Base/InnerViewWrapper";
+import Show from "./ui/Base/Show";
+import useReload from "./hooks/useReload";
 
 type EditType = 'view' | 'edit' | 'preview';
-
-interface ViewWrapperProps {
-    editType: EditType;
-    canEdit: boolean;
-    editDescriptions?: string;
-}
-
-const InnerViewWrapper: React.FC<PropsWithChildren<ViewWrapperProps>> = ({
-                                                                             canEdit,
-                                                                             editType,
-                                                                             editDescriptions,
-                                                                             children,
-                                                                         }) => {
-    return (
-        <div>
-            {
-                editType === 'view' && !canEdit && editDescriptions && (
-                    <div style={{
-                        color: 'gray',
-                    }}>
-                        {editDescriptions ?? ''}
-                    </div>
-                )
-            }
-            <div>
-                {children}
-            </div>
-        </div>
-    )
-}
 
 export default class Base {
     @nonenumerable
@@ -159,7 +128,7 @@ export default class Base {
         })
     }
 
-    on(name: string, cb: any) {
+    on = (name: string, cb: any) => {
         if (this.watch[name]) {
             this.watch[name].push(cb);
         } else {
@@ -169,9 +138,9 @@ export default class Base {
 
     @nonenumerable
     Show = () => {
-        const reload = useReload();
         const View = this.View;
         const Edit = this.Edit;
+        const reload = useReload();
         useEffect(() => {
             this.on('type-change', () => {
                 try {
@@ -188,89 +157,27 @@ export default class Base {
                 }
             })
         }, []);
-        if (this.isPreview) {
-            return this.isHidden ? <></> : <View/>
-        }
-        const showButtons = () => {
-            if (this.canTranslate) {
-                return true
-            }
-            if (this.editType === "view" && !this.canEdit && this.showEditButton) {
-                return true
-            }
-            if (this.editType === 'edit') {
-                return true
-            }
-            return false
-        }
         return (
-            <div style={{position: 'relative'}}>
-                <div style={{
-                    width: showButtons() ? 'calc(100% - 60px)' : "auto",
-                    minHeight: showButtons() ? '60px' : 'auto'
-                }}>
-                    {!this.canEdit ? <View/> : <Edit/>}
-                </div>
-                <div style={{width: 60, position: "absolute", top: 0, right: 0}}>
-                    {
-                        this.canHidden && (
-                            <div onClick={() => {
-                                this.isHidden = !this.isHidden;
-                                reload();
-                            }} style={{
-                                textAlign: 'center'
-                            }}>
-                                {!this.isHidden && <VisibilityIcon color="success"/>}
-                                {this.isHidden && <VisibilityOffIcon color="error"/>}
-                            </div>
-                        )
-                    }
-                    <div>
-                        {
-                            this.editType === 'view' && !this.canEdit && this.showEditButton && <Button
-                                variant="contained"
-                                size="small"
-                                onClick={() => {
-                                    this.editType = 'edit';
-                                    reload();
-                                }}>
-                                编辑
-                            </Button>
-                        }
-                    </div>
-                    <div>
-                        {
-                            this.editType === 'edit' && (
-                                <Button
-                                    onClick={() => {
-                                        this.editType = 'view';
-                                        reload();
-                                    }}
-                                    size="small"
-                                    variant="contained"
-                                >
-                                    完成
-                                </Button>
-                            )
-                        }
-                    </div>
-                    {
-                        this.canTranslate && !this.canEdit && (
-                            <div>
-                                <Button
-                                    size="small"
-                                    variant="outlined"
-                                    onClick={async () => {
-                                        await this.onTranslate?.();
-                                        reload();
-                                    }}>
-                                    翻译
-                                </Button>
-                            </div>
-                        )
-                    }
-                </div>
-            </div>);
+            <Show
+                View={View}
+                Edit={Edit}
+                setIsHidden={(e: boolean | undefined) => {
+                    this.isHidden = e;
+                    reload();
+                }}
+                setEditType={(e: EditType) => {
+                    this.editType = e
+                }}
+                onTranslate={this.onTranslate}
+                canTranslate={this.canTranslate}
+                canEdit={this.canEdit}
+                canHidden={this.canHidden}
+                showEditButton={this.showEditButton}
+                isHidden={this.isHidden}
+                isPreview={this.isPreview}
+                editType={this.editType}
+            />
+        )
     }
 
     @nonenumerable

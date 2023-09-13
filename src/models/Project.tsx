@@ -9,7 +9,7 @@ import styled from "styled-components";
 import {IAchievement, IChallengeAndSolution} from "./types";
 import Keywords from "./Keywords";
 import ArrayData from "./ArrayData";
-import {Row} from "antd";
+import {Col, Row} from "antd";
 import {nonenumerable} from "core-decorators";
 import {formatAndTranslateResume} from "../services/mh";
 
@@ -87,12 +87,10 @@ class Project extends Base {
         return (
             <Container>
                 <Content>
-                    <div>
-                        <Name/>
-                        <span style={{marginLeft: 10}}>
+                    <Name/>
+                    <span style={{marginLeft: 10}}>
                             <Keywords/>
                         </span>
-                    </div>
                     <div>
                         <Times/>
                     </div>
@@ -108,11 +106,15 @@ class Project extends Base {
                 {this.achievements?.data?.length > 0 && (
                     <>
                         <div>
-                            <div style={{
-                                fontWeight: "bold",
-                                fontSize: 'var(--base-font-size-middle)'
-                            }}>Achievements :
-                            </div>
+                            {
+                                this.isPreview && (
+                                    <div style={{
+                                        fontWeight: "bold",
+                                        fontSize: 'var(--base-font-size-middle)'
+                                    }}>Achievements :
+                                    </div>
+                                )
+                            }
                             <ul style={{
                                 fontSize: 'var(--base-font-size-middle)',
                             }}>
@@ -133,10 +135,16 @@ class Project extends Base {
         const Achievements = this.achievements.Show;
         return (
             <Container>
-                <Row>
-                    <Name/>
-                    <Keywords/>
-                    <Times/>
+                <Row gutter={12}>
+                    <Col>
+                        <Name/>
+                    </Col>
+                    <Col>
+                        <Keywords/>
+                    </Col>
+                    <Col>
+                        <Times/>
+                    </Col>
                 </Row>
                 <Descriptions>
                     <DescriptionsShow/>
@@ -149,11 +157,6 @@ class Project extends Base {
                 {this.achievements?.data?.length > 0 && (
                     <>
                         <div>
-                            <div style={{
-                                fontWeight: "bold",
-                                fontSize: 'var(--base-font-size-middle)'
-                            }}>Achievements :
-                            </div>
                             <ul style={{
                                 fontSize: 'var(--base-font-size-middle)',
                             }}>

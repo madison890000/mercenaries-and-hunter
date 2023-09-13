@@ -101,12 +101,16 @@ class BaseInfo extends Base {
                                 <Location/>
                             </div>
                         </div>
-                        <div className={styles.basicInfoItem}>
-                            <div>Visa:</div>
-                            <div>
-                                <Visa/>
-                            </div>
-                        </div>
+                        {
+                            this.visa.text && (
+                                <div className={styles.basicInfoItem}>
+                                    <div>Visa:</div>
+                                    <div>
+                                        <Visa/>
+                                    </div>
+                                </div>
+                            )
+                        }
                         <div className={styles.links}>
                             {this.links.data?.map(l => <l.View/>)}
                         </div>
@@ -123,6 +127,7 @@ class BaseInfo extends Base {
         const Cellphone = this.cellphone.Show;
         const Location = this.location.Show;
         const Links = this.links.Show;
+        const Visa = this.visa.Show;
         const ViewWrapper = this.ViewWrapper;
         return (
             <ViewWrapper editText="编辑个人信息">
@@ -155,6 +160,12 @@ class BaseInfo extends Base {
                             <div>Location:</div>
                             <div>
                                 <Location/>
+                            </div>
+                        </div>
+                        <div className={styles.basicInfoItem}>
+                            <div>Visa:</div>
+                            <div>
+                                <Visa/>
                             </div>
                         </div>
                     </div>

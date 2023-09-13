@@ -75,8 +75,8 @@ function Home() {
                     }}>每一分钟自动保存
                     </div>
                 </div>
-
             </Row>
+            <Divider/>
             <div className={styles.main} id="print-id">
                 <ViewBaseInfo/>
                 <Divider title={intl.formatMessage(messages.profile)}/>

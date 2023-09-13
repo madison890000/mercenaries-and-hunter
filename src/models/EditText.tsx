@@ -36,12 +36,13 @@ class EditText extends Base {
         if (this.inputType === 'input') {
             return (
                 <TextField
-                    label={this.label}
+                    // label={this.label}
                     placeholder={this.placeholder}
                     defaultValue={this.text}
                     onChange={(e) => {
                         this.text = e?.target?.value
                     }}
+                    variant="standard"
                     size="small"
                 />
             )

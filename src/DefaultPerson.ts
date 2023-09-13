@@ -1,7 +1,7 @@
 import Person from './models/Person';
 
 const defaultPerson = new Person({
-    firstName: '名',
+    firstName: '名字',
     lastName: '姓',
     email: '@gmail.com',
     cellphone: '+64 000 000 000',
@@ -22,8 +22,8 @@ const defaultPerson = new Person({
     ],
     educations: [
         {
-            major: '大学',
-            college: '专业',
+            major: '专业',
+            college: '大学',
             degree: 'BACHELOR',
             start: '2018-09-01T00:00:00Z',
             end: '2022-07-01T00:00:00Z'

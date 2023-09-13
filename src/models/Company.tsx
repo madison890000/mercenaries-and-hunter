@@ -16,7 +16,7 @@ class Company extends Base {
 
     constructor(name: string = '') {
         super();
-        this.name = new EditText(name, 'input', '公司').setParent(this);
+        this.name = new EditText(name, 'input', '').setParent(this);
     }
 
     View = () => {

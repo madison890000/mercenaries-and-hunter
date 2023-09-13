@@ -33,7 +33,7 @@ class Keywords extends Base {
             }}>
                 <Select
                     style={{
-                        minWidth: 400,
+                        minWidth: 350,
                         fontSize: 'var(--base-font-size-middle)'
                     }}
                     defaultValue={this.data}

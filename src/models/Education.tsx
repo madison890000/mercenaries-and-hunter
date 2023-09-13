@@ -33,7 +33,7 @@ class Education extends Base {
         this.college = new EditText(college).setParent(this);
         this.degree = new EditText(degree).setParent(this);
         this.times = new Times(start, end).setParent(this);
-        this.showName = '教育';
+        this.showName = '教育经历';
         this.showEditButton = true;
     }
 
@@ -89,11 +89,12 @@ class Education extends Base {
         delete json.times;
         return json
     }
-    toResume(){
+
+    toResume() {
         return {
-            college:this.college,
-            major:this.major,
-            degree:this.degree,
+            college: this.college,
+            major: this.major,
+            degree: this.degree,
         }
     }
 }

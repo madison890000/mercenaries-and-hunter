@@ -89,7 +89,7 @@ class Period extends Base {
         ).setParent(this);
         this.keywords = new Keywords(keywords).setParent(this);
         this.descriptions = new Description(descriptions, 'textarea', '职位简介').setParent(this)
-        this.jobPosition = new EditText(jobPosition, 'input', '职位').setParent(this);
+        this.jobPosition = new EditText(jobPosition, 'input', '').setParent(this);
         this.projects = new ArrayData<Project>(projects?.map(e => new Project(e)) ?? [], () => new Project({
                 name: '',
                 challengeAndSolutions: [],
@@ -148,12 +148,6 @@ class Period extends Base {
                     borderRadius: 'var(--base-border-radius)'
                 }}>
                     <>
-                        <div style={{
-                            fontSize: 'var(--base-font-size-middle)',
-                            padding: 10,
-                            paddingBottom: 0
-                        }}>Achievements:
-                        </div>
                         <ul style={{
                             fontSize: 'var(--base-font-size-middle)'
                         }}>
@@ -161,6 +155,7 @@ class Period extends Base {
                         </ul>
                     </>
                 </div>
+                <Divider/>
             </>
         )
 
