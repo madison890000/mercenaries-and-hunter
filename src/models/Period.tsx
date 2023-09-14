@@ -155,7 +155,7 @@ class Period extends Base {
                         </ul>
                     </>
                 </div>
-                <Divider/>
+                <Divider variant="dash"/>
             </>
         )
 

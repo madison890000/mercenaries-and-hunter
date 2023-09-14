@@ -6,7 +6,7 @@ import InnerViewWrapper from "./ui/Base/InnerViewWrapper";
 import Show from "./ui/Base/Show";
 import useReload from "./hooks/useReload";
 
-type EditType = 'view' | 'edit' | 'preview';
+type EditType = 'edit' | 'view';
 
 export default class Base {
     @nonenumerable
@@ -39,15 +39,14 @@ export default class Base {
 
     constructor() {
         this.id = v4();
-        this.editType = 'view';
+        this.editType = 'edit';
         this.canTranslate = false;
         this.showEditButton = false;
         this.ViewWrapper = ({children, editDescriptions}) => {
             return (
                 <InnerViewWrapper
                     editDescriptions={editDescriptions}
-                    editType={this.isPreview ? 'preview' : this.editType}
-                    canEdit={this.canEdit}
+                    editType={this.isPreview ? 'view' : 'edit'}
                 >{children}</InnerViewWrapper>
             )
         };
@@ -96,9 +95,6 @@ export default class Base {
         return undefined
     }
 
-    toggleEditType() {
-        this.editType = this.editType === 'view' ? 'edit' : 'view'
-    }
 
     @nonenumerable
     get canEdit() {
@@ -113,7 +109,7 @@ export default class Base {
 
     @nonenumerable
     get isPreview() {
-        const innerEdit = this.editType === 'preview';
+        const innerEdit = this.editType === 'view';
         const parent = this.parent;
         if (!innerEdit && parent) {
             return parent?.isPreview
@@ -165,17 +161,11 @@ export default class Base {
                     this.isHidden = e;
                     reload();
                 }}
-                setEditType={(e: EditType) => {
-                    this.editType = e
-                }}
                 onTranslate={this.onTranslate}
                 canTranslate={this.canTranslate}
-                canEdit={this.canEdit}
                 canHidden={this.canHidden}
-                showEditButton={this.showEditButton}
                 isHidden={this.isHidden}
                 isPreview={this.isPreview}
-                editType={this.editType}
             />
         )
     }

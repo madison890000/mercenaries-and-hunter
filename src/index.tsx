@@ -8,10 +8,18 @@ import LocaleContext, {LocaleContextContainer} from './contexts/LocaleContext';
 import {GlobalContextContainer} from "./contexts/GlobalContext";
 import RouteMap from "./Routes";
 import {GoogleOAuthProvider} from '@react-oauth/google';
+import {createTheme, ThemeProvider} from '@mui/material/styles';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: '#008b8b',
+        },
+    },
+});
 const I18nProvider = () => {
     const {locale} = useContext(LocaleContext);
     return (
@@ -24,11 +32,13 @@ root.render(
     <GoogleOAuthProvider
         clientId={process.env.REACT_APP_GOOGLE_OAUTH2_CLIENT_ID ?? ''}
     >
-        <LocaleContextContainer>
-            <GlobalContextContainer>
-                <I18nProvider/>
-            </GlobalContextContainer>
-        </LocaleContextContainer>
+        <ThemeProvider theme={theme}>
+            <LocaleContextContainer>
+                <GlobalContextContainer>
+                    <I18nProvider/>
+                </GlobalContextContainer>
+            </LocaleContextContainer>
+        </ThemeProvider>
     </GoogleOAuthProvider>
 );
 

@@ -1,8 +1,8 @@
 import {SyntheticEvent, useState} from "react";
 import Button from "@mui/material/Button";
 import {Box, Modal} from "@mui/material";
-import FlexViewList from "./FlexViewList";
-import NormalViewList from "./NormalViewList";
+import FlexEditList from "./FlexEditList";
+import NormalEditList from "./NormalEditList";
 
 interface ViewListProps {
     flex?: boolean;
@@ -12,7 +12,7 @@ interface ViewListProps {
     onDelete: any;
 }
 
-const ViewList: React.FC<ViewListProps> = ({onAdd, onDelete, canEdit, flex, data}) => {
+const EditList: React.FC<ViewListProps> = ({onAdd, onDelete, canEdit, flex, data}) => {
     const [value, setValue] = useState(0);
     const [open, setOpen] = useState(false);
     const handleChange = (event: SyntheticEvent, newValue: number) => {
@@ -34,7 +34,7 @@ const ViewList: React.FC<ViewListProps> = ({onAdd, onDelete, canEdit, flex, data
         <>
             {
                 !flex && (
-                    <NormalViewList
+                    <NormalEditList
                         value={value}
                         handleChange={handleChange}
                         setValue={setValue}
@@ -42,13 +42,11 @@ const ViewList: React.FC<ViewListProps> = ({onAdd, onDelete, canEdit, flex, data
                         setOpen={setOpen}
                         setEditData={setEditData}
                         onAdd={onAdd}
-                        canEdit={canEdit}
                     />
                 )
             }
             {
-                flex &&
-                <FlexViewList canEdit={canEdit} data={data} onAdd={onAdd} setEditData={setEditData} setOpen={setOpen}/>
+                flex && <FlexEditList data={data} onAdd={onAdd} setEditData={setEditData} setOpen={setOpen}/>
             }
             <Modal
                 open={open}
@@ -94,4 +92,4 @@ const ViewList: React.FC<ViewListProps> = ({onAdd, onDelete, canEdit, flex, data
     )
 }
 
-export default ViewList
+export default EditList

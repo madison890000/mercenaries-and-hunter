@@ -7,29 +7,19 @@ class EditText extends Base {
     private inputType: "input" | "textarea";
     private label?: string;
     private placeholder: string | undefined;
+    private variant: 'standard' | 'outlined' | undefined;
 
-    constructor(text: string, type: 'input' | 'textarea' = 'input', label?: string, placeholder?: string) {
+    constructor(text: string, type: 'input' | 'textarea' = 'input', label?: string, placeholder?: string, variant?: 'standard' | 'outlined') {
         super();
         this.text = text;
         this.inputType = type;
         this.label = label;
         this.placeholder = placeholder;
+        this.variant = variant;
     }
 
-    Preview = () => {
-        return <>{this.text}</>
-    }
     View = () => {
-        const Preview = this.Preview;
-        if (this.isPreview) {
-            return <Preview/>
-        }
-        if (this.text) {
-            return <>{this.text}</>
-        } else {
-            return <div style={{color: 'gray'}}>没有内容，请点击编辑添加</div>
-        }
-
+        return <>{this.text}</>
     }
 
     Edit = () => {
@@ -42,7 +32,7 @@ class EditText extends Base {
                     onChange={(e) => {
                         this.text = e?.target?.value
                     }}
-                    variant="standard"
+                    variant={this.variant}
                     size="small"
                 />
             )

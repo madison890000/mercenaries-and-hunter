@@ -1,6 +1,6 @@
 import Base from "./Base";
 import Preview from "./ui/ArrayData/Preview";
-import ViewList from "./ui/ArrayData/ViewList";
+import EditList from "./ui/ArrayData/EditList";
 import useReload from "./hooks/useReload";
 
 export default class ArrayData<T extends {
@@ -37,10 +37,10 @@ export default class ArrayData<T extends {
 
 
     Preview = () => <Preview flex={this.flex} data={this.data}/>
-    ViewList = () => {
+    EditList = () => {
         const reload = useReload();
         return (
-            <ViewList
+            <EditList
                 data={this.data}
                 onAdd={() => {
                     this.onAdd();
@@ -50,7 +50,6 @@ export default class ArrayData<T extends {
                     this.onDelete(e);
                     reload();
                 }}
-                canEdit={this.canEdit}
                 flex={this.flex}
             />
         )
@@ -58,13 +57,13 @@ export default class ArrayData<T extends {
     View = () => {
         const ViewWrapper = this.ViewWrapper;
         const Preview = this.Preview;
-        const ViewList = this.ViewList;
+        const EditList = this.EditList;
         if (this.isPreview) {
             return <Preview/>
         }
         return (
             <ViewWrapper editDescriptions={this.editDescriptions}>
-                <ViewList/>
+                <EditList/>
             </ViewWrapper>
         )
 

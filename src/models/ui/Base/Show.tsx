@@ -3,37 +3,28 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import Button from "../../components/Button";
 
-type EditType = 'view' | 'edit' | 'preview';
+type EditType = 'edit' | 'view';
 
 interface ShowProps {
     View: any;
     Edit: any;
     setIsHidden: any;
-    setEditType: any;
     onTranslate: any;
     canTranslate: boolean;
-    canEdit: boolean;
     canHidden: boolean;
-    showEditButton: boolean;
     isHidden?: boolean;
     isPreview: boolean;
-    editType: EditType;
-
 }
 
 const Show: React.FC<ShowProps> = ({
                                        isPreview,
                                        canTranslate,
                                        isHidden,
-                                       canEdit,
-                                       showEditButton,
-                                       editType,
                                        onTranslate,
                                        canHidden,
                                        View,
                                        Edit,
                                        setIsHidden,
-                                       setEditType
                                    }) => {
     if (isPreview) {
         return isHidden ? <></> : <View/>
@@ -45,22 +36,16 @@ const Show: React.FC<ShowProps> = ({
         if (canHidden) {
             return true
         }
-        if (editType === "view" && !canEdit && showEditButton) {
-            return true
-        }
-        if (editType === 'edit') {
-            return true
-        }
         return false
     }
     return (
         <div style={{display: 'flex'}}>
             <div style={{
-                width: "auto",
-                flex: '1 1 auto',
+                width: "100%",
+                // flex: '1 1 auto',
                 minHeight: showButtons() ? '60px' : 'auto'
             }}>
-                {!canEdit ? <View/> : <Edit/>}
+                <Edit/>
             </div>
             {
                 showButtons() && (
@@ -72,40 +57,15 @@ const Show: React.FC<ShowProps> = ({
                                 }} style={{
                                     textAlign: 'center'
                                 }}>
-                                    {!isHidden && <VisibilityIcon color="success"/>}
+                                    {!isHidden && <VisibilityIcon style={{
+                                        color: 'var(--color-primary)'
+                                    }}/>}
                                     {isHidden && <VisibilityOffIcon color="error"/>}
                                 </div>
                             )
                         }
-                        <div>
-                            {
-                                editType === 'view' && !canEdit && showEditButton && <Button
-                                    variant="contained"
-                                    size="small"
-                                    onClick={() => {
-                                        setEditType('edit');
-                                    }}>
-                                    编辑
-                                </Button>
-                            }
-                        </div>
-                        <div>
-                            {
-                                editType === 'edit' && (
-                                    <Button
-                                        onClick={() => {
-                                            setEditType('view');
-                                        }}
-                                        size="small"
-                                        variant="contained"
-                                    >
-                                        完成
-                                    </Button>
-                                )
-                            }
-                        </div>
                         {
-                            canTranslate && !canEdit && (
+                            canTranslate && (
                                 <div>
                                     <Button
                                         size="small"

@@ -29,9 +29,9 @@ class Education extends Base {
 
     constructor({college, major, degree, start, end}: IEducation) {
         super();
-        this.major = new EditText(major).setParent(this);
-        this.college = new EditText(college).setParent(this);
-        this.degree = new EditText(degree).setParent(this);
+        this.major = new EditText(major, 'input', '', '', 'outlined').setParent(this);
+        this.college = new EditText(college, 'input', '大学', '', 'standard').setParent(this);
+        this.degree = new EditText(degree, 'input', '', '', 'standard').setParent(this);
         this.times = new Times(start, end).setParent(this);
         this.showName = '教育经历';
         this.showEditButton = true;
@@ -72,6 +72,8 @@ class Education extends Base {
                 </div>
                 <div>
                     <Major/>
+                </div>
+                <div>
                     <Degree/>
                 </div>
                 <Times/>

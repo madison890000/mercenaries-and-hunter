@@ -47,7 +47,9 @@ code {
     --color-smoke: #848884;
     --color-steel-gray: #71797e;
 
-    --color-red: #ff7070;
+    --color-primary: #008b8b;
+
+    --color-red: #dc143c;
     --color-yellow: #fff69e;
     --color-dark-yellow: #c2aa59;
     --color-green: #93c47d;
@@ -175,4 +177,8 @@ code {
     right: 4px;
     top: 4px;
     min-width: 120px;
+}
+
+.add {
+    opacity: 1 !important;
 }

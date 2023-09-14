@@ -7,6 +7,7 @@ import Link from "./Link";
 import {RelatedLink} from "./types";
 import {nonenumerable} from "core-decorators";
 import {formatAndTranslateResume} from "../services/mh";
+import {Divider} from "./components";
 
 class BaseInfo extends Base {
 
@@ -32,15 +33,15 @@ class BaseInfo extends Base {
         super();
         this.links = new ArrayData<Link>(links?.map((e: RelatedLink) => new Link(e)) ?? [], () => new Link({
             name: '链接',
-            value: ''
-        }), false).setParent(this);
-        this.firstName = new EditText(firstName, 'input', '名').setParent(this);
-        this.lastName = new EditText(lastName, 'input', '姓').setParent(this);
-        this.email = new EditText(email).setParent(this);
-        this.cellphone = new EditText(cellphone).setParent(this);
-        this.location = new EditText(location).setParent(this);
-        this.visa = new EditText(visa).setParent(this);
-        this.searchingFor = new EditText(searchingFor).setParent(this);
+            value: '',
+        }), true).setParent(this);
+        this.firstName = new EditText(firstName, 'input', '名', '', 'outlined').setParent(this);
+        this.lastName = new EditText(lastName, 'input', '姓', '', 'outlined').setParent(this);
+        this.email = new EditText(email, 'input', '邮箱', '', 'standard').setParent(this);
+        this.cellphone = new EditText(cellphone, 'input', '电话', '', 'standard').setParent(this);
+        this.location = new EditText(location, 'input', '城市', '', 'standard').setParent(this);
+        this.visa = new EditText(visa, 'input', '', '', 'standard').setParent(this);
+        this.searchingFor = new EditText(searchingFor, 'input', '', '', 'standard').setParent(this);
         this.canTranslate = true;
         this.showEditButton = true;
     }
@@ -134,7 +135,6 @@ class BaseInfo extends Base {
                 <header className={styles.header}>
                     <h1>
                         <FirstName/>
-                        <span style={{margin: '0 10px'}}></span>
                         <LastName/>
                     </h1>
                     <div className={styles.basicInfo}>
@@ -169,10 +169,9 @@ class BaseInfo extends Base {
                             </div>
                         </div>
                     </div>
-                    <div className={styles.links}>
-                        <Links/>
-                    </div>
                 </header>
+                <Divider variant="dash"/>
+                <Links/>
             </ViewWrapper>
         )
     }

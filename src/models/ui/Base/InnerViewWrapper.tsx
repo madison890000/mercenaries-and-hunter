@@ -1,14 +1,13 @@
 import React, {PropsWithChildren} from "react";
 
-type EditType = 'view' | 'edit' | 'preview';
+type EditType = 'edit' | 'view';
+
 interface ViewWrapperProps {
     editType: EditType;
-    canEdit: boolean;
     editDescriptions?: string;
 }
 
 const InnerViewWrapper: React.FC<PropsWithChildren<ViewWrapperProps>> = ({
-                                                                             canEdit,
                                                                              editType,
                                                                              editDescriptions,
                                                                              children,
@@ -16,7 +15,7 @@ const InnerViewWrapper: React.FC<PropsWithChildren<ViewWrapperProps>> = ({
     return (
         <div>
             {
-                editType === 'view' && !canEdit && editDescriptions && (
+                editType === 'edit' && editDescriptions && (
                     <div style={{
                         color: 'gray',
                     }}>

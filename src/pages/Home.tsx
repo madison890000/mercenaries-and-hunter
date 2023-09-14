@@ -39,7 +39,7 @@ function Home() {
     const ViewPeriods = person.ViewPeriods;
     const ViewEducations = person.ViewEducations;
     useEffect(() => {
-        person.editType = 'view';
+        person.editType = 'edit';
         reload()
     }, [])
     const save = () => {

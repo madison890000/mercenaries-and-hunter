@@ -24,6 +24,9 @@ class Times extends Base {
     Edit = () => {
         return (
             <DatePicker.RangePicker
+                style={{
+                    width: 210,
+                }}
                 picker="month"
                 defaultValue={[
                     this.start,

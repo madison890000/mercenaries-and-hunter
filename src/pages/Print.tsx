@@ -31,7 +31,7 @@ function Print({person: outerPerson}: any) {
 
     const person = outerPerson ?? globalPerson;
     useEffect(() => {
-        person.editType = 'preview';
+        person.editType = 'view';
         reload()
     }, [globalPerson]);
     const ViewBaseInfo = person.ViewBaseInfo;
