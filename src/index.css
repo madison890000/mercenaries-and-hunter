@@ -49,6 +49,17 @@ code {
 
     --color-primary: #008b8b;
 
+    --color-blue-0: #0000ff;
+    --color-blue-1: #1919ff;
+    --color-blue-2: #3333ff;
+    --color-blue-3: #4d4dff;
+    --color-blue-4: #6666ff;
+    --color-blue-5: #8080ff;
+    --color-blue-6: #9999ff;
+    --color-blue-7: #b2b2ff;
+    --color-blue-8: #ccccff;
+    --color-blue-9: #e6e6ff;
+
     --color-red: #dc143c;
     --color-yellow: #fff69e;
     --color-dark-yellow: #c2aa59;

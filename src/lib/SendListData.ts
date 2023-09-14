@@ -24,10 +24,12 @@ class SendList {
 
     updateLocalDataByIDAndField(id: string, field: any, saveNow: boolean) {
         const index = this.localData?.findIndex((e) => e?.id === id);
-        this.localData[index] = {
+        const localData = [...this.localData];
+        localData[index] = {
             ...this.localData[index],
             ...field,
         };
+        this.localData = localData;
         saveNow && this.save();
     }
 
@@ -101,6 +103,7 @@ class SendList {
     }
 
     getListByIds(ids: string[]) {
+        return this.localData
         return this.localData?.filter(d => ids?.includes(d?.id))
     }
 

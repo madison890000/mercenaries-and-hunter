@@ -15,7 +15,16 @@ enum SendType {
     REJECTED = 5,
 }
 
+const colors = {
+    [SendType.SEND]: 'black',
+    [SendType.START_INTERVIEWING]: '#000099',
+    [SendType.MIDDLE_INTERVIEWING]: 'var(--color-blue-6)',
+    [SendType.FINAL_INTERVIEWING]: '#ff33cc',
+    [SendType.OFFER]: 'var(--color-primary)',
+    [SendType.REJECTED]: 'var(--color-red)',
+}
 const SendStatus: React.FC<SendStatusProps> = ({value, onChange}) => {
+
 
     return (
         <div style={{
@@ -24,17 +33,37 @@ const SendStatus: React.FC<SendStatusProps> = ({value, onChange}) => {
             <Select
                 value={value}
                 style={{
-                    minWidth: 100
+                    minWidth: 100,
+                    // @ts-ignore
+                    color: colors[value],
                 }}
                 onChange={onChange}
                 variant="standard"
             >
                 <MenuItem value={SendType.SEND}>投递中</MenuItem>
-                <MenuItem value={SendType.START_INTERVIEWING}>开始面试</MenuItem>
-                <MenuItem value={SendType.MIDDLE_INTERVIEWING}>中期面试</MenuItem>
-                <MenuItem value={SendType.FINAL_INTERVIEWING}>终面</MenuItem>
-                <MenuItem value={SendType.OFFER}>发Offer</MenuItem>
-                <MenuItem value={SendType.REJECTED}>没谈拢</MenuItem>
+                <MenuItem value={SendType.START_INTERVIEWING}
+                          style={{
+                              color: '#000099'
+                          }}
+                >开始面试</MenuItem>
+                <MenuItem value={SendType.MIDDLE_INTERVIEWING}
+                          style={{
+                              color: 'var(--color-blue-6)'
+                          }}
+                >中期面试</MenuItem>
+                <MenuItem value={SendType.FINAL_INTERVIEWING}
+                          style={{
+                              color: '#ff33cc',
+                          }}
+                >终面</MenuItem>
+                <MenuItem value={SendType.OFFER}
+                          style={{
+                              color: 'var(--color-primary)'
+                          }}
+                >发Offer</MenuItem>
+                <MenuItem value={SendType.REJECTED} style={{
+                    color: 'var(--color-red)'
+                }}>婉拒</MenuItem>
             </Select>
         </div>
     )
