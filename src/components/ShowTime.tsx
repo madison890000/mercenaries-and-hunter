@@ -2,6 +2,7 @@ const ONE_MIN = 1000 * 60
 const ONE_HOUR = ONE_MIN * 60
 const ONE_DAY = ONE_HOUR * 24
 const SEVEN_DAY = ONE_DAY * 7
+const ONE_MONTH = ONE_DAY * 31
 
 const timeUntilNow = (time: string) => {
     const now = Date.now();
@@ -32,6 +33,9 @@ const timeUntilNow = (time: string) => {
     }
     if (timeSeconds < SEVEN_DAY) {
         return '1周内'
+    }
+    if (timeSeconds < ONE_MONTH) {
+        return '1月内'
     }
     return '-'
 }
