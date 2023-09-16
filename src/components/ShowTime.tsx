@@ -1,48 +1,84 @@
+import {defineMessages, useIntl} from "react-intl";
+
 const ONE_MIN = 1000 * 60
 const ONE_HOUR = ONE_MIN * 60
 const ONE_DAY = ONE_HOUR * 24
 const SEVEN_DAY = ONE_DAY * 7
 const ONE_MONTH = ONE_DAY * 31
 
-const timeUntilNow = (time: string) => {
+const messages = defineMessages({
+    now: {
+        id: 'time.now',
+    },
+    min5: {
+        id: 'time.5mins',
+    },
+    min30: {
+        id: 'time.half-hour',
+    },
+    min60: {
+        id: 'time.one-hour',
+    },
+    hour2: {
+        id: 'time.two-hour',
+    },
+    hour6: {
+        id: 'time.six-hour',
+    },
+    hour12: {
+        id: 'time.half-day',
+    },
+    hour24: {
+        id: 'time.one-day',
+    },
+    day7: {
+        id: 'time.one-week',
+    },
+    day31: {
+        id: 'time.one-mouth',
+    },
+});
+const TimeUntilNow: React.FC<{ time: string }> = ({time}) => {
     const now = Date.now();
     const timeSeconds = now - new Date(time).getTime();
+    const intl = useIntl();
+    let text = '-';
     if (timeSeconds < ONE_MIN) {
-        return '刚刚'
+        text = intl.formatMessage(messages.now)
     }
     if (timeSeconds < ONE_MIN * 5) {
-        return '5分钟内'
+        text = intl.formatMessage(messages.min5)
     }
     if (timeSeconds < ONE_MIN * 30) {
-        return '半小时内'
+        text = intl.formatMessage(messages.min30)
     }
     if (timeSeconds < ONE_HOUR) {
-        return '1小时内'
+        text = intl.formatMessage(messages.min60)
     }
     if (timeSeconds < ONE_HOUR * 2) {
-        return '2小时内'
+        text = intl.formatMessage(messages.hour2)
     }
     if (timeSeconds < ONE_HOUR * 6) {
-        return '6小时内'
+        text = intl.formatMessage(messages.hour6)
     }
     if (timeSeconds < ONE_HOUR * 12) {
-        return '12小时内'
+        text = intl.formatMessage(messages.hour12)
     }
     if (timeSeconds < ONE_DAY) {
-        return '1天内'
+        text = intl.formatMessage(messages.hour24)
     }
     if (timeSeconds < SEVEN_DAY) {
-        return '1周内'
+        text = intl.formatMessage(messages.day7)
     }
     if (timeSeconds < ONE_MONTH) {
-        return '1月内'
+        text = intl.formatMessage(messages.day31)
     }
-    return '-'
+    return <>{text}</>
 }
 const ShowTimeUntilNow: React.FC<{ time: string }> = ({time}) => <span
     style={{
         color: 'gray',
         fontSize: '12px',
         fontStyle: 'italic'
-    }}>{timeUntilNow(time)}</span>
+    }}><TimeUntilNow time={time}/></span>
 export default ShowTimeUntilNow

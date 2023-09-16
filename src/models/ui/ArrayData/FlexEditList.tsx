@@ -2,6 +2,13 @@ import {Col, Row} from "antd";
 import Button from "@mui/material/Button";
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
+import {defineMessages, useIntl} from "react-intl";
+
+const messages = defineMessages({
+    add: {
+        id: 'btn.add',
+    }
+});
 
 interface ViewListProps {
     flex?: boolean;
@@ -17,6 +24,7 @@ const FlexEditList: React.FC<ViewListProps> = ({
                                                    setEditData,
                                                    data
                                                }) => {
+    const intl = useIntl();
     return (
         <>
             <Row gutter={24}>
@@ -54,7 +62,7 @@ const FlexEditList: React.FC<ViewListProps> = ({
                         <AddIcon style={{
                             color: 'var(--color-primary)'
                         }}/>
-                        增加
+                        {intl.formatMessage(messages.add)}
                     </Button>
                 </Col>
             </Row>

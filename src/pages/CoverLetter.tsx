@@ -7,12 +7,29 @@ import GlobalContext from "../contexts/GlobalContext";
 import Button from "../models/components/Button";
 import LoginWrapper from "../modules/LoginWrapper/LoginWrapper";
 import {Divider} from "../models/components";
+import {defineMessages, useIntl} from "react-intl";
 
+
+const messages = defineMessages({
+    copy: {
+        id: 'btn.copy',
+    },
+    companyName: {
+        id: 'cl.company-name',
+    },
+    jobLink: {
+        id: 'cl.job-link',
+    },
+    btn: {
+        id: 'cl.btn',
+    }
+});
 const Editor = () => {
     const {person} = useContext(GlobalContext);
     const [job, setJob] = useState<string>();
     const [company, setCompany] = useState<string>();
     const {run, message, loading} = useCoverLetter();
+    const intl = useIntl();
     return (
         <>
             <div style={{
@@ -21,7 +38,7 @@ const Editor = () => {
                 <Row gutter={12} align="middle">
                     <Col>
                         <TextField
-                            label="公司名称"
+                            label={intl.formatMessage(messages.companyName)}
                             defaultValue=""
                             onChange={(e) => {
                                 setCompany(e?.target?.value)
@@ -31,7 +48,7 @@ const Editor = () => {
                     </Col>
                     <Col flex="auto">
                         <TextField
-                            label="岗位地址"
+                            label={intl.formatMessage(messages.jobLink)}
                             onChange={(e) => {
                                 setJob(e?.target?.value)
                             }}
@@ -45,7 +62,7 @@ const Editor = () => {
                             <LoginWrapper>
                                 <Button loading={loading} variant="contained" type="primary" onClick={async () => {
                                     company && job && await run(person.toResume(), job, company);
-                                }}>生成Cover letter</Button>
+                                }}>{intl.formatMessage(messages.btn)}</Button>
                             </LoginWrapper>
                         </div>
                     </Col>
@@ -68,7 +85,7 @@ const Editor = () => {
                             onClick={() => {
                                 copy(message);
                             }}
-                        >复制</Button>
+                        >{intl.formatMessage(messages.copy)}</Button>
                     </div>
                 </div>
             </div>

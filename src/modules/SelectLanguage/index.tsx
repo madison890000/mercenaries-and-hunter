@@ -5,7 +5,7 @@ import Grow from '@mui/material/Grow';
 import Paper from '@mui/material/Paper';
 import MenuList from '@mui/material/MenuList';
 import MenuItem from '@mui/material/MenuItem';
-import { LocalesKey } from '../../i18n/languages';
+import {LocalesKey} from '../../i18n/languages';
 
 interface SelectLanguageProps {
     value?: LocalesKey;
@@ -13,7 +13,7 @@ interface SelectLanguageProps {
     options: { label: string; value: LocalesKey }[];
 }
 
-const SelectLanguage = ({ onChange, value, options }: SelectLanguageProps) => {
+const SelectLanguage = ({onChange, value, options}: SelectLanguageProps) => {
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef<HTMLButtonElement>(null);
     const handleToggle = () => {
@@ -33,6 +33,7 @@ const SelectLanguage = ({ onChange, value, options }: SelectLanguageProps) => {
                 aria-expanded={open ? 'true' : undefined}
                 aria-haspopup="true"
                 onClick={handleToggle}
+                variant="outlined"
             >
                 {options?.find((l: any) => l.value === value)?.label}
             </Button>
@@ -44,7 +45,7 @@ const SelectLanguage = ({ onChange, value, options }: SelectLanguageProps) => {
                 transition
                 disablePortal
             >
-                {({ TransitionProps, placement }) => (
+                {({TransitionProps, placement}) => (
                     <Grow
                         {...TransitionProps}
                         style={{
