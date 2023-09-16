@@ -103,7 +103,9 @@ class SendList {
     }
 
     getListByIds(ids: string[]) {
-        return this.localData
+        if (process.env.NODE_ENV === 'development') {
+            return this.localData
+        }
         return this.localData?.filter(d => ids?.includes(d?.id))
     }
 

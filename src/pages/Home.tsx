@@ -24,6 +24,12 @@ const messages = defineMessages({
     educationExperiences: {
         id: 'section.divider.educationExperiences',
         defaultMessage: 'Education'
+    },
+    goPrint:{
+        id:'btn.print'
+    },
+    save:{
+        id:'btn.save'
     }
 });
 
@@ -61,14 +67,14 @@ function Home() {
                 <AIScore/>
                 <Button variant="contained" onClick={() => {
                     navigate('/print')
-                }} size="large">去打印</Button>
+                }} size="large">{intl.formatMessage(messages.goPrint)}</Button>
                 <div style={{
                     textAlign: "center"
                 }}>
                     <div>
                         <Button onClick={() => {
                             save();
-                        }}>保存</Button>
+                        }}>{intl.formatMessage(messages.save)}</Button>
                     </div>
                     <div style={{
                         fontSize: 'var(--base-font-size-small)'

@@ -2,8 +2,13 @@ import React from "react";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import Button from "../../components/Button";
+import {defineMessages, useIntl} from "react-intl";
 
-type EditType = 'edit' | 'view';
+const messages = defineMessages({
+    translate: {
+        id: 'btn.translate',
+    }
+});
 
 interface ShowProps {
     View: any;
@@ -26,6 +31,7 @@ const Show: React.FC<ShowProps> = ({
                                        Edit,
                                        setIsHidden,
                                    }) => {
+    const intl = useIntl();
     if (isPreview) {
         return isHidden ? <></> : <View/>
     }
@@ -49,7 +55,7 @@ const Show: React.FC<ShowProps> = ({
             </div>
             {
                 showButtons() && (
-                    <div style={{width: 60}}>
+                    <div style={{width: 80}}>
                         {
                             canHidden && (
                                 <div onClick={() => {
@@ -73,7 +79,7 @@ const Show: React.FC<ShowProps> = ({
                                         onClick={async () => {
                                             await onTranslate?.();
                                         }}>
-                                        翻译
+                                        {intl.formatMessage(messages.translate)}
                                     </Button>
                                 </div>
                             )

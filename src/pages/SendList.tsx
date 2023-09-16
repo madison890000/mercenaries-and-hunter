@@ -7,15 +7,37 @@ import Button from "@mui/material/Button";
 import SendStatus from "../components/SendStatus";
 import useSendList from "../hooks/useSendList";
 import Like from "../components/Like";
+import {defineMessages, useIntl} from "react-intl";
 
 const DEFAULT_COLUMNS_WIDTH = 150;
-
+const messages = defineMessages({
+    reloadData: {
+        id: 'send.reload-data',
+        defaultMessage: "Reload Data",
+    },
+    tips: {
+        id: 'send.tips',
+    },
+    name: {
+        id: 'send.table.name',
+    },
+    time: {
+        id: 'send.table.time',
+    },
+    favor: {
+        id: 'send.table.favor',
+    },
+    status: {
+        id: 'send.table.status',
+    },
+});
 const SendList = () => {
     const {sends, updateStatusById, updateLikeById, getList} = useSendList();
     const [pagination, setPagination] = useState({
         page: 0,
         pageSize: 20
     })
+    const intl = useIntl();
     const columns: GridColDef<{
         id: string;
         title?: string;
@@ -24,18 +46,18 @@ const SendList = () => {
         site: string;
     }>[] = [
         {
-            field: 'title', headerName: '名称', width: DEFAULT_COLUMNS_WIDTH * 3,
+            field: 'title', headerName: intl.formatMessage(messages.name), width: DEFAULT_COLUMNS_WIDTH * 3,
             renderCell: ({value, row}) => <a href={row.originUrl ?? row?.site} target="_blank">{value}</a>
         },
         {
             field: 'time',
-            headerName: '投递时间',
+            headerName: intl.formatMessage(messages.time),
             width: DEFAULT_COLUMNS_WIDTH,
             renderCell: ({value}) => <ShowTimeUntilNow time={value}/>
         },
         {
             field: 'like',
-            headerName: '心仪度',
+            headerName: intl.formatMessage(messages.favor),
             width: DEFAULT_COLUMNS_WIDTH,
             renderCell: ({value, row}) => (
                 <Like
@@ -46,7 +68,7 @@ const SendList = () => {
         },
         {
             field: 'status',
-            headerName: '状态',
+            headerName: intl.formatMessage(messages.status),
             width: DEFAULT_COLUMNS_WIDTH,
             renderCell: ({value, row}) => (
                 <SendStatus
@@ -62,13 +84,13 @@ const SendList = () => {
                 <Button variant="contained" onClick={() => {
                     getList();
                 }}>
-                    刷新数据
+                    {intl.formatMessage(messages.reloadData)}
                 </Button>
                 <a style={{
                     marginLeft: 30,
                 }}
                    href="https://chrome.google.com/webstore/detail/it-mercenaries-and-hunter/eilakanollhbgdoppbffeikcbkhmeloc?hl=zh-CN&authuser=0"
-                   target="_blank">(需要安装插件)</a>
+                   target="_blank">({intl.formatMessage(messages.tips)})</a>
             </CardContent>
             <DataGrid
                 rows={sends}

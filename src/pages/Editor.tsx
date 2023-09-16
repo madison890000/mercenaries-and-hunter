@@ -6,10 +6,24 @@ import Button from "../models/components/Button";
 import {CardContent, TextField, Typography} from "@mui/material";
 import Card from "@mui/material/Card";
 import LoginWrapper from "../modules/LoginWrapper/LoginWrapper";
+import {defineMessages, useIntl} from "react-intl";
 
+
+const messages = defineMessages({
+    copy: {
+        id: 'btn.copy',
+    },
+    placeholder: {
+        id: 'home.input-placeholder',
+    },
+    btn: {
+        id: 'home.translate-btn',
+    },
+});
 const Editor = () => {
     const [data, setData] = useState<string>();
     const {run, message, loading} = useMessage();
+    const intl = useIntl();
     return (
         <>
             <Row gutter={12} style={{
@@ -20,7 +34,7 @@ const Editor = () => {
                 }}>
                     <div>
                         <TextField
-                            label="输入需要优化的内容"
+                            label={intl.formatMessage(messages.placeholder)}
                             onChange={(e) => {
                                 setData(e?.target?.value)
                             }}
@@ -36,7 +50,7 @@ const Editor = () => {
                         <LoginWrapper>
                             <Button variant="contained" loading={loading} type="primary" onClick={async () => {
                                 data && await run(data);
-                            }}>一键翻译并修改语法和语气</Button>
+                            }}>{intl.formatMessage(messages.btn)}</Button>
                         </LoginWrapper>
                     </div>
                     <Card>
@@ -54,7 +68,7 @@ const Editor = () => {
                             onClick={() => {
                                 copy(message);
                             }}
-                        >复制</Button>
+                        >{intl.formatMessage(messages.copy)}</Button>
                     </div>
                 </Col>
             </Row>

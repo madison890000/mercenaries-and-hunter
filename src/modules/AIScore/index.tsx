@@ -4,13 +4,19 @@ import {SwipeableDrawer} from "@mui/material";
 import {Divider} from "../../models/components";
 import GlobalContext from "../../contexts/GlobalContext";
 import {useNavigate} from "react-router";
+import {defineMessages, useIntl} from "react-intl";
 
-
+const messages = defineMessages({
+    aiadvise: {
+        id: 'btn.ai-advise',
+    }
+});
 const AIScore = () => {
     const {scoreValues} = useContext(GlobalContext);
     const {score, advise} = scoreValues;
     const [open, setOpen] = useState(false);
     const navigate = useNavigate();
+    const intl = useIntl();
     const toggleDrawer =
         (o: boolean) =>
             (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -27,7 +33,7 @@ const AIScore = () => {
             };
     return (
         <React.Fragment>
-            <Button variant="outlined" onClick={toggleDrawer(true)}>AI建议</Button>
+            <Button variant="outlined" onClick={toggleDrawer(true)}>{intl.formatMessage(messages.aiadvise)}</Button>
             <SwipeableDrawer
                 anchor="right"
                 open={open}
@@ -39,10 +45,10 @@ const AIScore = () => {
                     minWidth: 400,
                     padding: 10,
                 }}>
-                    <h5>IT猎人得分：{score}</h5>
+                    <h5>Score：{score}</h5>
                     <Divider/>
                     <h5>
-                        建议：
+                        Advise：
                         {
                             score === 0 && (
                                 <Button onClick={() => {
