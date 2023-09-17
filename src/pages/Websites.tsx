@@ -3,7 +3,6 @@ import React from "react";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Navigation} from 'swiper/modules';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
 // Import Swiper styles
@@ -47,11 +46,21 @@ const ImageCard = ({src, description}: any) => (
         border: '1px solid var(--color-platinum)',
         borderRadius: 4,
         margin: 2,
+        width: 1170,
+        height: 675,
+        backgroundSize: "100% 100%",
+        backgroundImage: 'url(./imgs/pc.jpg)'
         // background: 'var(--color-ash-gray)'
     }}>
-        <CardMedia
-            sx={{height: 340, margin: '12px', backgroundSize: 'contain'}}
-            image={src}
+        <img
+            style={{
+                width:810,
+                height: 476,
+                position: 'absolute',
+                top: 92,
+                left: 180,
+            }}
+            src={src}
             title="green iguana"
         />
         <CardContent style={{
