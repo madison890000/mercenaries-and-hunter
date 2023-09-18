@@ -35,8 +35,8 @@ const Menus = () => {
     const location = useLocation();
     const intl = useIntl();
     const MENU_LIST = [
-        {name: 'edit', hash: '/edit', title: intl.formatMessage(messages.edit)},
         {name: 'home', hash: '/', title: intl.formatMessage(messages.home)},
+        {name: 'edit', hash: '/edit', title: intl.formatMessage(messages.edit)},
         {name: 'cl', hash: '/cl', title: intl.formatMessage(messages.cl)},
         {name: 'web', hash: '/web', title: intl.formatMessage(messages.web)},
         {name: 'send', hash: '/send', title: intl.formatMessage(messages.send)}
