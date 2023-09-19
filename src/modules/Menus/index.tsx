@@ -5,6 +5,7 @@ import {useLocation, useNavigate} from "react-router";
 import {defineMessages, useIntl} from "react-intl";
 import SelectLanguage from "../SelectLanguage";
 import LocaleContext from '../../contexts/LocaleContext';
+import FLAGS from "../../constants/flags";
 
 const messages = defineMessages({
     edit: {
@@ -36,11 +37,15 @@ const Menus = () => {
     const intl = useIntl();
     const MENU_LIST = [
         {name: 'home', hash: '/', title: intl.formatMessage(messages.home)},
-        {name: 'edit', hash: '/edit', title: intl.formatMessage(messages.edit)},
-        {name: 'cl', hash: '/cl', title: intl.formatMessage(messages.cl)},
         {name: 'web', hash: '/web', title: intl.formatMessage(messages.web)},
         {name: 'send', hash: '/send', title: intl.formatMessage(messages.send)}
-    ]
+    ];
+    if (FLAGS.editResume) {
+        MENU_LIST.splice(1, 0, {name: 'edit', hash: '/edit', title: intl.formatMessage(messages.edit)})
+    }
+    if (FLAGS.autoCL) {
+        MENU_LIST.splice(1, 0, {name: 'cl', hash: '/cl', title: intl.formatMessage(messages.cl)})
+    }
     const {locale, updateLocale, languages} = React.useContext(LocaleContext);
     return (
         <>
