@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 // Import Swiper React components
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Navigation} from 'swiper/modules';
@@ -10,17 +10,24 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import {Divider} from "../models/components";
 import {defineMessages, useIntl} from "react-intl";
+import LocaleContext from "../contexts/LocaleContext";
+import {LocalesKey} from "../i18n/languages";
 
-/**
- *   "website.webs": "我们目前适配的网站（持续适配中，欢迎提供意见）",
- *   "website.title": "帮助用户摆脱google全文网页翻译(需要安装插件)",
- *   "website.description": "仅将网站重要的信息翻译后填充回网页下方。方便您更容易的查看相关信息。",
- *   "website.info": "翻译服务是自建的服务器，如遇到网络问题，请点击刷新按钮。",
- *   "website.help": "任何意见欢迎联系"
- * @param src
- * @param description
- * @constructor
- */
+const images = {
+    linkedin: {
+        'ja-JP': '/imgs/linkedin-ja-JP.png',
+    },
+    upwork: {
+        'ja-JP': '/imgs/upwork-ja-JP.png',
+    },
+    freelancer: {
+        'ja-JP': '/imgs/freelancer-ja-JP.png',
+    }
+} as unknown as {
+    linkedin: Record<LocalesKey, string>
+    upwork: Record<LocalesKey, string>
+    freelancer: Record<LocalesKey, string>
+};
 const messages = defineMessages({
     webs: {
         id: 'website.webs',
@@ -54,7 +61,7 @@ const ImageCard = ({src, description}: any) => (
     }}>
         <img
             style={{
-                width:810,
+                width: 810,
                 height: 476,
                 position: 'absolute',
                 top: 92,
@@ -75,6 +82,7 @@ const ImageCard = ({src, description}: any) => (
 
 const Websites = () => {
     const intl = useIntl();
+    const {locale} = useContext(LocaleContext);
     return (
         <>
             <CardContent>
@@ -90,7 +98,7 @@ const Websites = () => {
                 >
                     <SwiperSlide>
                         <ImageCard
-                            src="/imgs/linkedin.png"
+                            src={images.linkedin[locale] ?? "/imgs/linkedin.png"}
                             description={
                                 <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
                             }
@@ -98,14 +106,14 @@ const Websites = () => {
                     </SwiperSlide>
                     <SwiperSlide>
                         <ImageCard
-                            src="/imgs/freelancer.png"
+                            src={images.freelancer[locale] ?? "/imgs/freelancer.png"}
                             description={<a href="https://www.freelancer.com/"
                                             target="_blank">freelancer</a>}
                         />
                     </SwiperSlide>
                     <SwiperSlide>
                         <ImageCard
-                            src="/imgs/upwork.png"
+                            src={images.upwork[locale] ?? "/imgs/upwork.png"}
                             description={
                                 <a href="https://www.upwork.com/" target="_blank">upwork</a>
                             }
