@@ -20,7 +20,7 @@ const messages = defineMessages({
         id: 'home.translate-btn',
     },
 });
-const Editor = () => {
+const Translate = () => {
     const [data, setData] = useState<string>();
     const {run, message, loading} = useMessage();
     const intl = useIntl();
@@ -76,4 +76,4 @@ const Editor = () => {
     )
 }
 
-export default Editor
+export default Translate

@@ -61,7 +61,7 @@ const Editor = () => {
                         <div style={{textAlign: 'center'}}>
                             <LoginWrapper>
                                 <Button loading={loading} variant="contained" type="primary" onClick={async () => {
-                                    company && job && await run(person.toResume(), job, company);
+                                    company && job && await run(person?.toResume(), job, company);
                                 }}>{intl.formatMessage(messages.btn)}</Button>
                             </LoginWrapper>
                         </div>

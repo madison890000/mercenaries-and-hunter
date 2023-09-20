@@ -88,18 +88,18 @@ class SendList {
 
     syncDataToServer = async () => {
         const needSyncData = this.localData?.filter(e => e?.needSync);
-        if (needSyncData?.length > 0) {
-            await syncSends(needSyncData?.map(e => ({
-                ...e,
-                id: e?.serverId,
-            })));
-            needSyncData?.forEach(e => {
-                this.updateLocalDataByIDAndField(e?.id, {
-                    needSync: false
-                }, false)
-            })
-            this.save();
-        }
+        // if (needSyncData?.length > 0) {
+        //     await syncSends(needSyncData?.map(e => ({
+        //         ...e,
+        //         id: e?.serverId,
+        //     })));
+        //     needSyncData?.forEach(e => {
+        //         this.updateLocalDataByIDAndField(e?.id, {
+        //             needSync: false
+        //         }, false)
+        //     })
+        //     this.save();
+        // }
     }
 
     getListByIds(ids: string[]) {

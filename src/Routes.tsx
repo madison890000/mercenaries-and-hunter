@@ -1,12 +1,11 @@
 import {HashRouter, Outlet, Route, Routes} from "react-router-dom";
 import Menus from "./modules/Menus";
-import ExportResume from "./ExportResume";
-import Preview from "./pages/Home";
+import ImportResume from "./pages/ImportResume";
+import EditResume from "./pages/EditResume";
 import Print from "./pages/Print";
-import Editor from "./pages/Editor";
+import Translate from "./pages/Translate";
 import CoverLetter from "./pages/CoverLetter";
 import Websites from "./pages/Websites";
-import Score from "./pages/Score";
 import SendList from "./pages/SendList";
 import React from "react";
 import WithPaddingLayout from "./layouts/WithPaddingLayout";
@@ -26,10 +25,9 @@ const RouteMap = () => {
                         </WithPaddingLayout>
                     </>
                 }>
-                    <Route path="/" index element={<Editor/>}/>
-                    <Route path="copy" index element={<ExportResume/>}/>
-                    <Route path="score" index element={<Score/>}/>
-                    <Route path="edit" index element={<Preview/>}/>
+                    <Route path="/" index element={<Translate/>}/>
+                    <Route path="import" index element={<ImportResume/>}/>
+                    <Route path="edit" index element={<EditResume/>}/>
                     <Route path="cl" index element={<CoverLetter/>}/>
                     <Route path="web" index element={<Websites/>}/>
                     <Route path="send" index element={<SendList/>}/>

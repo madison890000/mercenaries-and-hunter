@@ -6,7 +6,7 @@ import useReload from "../models/hooks/useReload";
 import useUserInfo from "./useUserInfo";
 
 interface ILocaleContext {
-    person: Person;
+    person?: Person;
     scoreValues: ReturnType<typeof useScore>;
     reloadPerson: () => void;
     reload: () => void;
@@ -25,8 +25,8 @@ const getStorePerson = () => {
 // @ts-ignore
 window.person = getStorePerson();
 export const GlobalContextContainer = ({children}: PropsWithChildren) => {
-    const {userInfo,updateToken} = useUserInfo();
-    const person = useRef<Person>(getStorePerson());
+    const {userInfo, updateToken} = useUserInfo();
+    const person = useRef<Person | undefined>(getStorePerson());
 
     const reload = useReload();
     const {person: globalPerson} = useContext(GlobalContext);

@@ -16,6 +16,10 @@ const messages = defineMessages({
         id: 'menu.format-and-translate',
         defaultMessage: "AI translate"
     },
+    import: {
+        id: 'menu.import',
+        defaultMessage: 'Score your Resume'
+    },
     cl: {
         id: 'menu.auto-cl',
         defaultMessage: 'AI Cover Letter'
@@ -37,8 +41,9 @@ const Menus = () => {
     const intl = useIntl();
     const MENU_LIST = [
         {name: 'home', hash: '/', title: intl.formatMessage(messages.home)},
+        {name: 'import', hash: '/import', title: intl.formatMessage(messages.import)},
         {name: 'web', hash: '/web', title: intl.formatMessage(messages.web)},
-        {name: 'send', hash: '/send', title: intl.formatMessage(messages.send)}
+        {name: 'send', hash: '/send', title: intl.formatMessage(messages.send)},
     ];
     if (FLAGS.editResume) {
         MENU_LIST.splice(1, 0, {name: 'edit', hash: '/edit', title: intl.formatMessage(messages.edit)})

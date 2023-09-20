@@ -1,4 +1,6 @@
+import {IS_DEV} from "./environment";
+
 export const API_DOMAIN =
-    process.env.NODE_ENV === 'development' ?
-        'https://chat.mercenarieshunter.com'
+    IS_DEV ?
+        'http://localhost:8083'
         : `https://chat.mercenarieshunter.com`;

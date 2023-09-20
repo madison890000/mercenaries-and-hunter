@@ -1,6 +1,7 @@
+import {IS_DEV} from "./environment";
 
 const FLAGS = {
-    editResume:false,
-    autoCL:false,
+    editResume: IS_DEV ? true : false,
+    autoCL: IS_DEV ? true : false,
 }
 export default FLAGS

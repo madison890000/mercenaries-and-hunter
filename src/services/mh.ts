@@ -6,10 +6,16 @@ export const formatAndTranslateResume = async (text: any) => {
     }, {}).then(e => e.data)
 }
 
-export const scoreResume = async (resume: any, needCreateResume: boolean) => {
+export const summarizeResume = async (text: string[]) => {
+    return httpClient.post(`/chat/summarize-resume`, {
+        content: text
+    }, {}).then(e => e.data)
+}
+
+export const scoreResume = async (resume: any, locale: string) => {
     return httpClient.post(`/chat/score-resume`, {
         content: resume,
-        needCreateResume,
+        locale,
     }, {}).then(e => e?.data)
 }
 export const syncAccount = () => {
