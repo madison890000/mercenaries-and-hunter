@@ -39,7 +39,7 @@ const ImportResume = () => {
     const summarizeAndScore = (r: string[]) => {
         setSummarizeLoading(true);
         summarizeResume(r).then(data => {
-            globalStore.save('resume-summary', JSON.stringify(data?.resume))
+            globalStore.save('resume-summary', data?.resume)
             run(data?.resume, locale);
         }).finally(() => {
             setSummarizeLoading(false);

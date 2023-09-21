@@ -20,7 +20,7 @@ class Jobs {
             },
             {
                 task: sendListData.syncDataToServer,
-                time: 12 * 24 * 5,
+                time: 2 * 60 * 24 * 5,
             },
         ];
         setInterval(async () => {
@@ -33,7 +33,7 @@ class Jobs {
                     }
                 }
             }
-        }, 5 * 1000)
+        }, 30 * 1000)
     }
 
     turnOn() {

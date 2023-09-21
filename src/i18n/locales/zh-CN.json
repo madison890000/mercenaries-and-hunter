@@ -44,6 +44,7 @@
   "btn.translate": "翻译",
   "btn.upload-resume": "上传简历",
   "btn.re-upload-resume": "重新上传简历",
+  "btn.go-upload-resume": "没有简历，去上传",
   "website.webs": "我们目前适配的网站（持续适配中，欢迎提供意见）",
   "website.title": "帮助用户摆脱google全文网页翻译(需要安装插件)",
   "website.sub-title": "插件地址",

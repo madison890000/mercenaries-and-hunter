@@ -1,13 +1,14 @@
-import React, {useContext, useState} from "react";
+import React, {useState} from "react";
 import {Col, Row} from "antd";
 import copy from 'copy-to-clipboard';
 import {Card, CardContent, TextField, Typography} from "@mui/material";
 import {useCoverLetter} from "../hooks/useCoverLetter";
-import GlobalContext from "../contexts/GlobalContext";
 import Button from "../models/components/Button";
 import LoginWrapper from "../modules/LoginWrapper/LoginWrapper";
 import {Divider} from "../models/components";
 import {defineMessages, useIntl} from "react-intl";
+import globalStore from "../lib/GlobalData";
+import {useNavigate} from "react-router";
 
 
 const messages = defineMessages({
@@ -22,14 +23,20 @@ const messages = defineMessages({
     },
     btn: {
         id: 'cl.btn',
+    },
+    uploadBtn:{
+        id: 'btn.go-upload-resume',
     }
 });
 const Editor = () => {
-    const {person} = useContext(GlobalContext);
     const [job, setJob] = useState<string>();
     const [company, setCompany] = useState<string>();
     const {run, message, loading} = useCoverLetter();
     const intl = useIntl();
+    const navigate = useNavigate();
+    // const hasResume = false;
+    const hasResume = !!globalStore.get('resume-summary');
+    console.log(typeof globalStore.get('resume-summary'))
     return (
         <>
             <div style={{
@@ -58,13 +65,23 @@ const Editor = () => {
                         />
                     </Col>
                     <Col>
-                        <div style={{textAlign: 'center'}}>
-                            <LoginWrapper>
-                                <Button loading={loading} variant="contained" type="primary" onClick={async () => {
-                                    company && job && await run(person?.toResume(), job, company);
-                                }}>{intl.formatMessage(messages.btn)}</Button>
+                        {
+                            hasResume ? (
+                                <div style={{textAlign: 'center'}}>
+                                    <LoginWrapper>
+                                        <Button loading={loading} variant="contained" type="primary"
+                                                onClick={async () => {
+                                                    company && job && await run(globalStore.get('resume-summary'), job, company);
+                                                }}>{intl.formatMessage(messages.btn)}</Button>
+                                    </LoginWrapper>
+                                </div>
+                            ) : <LoginWrapper>
+                                <Button variant="contained" type="primary" onClick={async () => {
+                                    navigate('/import');
+                                }}>{intl.formatMessage(messages.uploadBtn)}</Button>
                             </LoginWrapper>
-                        </div>
+                        }
+
                     </Col>
                 </Row>
                 <div>

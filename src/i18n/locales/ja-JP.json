@@ -44,6 +44,7 @@
   "btn.translate": "翻訳する",
   "btn.upload-resume": "履歴書をアップロード",
   "btn.re-upload-resume": "履歴書を再アップロード",
+  "btn.go-upload-resume": "履歴書がない場合、アップロードに進む",
   "website.webs": "現在、いくつかの Web サイトをサポートしており (継続的な適応性を備えています)、追加の Web サイトに関するフィードバックを歓迎しています。",
   "website.title": "ユーザー向けの Google の Web ページ翻訳の問題を解決するのに役立ちます。",
   "website.sub-title": "プラグインのインストールが必要です",

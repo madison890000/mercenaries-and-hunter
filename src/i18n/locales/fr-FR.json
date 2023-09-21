@@ -44,6 +44,7 @@
   "btn.translate": "Traduire",
   "btn.upload-resume": "Télécharger le CV",
   "btn.re-upload-resume": "Re-télécharger le CV",
+  "btn.go-upload-resume": "Pas de CV, aller télécharger",
   "website.webs": "Nous prenons actuellement en charge plusieurs sites Web (avec une adaptabilité continue) et apprécions les commentaires sur d'autres.",
   "website.title": "Peut vous aider à surmonter la traduction des pages Web de Google pour les utilisateurs.",
   "website.sub-title": "nécessite l'installation d'un plugin",

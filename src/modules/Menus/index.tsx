@@ -42,15 +42,14 @@ const Menus = () => {
     const MENU_LIST = [
         {name: 'home', hash: '/', title: intl.formatMessage(messages.home)},
         {name: 'import', hash: '/import', title: intl.formatMessage(messages.import)},
+        {name: 'cl', hash: '/cl', title: intl.formatMessage(messages.cl)},
         {name: 'web', hash: '/web', title: intl.formatMessage(messages.web)},
         {name: 'send', hash: '/send', title: intl.formatMessage(messages.send)},
     ];
     if (FLAGS.editResume) {
         MENU_LIST.splice(1, 0, {name: 'edit', hash: '/edit', title: intl.formatMessage(messages.edit)})
     }
-    if (FLAGS.autoCL) {
-        MENU_LIST.splice(1, 0, {name: 'cl', hash: '/cl', title: intl.formatMessage(messages.cl)})
-    }
+
     const {locale, updateLocale, languages} = React.useContext(LocaleContext);
     return (
         <>

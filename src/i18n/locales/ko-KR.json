@@ -44,6 +44,7 @@
   "btn.translate": "번역",
   "btn.upload-resume": "이력서 업로드",
   "btn.re-upload-resume": "이력서 다시 업로드",
+  "btn.go-upload-resume": "이력서가 없으면 업로드로 이동",
   "website.webs": "현재 여러 웹 사이트를 지원하고 있으며 (지속적으로 적응 중), 추가 피드백을 환영합니다.",
   "website.title": "Google의 웹 페이지 번역을 극복하는 데 도움을 줄 수 있습니다.",
   "website.sub-title": "플러그인 설치가 필요합니다.",
