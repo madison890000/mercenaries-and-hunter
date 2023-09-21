@@ -45,32 +45,23 @@ const TimeUntilNow: React.FC<{ time: string }> = ({time}) => {
     let text = '-';
     if (timeSeconds < ONE_MIN) {
         text = intl.formatMessage(messages.now)
-    }
-    if (timeSeconds < ONE_MIN * 5) {
+    }else if (timeSeconds < ONE_MIN * 5) {
         text = intl.formatMessage(messages.min5)
-    }
-    if (timeSeconds < ONE_MIN * 30) {
+    }else if (timeSeconds < ONE_MIN * 30) {
         text = intl.formatMessage(messages.min30)
-    }
-    if (timeSeconds < ONE_HOUR) {
+    }else if (timeSeconds < ONE_HOUR) {
         text = intl.formatMessage(messages.min60)
-    }
-    if (timeSeconds < ONE_HOUR * 2) {
+    }else if (timeSeconds < ONE_HOUR * 2) {
         text = intl.formatMessage(messages.hour2)
-    }
-    if (timeSeconds < ONE_HOUR * 6) {
+    }else if (timeSeconds < ONE_HOUR * 6) {
         text = intl.formatMessage(messages.hour6)
-    }
-    if (timeSeconds < ONE_HOUR * 12) {
+    }else if (timeSeconds < ONE_HOUR * 12) {
         text = intl.formatMessage(messages.hour12)
-    }
-    if (timeSeconds < ONE_DAY) {
+    }else if (timeSeconds < ONE_DAY) {
         text = intl.formatMessage(messages.hour24)
-    }
-    if (timeSeconds < SEVEN_DAY) {
+    }else if (timeSeconds < SEVEN_DAY) {
         text = intl.formatMessage(messages.day7)
-    }
-    if (timeSeconds < ONE_MONTH) {
+    }else if (timeSeconds < ONE_MONTH) {
         text = intl.formatMessage(messages.day31)
     }
     return <>{text}</>
