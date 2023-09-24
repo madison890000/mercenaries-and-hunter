@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './index.module.scss';
-import capitalize from '../../../utils/capitalize';
+import capitalize from '../../utils/capitalize';
 
 interface DividerProps {
     title?: string;

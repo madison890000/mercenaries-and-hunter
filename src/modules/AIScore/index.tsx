@@ -1,7 +1,7 @@
 import React, {useContext, useState} from "react";
 import Button from "@mui/material/Button";
 import {SwipeableDrawer} from "@mui/material";
-import {Divider} from "../../models/components";
+import Divider from "../../components/Divider";
 import GlobalContext from "../../contexts/GlobalContext";
 import {useNavigate} from "react-router";
 import {defineMessages, useIntl} from "react-intl";

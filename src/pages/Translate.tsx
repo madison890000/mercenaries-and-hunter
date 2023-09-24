@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Col, Row} from "antd";
 import {useMessage} from "../hooks/useMessage";
 import copy from 'copy-to-clipboard';
-import Button from "../models/components/Button";
+import Button from "../components/Button";
 import {CardContent, TextField, Typography} from "@mui/material";
 import Card from "@mui/material/Card";
 import LoginWrapper from "../modules/LoginWrapper/LoginWrapper";

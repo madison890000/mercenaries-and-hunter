@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
-import {Divider} from "../models/components";
+import Divider from "../components/Divider";
 import {defineMessages, useIntl} from "react-intl";
 import LocaleContext from "../contexts/LocaleContext";
 import {LocalesKey} from "../i18n/languages";
