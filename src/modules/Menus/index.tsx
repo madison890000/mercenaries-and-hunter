@@ -52,7 +52,9 @@ const Menus = () => {
 
     const {locale, updateLocale, languages} = React.useContext(LocaleContext);
     return (
-        <>
+        <div style={{
+            position: 'relative'
+        }}>
             <MenuList
                 style={{
                     display: 'flex',
@@ -74,13 +76,13 @@ const Menus = () => {
             </MenuList>
             <div style={{
                 position: 'absolute',
-                top: 10,
+                bottom: 10,
                 right: 5,
                 zIndex: 1000
             }}>
                 <SelectLanguage value={locale} options={languages} onChange={updateLocale}/>
             </div>
-        </>
+        </div>
     );
 };
 export default Menus;

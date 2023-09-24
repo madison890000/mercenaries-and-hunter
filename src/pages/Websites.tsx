@@ -117,8 +117,7 @@ const Support = () => {
                     <SwiperSlide>
                         <ImageCard
                             src={'/imgs/help-5.png'}
-                            description={<a href="https://www.freelancer.com/"
-                                            target="_blank">{intl.formatMessage({id:'website.text.4'})}</a>}
+                            description={<div>{intl.formatMessage({id:'website.text.4'})}</div>}
                         />
                     </SwiperSlide>
                     <SwiperSlide>
@@ -229,10 +228,18 @@ const Support = () => {
                                     }
                                 />
                             </SwiperSlide>
+                            <SwiperSlide>
+                                <ImageCard
+                                    src={images.upwork[locale] ?? "/imgs/web3.png"}
+                                    description={
+                                        <a href="https://web3.career/" target="_blank">web3.career</a>
+                                    }
+                                />
+                            </SwiperSlide>
                         </Swiper>
                         <Divider/>
                         <section>
-                            <h4>{intl.formatMessage(messages.webs)}: LinkedIn/Upwork/Freelancer</h4>
+                            <h4>{intl.formatMessage(messages.webs)}: LinkedIn/Upwork/Freelancer/web3.career</h4>
                         </section>
                         <section>
                             <div>{intl.formatMessage(messages.info)}</div>
