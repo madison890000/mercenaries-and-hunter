@@ -7,6 +7,4 @@ const COLORS = [
     '#FF66B2'
 ] as const;
 
-export const BACKGROUND_OF_MOUNT_RECT = '#E0E0E0';
-
 export default COLORS;
