@@ -12,6 +12,32 @@ export const addSend = async (site: string, config: any) => {
     });
     return res.data;
 }
+
+export const openTranslate = async () => {
+    const res = await chrome?.runtime?.sendMessage({
+        args: ['open-translate']
+    });
+    return res;
+}
+
+export const closeTranslate = async () => {
+    const res = await chrome?.runtime?.sendMessage({
+        args: ['close-translate']
+    });
+    return res;
+}
+export const changeTranslateTo = async (to: any) => {
+    const res = await chrome?.runtime?.sendMessage({
+        args: ['change-translate', to]
+    });
+    return res;
+}
+export const getTranslateConfig = async () => {
+    const res = await chrome?.runtime?.sendMessage({
+        args: ['get-translate-config']
+    });
+    return res;
+}
 export const hasSite = async (site: string) => {
     const res = await chrome?.runtime?.sendMessage({
         args: ['has-site', site]
