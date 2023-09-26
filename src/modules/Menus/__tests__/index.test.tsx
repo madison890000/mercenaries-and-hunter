@@ -1,8 +1,16 @@
-import React from 'react';
+import React, {PropsWithChildren} from 'react';
 import Menus from '../index';
-import renderer from 'react-test-renderer';
+import {render} from '@testing-library/react';
+import {BrowserRouter as Router} from 'react-router-dom';
 
+const RouterWrapper: React.FC<PropsWithChildren> = ({children}) => {
+    return <Router>{children}</Router>;
+};
 test('renders Menus', () => {
-    const MenusDom = renderer.create(<Menus />).toJSON();
-    expect(MenusDom).toMatchSnapshot();
+    const {asFragment} = render(
+        <RouterWrapper>
+            <Menus/>
+        </RouterWrapper>
+    );
+    expect(asFragment()).toMatchSnapshot();
 });
