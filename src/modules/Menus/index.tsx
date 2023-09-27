@@ -62,9 +62,13 @@ const Menus = () => {
             >
                 {
                     MENU_LIST.map((e) => (
-                        <MenuItem onClick={() => {
-                            navigate(e?.hash)
-                        }} selected={location.pathname === e?.hash}>
+                        <MenuItem
+                            key={e?.hash}
+                            onClick={() => {
+                                navigate(e?.hash)
+                            }}
+                            selected={location.pathname === e?.hash}
+                        >
                             {e?.title}
                         </MenuItem>
                     ))
