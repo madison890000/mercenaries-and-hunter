@@ -1,6 +1,7 @@
 import Select from '@mui/material/Select';
 import MenuItem from "@mui/material/MenuItem";
 import {defineMessages, useIntl} from "react-intl";
+import {SendType} from "../types";
 
 const messages = defineMessages({
     send: {
@@ -29,14 +30,6 @@ interface SendStatusProps {
     onChange: any;
 }
 
-enum SendType {
-    SEND = 0,
-    START_INTERVIEWING = 1,
-    MIDDLE_INTERVIEWING = 2,
-    FINAL_INTERVIEWING = 3,
-    OFFER = 4,
-    REJECTED = 5,
-}
 
 const colors = {
     [SendType.SEND]: 'black',

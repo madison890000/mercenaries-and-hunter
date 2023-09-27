@@ -9,6 +9,7 @@ import Divider from "../components/Divider";
 import {defineMessages, useIntl} from "react-intl";
 import globalStore from "../lib/GlobalData";
 import {useNavigate} from "react-router";
+import {RESUME_SUMMARY} from "../constants/StoreKeys";
 
 
 const messages = defineMessages({
@@ -35,8 +36,7 @@ const Editor = () => {
     const intl = useIntl();
     const navigate = useNavigate();
     // const hasResume = false;
-    const hasResume = !!globalStore.get('resume-summary');
-    console.log(typeof globalStore.get('resume-summary'))
+    const hasResume = !!globalStore.get(RESUME_SUMMARY);
     return (
         <>
             <div style={{
@@ -71,7 +71,7 @@ const Editor = () => {
                                     <LoginWrapper>
                                         <Button loading={loading} variant="contained" type="primary"
                                                 onClick={async () => {
-                                                    company && job && await run(globalStore.get('resume-summary'), job, company);
+                                                    company && job && await run(globalStore.get(RESUME_SUMMARY), job, company);
                                                 }}>{intl.formatMessage(messages.btn)}</Button>
                                     </LoginWrapper>
                                 </div>

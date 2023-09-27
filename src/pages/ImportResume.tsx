@@ -9,13 +9,14 @@ import globalStore from "../lib/GlobalData";
 import {useIntl} from "react-intl";
 import Rating from "@mui/material/Rating";
 import LocaleContext from "../contexts/LocaleContext";
+import {RESUME_SUMMARY} from "../constants/StoreKeys";
 
 
 const ImportResume = () => {
     const [uploadResumeString, setUploadResume] = useState<string[] | void>();
     const {scoreValues} = useContext(GlobalContext);
     const intl = useIntl();
-    const {run, score, advise, loading: scoreLoading, error} = scoreValues;
+    const {mutate, score, advise, isLoading: scoreLoading, error} = scoreValues;
     const [summarizeLoading, setSummarizeLoading] = useState(false);
     const uploadProps: UploadProps = {
         name: 'file',
@@ -39,8 +40,11 @@ const ImportResume = () => {
     const summarizeAndScore = (r: string[]) => {
         setSummarizeLoading(true);
         summarizeResume(r).then(data => {
-            globalStore.save('resume-summary', data?.resume)
-            run(data?.resume, locale);
+            globalStore.save(RESUME_SUMMARY, data?.resume)
+            mutate({
+                resume: data?.resume,
+                locale: locale
+            });
         }).finally(() => {
             setSummarizeLoading(false);
         })

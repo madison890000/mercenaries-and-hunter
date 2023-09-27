@@ -11,24 +11,16 @@ import 'swiper/css/navigation';
 import Divider from "../components/Divider";
 import {defineMessages, useIntl} from "react-intl";
 import LocaleContext from "../contexts/LocaleContext";
-import {LocalesKey} from "../i18n/languages";
 import {Card} from "@mui/material";
+import {
+    CHROME_EXTENSION_LINK_ADDRESS,
+    FREELANCER_OFFICIAL_WEB_ADDRESS,
+    LINKEDIN_OFFICIAL_WEB_ADDRESS,
+    UPWORK_OFFICIAL_WEB_ADDRESS,
+    WEB3_CAREER_OFFICIAL_WEB_ADDRESS
+} from "../constants/domain";
+import {HELP_IMAGES, SCREEN_SHOT_IMAGES_WITH_LOCALE} from "../constants/images";
 
-const images = {
-    linkedin: {
-        'ja-JP': '/imgs/linkedin-ja-JP.png',
-    },
-    upwork: {
-        'ja-JP': '/imgs/upwork-ja-JP.png',
-    },
-    freelancer: {
-        'ja-JP': '/imgs/freelancer-ja-JP.png',
-    }
-} as unknown as {
-    linkedin: Record<LocalesKey, string>
-    upwork: Record<LocalesKey, string>
-    freelancer: Record<LocalesKey, string>
-};
 const messages = defineMessages({
     webs: {
         id: 'website.webs',
@@ -99,12 +91,12 @@ const Support = () => {
         <>
             <CardContent>
                 <Typography variant="h3" gutterBottom>
-                    {intl.formatMessage({id:'website.text.1'})}
+                    {intl.formatMessage({id: 'website.text.1'})}
                 </Typography>
                 <Typography variant="subtitle2" gutterBottom>
-                    {intl.formatMessage({id:'website.text.2'})}（<a
-                    href="https://chrome.google.com/webstore/detail/it-mercenaries-and-hunter/eilakanollhbgdoppbffeikcbkhmeloc?hl=zh-CN&authuser=0"
-                    target="_blank">{intl.formatMessage(messages.subTitle)}</a>） {intl.formatMessage({id:'website.text.3'})}.
+                    {intl.formatMessage({id: 'website.text.2'})}（<a
+                    href={CHROME_EXTENSION_LINK_ADDRESS}
+                    target="_blank">{intl.formatMessage(messages.subTitle)}</a>） {intl.formatMessage({id: 'website.text.3'})}.
 
                 </Typography>
                 <Swiper
@@ -116,15 +108,15 @@ const Support = () => {
                 >
                     <SwiperSlide>
                         <ImageCard
-                            src={'/imgs/help-5.png'}
-                            description={<div>{intl.formatMessage({id:'website.text.4'})}</div>}
+                            src={HELP_IMAGES.appliedListInWeb}
+                            description={<div>{intl.formatMessage({id: 'website.text.4'})}</div>}
                         />
                     </SwiperSlide>
                     <SwiperSlide>
                         <ImageCard
-                            src={images.linkedin[locale] ?? "/imgs/linkedin.png"}
+                            src={SCREEN_SHOT_IMAGES_WITH_LOCALE.linkedin[locale] ?? SCREEN_SHOT_IMAGES_WITH_LOCALE.linkedin.default}
                             description={
-                                <div>{intl.formatMessage({id:'website.text.5'})}</div>
+                                <div>{intl.formatMessage({id: 'website.text.5'})}</div>
                             }
                         />
                     </SwiperSlide>
@@ -134,30 +126,30 @@ const Support = () => {
                     marginTop: 20
                 }}>
                     <CardContent>
-                        <h3 style={{textAlign: 'center'}}>{intl.formatMessage({id:'website.text.6'})}</h3>
+                        <h3 style={{textAlign: 'center'}}>{intl.formatMessage({id: 'website.text.6'})}</h3>
                         <section>
-                            <Title content={intl.formatMessage({id:'website.text.7'})}/>
+                            <Title content={intl.formatMessage({id: 'website.text.7'})}/>
                         </section>
                         <section>
-                            <Title content={intl.formatMessage({id:'website.text.8'})}/>
-                            {intl.formatMessage({id:'website.text.9'})}
+                            <Title content={intl.formatMessage({id: 'website.text.8'})}/>
+                            {intl.formatMessage({id: 'website.text.9'})}
                             <div>
-                                <DescriptionImage src={'/imgs/help-2.png'}/>
+                                <DescriptionImage src={HELP_IMAGES.defaultExtensionPopup}/>
                             </div>
                         </section>
                         <section>
-                            <Title content={intl.formatMessage({id:'website.text.10'})}/>
-                            {intl.formatMessage({id:'website.text.10.1'})}
+                            <Title content={intl.formatMessage({id: 'website.text.10'})}/>
+                            {intl.formatMessage({id: 'website.text.10.1'})}
                             <div>
-                                <DescriptionImage src={'/imgs/help-3.png'}/>
+                                <DescriptionImage src={HELP_IMAGES.markSiteInExtensionPopup}/>
                             </div>
                         </section>
                         <section>
-                            <Title content={intl.formatMessage({id:'website.text.11'})}/>
-                            {intl.formatMessage({id:'website.text.12'})}
+                            <Title content={intl.formatMessage({id: 'website.text.11'})}/>
+                            {intl.formatMessage({id: 'website.text.12'})}
                             <div>
-                                <DescriptionImage src={'/imgs/help-4.png'}/>
-                                <DescriptionImage src={'/imgs/help-5.png'} style={{
+                                <DescriptionImage src={HELP_IMAGES.appliedListButtonInExtensionPopup}/>
+                                <DescriptionImage src={HELP_IMAGES.appliedListInWeb} style={{
                                     width: 350
                                 }}/>
                             </div>
@@ -168,7 +160,7 @@ const Support = () => {
                     marginTop: 20
                 }}>
                     <CardContent>
-                        <h3 style={{textAlign: 'center'}}>{intl.formatMessage({id:'website.text.13'})}</h3>
+                        <h3 style={{textAlign: 'center'}}>{intl.formatMessage({id: 'website.text.13'})}</h3>
 
                         <div style={{
                             textAlign: "left",
@@ -178,25 +170,25 @@ const Support = () => {
                             <h5>{intl.formatMessage(messages.description)}</h5>
                         </div>
                         <section>
-                            <Title content={intl.formatMessage({id:'website.text.14'})}/>
+                            <Title content={intl.formatMessage({id: 'website.text.14'})}/>
                         </section>
                         <section>
-                            <Title content={intl.formatMessage({id:'website.text.15'})}/>
-                            {intl.formatMessage({id:'website.text.16'})}
+                            <Title content={intl.formatMessage({id: 'website.text.15'})}/>
+                            {intl.formatMessage({id: 'website.text.16'})}
                             <div>
-                                <DescriptionImage src={'/imgs/help-2.png'}/>
+                                <DescriptionImage src={HELP_IMAGES.defaultExtensionPopup}/>
                             </div>
                         </section>
                         <section>
-                            <Title content={intl.formatMessage({id:'website.text.17'})}/>
-                            {intl.formatMessage({id:'website.text.18'})}
+                            <Title content={intl.formatMessage({id: 'website.text.17'})}/>
+                            {intl.formatMessage({id: 'website.text.18'})}
                             <div>
-                                <DescriptionImage src={'/imgs/help-1.png'}/>
+                                <DescriptionImage src={HELP_IMAGES.defaultExtensionHome}/>
                             </div>
                         </section>
                         <section>
-                            <Title content={intl.formatMessage({id:'website.text.19'})}/>
-                            {intl.formatMessage({id:'website.text.20'})}
+                            <Title content={intl.formatMessage({id: 'website.text.19'})}/>
+                            {intl.formatMessage({id: 'website.text.20'})}
                         </section>
                         <Swiper
                             // @ts-ignore
@@ -207,32 +199,32 @@ const Support = () => {
                         >
                             <SwiperSlide>
                                 <ImageCard
-                                    src={images.linkedin[locale] ?? "/imgs/linkedin.png"}
+                                    src={SCREEN_SHOT_IMAGES_WITH_LOCALE.linkedin[locale] ?? SCREEN_SHOT_IMAGES_WITH_LOCALE.linkedin.default}
                                     description={
-                                        <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+                                        <a href={LINKEDIN_OFFICIAL_WEB_ADDRESS} target="_blank">LinkedIn</a>
                                     }
                                 />
                             </SwiperSlide>
                             <SwiperSlide>
                                 <ImageCard
-                                    src={images.freelancer[locale] ?? "/imgs/freelancer.png"}
-                                    description={<a href="https://www.freelancer.com/"
+                                    src={SCREEN_SHOT_IMAGES_WITH_LOCALE.freelancer[locale] ?? SCREEN_SHOT_IMAGES_WITH_LOCALE.freelancer.default}
+                                    description={<a href={FREELANCER_OFFICIAL_WEB_ADDRESS}
                                                     target="_blank">freelancer</a>}
                                 />
                             </SwiperSlide>
                             <SwiperSlide>
                                 <ImageCard
-                                    src={images.upwork[locale] ?? "/imgs/upwork.png"}
+                                    src={SCREEN_SHOT_IMAGES_WITH_LOCALE.upwork[locale] ?? SCREEN_SHOT_IMAGES_WITH_LOCALE.upwork.default}
                                     description={
-                                        <a href="https://www.upwork.com/" target="_blank">upwork</a>
+                                        <a href={UPWORK_OFFICIAL_WEB_ADDRESS} target="_blank">upwork</a>
                                     }
                                 />
                             </SwiperSlide>
                             <SwiperSlide>
                                 <ImageCard
-                                    src={images.upwork[locale] ?? "/imgs/web3.png"}
+                                    src={SCREEN_SHOT_IMAGES_WITH_LOCALE.web3Career[locale] ?? SCREEN_SHOT_IMAGES_WITH_LOCALE.web3Career.default}
                                     description={
-                                        <a href="https://web3.career/" target="_blank">web3.career</a>
+                                        <a href={WEB3_CAREER_OFFICIAL_WEB_ADDRESS} target="_blank">web3.career</a>
                                     }
                                 />
                             </SwiperSlide>

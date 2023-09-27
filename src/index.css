@@ -183,13 +183,6 @@ code {
     size: 297mm 420mm; /* or size: 1123px 1588px; */
 }
 
-.change-language {
-    position: absolute;
-    right: 4px;
-    top: 4px;
-    min-width: 120px;
-}
-
 .add {
     opacity: 1 !important;
 }

@@ -1,10 +1,6 @@
 import {defineMessages, useIntl} from "react-intl";
+import {ONE_DAY, ONE_HOUR, ONE_MIN, ONE_MONTH, SEVEN_DAY} from "../constants/date";
 
-const ONE_MIN = 1000 * 60
-const ONE_HOUR = ONE_MIN * 60
-const ONE_DAY = ONE_HOUR * 24
-const SEVEN_DAY = ONE_DAY * 7
-const ONE_MONTH = ONE_DAY * 31
 
 const messages = defineMessages({
     now: {

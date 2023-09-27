@@ -1,5 +1,6 @@
 import sendListData from "../lib/SendListData";
 import {syncAccount} from "../services/mh";
+import {HALF_MINUTES, MAX_CRON_JOBS_TIME} from "../constants/date";
 
 class Jobs {
     private jobs: any[];
@@ -20,10 +21,10 @@ class Jobs {
             },
             {
                 task: sendListData.syncDataToServer,
-                time: 2 * 60 * 24 * 5,
+                time: MAX_CRON_JOBS_TIME,
             },
         ];
-        setInterval(async () => {
+        const checking = async () => {
             if (this.flag) {
                 for (let i = 0; i < this.jobs.length; i++) {
                     const e = this.jobs[i];
@@ -33,7 +34,10 @@ class Jobs {
                     }
                 }
             }
-        }, 30 * 1000)
+        }
+        setInterval(()=>{
+            checking();
+        }, HALF_MINUTES)
     }
 
     turnOn() {
@@ -45,5 +49,5 @@ class Jobs {
     }
 }
 
-const jobs = new Jobs();
-export default jobs
+const cronJobs = new Jobs();
+export default cronJobs

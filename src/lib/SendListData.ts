@@ -1,26 +1,20 @@
 import {syncSends} from "../services/mh";
+import {IS_DEV} from "../constants/environment";
+import {getItem, saveItem} from "../utils";
+import {IAppliedInExtension, IAppliedInLocal, IAppliedInServer, SendType} from "../types";
 
-const saveItem = (key: string, value: string) => {
-    window.localStorage.setItem(key, value);
-}
 
-const getItem = (key: string, type = 'string') => {
-    return new Promise(resolve => {
-        const data = window.localStorage.getItem(key);
-        resolve(data)
-    })
-
-}
-
-class SendList {
-    private localData: any[];
-    private serviceData: any[];
+class AppliedList {
+    private localData: IAppliedInLocal[];
+    private serviceData: IAppliedInServer[];
 
     constructor() {
         this.localData = [];
         this.serviceData = [];
         this.recover();
     }
+
+    private static DATA_KEY = 'send-list-data';
 
     updateLocalDataByIDAndField(id: string, field: any, saveNow: boolean) {
         const index = this.localData?.findIndex((e) => e?.id === id);
@@ -79,7 +73,7 @@ class SendList {
         });
     }
 
-    setServerData(d: any[]) {
+    setServerData(d: IAppliedInServer[]) {
         this.serviceData = d;
         this.diffLastRestoreAndServerData();
         this.save();
@@ -103,19 +97,19 @@ class SendList {
     }
 
     getListByIds(ids: string[]) {
-        if (process.env.NODE_ENV === 'development') {
+        if (IS_DEV) {
             return this.localData
         }
         return this.localData?.filter(d => ids?.includes(d?.id))
     }
 
-    addMore(data: any[]) {
+    addMore(data: IAppliedInExtension[]) {
         let changed = false;
         data?.forEach((d) => {
             if (!this.localData.find(a => a?.id === d?.id)) {
                 const newData = {
                     ...d,
-                    status: 0,
+                    status: SendType.SEND,
                     like: 3,
                     needSync: true,
                 };
@@ -143,12 +137,12 @@ class SendList {
     }
 
     save() {
-        saveItem('send-list-data', JSON.stringify(this.localData))
+        saveItem(AppliedList.DATA_KEY, JSON.stringify(this.localData))
     }
 
 
     recover = async () => {
-        const data = await getItem('send-list-data') as any[];
+        const data = await getItem(AppliedList.DATA_KEY) as any[];
         try {
             if (typeof data === "string") {
                 this.localData = JSON.parse(data);
@@ -162,5 +156,5 @@ class SendList {
 
 }
 
-const sendList = new SendList();
+const sendList = new AppliedList();
 export default sendList

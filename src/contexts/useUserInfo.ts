@@ -1,10 +1,10 @@
 import {useEffect, useRef, useState} from "react";
 import * as jose from 'jose'
 import {getGoogleToken} from "../utils";
-import jobs from "../jobs";
 import sendList from "../lib/SendListData";
 import {getUserInfo} from "../services/mh";
 import {ONE_WEEK} from "../constants/date";
+import cronJobs from "../CronJobs";
 
 
 const useUserInfo = () => {
@@ -40,10 +40,10 @@ const useUserInfo = () => {
                     picture: info?.picture as string,
                     login: true,
                 });
-                jobs.turnOn();
+                cronJobs.turnOn();
                 getServerInfo();
             } else {
-                jobs.turnOff();
+                cronJobs.turnOff();
             }
         }
     };

@@ -1,5 +1,7 @@
 import React, {Dispatch, PropsWithChildren, SetStateAction, useState} from 'react';
 import {APP_LOCALES, LANGUAGE_OPTIONS, LocalesKey} from '../i18n/languages';
+import globalStore from "../lib/GlobalData";
+import {I18N_KEY} from "../constants/StoreKeys";
 
 interface ILocaleContext {
     locale: LocalesKey;
@@ -7,17 +9,19 @@ interface ILocaleContext {
     languages: { label: string; value: LocalesKey }[];
 }
 
+const DEFAULT_LOCALE = 'en-US';
+
 export const LocaleContext = React.createContext({} as ILocaleContext);
 
 const getInitLanguage = (): LocalesKey => {
-    if (window.localStorage.getItem('i18n')) {
-        return window.localStorage.getItem('i18n') as LocalesKey
+    if (globalStore.get(I18N_KEY)) {
+        return globalStore.get(I18N_KEY) as LocalesKey
     } else {
         const browserLang = window.navigator.language;
         if (Object.keys(APP_LOCALES).includes(browserLang)) {
             return browserLang as LocalesKey
         } else {
-            return 'en-US'
+            return DEFAULT_LOCALE
         }
     }
 }
@@ -29,7 +33,7 @@ export const LocaleContextContainer = ({children}: PropsWithChildren) => {
                 locale,
                 updateLocale: (e) => {
                     updateLocale(e);
-                    window.localStorage.setItem('i18n', e as string)
+                    globalStore.save(I18N_KEY, e as string)
                 },
                 languages: LANGUAGE_OPTIONS
             }}
