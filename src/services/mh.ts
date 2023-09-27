@@ -1,10 +1,6 @@
 import httpClient from "../utils/httpClient";
+import {IAppliedInExtension, NeedSyncAppliedItem} from "../types";
 
-export const formatAndTranslateResume = async (text: any) => {
-    return httpClient.post(`/chat/format-resume`, {
-        content: JSON.stringify(text)
-    }, {}).then(e => e.data)
-}
 
 export const summarizeResume = async (text: string[]) => {
     return httpClient.post(`/chat/summarize-resume`, {
@@ -13,7 +9,10 @@ export const summarizeResume = async (text: string[]) => {
 }
 
 export const scoreResume = async (resume: any, locale: string) => {
-    return httpClient.post(`/chat/score-resume`, {
+    return httpClient.post<{
+        score: number;
+        advise: string[];
+    }>(`/chat/score-resume`, {
         content: resume,
         locale,
     }, {}).then(e => e?.data)
@@ -21,7 +20,7 @@ export const scoreResume = async (resume: any, locale: string) => {
 export const syncAccount = () => {
     return httpClient.post(`/rest/accounts/sync`, {}, {})
 }
-export const syncSends = (sends: any[]) => {
+export const syncSends = (sends: NeedSyncAppliedItem[]) => {
     return httpClient.post(`/rest/sends/sync`, {
         sends,
     }, {})
@@ -34,7 +33,7 @@ export const getSendList = async () => {
     if (!chrome?.runtime) {
         return [];
     }
-    return new Promise<any[]>(((resolve, reject) => {
+    return new Promise<IAppliedInExtension[]>(((resolve, reject) => {
         chrome?.runtime?.sendMessage(process.env.REACT_APP_EXTENSION_NAME, {
             args: ['send-list']
         }, res => {

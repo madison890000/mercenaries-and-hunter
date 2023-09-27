@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {PropsWithChildren, useContext} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
@@ -9,6 +9,7 @@ import {GlobalContextContainer} from "./contexts/GlobalContext";
 import RouteMap from "./Routes";
 import {GoogleOAuthProvider} from '@react-oauth/google';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
@@ -20,6 +21,13 @@ const theme = createTheme({
         },
     },
 });
+const queryClient = new QueryClient()
+
+const ReactQueryWrapper: React.FC<PropsWithChildren> = ({children}) => (
+    <QueryClientProvider client={queryClient}>
+        {children}
+    </QueryClientProvider>
+)
 const I18nProvider = () => {
     const {locale} = useContext(LocaleContext);
     return (
@@ -33,11 +41,13 @@ root.render(
         clientId={process.env.REACT_APP_GOOGLE_OAUTH2_CLIENT_ID ?? ''}
     >
         <ThemeProvider theme={theme}>
-            <LocaleContextContainer>
-                <GlobalContextContainer>
-                    <I18nProvider/>
-                </GlobalContextContainer>
-            </LocaleContextContainer>
+            <ReactQueryWrapper>
+                <LocaleContextContainer>
+                    <GlobalContextContainer>
+                        <I18nProvider/>
+                    </GlobalContextContainer>
+                </LocaleContextContainer>
+            </ReactQueryWrapper>
         </ThemeProvider>
     </GoogleOAuthProvider>
 );

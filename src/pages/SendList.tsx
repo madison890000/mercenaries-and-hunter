@@ -9,6 +9,7 @@ import useSendList from "../hooks/useSendList";
 import Like from "../components/Like";
 import {defineMessages, useIntl} from "react-intl";
 import {CHROME_EXTENSION_LINK_ADDRESS} from "../constants/domain";
+import {IAppliedInLocal} from "../types";
 
 const DEFAULT_COLUMNS_WIDTH = 150;
 const DEFAULT_PAGE_SIZE = 20;
@@ -40,13 +41,7 @@ const SendList = () => {
         pageSize: DEFAULT_PAGE_SIZE
     })
     const intl = useIntl();
-    const columns: GridColDef<{
-        id: string;
-        title?: string;
-        time: string;
-        originUrl?: string;
-        site: string;
-    }>[] = [
+    const columns: GridColDef<IAppliedInLocal>[] = [
         {
             field: 'title', headerName: intl.formatMessage(messages.name), width: DEFAULT_COLUMNS_WIDTH * 3,
             renderCell: ({value, row}) => <a href={row.originUrl ?? row?.site} target="_blank">{value}</a>

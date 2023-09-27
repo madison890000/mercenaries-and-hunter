@@ -1,29 +1,28 @@
-import {useEffect, useState} from "react";
 import {getSendList} from "../services/mh";
 import sendList from "../lib/SendListData";
+import {useQuery} from "@tanstack/react-query";
 
 
 const useSendList = () => {
-    const [sends, setSends] = useState<any>([]);
-    const getList = async () => {
-        const res = await getSendList();
-        sendList.addMore(res);
-        const finalData = sendList.getListByIds(res?.map(e => e?.id) ?? []);
-        setSends(finalData)
-    }
-    useEffect(() => {
-        getList();
-    }, []);
+    const {data, refetch} = useQuery({
+        queryFn: async () => {
+            const res = await getSendList();
+            sendList.addMore(res);
+            const finalData = sendList.getListByIds(res?.map(e => e?.id) ?? []);
+            return finalData
+        },
+        initialData: []
+    });
     return {
-        getList,
-        sends,
+        getList: refetch,
+        sends: data,
         updateStatusById: (id: string, status: any) => {
             sendList.updateStatusById(id, status);
-            getList();
+            refetch();
         },
         updateLikeById: (id: string, status: any) => {
             sendList.updateLikeById(id, status);
-            getList();
+            refetch();
         },
     }
 }

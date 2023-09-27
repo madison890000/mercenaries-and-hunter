@@ -16,7 +16,7 @@ const ImportResume = () => {
     const [uploadResumeString, setUploadResume] = useState<string[] | void>();
     const {scoreValues} = useContext(GlobalContext);
     const intl = useIntl();
-    const {run, score, advise, loading: scoreLoading, error} = scoreValues;
+    const {mutate, score, advise, isLoading: scoreLoading, error} = scoreValues;
     const [summarizeLoading, setSummarizeLoading] = useState(false);
     const uploadProps: UploadProps = {
         name: 'file',
@@ -41,7 +41,10 @@ const ImportResume = () => {
         setSummarizeLoading(true);
         summarizeResume(r).then(data => {
             globalStore.save(RESUME_SUMMARY, data?.resume)
-            run(data?.resume, locale);
+            mutate({
+                resume: data?.resume,
+                locale: locale
+            });
         }).finally(() => {
             setSummarizeLoading(false);
         })

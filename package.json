@@ -11,6 +11,7 @@
     "@mui/material": "^ 5.10.11",
     "@mui/x-data-grid": "^6.12.0",
     "@react-oauth/google": "^0.11.1",
+    "@tanstack/react-query": "^4.35.3",
     "@types/chrome": "^0.0.244",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.11.59",
@@ -70,11 +71,11 @@
     ]
   },
   "devDependencies": {
-    "@types/react-test-renderer": "^18.0.0",
-    "@types/uuid": "^8.3.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/react-test-renderer": "^18.0.0",
+    "@types/uuid": "^8.3.4",
     "react-scripts": "^5.0.1",
     "react-test-renderer": "^18.2.0",
     "typescript-plugin-css-modules": "^5.0.1"
