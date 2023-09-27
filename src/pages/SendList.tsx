@@ -8,8 +8,10 @@ import SendStatus from "../components/SendStatus";
 import useSendList from "../hooks/useSendList";
 import Like from "../components/Like";
 import {defineMessages, useIntl} from "react-intl";
+import {CHROME_EXTENSION_LINK_ADDRESS} from "../constants/domain";
 
 const DEFAULT_COLUMNS_WIDTH = 150;
+const DEFAULT_PAGE_SIZE = 20;
 const messages = defineMessages({
     reloadData: {
         id: 'send.reload-data',
@@ -35,7 +37,7 @@ const SendList = () => {
     const {sends, updateStatusById, updateLikeById, getList} = useSendList();
     const [pagination, setPagination] = useState({
         page: 0,
-        pageSize: 20
+        pageSize: DEFAULT_PAGE_SIZE
     })
     const intl = useIntl();
     const columns: GridColDef<{
@@ -89,7 +91,7 @@ const SendList = () => {
                 <a style={{
                     marginLeft: 30,
                 }}
-                   href="https://chrome.google.com/webstore/detail/it-mercenaries-and-hunter/eilakanollhbgdoppbffeikcbkhmeloc?hl=zh-CN&authuser=0"
+                   href={CHROME_EXTENSION_LINK_ADDRESS}
                    target="_blank">({intl.formatMessage(messages.tips)})</a>
             </CardContent>
             <DataGrid

@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {formatAndTranslate} from "../services/stream";
+import {TIME_OUT_MS} from "../constants/date";
 
-const TIME_OUT_MS = 60000;
 
 
 export function useMessage() {

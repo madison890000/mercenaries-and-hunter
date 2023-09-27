@@ -20,11 +20,12 @@ class GlobalStore {
         this.recover();
     }
 
+    private static DATA_KEYS = 'global-data-key';
 
     save(key: string, value: any) {
         if (!this.keys?.find(k => k === key)) {
             this.keys.push(key);
-            saveItem('global-data-key', JSON.stringify(this.keys))
+            saveItem(GlobalStore.DATA_KEYS, JSON.stringify(this.keys))
         }
         this.data[key] = value;
         saveItem(key, JSON.stringify(value))
@@ -35,7 +36,7 @@ class GlobalStore {
     }
 
     recover = async () => {
-        const data = await getItem('global-data-key') as any[];
+        const data = await getItem(GlobalStore.DATA_KEYS) as any[];
         try {
             if (typeof data === "string") {
                 this.keys = JSON.parse(data);

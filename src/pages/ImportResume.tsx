@@ -9,6 +9,7 @@ import globalStore from "../lib/GlobalData";
 import {useIntl} from "react-intl";
 import Rating from "@mui/material/Rating";
 import LocaleContext from "../contexts/LocaleContext";
+import {RESUME_SUMMARY} from "../constants/StoreKeys";
 
 
 const ImportResume = () => {
@@ -39,7 +40,7 @@ const ImportResume = () => {
     const summarizeAndScore = (r: string[]) => {
         setSummarizeLoading(true);
         summarizeResume(r).then(data => {
-            globalStore.save('resume-summary', data?.resume)
+            globalStore.save(RESUME_SUMMARY, data?.resume)
             run(data?.resume, locale);
         }).finally(() => {
             setSummarizeLoading(false);

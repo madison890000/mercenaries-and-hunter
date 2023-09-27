@@ -1,25 +1,26 @@
 import {useState} from "react";
 import {scoreResume} from "../services/mh";
 import globalStore from "../lib/GlobalData";
+import {ADVISE_KEY, SCORE_KEY} from "../constants/StoreKeys";
 
 const TIME_OUT_MS = 60000;
 
 
 export function useScore() {
     const [error, setError] = useState('');
-    const [score, setScore] = useState(globalStore.get('score'));
-    const [advise, setAdvise] = useState<string[]>(globalStore.get('advise'));
+    const [score, setScore] = useState(globalStore.get(SCORE_KEY));
+    const [advise, setAdvise] = useState<string[]>(globalStore.get(ADVISE_KEY));
     const [done, setDone] = useState(false);
     const [loading, setLoading] = useState(false);
     const run = async (resume: any, locale: string) => {
         try {
             setLoading(true);
-            const res = await scoreResume(resume,locale);
+            const res = await scoreResume(resume, locale);
             if (res.score) {
                 setScore(res?.score);
-                globalStore.save('score', res?.score);
+                globalStore.save(SCORE_KEY, res?.score);
                 setAdvise(res?.advise);
-                globalStore.save('advise', res?.advise)
+                globalStore.save(ADVISE_KEY, res?.advise)
             } else {
                 setScore(0);
 

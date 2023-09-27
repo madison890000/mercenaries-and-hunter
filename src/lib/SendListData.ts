@@ -1,4 +1,5 @@
 import {syncSends} from "../services/mh";
+import {IS_DEV} from "../constants/environment";
 
 const saveItem = (key: string, value: string) => {
     window.localStorage.setItem(key, value);
@@ -21,6 +22,8 @@ class SendList {
         this.serviceData = [];
         this.recover();
     }
+
+    private static DATA_KEY = 'send-list-data';
 
     updateLocalDataByIDAndField(id: string, field: any, saveNow: boolean) {
         const index = this.localData?.findIndex((e) => e?.id === id);
@@ -103,7 +106,7 @@ class SendList {
     }
 
     getListByIds(ids: string[]) {
-        if (process.env.NODE_ENV === 'development') {
+        if (IS_DEV) {
             return this.localData
         }
         return this.localData?.filter(d => ids?.includes(d?.id))
@@ -143,12 +146,12 @@ class SendList {
     }
 
     save() {
-        saveItem('send-list-data', JSON.stringify(this.localData))
+        saveItem(SendList.DATA_KEY, JSON.stringify(this.localData))
     }
 
 
     recover = async () => {
-        const data = await getItem('send-list-data') as any[];
+        const data = await getItem(SendList.DATA_KEY) as any[];
         try {
             if (typeof data === "string") {
                 this.localData = JSON.parse(data);

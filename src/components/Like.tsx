@@ -5,16 +5,13 @@ interface LikeProps {
     onChange: any;
 }
 
-const Like: React.FC<LikeProps> = ({value, onChange}) => {
-
-    return (
-        <Rating
-            name="simple-controlled"
-            value={value}
-            onChange={(event, newValue) => {
-                onChange(newValue);
-            }}
-        />
-    )
-}
+const Like: React.FC<LikeProps> = ({value, onChange}) => (
+    <Rating
+        name="simple-controlled"
+        value={value}
+        onChange={(event, newValue) => {
+            onChange(newValue);
+        }}
+    />
+)
 export default Like
