@@ -24,7 +24,7 @@ class Jobs {
                 time: MAX_CRON_JOBS_TIME,
             },
         ];
-        setInterval(async () => {
+        const checking = async () => {
             if (this.flag) {
                 for (let i = 0; i < this.jobs.length; i++) {
                     const e = this.jobs[i];
@@ -34,6 +34,9 @@ class Jobs {
                     }
                 }
             }
+        }
+        setInterval(()=>{
+            checking();
         }, HALF_MINUTES)
     }
 
