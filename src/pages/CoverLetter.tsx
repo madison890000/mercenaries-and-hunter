@@ -9,7 +9,7 @@ import Divider from "../components/Divider";
 import {defineMessages, useIntl} from "react-intl";
 import globalStore from "../lib/GlobalData";
 import {useNavigate} from "react-router";
-import {RESUME_SUMMARY} from "../constants/StoreKeys";
+import {AUTO_CL_COMPANY_NAME, AUTO_CL_JOB_ADDRESS, RESUME_SUMMARY} from "../constants/StoreKeys";
 
 
 const messages = defineMessages({
@@ -25,13 +25,13 @@ const messages = defineMessages({
     btn: {
         id: 'cl.btn',
     },
-    uploadBtn:{
+    uploadBtn: {
         id: 'btn.go-upload-resume',
     }
 });
 const Editor = () => {
-    const [job, setJob] = useState<string>();
-    const [company, setCompany] = useState<string>();
+    const [job, setJob] = useState<string>(globalStore.get(AUTO_CL_JOB_ADDRESS));
+    const [company, setCompany] = useState<string>(globalStore.get(AUTO_CL_COMPANY_NAME));
     const {run, message, loading} = useCoverLetter();
     const intl = useIntl();
     const navigate = useNavigate();
@@ -46,9 +46,10 @@ const Editor = () => {
                     <Col>
                         <TextField
                             label={intl.formatMessage(messages.companyName)}
-                            defaultValue=""
+                            defaultValue={company}
                             onChange={(e) => {
-                                setCompany(e?.target?.value)
+                                setCompany(e?.target?.value);
+                                globalStore.save(AUTO_CL_COMPANY_NAME, e?.target?.value)
                             }}
                             size="small"
                         />
@@ -57,8 +58,10 @@ const Editor = () => {
                         <TextField
                             label={intl.formatMessage(messages.jobLink)}
                             onChange={(e) => {
-                                setJob(e?.target?.value)
+                                setJob(e?.target?.value);
+                                globalStore.save(AUTO_CL_JOB_ADDRESS, e?.target?.value)
                             }}
+                            defaultValue={job}
                             fullWidth
                             variant="filled"
                             multiline
