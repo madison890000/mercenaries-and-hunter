@@ -87,14 +87,14 @@
       "!src/i18n/**.*",
       "!src/constants/**.*",
       "!src/index.tsx",
-      "!src/components/index.ts",
-      "!src/components/Capability/index.tsx",
+      "!src/Routes.tsx",
+      "!src/types.ts",
+      "!src/CronJobs/**.*",
       "!src/setupTests.ts",
       "!src/reportWebVitals.ts",
       "!src/services/",
-      "!<rootDir>/src/lib/types.ts",
-      "!<rootDir>/node_modules/",
-      "!<rootDir>/path/to/dir/"
+      "!src/lib/**.*",
+      "!<rootDir>/node_modules/"
     ],
     "coverageThreshold": {
       "global": {
