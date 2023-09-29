@@ -7,6 +7,8 @@ import {CardContent, TextField, Typography} from "@mui/material";
 import Card from "@mui/material/Card";
 import LoginWrapper from "../modules/LoginWrapper/LoginWrapper";
 import {defineMessages, useIntl} from "react-intl";
+import globalStore from "../lib/GlobalData";
+import {TRANSLATE_ORIGIN_DATA} from "../constants/StoreKeys";
 
 
 const messages = defineMessages({
@@ -21,7 +23,7 @@ const messages = defineMessages({
     },
 });
 const Translate = () => {
-    const [data, setData] = useState<string>();
+    const [data, setData] = useState<string>(globalStore.get(TRANSLATE_ORIGIN_DATA));
     const {run, message, loading} = useMessage();
     const intl = useIntl();
     return (
@@ -36,9 +38,11 @@ const Translate = () => {
                         <TextField
                             label={intl.formatMessage(messages.placeholder)}
                             onChange={(e) => {
-                                setData(e?.target?.value)
+                                setData(e?.target?.value);
+                                globalStore.save(TRANSLATE_ORIGIN_DATA, e?.target?.value)
                             }}
                             rows={18}
+                            defaultValue={data}
                             fullWidth
                             variant="filled"
                             multiline
