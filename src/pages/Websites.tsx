@@ -20,6 +20,7 @@ import {
     WEB3_CAREER_OFFICIAL_WEB_ADDRESS
 } from "../constants/domain";
 import {HELP_IMAGES, SCREEN_SHOT_IMAGES_WITH_LOCALE} from "../constants/images";
+import Button from "@mui/material/Button";
 
 const messages = defineMessages({
     webs: {
@@ -42,24 +43,25 @@ const messages = defineMessages({
     },
 
 });
-const ImageCard = ({src, description}: any) => (
+const ImageCard = ({src, description, style}: any) => (
     <div style={{
         border: '1px solid var(--color-platinum)',
         borderRadius: 4,
-        margin: 2,
-        width: 1170,
-        height: 675,
+        margin: 'auto',
+        position: 'relative',
+        width: 980,
+        height: 600,
         backgroundSize: "100% 100%",
-        backgroundImage: 'url(./imgs/pc.jpg)'
-        // background: 'var(--color-ash-gray)'
+        backgroundImage: 'url(./imgs/pc.jpg)',
+        ...style
     }}>
         <img
             style={{
-                width: 810,
-                height: 476,
+                width: 680,
+                height: 425,
                 position: 'absolute',
-                top: 92,
-                left: 180,
+                top: 79,
+                left: 145,
             }}
             src={src}
             title="green iguana"
@@ -82,22 +84,26 @@ const DescriptionImage = ({src}: any) => (
         borderRadius: 8,
         height: 350,
         marginRight: 20,
+        marginTop: 12,
     }}/>
 )
 const Support = () => {
     const intl = useIntl();
     const {locale} = useContext(LocaleContext);
     return (
-        <>
+        <div style={{
+            textAlign: "center"
+        }}>
             <CardContent>
-                <Typography variant="h3" gutterBottom>
-                    {intl.formatMessage({id: 'website.text.1'})}
-                </Typography>
                 <Typography variant="subtitle2" gutterBottom>
-                    {intl.formatMessage({id: 'website.text.2'})}（<a
-                    href={CHROME_EXTENSION_LINK_ADDRESS}
-                    target="_blank">{intl.formatMessage(messages.subTitle)}</a>） {intl.formatMessage({id: 'website.text.3'})}.
-
+                    <Button variant="contained" size="large"
+                            onClick={() => {
+                                window.open(CHROME_EXTENSION_LINK_ADDRESS, '_blank')
+                            }}
+                    >{intl.formatMessage(messages.subTitle)}</Button>
+                </Typography>
+                <Typography variant="h4" gutterBottom>
+                    {intl.formatMessage({id: 'website.text.1'})}
                 </Typography>
                 <Swiper
                     // @ts-ignore
@@ -109,24 +115,32 @@ const Support = () => {
                     <SwiperSlide>
                         <ImageCard
                             src={HELP_IMAGES.appliedListInWeb}
-                            description={<div>{intl.formatMessage({id: 'website.text.4'})}</div>}
+                            description={<div style={{
+                                color: 'var(--color-primary)',
+                                fontWeight: 'bolder'
+                            }}>{intl.formatMessage({id: 'website.text.4'})}</div>}
                         />
                     </SwiperSlide>
                     <SwiperSlide>
                         <ImageCard
                             src={SCREEN_SHOT_IMAGES_WITH_LOCALE.linkedin[locale] ?? SCREEN_SHOT_IMAGES_WITH_LOCALE.linkedin.default}
                             description={
-                                <div>{intl.formatMessage({id: 'website.text.5'})}</div>
+                                <div style={{
+                                    color: 'var(--color-primary)',
+                                    fontWeight: 'bolder'
+                                }}>{intl.formatMessage({id: 'website.text.5'})}</div>
                             }
                         />
                     </SwiperSlide>
                 </Swiper>
 
                 <Card style={{
-                    marginTop: 20
+                    margin: 20,
+                    backgroundColor: 'var(--color-blue-9)',
                 }}>
                     <CardContent>
                         <h3 style={{textAlign: 'center'}}>{intl.formatMessage({id: 'website.text.6'})}</h3>
+                        <Divider/>
                         <section>
                             <Title content={intl.formatMessage({id: 'website.text.7'})}/>
                         </section>
@@ -157,17 +171,17 @@ const Support = () => {
                     </CardContent>
                 </Card>
                 <Card style={{
-                    marginTop: 20
+                    margin: 20,
+                    backgroundColor: 'var(--color-blue-8)'
                 }}>
                     <CardContent>
                         <h3 style={{textAlign: 'center'}}>{intl.formatMessage({id: 'website.text.13'})}</h3>
-
+                        <Divider/>
                         <div style={{
-                            textAlign: "left",
                             marginTop: 20,
                         }}>
-                            <h5>{intl.formatMessage(messages.title)}</h5>
-                            <h5>{intl.formatMessage(messages.description)}</h5>
+                            <div>{intl.formatMessage(messages.title)}</div>
+                            <div>{intl.formatMessage(messages.description)}</div>
                         </div>
                         <section>
                             <Title content={intl.formatMessage({id: 'website.text.14'})}/>
@@ -247,7 +261,7 @@ const Support = () => {
                     </div>
                 </section>
             </CardContent>
-        </>
+        </div>
     )
 }
 
