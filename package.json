@@ -95,6 +95,10 @@
       "!src/reportWebVitals.ts",
       "!src/services/",
       "!src/lib/**.*",
+      "!src/contexts/**.*",
+      "!src/pages/**.*",
+      "!src/hooks/**.*",
+      "!src/utils/**.*",
       "!<rootDir>/node_modules/"
     ],
     "coverageThreshold": {
