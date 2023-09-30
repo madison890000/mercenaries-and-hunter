@@ -25,6 +25,11 @@ class GlobalStore {
         return this.data[key]
     }
 
+    async syncGetWithNoCache(key: string) {
+        this.data[key] = await getItem(key);
+        return this.data[key]
+    }
+
     recover = async () => {
         const data = await getItem(GlobalStore.DATA_KEYS) as any[];
         try {

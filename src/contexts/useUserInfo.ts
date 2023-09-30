@@ -1,14 +1,15 @@
 import {useEffect, useRef, useState} from "react";
 import * as jose from 'jose'
-import {getGoogleToken} from "../utils";
 import sendList from "../lib/SendListData";
 import {getUserInfo} from "../services/mh";
 import {ONE_WEEK} from "../constants/date";
 import cronJobs from "../CronJobs";
+import globalStore from "../lib/GlobalData";
+import {GOOGLE_TOKEN_KEY} from "../constants/StoreKeys";
 
 
 const useUserInfo = () => {
-    const token = useRef<string | undefined>(getGoogleToken());
+    const token = useRef<string | undefined>(globalStore.get(GOOGLE_TOKEN_KEY));
     const [userInfo, setUserInfo] = useState({
         name: '',
         email: '',
@@ -22,11 +23,6 @@ const useUserInfo = () => {
         if (data?.sends?.length > 0) {
             sendList.setServerData(data?.sends);
         }
-    }
-    const updateToken = () => {
-        // @ts-ignore
-        token.current = getGoogleToken();
-        decodeToken();
     }
     const decodeToken = () => {
         if (token.current) {
@@ -47,11 +43,15 @@ const useUserInfo = () => {
             }
         }
     };
+    const updateToken = async () => {
+        token.current = await globalStore.syncGetWithNoCache(GOOGLE_TOKEN_KEY);
+        decodeToken();
+    }
     useEffect(() => {
         decodeToken();
         window.addEventListener('storage', (e) => {
-            if (e?.key === 'google-token') {
-                decodeToken();
+            if (e?.key === GOOGLE_TOKEN_KEY) {
+                updateToken();
             }
         })
     }, []);
