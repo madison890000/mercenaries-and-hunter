@@ -1,0 +1,331 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SendStatus -> FINAL_INTERVIEWING 1`] = `
+<div
+  style={
+    Object {
+      "margin": 10,
+    }
+  }
+>
+  <div
+    className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary  css-74e2me-MuiInputBase-root-MuiInput-root-MuiSelect-root"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#ff33cc",
+        "minWidth": 100,
+      }
+    }
+  >
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      className="MuiSelect-select MuiSelect-standard MuiInputBase-input MuiInput-input css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      role="button"
+      tabIndex={0}
+    >
+      Final Interview
+    </div>
+    <input
+      aria-hidden={true}
+      aria-invalid={false}
+      className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+      onAnimationStart={[Function]}
+      onChange={[Function]}
+      tabIndex={-1}
+      value={3}
+    />
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconStandard css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon"
+      data-testid="ArrowDropDownIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`SendStatus -> MIDDLE_INTERVIEWING 1`] = `
+<div
+  style={
+    Object {
+      "margin": 10,
+    }
+  }
+>
+  <div
+    className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary  css-74e2me-MuiInputBase-root-MuiInput-root-MuiSelect-root"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "var(--color-blue-6)",
+        "minWidth": 100,
+      }
+    }
+  >
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      className="MuiSelect-select MuiSelect-standard MuiInputBase-input MuiInput-input css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      role="button"
+      tabIndex={0}
+    >
+      Middle Interview
+    </div>
+    <input
+      aria-hidden={true}
+      aria-invalid={false}
+      className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+      onAnimationStart={[Function]}
+      onChange={[Function]}
+      tabIndex={-1}
+      value={2}
+    />
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconStandard css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon"
+      data-testid="ArrowDropDownIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`SendStatus -> OFFER 1`] = `
+<div
+  style={
+    Object {
+      "margin": 10,
+    }
+  }
+>
+  <div
+    className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary  css-74e2me-MuiInputBase-root-MuiInput-root-MuiSelect-root"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "var(--color-primary)",
+        "minWidth": 100,
+      }
+    }
+  >
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      className="MuiSelect-select MuiSelect-standard MuiInputBase-input MuiInput-input css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      role="button"
+      tabIndex={0}
+    >
+      Offer
+    </div>
+    <input
+      aria-hidden={true}
+      aria-invalid={false}
+      className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+      onAnimationStart={[Function]}
+      onChange={[Function]}
+      tabIndex={-1}
+      value={4}
+    />
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconStandard css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon"
+      data-testid="ArrowDropDownIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`SendStatus -> REJECTED 1`] = `
+<div
+  style={
+    Object {
+      "margin": 10,
+    }
+  }
+>
+  <div
+    className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary  css-74e2me-MuiInputBase-root-MuiInput-root-MuiSelect-root"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "var(--color-red)",
+        "minWidth": 100,
+      }
+    }
+  >
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      className="MuiSelect-select MuiSelect-standard MuiInputBase-input MuiInput-input css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      role="button"
+      tabIndex={0}
+    >
+      Rejected
+    </div>
+    <input
+      aria-hidden={true}
+      aria-invalid={false}
+      className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+      onAnimationStart={[Function]}
+      onChange={[Function]}
+      tabIndex={-1}
+      value={5}
+    />
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconStandard css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon"
+      data-testid="ArrowDropDownIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`SendStatus -> START_INTERVIEWING 1`] = `
+<div
+  style={
+    Object {
+      "margin": 10,
+    }
+  }
+>
+  <div
+    className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary  css-74e2me-MuiInputBase-root-MuiInput-root-MuiSelect-root"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#000099",
+        "minWidth": 100,
+      }
+    }
+  >
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      className="MuiSelect-select MuiSelect-standard MuiInputBase-input MuiInput-input css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      role="button"
+      tabIndex={0}
+    >
+      Start Interview
+    </div>
+    <input
+      aria-hidden={true}
+      aria-invalid={false}
+      className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+      onAnimationStart={[Function]}
+      onChange={[Function]}
+      tabIndex={-1}
+      value={1}
+    />
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconStandard css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon"
+      data-testid="ArrowDropDownIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`SendStatus -> Send 1`] = `
+<div
+  style={
+    Object {
+      "margin": 10,
+    }
+  }
+>
+  <div
+    className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary  css-74e2me-MuiInputBase-root-MuiInput-root-MuiSelect-root"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "black",
+        "minWidth": 100,
+      }
+    }
+  >
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      className="MuiSelect-select MuiSelect-standard MuiInputBase-input MuiInput-input css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      role="button"
+      tabIndex={0}
+    >
+      Applied
+    </div>
+    <input
+      aria-hidden={true}
+      aria-invalid={false}
+      className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+      onAnimationStart={[Function]}
+      onChange={[Function]}
+      tabIndex={-1}
+      value={0}
+    />
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconStandard css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon"
+      data-testid="ArrowDropDownIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+    </svg>
+  </div>
+</div>
+`;

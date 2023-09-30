@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShowTime just now 1`] = `
+<span
+  style={
+    Object {
+      "color": "gray",
+      "fontSize": "12px",
+      "fontStyle": "italic",
+    }
+  }
+>
+  Now
+</span>
+`;
+
+exports[`ShowTime within 1 day 1`] = `
+<span
+  style={
+    Object {
+      "color": "gray",
+      "fontSize": "12px",
+      "fontStyle": "italic",
+    }
+  }
+>
+  today
+</span>
+`;
+
+exports[`ShowTime within 1 hours 1`] = `
+<span
+  style={
+    Object {
+      "color": "gray",
+      "fontSize": "12px",
+      "fontStyle": "italic",
+    }
+  }
+>
+  one hour ago
+</span>
+`;
+
+exports[`ShowTime within 2 hours 1`] = `
+<span
+  style={
+    Object {
+      "color": "gray",
+      "fontSize": "12px",
+      "fontStyle": "italic",
+    }
+  }
+>
+  two hour ago
+</span>
+`;
+
+exports[`ShowTime within 5 mins 1`] = `
+<span
+  style={
+    Object {
+      "color": "gray",
+      "fontSize": "12px",
+      "fontStyle": "italic",
+    }
+  }
+>
+  5 minutes ago
+</span>
+`;
+
+exports[`ShowTime within 6 hours 1`] = `
+<span
+  style={
+    Object {
+      "color": "gray",
+      "fontSize": "12px",
+      "fontStyle": "italic",
+    }
+  }
+>
+  6 hour ago
+</span>
+`;
+
+exports[`ShowTime within 7 day 1`] = `
+<span
+  style={
+    Object {
+      "color": "gray",
+      "fontSize": "12px",
+      "fontStyle": "italic",
+    }
+  }
+>
+  this week
+</span>
+`;
+
+exports[`ShowTime within 12 hours 1`] = `
+<span
+  style={
+    Object {
+      "color": "gray",
+      "fontSize": "12px",
+      "fontStyle": "italic",
+    }
+  }
+>
+  12 hour ago
+</span>
+`;
+
+exports[`ShowTime within 30 day 1`] = `
+<span
+  style={
+    Object {
+      "color": "gray",
+      "fontSize": "12px",
+      "fontStyle": "italic",
+    }
+  }
+>
+  this month
+</span>
+`;
+
+exports[`ShowTime within 30 mins 1`] = `
+<span
+  style={
+    Object {
+      "color": "gray",
+      "fontSize": "12px",
+      "fontStyle": "italic",
+    }
+  }
+>
+  half an hour ago
+</span>
+`;

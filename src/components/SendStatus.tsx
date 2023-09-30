@@ -27,7 +27,7 @@ const messages = defineMessages({
 
 interface SendStatusProps {
     value: string | number | undefined;
-    onChange: any;
+    onChange?: any;
 }
 
 
