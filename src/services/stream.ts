@@ -1,5 +1,6 @@
 import {API_DOMAIN} from "../constants/domain";
-import {getGoogleToken} from "../utils";
+import globalStore from "../lib/GlobalData";
+import {GOOGLE_TOKEN_KEY} from "../constants/StoreKeys";
 
 
 export const formatAndTranslate = async (text: string) => {
@@ -7,7 +8,7 @@ export const formatAndTranslate = async (text: string) => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'authorization': `Bearer ${getGoogleToken()}`
+            'authorization': `Bearer ${globalStore.get(GOOGLE_TOKEN_KEY)}`
         },
         body: JSON.stringify({
             content: text
@@ -19,7 +20,7 @@ export const formatAndTranslateCV = async (resume: string, job: string, company:
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'authorization': `Bearer ${getGoogleToken()}`
+            'authorization': `Bearer ${globalStore.get(GOOGLE_TOKEN_KEY)}`
         },
         body: JSON.stringify({
             resume,
