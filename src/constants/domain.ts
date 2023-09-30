@@ -5,7 +5,7 @@ export const API_DOMAIN =
         'http://localhost:8083'
         : `https://chat.mercenarieshunter.com`;
 
-export const CHROME_EXTENSION_LINK_ADDRESS = "https://chrome.google.com/webstore/detail/it-mercenaries-and-hunter/eilakanollhbgdoppbffeikcbkhmeloc?hl=zh-CN&authuser=0";
+export const CHROME_EXTENSION_LINK_ADDRESS = "https://chromewebstore.google.com/detail/it-mercenaries-and-hunter/eilakanollhbgdoppbffeikcbkhmeloc?hl=zh-CN";
 
 export const LINKEDIN_OFFICIAL_WEB_ADDRESS = "https://www.linkedin.com/"
 export const FREELANCER_OFFICIAL_WEB_ADDRESS = "https://www.freelancer.com/"
