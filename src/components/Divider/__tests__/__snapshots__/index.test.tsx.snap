@@ -1,23 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders Divider 1`] = `
+exports[`renders Divider -> variant dash 1`] = `
 <div
-  className="divider"
->
-  <div>
-    <div
-      className="title"
-    >
-      Test Divider
-    </div>
-  </div>
-  <div
-    className="section"
-  />
-</div>
+  className="sectionDash"
+/>
 `;
 
-exports[`renders Divider with extra 1`] = `
+exports[`renders Divider -> variant v 1`] = `
+<div
+  className="dividerH"
+/>
+`;
+
+exports[`renders Divider 1`] = `
 <div
   className="divider"
 >

@@ -2,7 +2,7 @@ import Rating from '@mui/material/Rating';
 
 interface LikeProps {
     value: number | undefined;
-    onChange: any;
+    onChange?: any;
 }
 
 const Like: React.FC<LikeProps> = ({value, onChange}) => (

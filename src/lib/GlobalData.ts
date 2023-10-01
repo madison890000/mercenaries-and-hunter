@@ -26,7 +26,8 @@ class GlobalStore {
     }
 
     async syncGetWithNoCache(key: string) {
-        this.data[key] = await getItem(key);
+        const values = await getItem(key) as any;
+        this.data[key] = JSON.parse(values);
         return this.data[key]
     }
 

@@ -1,0 +1,1327 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Like -> 0 star 1`] = `
+<span
+  aria-label={null}
+  className="MuiRating-root MuiRating-sizeMedium css-iljtu2-MuiRating-root"
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  role={null}
+>
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":r1:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarBorderIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      1 Star
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":r1:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={1}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":r2:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarBorderIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      2 Stars
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":r2:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={2}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":r3:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarBorderIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      3 Stars
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":r3:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={3}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":r4:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarBorderIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      4 Stars
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":r4:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={4}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":r5:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarBorderIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      5 Stars
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":r5:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={5}
+  />
+  <label
+    className="MuiRating-label MuiRating-pristine css-dqr9h-MuiRating-label"
+  >
+    <input
+      checked={false}
+      className="MuiRating-visuallyHidden"
+      id="simple-controlled-empty"
+      name="simple-controlled"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      type="radio"
+      value=""
+    />
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      Empty
+    </span>
+  </label>
+</span>
+`;
+
+exports[`Like -> 1 star 1`] = `
+<span
+  aria-label={null}
+  className="MuiRating-root MuiRating-sizeMedium css-iljtu2-MuiRating-root"
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  role={null}
+>
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":r7:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      1 Star
+    </span>
+  </label>
+  <input
+    checked={true}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":r7:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={1}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":r8:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarBorderIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      2 Stars
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":r8:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={2}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":r9:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarBorderIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      3 Stars
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":r9:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={3}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":ra:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarBorderIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      4 Stars
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":ra:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={4}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":rb:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarBorderIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      5 Stars
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":rb:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={5}
+  />
+  <label
+    className="MuiRating-label MuiRating-pristine css-dqr9h-MuiRating-label"
+  >
+    <input
+      checked={false}
+      className="MuiRating-visuallyHidden"
+      id="simple-controlled-empty"
+      name="simple-controlled"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      type="radio"
+      value=""
+    />
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      Empty
+    </span>
+  </label>
+</span>
+`;
+
+exports[`Like -> 2 star 1`] = `
+<span
+  aria-label={null}
+  className="MuiRating-root MuiRating-sizeMedium css-iljtu2-MuiRating-root"
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  role={null}
+>
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":rd:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      1 Star
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":rd:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={1}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":re:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      2 Stars
+    </span>
+  </label>
+  <input
+    checked={true}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":re:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={2}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":rf:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarBorderIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      3 Stars
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":rf:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={3}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":rg:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarBorderIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      4 Stars
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":rg:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={4}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":rh:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarBorderIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      5 Stars
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":rh:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={5}
+  />
+  <label
+    className="MuiRating-label MuiRating-pristine css-dqr9h-MuiRating-label"
+  >
+    <input
+      checked={false}
+      className="MuiRating-visuallyHidden"
+      id="simple-controlled-empty"
+      name="simple-controlled"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      type="radio"
+      value=""
+    />
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      Empty
+    </span>
+  </label>
+</span>
+`;
+
+exports[`Like -> 3 star 1`] = `
+<span
+  aria-label={null}
+  className="MuiRating-root MuiRating-sizeMedium css-iljtu2-MuiRating-root"
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  role={null}
+>
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":rj:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      1 Star
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":rj:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={1}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":rk:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      2 Stars
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":rk:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={2}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":rl:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      3 Stars
+    </span>
+  </label>
+  <input
+    checked={true}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":rl:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={3}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":rm:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarBorderIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      4 Stars
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":rm:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={4}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":rn:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarBorderIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      5 Stars
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":rn:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={5}
+  />
+  <label
+    className="MuiRating-label MuiRating-pristine css-dqr9h-MuiRating-label"
+  >
+    <input
+      checked={false}
+      className="MuiRating-visuallyHidden"
+      id="simple-controlled-empty"
+      name="simple-controlled"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      type="radio"
+      value=""
+    />
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      Empty
+    </span>
+  </label>
+</span>
+`;
+
+exports[`Like -> 4 star 1`] = `
+<span
+  aria-label={null}
+  className="MuiRating-root MuiRating-sizeMedium css-iljtu2-MuiRating-root"
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  role={null}
+>
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":rp:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      1 Star
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":rp:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={1}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":rq:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      2 Stars
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":rq:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={2}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":rr:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      3 Stars
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":rr:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={3}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":rs:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      4 Stars
+    </span>
+  </label>
+  <input
+    checked={true}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":rs:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={4}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":rt:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarBorderIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      5 Stars
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":rt:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={5}
+  />
+  <label
+    className="MuiRating-label MuiRating-pristine css-dqr9h-MuiRating-label"
+  >
+    <input
+      checked={false}
+      className="MuiRating-visuallyHidden"
+      id="simple-controlled-empty"
+      name="simple-controlled"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      type="radio"
+      value=""
+    />
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      Empty
+    </span>
+  </label>
+</span>
+`;
+
+exports[`Like -> 5 star 1`] = `
+<span
+  aria-label={null}
+  className="MuiRating-root MuiRating-sizeMedium css-iljtu2-MuiRating-root"
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  role={null}
+>
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":rv:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      1 Star
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":rv:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={1}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":r10:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      2 Stars
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":r10:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={2}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":r11:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      3 Stars
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":r11:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={3}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":r12:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      4 Stars
+    </span>
+  </label>
+  <input
+    checked={false}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":r12:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={4}
+  />
+  <label
+    className="css-dqr9h-MuiRating-label"
+    htmlFor=":r13:"
+  >
+    <span
+      className="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+        data-testid="StarIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      5 Stars
+    </span>
+  </label>
+  <input
+    checked={true}
+    className="MuiRating-visuallyHidden"
+    disabled={false}
+    id=":r13:"
+    name="simple-controlled"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="radio"
+    value={5}
+  />
+  <label
+    className="MuiRating-label MuiRating-pristine css-dqr9h-MuiRating-label"
+  >
+    <input
+      checked={false}
+      className="MuiRating-visuallyHidden"
+      id="simple-controlled-empty"
+      name="simple-controlled"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      type="radio"
+      value=""
+    />
+    <span
+      className="MuiRating-visuallyHidden"
+    >
+      Empty
+    </span>
+  </label>
+</span>
+`;

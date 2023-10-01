@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import {IntlProvider} from 'react-intl';
 import {generatedTranslations} from './i18n/translations';
 import LocaleContext, {LocaleContextContainer} from './contexts/LocaleContext';
-import {GlobalContextContainer} from "./contexts/GlobalContext";
+import {GlobalContextContainer} from "./contexts/GlobalContextContainer";
 import RouteMap from "./Routes";
 import {GoogleOAuthProvider} from '@react-oauth/google';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
