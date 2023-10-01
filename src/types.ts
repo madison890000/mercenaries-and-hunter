@@ -20,15 +20,16 @@ export interface IAppliedInLocal extends IAppliedInExtension {
     like: number;
     needSync: boolean;
     serverId?: number;
-    updateTime?: string;
+    updateTime?: number;
 }
 
-export interface IAppliedInServer extends IAppliedInLocal {
+export interface IAppliedInServer extends Omit<IAppliedInLocal, 'id'> {
     status: SendType;
+    id: number;
     like: number;
     needSync: boolean;
     serverId: number;
-    updateTime: string;
+    updateTime: number;
 }
 
 export type NeedSyncAppliedItem = Omit<IAppliedInLocal, 'id'> & { id?: number }
