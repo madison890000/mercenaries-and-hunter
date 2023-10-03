@@ -1,5 +1,5 @@
 import {defineMessages, useIntl} from "react-intl";
-import {ONE_DAY, ONE_HOUR, ONE_MIN, ONE_MONTH, SEVEN_DAY} from "../constants/date";
+import {ONE_DAY, ONE_HOUR, ONE_MIN, ONE_MONTH, SEVEN_DAY, TWO_WEEK_DAY} from "../constants/date";
 
 
 const messages = defineMessages({
@@ -30,6 +30,9 @@ const messages = defineMessages({
     day7: {
         id: 'time.one-week',
     },
+    day14: {
+        id: 'time.two-week',
+    },
     day31: {
         id: 'time.one-mouth',
     },
@@ -57,6 +60,8 @@ const TimeUntilNow: React.FC<{ time: string }> = ({time}) => {
         text = intl.formatMessage(messages.hour24)
     }else if (timeSeconds < SEVEN_DAY) {
         text = intl.formatMessage(messages.day7)
+    }else if (timeSeconds < TWO_WEEK_DAY) {
+        text = intl.formatMessage(messages.day14)
     }else if (timeSeconds < ONE_MONTH) {
         text = intl.formatMessage(messages.day31)
     }
