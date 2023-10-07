@@ -9,6 +9,7 @@ import LoginWrapper from "../modules/LoginWrapper/LoginWrapper";
 import {defineMessages, useIntl} from "react-intl";
 import globalStore from "../lib/GlobalData";
 import {TRANSLATE_ORIGIN_DATA} from "../constants/StoreKeys";
+import TranslateHelp from "../modules/Help/translate";
 
 
 const messages = defineMessages({

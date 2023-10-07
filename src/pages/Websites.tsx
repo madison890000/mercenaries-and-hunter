@@ -21,6 +21,8 @@ import {
 } from "../constants/domain";
 import {HELP_IMAGES, SCREEN_SHOT_IMAGES_WITH_LOCALE} from "../constants/images";
 import Button from "@mui/material/Button";
+import TranslateHelp from "../modules/Help/translate";
+import CL from "../modules/Help/cl";
 
 const messages = defineMessages({
     webs: {
@@ -94,46 +96,9 @@ const Support = () => {
         <div style={{
             textAlign: "center"
         }}>
+            <TranslateHelp />
+            <CL/>
             <CardContent>
-                <Typography variant="subtitle2" gutterBottom>
-                    <Button variant="contained" size="large"
-                            onClick={() => {
-                                window.open(CHROME_EXTENSION_LINK_ADDRESS, '_blank')
-                            }}
-                    >{intl.formatMessage(messages.subTitle)}</Button>
-                </Typography>
-                <Typography variant="h4" gutterBottom>
-                    {intl.formatMessage({id: 'website.text.1'})}
-                </Typography>
-                <Swiper
-                    // @ts-ignore
-                    navigation
-                    modules={[Navigation]}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
-                >
-                    <SwiperSlide>
-                        <ImageCard
-                            src={HELP_IMAGES.appliedListInWeb}
-                            description={<div style={{
-                                color: 'var(--color-primary)',
-                                fontWeight: 'bolder'
-                            }}>{intl.formatMessage({id: 'website.text.4'})}</div>}
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ImageCard
-                            src={SCREEN_SHOT_IMAGES_WITH_LOCALE.linkedin[locale] ?? SCREEN_SHOT_IMAGES_WITH_LOCALE.linkedin.default}
-                            description={
-                                <div style={{
-                                    color: 'var(--color-primary)',
-                                    fontWeight: 'bolder'
-                                }}>{intl.formatMessage({id: 'website.text.5'})}</div>
-                            }
-                        />
-                    </SwiperSlide>
-                </Swiper>
-
                 <Card style={{
                     margin: 20,
                     backgroundColor: 'var(--color-blue-9)',
