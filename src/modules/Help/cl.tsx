@@ -3,8 +3,6 @@ import {useIntl} from "react-intl";
 import {Col, Row} from "antd";
 import Button from "@mui/material/Button";
 import {useNavigate} from "react-router";
-import Divider from "../../components/Divider";
-
 
 const CL = () => {
     const intl = useIntl();
@@ -12,22 +10,23 @@ const CL = () => {
     return (
         <Card style={{
             textAlign: "left",
-            padding: 12,
-            margin: 20,
-            background:'var(--color-blue-9)'
+            padding: 30,
+            margin: 30,
+            background: 'var(--color-blue-9)'
         }}>
-            <h3 style={{
-                marginLeft: '20px'
-            }}>{intl.formatMessage({id: 'menu.auto-cl'})}</h3>
             <Row justify="space-between">
-                <Col span={12}>
+
+                <Col>
+                    <h2 style={{
+                        marginLeft: '20px'
+                    }}>{intl.formatMessage({id: 'menu.auto-cl'})}</h2>
                     <div style={{
                         textAlign: "left",
                         margin: 20,
                         fontStyle: 'italic'
                     }}>
                         <div>投递没回应，没有写Cover Letter？</div>
-                        <div>一份Cover Letter来回改，只是换了求职公司名称？</div>
+                        <div>只是换名称，重复Cover Letter？</div>
                         <div>抓耳挠骚，不知如何写Cover Letter？</div>
                     </div>
                     <div style={{
@@ -36,7 +35,7 @@ const CL = () => {
                         fontWeight: 'bolder'
                     }}>
                         <div>一键生成，告别蹩脚的求职信！</div>
-                        <div>助你无障碍英文沟通。</div>
+                        {/*<div>助你无障碍英文沟通。</div>*/}
                         <div style={{
                             marginTop: 20
                         }}>
@@ -47,7 +46,7 @@ const CL = () => {
                     </div>
                 </Col>
                 <Col>
-                    <img src="/gif/cl.gif"/>
+                    <img src="/gif/cl.gif" height="320"/>
                 </Col>
             </Row>
         </Card>

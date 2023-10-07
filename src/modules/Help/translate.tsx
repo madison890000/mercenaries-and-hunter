@@ -12,15 +12,15 @@ const Translate = () => {
     return (
         <Card style={{
             textAlign: "left",
-            padding: 12,
-            margin: 20,
+            padding: 30,
+            margin: 30,
             background:'var(--color-blue-9)'
         }}>
-            <h3 style={{
-                marginLeft: '20px'
-            }}>{intl.formatMessage({id: 'menu.format-and-translate'})}!</h3>
             <Row justify="space-between">
-                <Col span={8}>
+                <Col>
+                    <h2 style={{
+                        marginLeft: '20px'
+                    }}>{intl.formatMessage({id: 'menu.format-and-translate'})}</h2>
                     <div style={{
                         textAlign: "left",
                         margin: 20,
@@ -35,8 +35,8 @@ const Translate = () => {
                         margin: 20,
                         fontWeight: 'bolder'
                     }}>
-                        <div>一键翻译，修正语法错误和语气！</div>
-                        <div>助你无障碍英文沟通。</div>
+                        <div>一键翻译，告别错误英语！</div>
+                        {/*<div>助你无障碍英文沟通。</div>*/}
                         <div style={{
                             marginTop: 20
                         }}>
@@ -47,7 +47,7 @@ const Translate = () => {
                     </div>
                 </Col>
                 <Col>
-                    <img src="/gif/email.gif"/>
+                    <img src="/gif/email.gif" height="320"/>
                 </Col>
             </Row>
         </Card>
