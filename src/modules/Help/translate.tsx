@@ -3,8 +3,6 @@ import {useIntl} from "react-intl";
 import {Col, Row} from "antd";
 import Button from "@mui/material/Button";
 import {useNavigate} from "react-router";
-import Divider from "../../components/Divider";
-
 
 const Translate = () => {
     const intl = useIntl();
