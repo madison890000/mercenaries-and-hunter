@@ -13,14 +13,15 @@ import {defineMessages, useIntl} from "react-intl";
 import LocaleContext from "../contexts/LocaleContext";
 import {Card} from "@mui/material";
 import {
-    CHROME_EXTENSION_LINK_ADDRESS,
     FREELANCER_OFFICIAL_WEB_ADDRESS,
     LINKEDIN_OFFICIAL_WEB_ADDRESS,
     UPWORK_OFFICIAL_WEB_ADDRESS,
     WEB3_CAREER_OFFICIAL_WEB_ADDRESS
 } from "../constants/domain";
 import {HELP_IMAGES, SCREEN_SHOT_IMAGES_WITH_LOCALE} from "../constants/images";
-import Button from "@mui/material/Button";
+import TranslateHelp from "../modules/Help/translate";
+import CL from "../modules/Help/cl";
+import {Col, Row} from "antd";
 
 const messages = defineMessages({
     webs: {
@@ -78,13 +79,14 @@ const ImageCard = ({src, description, style}: any) => (
 const Title = ({content}: any) => (
     <h4>{content}</h4>
 )
-const DescriptionImage = ({src}: any) => (
+const DescriptionImage = ({src, style}: any) => (
     <img src={src} style={{
         border: '1px solid var(--color-light-gray)',
         borderRadius: 8,
-        height: 350,
+        // height: 350,
         marginRight: 20,
         marginTop: 12,
+        ...style
     }}/>
 )
 const Support = () => {
@@ -94,46 +96,9 @@ const Support = () => {
         <div style={{
             textAlign: "center"
         }}>
+            <TranslateHelp/>
+            <CL/>
             <CardContent>
-                <Typography variant="subtitle2" gutterBottom>
-                    <Button variant="contained" size="large"
-                            onClick={() => {
-                                window.open(CHROME_EXTENSION_LINK_ADDRESS, '_blank')
-                            }}
-                    >{intl.formatMessage(messages.subTitle)}</Button>
-                </Typography>
-                <Typography variant="h4" gutterBottom>
-                    {intl.formatMessage({id: 'website.text.1'})}
-                </Typography>
-                <Swiper
-                    // @ts-ignore
-                    navigation
-                    modules={[Navigation]}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
-                >
-                    <SwiperSlide>
-                        <ImageCard
-                            src={HELP_IMAGES.appliedListInWeb}
-                            description={<div style={{
-                                color: 'var(--color-primary)',
-                                fontWeight: 'bolder'
-                            }}>{intl.formatMessage({id: 'website.text.4'})}</div>}
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ImageCard
-                            src={SCREEN_SHOT_IMAGES_WITH_LOCALE.linkedin[locale] ?? SCREEN_SHOT_IMAGES_WITH_LOCALE.linkedin.default}
-                            description={
-                                <div style={{
-                                    color: 'var(--color-primary)',
-                                    fontWeight: 'bolder'
-                                }}>{intl.formatMessage({id: 'website.text.5'})}</div>
-                            }
-                        />
-                    </SwiperSlide>
-                </Swiper>
-
                 <Card style={{
                     margin: 20,
                     backgroundColor: 'var(--color-blue-9)',
@@ -141,33 +106,43 @@ const Support = () => {
                     <CardContent>
                         <h3 style={{textAlign: 'center'}}>{intl.formatMessage({id: 'website.text.6'})}</h3>
                         <Divider/>
-                        <section>
-                            <Title content={intl.formatMessage({id: 'website.text.7'})}/>
-                        </section>
-                        <section>
-                            <Title content={intl.formatMessage({id: 'website.text.8'})}/>
-                            {intl.formatMessage({id: 'website.text.9'})}
-                            <div>
-                                <DescriptionImage src={HELP_IMAGES.defaultExtensionPopup}/>
-                            </div>
-                        </section>
-                        <section>
-                            <Title content={intl.formatMessage({id: 'website.text.10'})}/>
-                            {intl.formatMessage({id: 'website.text.10.1'})}
-                            <div>
-                                <DescriptionImage src={HELP_IMAGES.markSiteInExtensionPopup}/>
-                            </div>
-                        </section>
-                        <section>
-                            <Title content={intl.formatMessage({id: 'website.text.11'})}/>
-                            {intl.formatMessage({id: 'website.text.12'})}
-                            <div>
-                                <DescriptionImage src={HELP_IMAGES.appliedListButtonInExtensionPopup}/>
-                                <DescriptionImage src={HELP_IMAGES.appliedListInWeb} style={{
-                                    width: 350
-                                }}/>
-                            </div>
-                        </section>
+                        <Row align="middle">
+                            <Col span={8}>
+                                <section>
+                                    <Title content={intl.formatMessage({id: 'website.text.7'})}/>
+                                    <Title content={intl.formatMessage({id: 'website.text.8'})}/>
+                                    {intl.formatMessage({id: 'website.text.9'})}
+                                    <Title content={intl.formatMessage({id: 'website.text.10'})}/>
+                                    {intl.formatMessage({id: 'website.text.10.1'})}
+                                    <Title content={intl.formatMessage({id: 'website.text.11'})}/>
+                                    {intl.formatMessage({id: 'website.text.12'})}
+                                </section>
+                            </Col>
+                            <Col span={16}>
+                                <section>
+                                    <DescriptionImage src={HELP_IMAGES.defaultExtensionPopup}
+                                                      style={{
+                                                          height: 250
+                                                      }}
+                                    />
+                                    <DescriptionImage src={HELP_IMAGES.markSiteInExtensionPopup}
+                                                      style={{
+                                                          height: 250
+                                                      }}
+                                    />
+                                    <DescriptionImage src={HELP_IMAGES.appliedListButtonInExtensionPopup}
+                                                      style={{
+                                                          height: 250
+                                                      }}
+                                    />
+                                    <DescriptionImage src={HELP_IMAGES.appliedListInWeb} style={{
+                                        height: 250
+                                    }}/>
+                                </section>
+                            </Col>
+                        </Row>
+
+
                     </CardContent>
                 </Card>
                 <Card style={{
@@ -183,23 +158,24 @@ const Support = () => {
                             <div>{intl.formatMessage(messages.title)}</div>
                             <div>{intl.formatMessage(messages.description)}</div>
                         </div>
-                        <section>
-                            <Title content={intl.formatMessage({id: 'website.text.14'})}/>
-                        </section>
-                        <section>
-                            <Title content={intl.formatMessage({id: 'website.text.15'})}/>
-                            {intl.formatMessage({id: 'website.text.16'})}
-                            <div>
-                                <DescriptionImage src={HELP_IMAGES.defaultExtensionPopup}/>
-                            </div>
-                        </section>
-                        <section>
-                            <Title content={intl.formatMessage({id: 'website.text.17'})}/>
-                            {intl.formatMessage({id: 'website.text.18'})}
-                            <div>
-                                <DescriptionImage src={HELP_IMAGES.defaultExtensionHome}/>
-                            </div>
-                        </section>
+                        <Row align="middle">
+                            <Col span={8}>
+                                <Title content={intl.formatMessage({id: 'website.text.14'})}/>
+                                <Title content={intl.formatMessage({id: 'website.text.15'})}/>
+                                {intl.formatMessage({id: 'website.text.16'})}
+                                <Title content={intl.formatMessage({id: 'website.text.17'})}/>
+                                {intl.formatMessage({id: 'website.text.18'})}
+                            </Col>
+                            <Col span={16}>
+                                <DescriptionImage src={HELP_IMAGES.defaultExtensionPopup} style={{
+                                    height: 250
+                                }}/>
+                                <DescriptionImage src={HELP_IMAGES.defaultExtensionHome} style={{
+                                    height: 250
+                                }}/>
+                            </Col>
+                        </Row>
+                        <Divider />
                         <section>
                             <Title content={intl.formatMessage({id: 'website.text.19'})}/>
                             {intl.formatMessage({id: 'website.text.20'})}

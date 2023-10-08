@@ -39,11 +39,11 @@ const Menus = () => {
     const location = useLocation();
     const intl = useIntl();
     const MENU_LIST = [
-        {name: 'home', hash: '/', title: intl.formatMessage(messages.home)},
-        {name: 'import', hash: '/import', title: intl.formatMessage(messages.import)},
-        {name: 'cl', hash: '/cl', title: intl.formatMessage(messages.cl)},
         {name: 'web', hash: '/web', title: intl.formatMessage(messages.web)},
+        {name: 'home', hash: '/', title: intl.formatMessage(messages.home)},
+        {name: 'cl', hash: '/cl', title: intl.formatMessage(messages.cl)},
         {name: 'send', hash: '/send', title: intl.formatMessage(messages.send)},
+        {name: 'import', hash: '/import', title: intl.formatMessage(messages.import)},
     ];
 
     const {locale, updateLocale, languages} = React.useContext(LocaleContext);
