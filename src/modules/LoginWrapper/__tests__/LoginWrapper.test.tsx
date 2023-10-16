@@ -42,7 +42,7 @@ test('LoginWrapper should show children if login', () => {
     )
 });
 
-test('LoginWrapper should show children and tips if login', () => {
+test('LoginWrapper should show children and tips if not login', () => {
     render((
         <LoginWrapper>
             <div data-testid="test-content">test content</div>
