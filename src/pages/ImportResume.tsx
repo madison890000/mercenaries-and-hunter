@@ -10,6 +10,8 @@ import {useIntl} from "react-intl";
 import Rating from "@mui/material/Rating";
 import LocaleContext from "../contexts/LocaleContext";
 import {RESUME_SUMMARY} from "../constants/StoreKeys";
+import Button from "../components/Button";
+import LoginWrapper from "../modules/LoginWrapper/LoginWrapper";
 
 
 const ImportResume = () => {
@@ -77,11 +79,13 @@ const ImportResume = () => {
                     padding: '40px',
                     textAlign: 'center'
                 }}>
-                    <Upload {...uploadProps}>
-                        <LoadingButton loading={loading} variant={"contained"} size="large">
-                            {getBtnText()}
-                        </LoadingButton>
-                    </Upload>
+                    <LoginWrapper>
+                        <Upload {...uploadProps}>
+                            <LoadingButton loading={loading} variant={"contained"} size="large">
+                                {getBtnText()}
+                            </LoadingButton>
+                        </Upload>
+                    </LoginWrapper>
                 </div>
                 {
                     !loading && advise?.length > 0 && (

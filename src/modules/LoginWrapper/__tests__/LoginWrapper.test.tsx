@@ -42,7 +42,7 @@ test('LoginWrapper should show children if login', () => {
     )
 });
 
-test('LoginWrapper should show children if login', () => {
+test('LoginWrapper should show children and tips if login', () => {
     render((
         <LoginWrapper>
             <div data-testid="test-content">test content</div>
@@ -65,5 +65,8 @@ test('LoginWrapper should show children if login', () => {
             }
         })
     })
-    expect(screen.queryByTestId('test-content')).not.toBeInTheDocument()
+    expect(screen.getByTestId('test-content').textContent).toBe(
+      'test content',
+    )
+    expect(screen.queryByTestId('login-tips')).toBeInTheDocument()
 });
