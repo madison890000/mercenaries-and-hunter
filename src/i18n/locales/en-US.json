@@ -47,6 +47,7 @@
   "btn.upload-resume": "Upload Resume",
   "btn.re-upload-resume": "re-Upload Resume",
   "btn.go-upload-resume": "No Resume,Go to upload",
+  "btn.login-first": "Please Login first",
   "website.webs": "We currently support several websites (with ongoing adaptability) and welcome feedback on additional ones.",
   "website.title": "Can assist you in overcoming Google's web page translation for users.",
   "website.sub-title": "requires installation of a plugin",
