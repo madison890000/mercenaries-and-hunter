@@ -15,6 +15,7 @@
   "menu.assistant-job": "きのう",
   "menu.send-list": "適用リスト",
   "menu.import": "履歴書の評価",
+  "menu.tools": "Tools",
   "send.reload-data": "データのリロード",
   "send.tips": "Chrome拡張機能をインストールする必要があります",
   "send.table.name": "職種名",

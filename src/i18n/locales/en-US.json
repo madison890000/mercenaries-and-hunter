@@ -15,6 +15,7 @@
   "menu.assistant-job": "Features",
   "menu.send-list": "Applied List",
   "menu.import": "Score Resume",
+  "menu.tools": "Tools",
   "send.reload-data": "Reload Data",
   "send.tips": "need chrome extension to be installed",
   "send.table.name": "Job Name",

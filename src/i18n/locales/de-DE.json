@@ -15,6 +15,7 @@
   "menu.assistant-job": "Funktionen",
   "menu.send-list": "Angewandte Liste",
   "menu.import": "Lebenslauf bewerten",
+  "menu.tools": "Tools",
   "send.reload-data": "Daten neu laden",
   "send.tips": "Es muss eine Chrome-Erweiterung installiert werden",
   "send.table.name": "Berufsbezeichnung",
