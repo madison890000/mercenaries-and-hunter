@@ -26,26 +26,6 @@ exports[`renders Menus 1`] = `
         role="menuitem"
         tabindex="0"
       >
-        AI translate
-        <span
-          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-        />
-      </li>
-      <li
-        class="MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root"
-        role="menuitem"
-        tabindex="-1"
-      >
-        AI Cover Letter
-        <span
-          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-        />
-      </li>
-      <li
-        class="MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root"
-        role="menuitem"
-        tabindex="-1"
-      >
         Applied List
         <span
           class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
@@ -56,7 +36,7 @@ exports[`renders Menus 1`] = `
         role="menuitem"
         tabindex="-1"
       >
-        Score Resume
+        Tools
         <span
           class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
         />

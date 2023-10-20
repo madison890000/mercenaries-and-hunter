@@ -40,7 +40,7 @@ const CL = () => {
                             marginTop: 20
                         }}>
                             <Button variant="contained" onClick={() => {
-                                navigate("/cl")
+                                navigate("/tools/cl")
                             }}>快去体验</Button>
                         </div>
                     </div>

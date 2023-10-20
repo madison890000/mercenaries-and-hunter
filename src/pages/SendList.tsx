@@ -76,7 +76,7 @@ const SendList = () => {
         }
     ];
     return (
-        <Card>
+        <>
             <CardContent>
                 <Button variant="contained" onClick={() => {
                     getList();
@@ -101,7 +101,7 @@ const SendList = () => {
                 }}
                 paginationModel={pagination}
             />
-        </Card>
+        </>
     )
 }
 

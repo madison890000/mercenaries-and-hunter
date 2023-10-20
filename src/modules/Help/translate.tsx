@@ -39,7 +39,7 @@ const Translate = () => {
                             marginTop: 20
                         }}>
                             <Button variant="contained" onClick={() => {
-                                navigate("/")
+                                navigate("/tools/translate")
                             }}>快去体验</Button>
                         </div>
                     </div>
