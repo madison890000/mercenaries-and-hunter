@@ -7,28 +7,33 @@ import Websites from "./pages/Websites";
 import SendList from "./pages/SendList";
 import React from "react";
 import WithPaddingLayout from "./layouts/WithPaddingLayout";
+import Tools from "./modules/Tools";
 
 
 const RouteMap = () => {
-    return (
-        <HashRouter>
-            <Routes>
-                <Route path="/" element={
-                    <>
-                        <Menus/>
-                        <WithPaddingLayout>
-                            <Outlet/>
-                        </WithPaddingLayout>
-                    </>
-                }>
-                    <Route path="/" index element={<Translate/>}/>
-                    <Route path="import" index element={<ImportResume/>}/>
-                    <Route path="cl" index element={<CoverLetter/>}/>
-                    <Route path="web" index element={<Websites/>}/>
-                    <Route path="send" index element={<SendList/>}/>
-                </Route>
-            </Routes>
-        </HashRouter>
-    )
+  return (
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Menus/>
+            <WithPaddingLayout>
+              <Outlet/>
+            </WithPaddingLayout>
+          </>
+        }>
+          <Route path="/" index element={<SendList/>}/>
+          <Route path="send" index element={<SendList/>}/>
+          <Route path="web" index element={<Websites/>}/>
+          <Route path="/tools">
+            <Route index element={<Tools/>}/>
+            <Route path="translate" index element={<Translate/>}/>
+            <Route path="import" index element={<ImportResume/>}/>
+            <Route path="cl" index element={<CoverLetter/>}/>
+          </Route>
+        </Route>
+      </Routes>
+    </HashRouter>
+  )
 }
 export default RouteMap

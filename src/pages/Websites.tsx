@@ -96,16 +96,12 @@ const Support = () => {
         <div style={{
             textAlign: "center"
         }}>
-            <TranslateHelp/>
-            <CL/>
             <CardContent>
                 <Card style={{
                     margin: 20,
                     backgroundColor: 'var(--color-blue-9)',
                 }}>
                     <CardContent>
-                        <h3 style={{textAlign: 'center'}}>{intl.formatMessage({id: 'website.text.6'})}</h3>
-                        <Divider/>
                         <Row align="middle">
                             <Col span={8}>
                                 <section>
@@ -141,10 +137,11 @@ const Support = () => {
                                 </section>
                             </Col>
                         </Row>
-
-
                     </CardContent>
                 </Card>
+                <Divider title="Tools" />
+                <TranslateHelp/>
+                <CL/>
                 <Card style={{
                     margin: 20,
                     backgroundColor: 'var(--color-blue-8)'

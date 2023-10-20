@@ -7,29 +7,17 @@ import SelectLanguage from "../SelectLanguage";
 import LocaleContext from '../../contexts/LocaleContext';
 
 const messages = defineMessages({
-    edit: {
-        id: 'menu.resume',
-        defaultMessage: "My Resume",
-    },
-    home: {
-        id: 'menu.format-and-translate',
-        defaultMessage: "AI translate"
-    },
-    import: {
-        id: 'menu.import',
-        defaultMessage: 'Score your Resume'
-    },
-    cl: {
-        id: 'menu.auto-cl',
-        defaultMessage: 'AI Cover Letter'
-    },
     web: {
         id: 'menu.assistant-job',
         defaultMessage: 'Assist Find Job'
     },
-    send: {
+    home: {
         id: 'menu.send-list',
         defaultMessage: 'Applied List'
+    },
+    tools: {
+        id: 'menu.tools',
+        defaultMessage: 'Tools'
     },
 });
 
@@ -41,9 +29,7 @@ const Menus = () => {
     const MENU_LIST = [
         {name: 'web', hash: '/web', title: intl.formatMessage(messages.web)},
         {name: 'home', hash: '/', title: intl.formatMessage(messages.home)},
-        {name: 'cl', hash: '/cl', title: intl.formatMessage(messages.cl)},
-        {name: 'send', hash: '/send', title: intl.formatMessage(messages.send)},
-        {name: 'import', hash: '/import', title: intl.formatMessage(messages.import)},
+        {name: 'tools', hash: '/tools', title: intl.formatMessage(messages.tools)},
     ];
 
     const {locale, updateLocale, languages} = React.useContext(LocaleContext);
