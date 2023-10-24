@@ -32,12 +32,12 @@ interface SendStatusProps {
 
 
 const colors = {
-  [SendType.SEND]: 'black',
-  [SendType.START_INTERVIEWING]: '#000099',
-  [SendType.MIDDLE_INTERVIEWING]: 'var(--color-blue-6)',
-  [SendType.FINAL_INTERVIEWING]: '#ff33cc',
-  [SendType.OFFER]: 'var(--color-primary)',
-  [SendType.REJECTED]: 'var(--color-red)',
+  [SendType.SEND]: '#609966',
+  [SendType.START_INTERVIEWING]: '#6096B4',
+  [SendType.MIDDLE_INTERVIEWING]: '#6096B4',
+  [SendType.FINAL_INTERVIEWING]: '#6096B4',
+  [SendType.OFFER]: '#DBA39A',
+  [SendType.REJECTED]: '#BDCDD6',
 }
 const SendStatus: React.FC<SendStatusProps> = ({value, onChange}) => {
 
@@ -49,37 +49,57 @@ const SendStatus: React.FC<SendStatusProps> = ({value, onChange}) => {
       <Select
         value={value}
         style={{
-          minWidth: 100,
+          minWidth: 160,
+          color:  "white",
+          textAlign: 'center',
           // @ts-ignore
-          color: colors[value],
+          backgroundColor: colors[value],
         }}
         onChange={onChange}
         variant="standard"
       >
-        <MenuItem value={SendType.SEND}>{intl.formatMessage(messages.send)}</MenuItem>
+        <MenuItem value={SendType.SEND}
+                  style={{
+                    margin:4,
+                    color: "white",
+                    backgroundColor: colors[SendType.SEND]
+                  }}
+        >{intl.formatMessage(messages.send)}</MenuItem>
         <MenuItem value={SendType.START_INTERVIEWING}
                   style={{
-                    color: '#000099'
+                    margin:4,
+                    color: "white",
+                    backgroundColor: colors[SendType.START_INTERVIEWING]
                   }}
         >{intl.formatMessage(messages.startInterview)}</MenuItem>
         <MenuItem value={SendType.MIDDLE_INTERVIEWING}
                   style={{
-                    color: 'var(--color-blue-6)'
+                    margin:4,
+                    color: "white",
+                    backgroundColor: colors[SendType.MIDDLE_INTERVIEWING]
                   }}
         >{intl.formatMessage(messages.middleInterview)}</MenuItem>
         <MenuItem value={SendType.FINAL_INTERVIEWING}
                   style={{
-                    color: '#ff33cc',
+                    margin:4,
+                    color: "white",
+                    backgroundColor: colors[SendType.FINAL_INTERVIEWING]
                   }}
         >{intl.formatMessage(messages.finalInterview)}</MenuItem>
         <MenuItem value={SendType.OFFER}
                   style={{
-                    color: 'var(--color-primary)'
+                    margin:4,
+                    color: "white",
+                    backgroundColor: colors[SendType.OFFER]
                   }}
         >{intl.formatMessage(messages.offer)}</MenuItem>
-        <MenuItem value={SendType.REJECTED} style={{
-          color: 'var(--color-red)'
-        }}>{intl.formatMessage(messages.rejected)}</MenuItem>
+        <MenuItem value={SendType.REJECTED}
+                  style={{
+                    margin:4,
+                    color: "white",
+                    backgroundColor: colors[SendType.REJECTED]
+                  }}
+        >{intl.formatMessage(messages.rejected)}</MenuItem>
       </Select>
     </div>
   )

@@ -11,7 +11,7 @@ import {defineMessages, useIntl} from "react-intl";
 import {CHROME_EXTENSION_LINK_ADDRESS} from "../constants/domain";
 import {IAppliedInLocal} from "../types";
 
-const DEFAULT_COLUMNS_WIDTH = 150;
+const DEFAULT_COLUMNS_WIDTH = 180;
 const DEFAULT_PAGE_SIZE = 20;
 const messages = defineMessages({
   reloadData: {
