@@ -36,6 +36,9 @@ const messages = defineMessages({
     day31: {
         id: 'time.one-mouth',
     },
+    dayThan1Month: {
+        id: 'time.more-than-month',
+    },
 });
 const TimeUntilNow: React.FC<{ time: string }> = ({time}) => {
     const now = Date.now();
@@ -64,6 +67,8 @@ const TimeUntilNow: React.FC<{ time: string }> = ({time}) => {
         text = intl.formatMessage(messages.day14)
     }else if (timeSeconds < ONE_MONTH) {
         text = intl.formatMessage(messages.day31)
+    }else{
+        text = intl.formatMessage(messages.dayThan1Month)
     }
     return <>{text}</>
 }
