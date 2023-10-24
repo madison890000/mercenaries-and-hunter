@@ -13,8 +13,10 @@ exports[`SendStatus -> FINAL_INTERVIEWING 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "color": "#ff33cc",
-        "minWidth": 100,
+        "backgroundColor": "#6096B4",
+        "color": "white",
+        "minWidth": 160,
+        "textAlign": "center",
       }
     }
   >
@@ -68,8 +70,10 @@ exports[`SendStatus -> MIDDLE_INTERVIEWING 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "color": "var(--color-blue-6)",
-        "minWidth": 100,
+        "backgroundColor": "#6096B4",
+        "color": "white",
+        "minWidth": 160,
+        "textAlign": "center",
       }
     }
   >
@@ -123,8 +127,10 @@ exports[`SendStatus -> OFFER 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "color": "var(--color-primary)",
-        "minWidth": 100,
+        "backgroundColor": "#DBA39A",
+        "color": "white",
+        "minWidth": 160,
+        "textAlign": "center",
       }
     }
   >
@@ -178,8 +184,10 @@ exports[`SendStatus -> REJECTED 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "color": "var(--color-red)",
-        "minWidth": 100,
+        "backgroundColor": "#BDCDD6",
+        "color": "white",
+        "minWidth": 160,
+        "textAlign": "center",
       }
     }
   >
@@ -233,8 +241,10 @@ exports[`SendStatus -> START_INTERVIEWING 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "color": "#000099",
-        "minWidth": 100,
+        "backgroundColor": "#6096B4",
+        "color": "white",
+        "minWidth": 160,
+        "textAlign": "center",
       }
     }
   >
@@ -288,8 +298,10 @@ exports[`SendStatus -> Send 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "color": "black",
-        "minWidth": 100,
+        "backgroundColor": "#609966",
+        "color": "white",
+        "minWidth": 160,
+        "textAlign": "center",
       }
     }
   >
