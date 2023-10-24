@@ -9,7 +9,17 @@ const useSendList = () => {
       const res = await getSendList();
       sendList.addMore(res);
       const finalData = sendList.getListByIds(res?.map(e => e?.id) ?? []);
-      return finalData
+      return finalData?.sort((a, b) => {
+        const createTimeA = new Date(a.time).getTime();
+        const createTimeB = new Date(b.time).getTime();
+        if (createTimeA > createTimeB) {
+          return -1;
+        }
+        if (createTimeA < createTimeB) {
+          return 1;
+        }
+        return 0
+      })
     },
     initialData: []
   });
