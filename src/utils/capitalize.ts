@@ -1,9 +1,9 @@
 const capitalize = (chars?: string) => {
-    if (!chars) {
-        return '';
-    }
-    const [first, ...rest] = chars.split('');
-    return first.toUpperCase() + rest.join('');
+  if (!chars) {
+    return '';
+  }
+  const [first, ...rest] = chars.split('');
+  return first.toUpperCase() + rest.join('');
 };
 
 export default capitalize;

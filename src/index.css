@@ -1,159 +1,129 @@
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 :root {
-    --base-font-size-x-large: 24px;
-    --base-font-size-large: 20px;
-    --base-font-size-middle: 16px;
-    --base-font-size-small: 14px;
-    --base-gap-unit: 2px;
-    --base-gap-2-unit: 4px;
-    --base-gap-small: 6px;
-    --base-gap: 12px;
-    --base-gap-large: 18px;
+  --base-font-size-x-large: 24px;
+  --base-font-size-large: 20px;
+  --base-font-size-middle: 16px;
+  --base-font-size-small: 14px;
+  --base-gap-unit: 2px;
+  --base-gap-2-unit: 4px;
+  --base-gap-small: 6px;
+  --base-gap: 12px;
+  --base-gap-large: 18px;
 
-    --base-padding-small: var(--base-gap-small);
-    --base-padding: var(--base-gap);
-    --base-padding-large: var(--base-gap-large);
-    --base-layout-padding: 40px;
+  --base-padding-small: var(--base-gap-small);
+  --base-padding: var(--base-gap);
+  --base-padding-large: var(--base-gap-large);
+  --base-layout-padding: 40px;
 
-    --base-margin: var(--base-gap);
-    --base-border-radius: var(--base-gap-2-unit);
+  --base-margin: var(--base-gap);
+  --base-border-radius: var(--base-gap-2-unit);
 
-    /**
+  /**
      *  colors
      */
-    --color-ash-gray: #b2beb5;
-    --color-blue-gray: #7393b3;
-    --color-charcoal: #36454f;
-    --color-dark-gray: #a9a9a9;
-    --color-glaucous: #6082b6;
-    --color-gray: #808080;
-    --color-gunmetal-gray: #818589;
-    --color-light-gray: #d3d3d3;
-    --color-pewter: #899499;
-    --color-platinum: #e5e4e2;
-    --color-sage-green: #8a9a5b;
-    --color-silver: #c0c0c0;
-    --color-slate-gray: #708090;
-    --color-smoke: #848884;
-    --color-steel-gray: #71797e;
+  --color-ash-gray: #b2beb5;
+  --color-blue-gray: #7393b3;
+  --color-charcoal: #36454f;
+  --color-dark-gray: #a9a9a9;
+  --color-glaucous: #6082b6;
+  --color-gray: #808080;
+  --color-gunmetal-gray: #818589;
+  --color-light-gray: #d3d3d3;
+  --color-pewter: #899499;
+  --color-platinum: #e5e4e2;
+  --color-sage-green: #8a9a5b;
+  --color-silver: #c0c0c0;
+  --color-slate-gray: #708090;
+  --color-smoke: #848884;
+  --color-steel-gray: #71797e;
 
-    --color-primary: #008b8b;
+  --color-primary: #008b8b;
 
-    --color-blue-0: #0000ff;
-    --color-blue-1: #1919ff;
-    --color-blue-2: #3333ff;
-    --color-blue-3: #4d4dff;
-    --color-blue-4: #6666ff;
-    --color-blue-5: #8080ff;
-    --color-blue-6: #9999ff;
-    --color-blue-7: #b2b2ff;
-    --color-blue-8: #ccccff;
-    --color-blue-9: #e6e6ff;
+  --color-blue-0: #0000ff;
+  --color-blue-1: #1919ff;
+  --color-blue-2: #3333ff;
+  --color-blue-3: #4d4dff;
+  --color-blue-4: #6666ff;
+  --color-blue-5: #8080ff;
+  --color-blue-6: #9999ff;
+  --color-blue-7: #b2b2ff;
+  --color-blue-8: #ccccff;
+  --color-blue-9: #e6e6ff;
 
-    --color-red: #dc143c;
-    --color-yellow: #fff69e;
-    --color-dark-yellow: #c2aa59;
-    --color-green: #93c47d;
-    --color-dark-red: #800000;
-    --color-white: #FFFFFF;
-    /**
+  --color-red: #dc143c;
+  --color-yellow: #fff69e;
+  --color-dark-yellow: #c2aa59;
+  --color-green: #93c47d;
+  --color-dark-red: #800000;
+  --color-white: #ffffff;
+  /**
      * page(layout)
      */
-    --page-background-color: 'white';
-    --page-padding: var(--base-padding);
-    --page-margin: var(--base-margin);
+  --page-background-color: 'white';
+  --page-padding: var(--base-padding);
+  --page-margin: var(--base-margin);
 
-    /**
+  /**
      * block
      */
-    --block-padding: var(--base-padding);
-    --block-margin: var(--base-margin);
+  --block-padding: var(--base-padding);
+  --block-margin: var(--base-margin);
 
-    /**
+  /**
      * inline-block
      */
-    --inline-block-padding: var(--base-padding);
-    --inline-block-margin: var(--base-gap-small);
+  --inline-block-padding: var(--base-padding);
+  --inline-block-margin: var(--base-gap-small);
 
-    /**
+  /**
      * tag
      */
-    --tag-fill: var(--color-gray);
-    --tag-color: white;
+  --tag-fill: var(--color-gray);
+  --tag-color: white;
 
-    /**
+  /**
      * skill
      */
-    --skill-name-color: var(--color-gray);
-    --skill-level-fill: var(--color-gray);
-    /**
+  --skill-name-color: var(--color-gray);
+  --skill-level-fill: var(--color-gray);
+  /**
      * education
      */
-    --education-degree-color: var(--color-gray);
-    /**
+  --education-degree-color: var(--color-gray);
+  /**
      * divider
      */
-    --divider-border-color: var(--color-gray);
-    /**
+  --divider-border-color: var(--color-gray);
+  /**
      * period
      */
-    --period-sub-title-color: var(--color-gray);
-    --period-background-color: rgba(0, 0, 0, 0.05);
+  --period-sub-title-color: var(--color-gray);
+  --period-background-color: rgba(0, 0, 0, 0.05);
 
-    color: var(--color-charcoal);
-    background: var(--color-platinum);
+  color: var(--color-charcoal);
+  background: var(--color-platinum);
 }
 
 .print {
-    --base-font-size-x-large: 34px;
-    --base-font-size-large: 28px;
-    --base-font-size-middle: 25px;
-    --base-font-size-small: 22px;
+  --base-font-size-x-large: 34px;
+  --base-font-size-large: 28px;
+  --base-font-size-middle: 25px;
+  --base-font-size-small: 22px;
 }
 
 @media screen and (max-width: 414px) {
-    :root {
-        --base-font-size-large: 16px;
-        --base-font-size-middle: 14px;
-        --base-font-size-small: 12px;
-        --base-gap-unit: 2px;
-        --base-gap-2-unit: 4px;
-        --base-gap-small: 3px;
-        --base-gap: 6px;
-        --base-gap-large: 12px;
-
-        --page-padding: var(--base-gap-large);
-        --page-margin: var(--base-gap-large);
-    }
-}
-
-@media screen and (max-width: 1350px) {
-    :root {
-        --base-font-size-large: 16px;
-        --base-font-size-middle: 14px;
-        --base-font-size-small: 12px;
-        --base-gap-unit: 2px;
-        --base-gap-2-unit: 4px;
-        --base-gap-small: 3px;
-        --base-gap: 6px;
-        --base-gap-large: 12px;
-
-        --page-padding: var(--base-gap-large);
-        --page-margin: var(--base-gap-large);
-    }
-}
-
-:root .small {
+  :root {
     --base-font-size-large: 16px;
     --base-font-size-middle: 14px;
     --base-font-size-small: 12px;
@@ -165,24 +135,54 @@ code {
 
     --page-padding: var(--base-gap-large);
     --page-margin: var(--base-gap-large);
+  }
+}
 
+@media screen and (max-width: 1350px) {
+  :root {
+    --base-font-size-large: 16px;
+    --base-font-size-middle: 14px;
+    --base-font-size-small: 12px;
+    --base-gap-unit: 2px;
+    --base-gap-2-unit: 4px;
+    --base-gap-small: 3px;
+    --base-gap: 6px;
+    --base-gap-large: 12px;
+
+    --page-padding: var(--base-gap-large);
+    --page-margin: var(--base-gap-large);
+  }
+}
+
+:root .small {
+  --base-font-size-large: 16px;
+  --base-font-size-middle: 14px;
+  --base-font-size-small: 12px;
+  --base-gap-unit: 2px;
+  --base-gap-2-unit: 4px;
+  --base-gap-small: 3px;
+  --base-gap: 6px;
+  --base-gap-large: 12px;
+
+  --page-padding: var(--base-gap-large);
+  --page-margin: var(--base-gap-large);
 }
 
 .small h1 {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 220px;
-    word-break: break-all;
-    font-size: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 220px;
+  word-break: break-all;
+  font-size: 24px;
 }
 
 /**
  * seems not working very well TODO need to make it working
  */
 @page {
-    size: 297mm 420mm; /* or size: 1123px 1588px; */
+  size: 297mm 420mm; /* or size: 1123px 1588px; */
 }
 
 .add {
-    opacity: 1 !important;
+  opacity: 1 !important;
 }

@@ -15,41 +15,41 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 
 const theme = createTheme({
-    palette: {
-        primary: {
-            main: '#008b8b',
-        },
+  palette: {
+    primary: {
+      main: '#008b8b',
     },
+  },
 });
 const queryClient = new QueryClient()
 
 const ReactQueryWrapper: React.FC<PropsWithChildren> = ({children}) => (
-    <QueryClientProvider client={queryClient}>
-        {children}
-    </QueryClientProvider>
+  <QueryClientProvider client={queryClient}>
+    {children}
+  </QueryClientProvider>
 )
 const I18nProvider = () => {
-    const {locale} = useContext(LocaleContext);
-    return (
-        <IntlProvider locale={locale} key={locale} messages={generatedTranslations()[locale]}>
-            <RouteMap/>
-        </IntlProvider>
-    );
+  const {locale} = useContext(LocaleContext);
+  return (
+    <IntlProvider locale={locale} key={locale} messages={generatedTranslations()[locale]}>
+      <RouteMap/>
+    </IntlProvider>
+  );
 };
 root.render(
-    <GoogleOAuthProvider
-        clientId={process.env.REACT_APP_GOOGLE_OAUTH2_CLIENT_ID ?? ''}
-    >
-        <ThemeProvider theme={theme}>
-            <ReactQueryWrapper>
-                <LocaleContextContainer>
-                    <GlobalContextContainer>
-                        <I18nProvider/>
-                    </GlobalContextContainer>
-                </LocaleContextContainer>
-            </ReactQueryWrapper>
-        </ThemeProvider>
-    </GoogleOAuthProvider>
+  <GoogleOAuthProvider
+    clientId={process.env.REACT_APP_GOOGLE_OAUTH2_CLIENT_ID ?? ''}
+  >
+    <ThemeProvider theme={theme}>
+      <ReactQueryWrapper>
+        <LocaleContextContainer>
+          <GlobalContextContainer>
+            <I18nProvider/>
+          </GlobalContextContainer>
+        </LocaleContextContainer>
+      </ReactQueryWrapper>
+    </ThemeProvider>
+  </GoogleOAuthProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

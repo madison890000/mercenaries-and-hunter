@@ -1,10 +1,9 @@
-import {getSendList} from "../services/mh";
-import sendList from "../lib/SendListData";
-import {useQuery} from "@tanstack/react-query";
-
+import { getSendList } from '../services/mh';
+import sendList from '../lib/SendListData';
+import { useQuery } from '@tanstack/react-query';
 
 const useSendList = () => {
-  const {data, refetch} = useQuery({
+  const { data, refetch } = useQuery({
     queryFn: async () => {
       const res = await getSendList();
       sendList.addMore(res);
@@ -18,8 +17,8 @@ const useSendList = () => {
         if (createTimeA < createTimeB) {
           return 1;
         }
-        return 0
-      })
+        return 0;
+      });
     },
     initialData: []
   });
@@ -33,8 +32,8 @@ const useSendList = () => {
     updateLikeById: (id: string, status: any) => {
       sendList.updateLikeById(id, status);
       refetch();
-    },
-  }
-}
+    }
+  };
+};
 
-export default useSendList
+export default useSendList;
