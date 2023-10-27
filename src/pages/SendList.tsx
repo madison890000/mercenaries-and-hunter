@@ -10,8 +10,9 @@ import Like from '../components/Like';
 import { defineMessages, useIntl } from 'react-intl';
 import { CHROME_EXTENSION_LINK_ADDRESS } from '../constants/domain';
 import { IAppliedInLocal } from '../types';
+import Link from "../components/Link";
 
-const DEFAULT_COLUMNS_WIDTH = 180;
+const DEFAULT_COLUMNS_WIDTH = 200;
 const DEFAULT_PAGE_SIZE = 20;
 const messages = defineMessages({
   reloadData: {
@@ -43,33 +44,32 @@ const SendList = () => {
   const intl = useIntl();
   const columns: GridColDef<IAppliedInLocal>[] = [
     {
+      field: 'like',
+      headerName: intl.formatMessage(messages.favor),
+      width: DEFAULT_COLUMNS_WIDTH,
+      renderCell: ({ value, row }) => <Like onChange={(e: any) => updateLikeById(row.id, e)} value={value}/>
+    },
+    {
       field: 'title',
       headerName: intl.formatMessage(messages.name),
-      width: DEFAULT_COLUMNS_WIDTH * 3,
+      flex: 1,
       renderCell: ({ value, row }) => (
-        <a href={row.originUrl ?? row?.site} target="_blank">
-          {value}
-        </a>
+        <Link href={row.originUrl ?? row?.site} text={value}/>
       )
     },
     {
       field: 'time',
       headerName: intl.formatMessage(messages.time),
-      width: DEFAULT_COLUMNS_WIDTH,
-      renderCell: ({ value }) => <ShowTimeUntilNow time={value} />
+      width: DEFAULT_COLUMNS_WIDTH/2,
+      renderCell: ({ value }) => <ShowTimeUntilNow time={value}/>
     },
-    {
-      field: 'like',
-      headerName: intl.formatMessage(messages.favor),
-      width: DEFAULT_COLUMNS_WIDTH,
-      renderCell: ({ value, row }) => <Like onChange={(e: any) => updateLikeById(row.id, e)} value={value} />
-    },
+
     {
       field: 'status',
       headerName: intl.formatMessage(messages.status),
       width: DEFAULT_COLUMNS_WIDTH,
       renderCell: ({ value, row }) => (
-        <SendStatus onChange={(e: any) => updateStatusById(row.id, e?.target?.value)} value={value} />
+        <SendStatus onChange={(e: any) => updateStatusById(row.id, e?.target?.value)} value={value}/>
       )
     }
   ];
