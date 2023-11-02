@@ -84,15 +84,6 @@ const SendList = () => {
         >
           {intl.formatMessage(messages.reloadData)}
         </Button>
-        <a
-          style={{
-            marginLeft: 30
-          }}
-          href={CHROME_EXTENSION_LINK_ADDRESS}
-          target="_blank"
-        >
-          ({intl.formatMessage(messages.tips)})
-        </a>
       </CardContent>
       <DataGrid
         rows={sends}

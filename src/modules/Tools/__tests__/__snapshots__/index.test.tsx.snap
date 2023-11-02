@@ -7,6 +7,7 @@ exports[`renders Tools 1`] = `
   >
     <button
       class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge css-jh47zj-MuiButtonBase-root-MuiButton-root"
+      style="background-color: rgb(96, 150, 180); padding: 40px;"
       tabindex="0"
       type="button"
     >
@@ -17,6 +18,7 @@ exports[`renders Tools 1`] = `
     </button>
     <button
       class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge css-jh47zj-MuiButtonBase-root-MuiButton-root"
+      style="background-color: rgb(96, 150, 180); padding: 40px;"
       tabindex="0"
       type="button"
     >
@@ -27,6 +29,7 @@ exports[`renders Tools 1`] = `
     </button>
     <button
       class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge css-jh47zj-MuiButtonBase-root-MuiButton-root"
+      style="background-color: rgb(96, 150, 180); padding: 40px;"
       tabindex="0"
       type="button"
     >

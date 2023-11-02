@@ -1,6 +1,6 @@
 import Button from "@mui/material/Button";
-import {useNavigate} from "react-router";
-import {useIntl} from "react-intl";
+import { useNavigate } from "react-router";
+import { useIntl } from "react-intl";
 
 
 const Tools = () => {
@@ -14,13 +14,22 @@ const Tools = () => {
     }}>
       <Button variant="contained" size="large" onClick={() => {
         navigate("/tools/translate")
-      }}>{intl.formatMessage({id: 'menu.format-and-translate'})}</Button>
+      }} style={{
+        backgroundColor: '#6096B4',
+        padding:40,
+      }}>{intl.formatMessage({ id: 'menu.format-and-translate' })}</Button>
       <Button variant="contained" size="large" onClick={() => {
         navigate("/tools/cl")
-      }}>{intl.formatMessage({id: 'menu.auto-cl'})}</Button>
+      }} style={{
+        backgroundColor: '#6096B4',
+        padding:40,
+      }}>{intl.formatMessage({ id: 'menu.auto-cl' })}</Button>
       <Button variant="contained" size="large" onClick={() => {
         navigate("/tools/import")
-      }}>{intl.formatMessage({id: 'menu.import'})}</Button>
+      }} style={{
+        backgroundColor: '#6096B4',
+        padding:40,
+      }}>{intl.formatMessage({ id: 'menu.import' })}</Button>
     </div>
   )
 }

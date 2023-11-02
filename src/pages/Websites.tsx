@@ -159,7 +159,8 @@ const Support = () => {
         <Card
           style={{
             margin: 20,
-            backgroundColor: 'var(--color-blue-8)'
+            color:'var(--color-white)',
+            background:'#6096B4'
           }}
         >
           <CardContent>
