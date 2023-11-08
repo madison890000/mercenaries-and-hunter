@@ -24,7 +24,7 @@
   "send.table.status": "Status",
   "send-enum.send": "Applied",
   "send-enum.startInterview": "Start Interview",
-  "send-enum.middleInterview": "Middle Interview",
+  "send-enum.middleInterview": "Mid Interview",
   "send-enum.finalInterview": "Final Interview",
   "send-enum.offer": "Offer",
   "send-enum.rejected": "Rejected",
