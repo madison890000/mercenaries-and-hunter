@@ -63,3 +63,7 @@ export const getSendList = async () => {
     }, 30 * 1000);
   });
 };
+
+export const hasInstallChromeExtension = () => {
+  return !!chrome?.runtime;
+};

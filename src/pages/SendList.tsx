@@ -8,9 +8,9 @@ import SendStatus from '../components/SendStatus';
 import useSendList from '../hooks/useSendList';
 import Like from '../components/Like';
 import { defineMessages, useIntl } from 'react-intl';
-import { CHROME_EXTENSION_LINK_ADDRESS } from '../constants/domain';
 import { IAppliedInLocal } from '../types';
 import Link from "../components/Link";
+import ExtensionWrapper from "../modules/ExtensionWrapper";
 
 const DEFAULT_COLUMNS_WIDTH = 200;
 const DEFAULT_PAGE_SIZE = 20;
@@ -44,9 +44,17 @@ const SendList = () => {
   const intl = useIntl();
   const columns: GridColDef<IAppliedInLocal>[] = [
     {
+      field: 'status',
+      headerName: intl.formatMessage(messages.status),
+      width: DEFAULT_COLUMNS_WIDTH - 20,
+      renderCell: ({ value, row }) => (
+        <SendStatus onChange={(e: any) => updateStatusById(row.id, e?.target?.value)} value={value}/>
+      )
+    },
+    {
       field: 'like',
       headerName: intl.formatMessage(messages.favor),
-      width: DEFAULT_COLUMNS_WIDTH,
+      width: DEFAULT_COLUMNS_WIDTH - 60,
       renderCell: ({ value, row }) => <Like onChange={(e: any) => updateLikeById(row.id, e)} value={value}/>
     },
     {
@@ -60,31 +68,12 @@ const SendList = () => {
     {
       field: 'time',
       headerName: intl.formatMessage(messages.time),
-      width: DEFAULT_COLUMNS_WIDTH/2,
+      width: DEFAULT_COLUMNS_WIDTH / 2,
       renderCell: ({ value }) => <ShowTimeUntilNow time={value}/>
     },
-
-    {
-      field: 'status',
-      headerName: intl.formatMessage(messages.status),
-      width: DEFAULT_COLUMNS_WIDTH,
-      renderCell: ({ value, row }) => (
-        <SendStatus onChange={(e: any) => updateStatusById(row.id, e?.target?.value)} value={value}/>
-      )
-    }
   ];
   return (
     <>
-      <CardContent>
-        <Button
-          variant="contained"
-          onClick={() => {
-            getList();
-          }}
-        >
-          {intl.formatMessage(messages.reloadData)}
-        </Button>
-      </CardContent>
       <DataGrid
         rows={sends}
         style={{
@@ -101,4 +90,9 @@ const SendList = () => {
   );
 };
 
-export default SendList;
+const WrapperWithExtension = ()=>(
+  <ExtensionWrapper>
+    <SendList />
+  </ExtensionWrapper>
+)
+export default WrapperWithExtension;

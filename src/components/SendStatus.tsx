@@ -43,15 +43,16 @@ const SendStatus: React.FC<SendStatusProps> = ({ value, onChange }) => {
   return (
     <div
       style={{
-        margin: 10
+        margin: 0
       }}
     >
       <Select
         value={value}
         style={{
-          minWidth: 160,
+          minWidth: 140,
           color: 'white',
           textAlign: 'center',
+          // borderRadius:8,
           // @ts-ignore
           backgroundColor: colors[value]
         }}

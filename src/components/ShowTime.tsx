@@ -75,7 +75,7 @@ const ShowTimeUntilNow: React.FC<{ time: string }> = ({ time }) => (
   <span
     style={{
       color: 'gray',
-      fontSize: '12px',
+      fontSize: '14px',
       fontStyle: 'italic'
     }}
   >
