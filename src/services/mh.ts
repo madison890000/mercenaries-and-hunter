@@ -1,52 +1,32 @@
-import httpClient from '../utils/httpClient';
-import { IAppliedInExtension, NeedSyncAppliedItem } from '../types';
+import { IAppliedInExtension } from '../types';
 
-export const summarizeResume = async (text: string[]) => {
-  return httpClient
-    .post(
-      `/chat/summarize-resume`,
-      {
-        content: text
-      },
-      {}
-    )
-    .then(e => e.data);
-};
 
-export const scoreResume = async (resume: any, locale: string) => {
-  return httpClient
-    .post<{
-      score: number;
-      advise: string[];
-    }>(
-      `/chat/score-resume`,
-      {
-        content: resume,
-        locale
-      },
-      {}
-    )
-    .then(e => e?.data);
-};
-export const syncAccount = () => {
-  return httpClient.post(`/rest/accounts/sync`, {}, {});
-};
-export const syncSends = (sends: NeedSyncAppliedItem[]) => {
-  return httpClient.post(
-    `/rest/sends/sync`,
-    {
-      sends
-    },
-    {}
-  );
-};
-
-export const getUserInfo = () => {
-  return httpClient.get(`/rest/accounts/user-info`, {}).then(e => e?.data);
-};
 export const getSendList = async () => {
   if (!chrome?.runtime) {
-    return [];
+    return [
+      {
+        "id": "2024-04-24T10:33:39.801Z0.868",
+        "originUrl": "http://localhost:8000/#/",
+        "site": "http://localhost:8000/#/",
+        "time": "2024-04-24T10:33:39.800Z",
+        "title": "M&H"
+      },
+      {
+        "id": "2024-04-24T10:34:39.801Z0.868",
+        "originUrl": "http://localhost:8000/#/",
+        "site": "http://localhost:8000/#/",
+        "time": "2024-04-24T10:33:39.800Z",
+        "title": "M&H"
+      },
+      {
+        "id": "2024-04-24T10:35:39.801Z0.868",
+        "originUrl": "http://localhost:8000/#/",
+        "site": "http://localhost:8000/#/",
+        "time": "2024-04-24T10:33:39.800Z",
+        "title": "M&H"
+      },
+
+    ];
   }
   return new Promise<IAppliedInExtension[]>((resolve, reject) => {
     chrome?.runtime?.sendMessage(
@@ -65,5 +45,5 @@ export const getSendList = async () => {
 };
 
 export const hasInstallChromeExtension = () => {
-  return !!chrome?.runtime;
+  return true ||!!chrome?.runtime;
 };

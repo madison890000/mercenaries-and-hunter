@@ -1,4 +1,3 @@
-export { default as capitalize } from './capitalize';
 
 export const saveItem = (key: string, value: string) => {
   window.localStorage.setItem(key, value);

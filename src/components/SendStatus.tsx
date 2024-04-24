@@ -6,7 +6,6 @@ import { SendType } from '../types';
 const messages = defineMessages({
   send: {
     id: 'send-enum.send',
-    defaultMessage: 'Reload Data'
   },
   startInterview: {
     id: 'send-enum.startInterview'
@@ -31,10 +30,10 @@ interface SendStatusProps {
 }
 
 const colors = {
-  [SendType.SEND]: '#609966',
-  [SendType.START_INTERVIEWING]: '#6096B4',
-  [SendType.MIDDLE_INTERVIEWING]: '#6096B4',
-  [SendType.FINAL_INTERVIEWING]: '#6096B4',
+  [SendType.SEND]: '#5BBCFF',
+  [SendType.START_INTERVIEWING]: '#BFEA7C',
+  [SendType.MIDDLE_INTERVIEWING]: '#9BCF53',
+  [SendType.FINAL_INTERVIEWING]: '#416D19',
   [SendType.OFFER]: '#DBA39A',
   [SendType.REJECTED]: '#BDCDD6'
 };

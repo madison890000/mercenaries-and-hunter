@@ -22,14 +22,3 @@ export interface IAppliedInLocal extends IAppliedInExtension {
     serverId?: number;
     updateTime?: number;
 }
-
-export interface IAppliedInServer extends Omit<IAppliedInLocal, 'id'> {
-    status: SendType;
-    id: number;
-    like: number;
-    needSync: boolean;
-    serverId: number;
-    updateTime: number;
-}
-
-export type NeedSyncAppliedItem = Omit<IAppliedInLocal, 'id'> & { id?: number }

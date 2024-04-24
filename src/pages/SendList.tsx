@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { CardContent } from '@mui/material';
 
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import ShowTimeUntilNow from '../components/ShowTime';
-import Button from '@mui/material/Button';
 import SendStatus from '../components/SendStatus';
 import useSendList from '../hooks/useSendList';
 import Like from '../components/Like';
@@ -44,32 +42,33 @@ const SendList = () => {
   const intl = useIntl();
   const columns: GridColDef<IAppliedInLocal>[] = [
     {
+      field: 'title',
+      headerName: intl.formatMessage(messages.name),
+      flex: 1,
+      renderCell: ({ value, row }) => (
+        <Link href={row.originUrl ?? row?.site} text={value} />
+      )
+    },
+    {
       field: 'status',
       headerName: intl.formatMessage(messages.status),
       width: DEFAULT_COLUMNS_WIDTH - 20,
       renderCell: ({ value, row }) => (
-        <SendStatus onChange={(e: any) => updateStatusById(row.id, e?.target?.value)} value={value}/>
+        <SendStatus onChange={(e: any) => updateStatusById(row.id, e?.target?.value)} value={value} />
       )
     },
     {
       field: 'like',
       headerName: intl.formatMessage(messages.favor),
       width: DEFAULT_COLUMNS_WIDTH - 60,
-      renderCell: ({ value, row }) => <Like onChange={(e: any) => updateLikeById(row.id, e)} value={value}/>
+      renderCell: ({ value, row }) => <Like onChange={(e: any) => updateLikeById(row.id, e)} value={value} />
     },
-    {
-      field: 'title',
-      headerName: intl.formatMessage(messages.name),
-      flex: 1,
-      renderCell: ({ value, row }) => (
-        <Link href={row.originUrl ?? row?.site} text={value}/>
-      )
-    },
+
     {
       field: 'time',
       headerName: intl.formatMessage(messages.time),
-      width: DEFAULT_COLUMNS_WIDTH / 2,
-      renderCell: ({ value }) => <ShowTimeUntilNow time={value}/>
+      width: DEFAULT_COLUMNS_WIDTH ,
+      renderCell: ({ value }) => <ShowTimeUntilNow time={value} />
     },
   ];
   return (
@@ -90,7 +89,7 @@ const SendList = () => {
   );
 };
 
-const WrapperWithExtension = ()=>(
+const WrapperWithExtension = () => (
   <ExtensionWrapper>
     <SendList />
   </ExtensionWrapper>
