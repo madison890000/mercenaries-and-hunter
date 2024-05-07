@@ -47,7 +47,7 @@ class AppliedList {
     changed && this.save();
   }
 
-  updateStatusById(id: string, status: any) {
+  updateStatusById(id: string, status: SendType) {
     this.updateLocalDataByIDAndField(
       id,
       {

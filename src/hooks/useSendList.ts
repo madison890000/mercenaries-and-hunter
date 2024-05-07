@@ -1,6 +1,7 @@
 import { getSendList } from '../services/mh';
 import sendList from '../lib/SendListData';
 import { useQuery } from '@tanstack/react-query';
+import { SendType } from "../pages/Board";
 
 const useSendList = () => {
   const { data, refetch } = useQuery({
@@ -11,10 +12,10 @@ const useSendList = () => {
       return finalData?.sort((a, b) => {
         const createTimeA = new Date(a.time).getTime();
         const createTimeB = new Date(b.time).getTime();
-        if (createTimeA > createTimeB) {
+        if ( createTimeA > createTimeB ) {
           return -1;
         }
-        if (createTimeA < createTimeB) {
+        if ( createTimeA < createTimeB ) {
           return 1;
         }
         return 0;
@@ -25,7 +26,7 @@ const useSendList = () => {
   return {
     getList: refetch,
     sends: data,
-    updateStatusById: (id: string, status: any) => {
+    updateStatusById: (id: string, status: SendType) => {
       sendList.updateStatusById(id, status);
       refetch();
     },
